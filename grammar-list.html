@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خريطة جرامر الفرنسية A1 -> C2</title>
+  <style>
+    :root {
+      --primary: #0055a5;
+      --secondary: #ef4135;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .level-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      padding: 20px;
+      border-top: 5px solid var(--primary);
+    }
+
+    .level-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .topic-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .topic-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .topic-item:last-child {
+      border-bottom: none;
+    }
+
+    .topic-item:hover {
+      background-color: #f1f5f9;
+    }
+
+    .topic-text {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .fr-text {
+      font-weight: 600;
+      color: #0f172a;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    .ar-text {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .copy-btn {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .copy-btn.copied {
+      background-color: #22c55e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🇫🇷 خريطة جرامر الفرنسية كاملة (A1 → C2)</h1>
+  <div id="grammar-container"></div>
+</div>
+
+<script>
+const data = [
+  {
+    level: "🇫🇷 A1 — Débutant | المبتدئ",
+    topics: [
+      { fr: "Les pronoms personnels", ar: "الضمائر الشخصية" },
+      { fr: "Le verbe être", ar: "فعل يكون" },
+      { fr: "Le verbe avoir", ar: "فعل يملك / لديه" },
+      { fr: "Les verbes du premier groupe (-er)", ar: "أفعال المجموعة الأولى" },
+      { fr: "Le présent de l’indicatif", ar: "المضارع" },
+      { fr: "La négation", ar: "النفي" },
+      { fr: "La phrase interrogative", ar: "صيغة السؤال" },
+      { fr: "Les articles définis", ar: "أدوات التعريف" },
+      { fr: "Les articles indéfinis", ar: "أدوات التنكير" },
+      { fr: "Le masculin et le féminin", ar: "المذكر والمؤنث" },
+      { fr: "Le singulier et le pluriel", ar: "المفرد والجمع" },
+      { fr: "L’accord des adjectifs", ar: "مطابقة الصفات" },
+      { fr: "Les adjectifs possessifs", ar: "صفات الملكية" },
+      { fr: "Les adjectifs démonstratifs", ar: "أسماء/صفات الإشارة" },
+      { fr: "Les prépositions", ar: "حروف الجر" },
+      { fr: "Les adverbes", ar: "الظروف" },
+      { fr: "Les nombres", ar: "الأعداد" },
+      { fr: "L’heure et la date", ar: "الوقت والتاريخ" },
+      { fr: "C’est / Ce sont", ar: "هذا/هذه، هؤلاء" },
+      { fr: "Il y a", ar: "يوجد / هناك" },
+      { fr: "Il est / Elle est", ar: "هو/هي يكون" },
+      { fr: "L’impératif", ar: "صيغة الأمر" },
+      { fr: "Le futur proche", ar: "المستقبل القريب" },
+      { fr: "Le passé récent", ar: "الماضي القريب" },
+      { fr: "Les verbes pronominaux", ar: "الأفعال الانعكاسية" },
+      { fr: "Les pronoms toniques", ar: "الضمائر المنفصلة" },
+      { fr: "La comparaison", ar: "المقارنة" }
+    ]
+  },
+  {
+    level: "🇫🇷 A2 — Élémentaire | ابتدائي متقدم",
+    topics: [
+      { fr: "Le passé composé", ar: "الماضي المركب" },
+      { fr: "Les auxiliaires avoir et être", ar: "الأفعال المساعدة avoir و être" },
+      { fr: "L’accord du participe passé", ar: "مطابقة اسم المفعول" },
+      { fr: "L’imparfait", ar: "الماضي المستمر/الوصف في الماضي" },
+      { fr: "Passé composé ou imparfait", ar: "الفرق بين الماضي المركب وImparfait" },
+      { fr: "Le futur simple", ar: "المستقبل البسيط" },
+      { fr: "Les pronoms COD", ar: "ضمائر المفعول المباشر" },
+      { fr: "Les pronoms COI", ar: "ضمائر المفعول غير المباشر" },
+      { fr: "Les pronoms y et en", ar: "الضميران y و en" },
+      { fr: "Les pronoms réfléchis", ar: "الضمائر الانعكاسية" },
+      { fr: "La place des pronoms", ar: "ترتيب الضمائر" },
+      { fr: "Les pronoms relatifs qui, que, où", ar: "الضمائر الموصولة" },
+      { fr: "Le comparatif", ar: "صيغة المقارنة" },
+      { fr: "Le superlatif", ar: "صيغة التفضيل" },
+      { fr: "Très, trop, assez, beaucoup", ar: "جدًا، أكثر من اللازم، بما يكفي، كثيرًا" },
+      { fr: "Depuis, pendant, il y a", ar: "منذ، لمدة، منذ/قبل" },
+      { fr: "Le conditionnel présent", ar: "الشرط الحاضر" },
+      { fr: "Si + présent", ar: "جمل الشرط مع المضارع" },
+      { fr: "Le gérondif", ar: "صيغة gerund" },
+      { fr: "L’infinitif", ar: "المصدر" },
+      { fr: "La négation avancée", ar: "النفي المتقدم" },
+      { fr: "Personne, rien, jamais, plus", ar: "لا أحد، لا شيء، أبدًا، لم يعد" },
+      { fr: "Le discours indirect simple", ar: "الكلام غير المباشر البسيط" },
+      { fr: "Tout, toute, tous, toutes", ar: "كل / جميع" },
+      { fr: "Quel, quelle, quels, quelles", ar: "أي / ما" }
+    ]
+  },
+  {
+    level: "🇫🇷 B1 — Intermédiaire | متوسط",
+    topics: [
+      { fr: "Le plus-que-parfait", ar: "الماضي الأسبق" },
+      { fr: "Le futur antérieur", ar: "المستقبل التام" },
+      { fr: "Le conditionnel présent", ar: "الشرط الحاضر" },
+      { fr: "Le subjonctif présent", ar: "صيغة التمني/الشك/الضرورة" },
+      { fr: "L’emploi du subjonctif", ar: "استخدام الـSubjonctif" },
+      { fr: "Si + imparfait → conditionnel", ar: "الشرط الافتراضي" },
+      { fr: "Les propositions relatives", ar: "الجمل الموصولة" },
+      { fr: "Ce qui / ce que / ce dont", ar: "ما الذي / ما / الذي منه" },
+      { fr: "Les pronoms relatifs", ar: "الضمائر الموصولة" },
+      { fr: "Les pronoms doubles", ar: "الضمائر المزدوجة" },
+      { fr: "Le pronom dont", ar: "الضمير dont" },
+      { fr: "Lequel, laquelle, lesquels, lesquelles", ar: "أيّ/الذي بصيغ مختلفة" },
+      { fr: "La voix passive", ar: "المبني للمجهول" },
+      { fr: "Le discours indirect", ar: "الكلام غير المباشر" },
+      { fr: "Le participe présent", ar: "اسم الفاعل/المشارك" },
+      { fr: "Le gérondif", ar: "صيغة gerund" },
+      { fr: "L’accord du participe passé", ar: "مطابقة اسم المفعول" },
+      { fr: "Les verbes de mouvement avec être", ar: "أفعال الحركة مع être" },
+      { fr: "L’expression de la cause", ar: "التعبير عن السبب" },
+      { fr: "L’expression de la conséquence", ar: "التعبير عن النتيجة" },
+      { fr: "L’expression du but", ar: "التعبير عن الهدف" },
+      { fr: "L’expression de l’opposition", ar: "التعبير عن المعارضة" },
+      { fr: "L’expression de la condition", ar: "التعبير عن الشرط" },
+      { fr: "L’expression de l’hypothèse", ar: "التعبير عن الافتراض" },
+      { fr: "Les connecteurs logiques", ar: "أدوات الربط المنطقية" }
+    ]
+  },
+  {
+    level: "🇫🇷 B2 — Intermédiaire supérieur | فوق المتوسط",
+    topics: [
+      { fr: "Le subjonctif passé", ar: "صيغة Subjonctif في الماضي" },
+      { fr: "Le conditionnel passé", ar: "الشرط الماضي" },
+      { fr: "Le plus-que-parfait du subjonctif", ar: "الماضي الأسبق للـSubjonctif" },
+      { fr: "Le futur antérieur", ar: "المستقبل التام" },
+      { fr: "Le passé simple", ar: "الماضي البسيط الأدبي" },
+      { fr: "Le passé antérieur", ar: "الماضي الأسبق الأدبي" },
+      { fr: "La concordance des temps", ar: "تطابق الأزمنة" },
+      { fr: "Le discours indirect avancé", ar: "الكلام غير المباشر المتقدم" },
+      { fr: "La voix passive avancée", ar: "المبني للمجهول المتقدم" },
+      { fr: "Faire + infinitif", ar: "جعل/التسبب في فعل شيء" },
+      { fr: "Laisser + infinitif", ar: "السماح بحدوث شيء" },
+      { fr: "Les phrases conditionnelles complexes", ar: "جمل الشرط المعقدة" },
+      { fr: "Les pronoms relatifs composés", ar: "الضمائر الموصولة المركبة" },
+      { fr: "Ce dont / ce à quoi / ce pour quoi", ar: "تراكيب موصولة متقدمة" },
+      { fr: "L’ellipse", ar: "الحذف" },
+      { fr: "L’inversion", ar: "عكس ترتيب الجملة" },
+      { fr: "La négation avancée", ar: "النفي المتقدم" },
+      { fr: "La mise en relief", ar: "التوكيد وإبراز عنصر في الجملة" },
+      { fr: "C’est… qui / que", ar: "تركيب التوكيد" },
+      { fr: "Ce sont… qui / que", ar: "تركيب التوكيد للجمع" },
+      { fr: "L’expression de la probabilité", ar: "التعبير عن الاحتمال" },
+      { fr: "L’expression de la concession", ar: "التعبير عن التنازل/رغم ذلك" },
+      { fr: "L’expression de la cause", ar: "التعبير المتقدم عن السبب" },
+      { fr: "L’expression de la conséquence", ar: "التعبير المتقدم عن النتيجة" },
+      { fr: "Les connecteurs logiques avancés", ar: "أدوات الربط المتقدمة" }
+    ]
+  },
+  {
+    level: "🇫🇷 C1 — Avancé | متقدم",
+    topics: [
+      { fr: "Les temps littéraires", ar: "الأزمنة الأدبية" },
+      { fr: "Le passé simple", ar: "الماضي البسيط الأدبي" },
+      { fr: "Le passé antérieur", ar: "الماضي الأسبق الأدبي" },
+      { fr: "Le subjonctif imparfait", ar: "Subjonctif الماضي البسيط الأدبي" },
+      { fr: "Le plus-que-parfait du subjonctif", ar: "Subjonctif الماضي الأسبق" },
+      { fr: "La concordance avancée des temps", ar: "تطابق الأزمنة المتقدم" },
+      { fr: "Le discours indirect avancé", ar: "الكلام غير المباشر المتقدم" },
+      { fr: "Le registre soutenu", ar: "الأسلوب الرسمي/الراقي" },
+      { fr: "Le style académique", ar: "الأسلوب الأكاديمي" },
+      { fr: "Les phrases complexes", ar: "الجمل المعقدة" },
+      { fr: "Les propositions subordonnées", ar: "الجمل الثانوية" },
+      { fr: "Les relatives complexes", ar: "الجمل الموصولة المعقدة" },
+      { fr: "L’ellipse avancée", ar: "الحذف المتقدم" },
+      { fr: "La mise en relief avancée", ar: "التوكيد المتقدم" },
+      { fr: "L’inversion stylistique", ar: "عكس ترتيب الجملة لأغراض أسلوبية" },
+      { fr: "Les connecteurs logiques précis", ar: "أدوات الربط الدقيقة" },
+      { fr: "L’expression du doute", ar: "التعبير عن الشك" },
+      { fr: "L’expression de la probabilité", ar: "التعبير عن الاحتمال" },
+      { fr: "L’expression de l’attitude", ar: "التعبير عن الموقف" },
+      { fr: "Indicatif, subjonctif et conditionnel", ar: "الفرق بين الصيغ الثلاث" }
+    ]
+  },
+  {
+    level: "🇫🇷 C2 — Maîtrise | إتقان",
+    topics: [
+      { fr: "La grammaire avancée", ar: "القواعد المتقدمة جدًا" },
+      { fr: "La syntaxe complexe", ar: "بناء الجمل المعقدة" },
+      { fr: "Le style littéraire", ar: "الأسلوب الأدبي" },
+      { fr: "Le style académique", ar: "الأسلوب الأكاديمي" },
+      { fr: "Le style juridique", ar: "الأسلوب القانوني" },
+      { fr: "Le style journalistique", ar: "الأسلوب الصحفي" },
+      { fr: "Le style administratif", ar: "الأسلوب الإداري" },
+      { fr: "Les nuances des temps verbaux", ar: "الفروق الدقيقة بين الأزمنة" },
+      { fr: "Les nuances des modes verbaux", ar: "الفروق الدقيقة بين الصيغ" },
+      { fr: "Les expressions idiomatiques", ar: "التعبيرات الاصطلاحية" },
+      { fr: "Les constructions rares", ar: "التراكيب النادرة" },
+      { fr: "L’ellipse stylistique", ar: "الحذف الأسلوبي" },
+      { fr: "L’inversion stylistique", ar: "القلب الأسلوبي" },
+      { fr: "La négation stylistique", ar: "النفي الأسلوبي" },
+      { fr: "La mise en relief", ar: "التوكيد وإبراز المعنى" },
+      { fr: "Le français soutenu", ar: "الفرنسية الرسمية الراقية" },
+      { fr: "Le français courant", ar: "الفرنسية اليومية المعتادة" },
+      { fr: "Le français familier", ar: "الفرنسية العامية" },
+      { fr: "La reformulation", ar: "إعادة صياغة الجمل" },
+      { fr: "La maîtrise des nuances", ar: "التحكم في الفروق الدقيقة في اللغة" }
+    ]
+  }
+];
+
+const container = document.getElementById('grammar-container');
+
+data.forEach((section) => {
+  const card = document.createElement('div');
+  card.className = 'level-card';
+
+  const title = document.createElement('div');
+  title.className = 'level-title';
+  title.innerText = section.level;
+  card.appendChild(title);
+
+  const list = document.createElement('ul');
+  list.className = 'topic-list';
+
+  section.topics.forEach((topic, index) => {
+    const li = document.createElement('li');
+    li.className = 'topic-item';
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'topic-text';
+    textDiv.innerHTML = `
+      <span style="color:#94a3b8; font-size:0.9rem;">${index + 1}.</span>
+      <span class="fr-text">${topic.fr}</span>
+      <span class="ar-text">— ${topic.ar}</span>
+    `;
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'copy-btn';
+    copyBtn.innerText = 'نسخ الفرنسي';
+
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(topic.fr).then(() => {
+        copyBtn.innerText = 'تم النسخ! ✓';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.innerText = 'نسخ الفرنسي';
+          copyBtn.classList.remove('copied');
+        }, 1500);
+      });
+    };
+
+    li.appendChild(textDiv);
+    li.appendChild(copyBtn);
+    list.appendChild(li);
+  });
+
+  card.appendChild(list);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
