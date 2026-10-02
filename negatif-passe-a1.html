@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الأفعال الفرنسية الشامل - الماضي المركب والنفي والمضارع</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        french: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .french-text {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .tab-btn.active {
+            background-color: #0284c7;
+            color: white;
+            border-color: #0284c7;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+    <header class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-sky-600 p-3 rounded-2xl text-white shadow-lg shadow-sky-600/30">
+                        <i class="fa-solid fa-book-bookmark text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black tracking-wide">تصريف الأفعال الفرنسية الـ 70 <span class="text-sky-400 french-text text-base sm:text-lg font-bold">(Je / J')</span></h1>
+                        <p class="text-slate-300 text-xs sm:text-sm font-medium">الماضي المركب الإيجابي <span class="french-text text-emerald-300 font-bold">(Affirmatif)</span> + النفي <span class="french-text text-rose-300 font-bold">(Négatif)</span> + المضارع <span class="french-text text-amber-300 font-bold">(Présent)</span></p>
+                    </div>
+                </div>
+
+                <!-- Dynamic Realtime Clock -->
+                <div class="bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 flex items-center space-x-4 space-x-reverse shadow-inner">
+                    <div class="text-sky-400 text-2xl">
+                        <i class="fa-regular fa-clock animate-pulse"></i>
+                    </div>
+                    <div class="text-right">
+                        <div id="live-time" class="text-base sm:text-lg font-bold tracking-wider font-mono text-white">00:00:00</div>
+                        <div id="live-date" class="text-xs text-slate-300 font-medium">جاري تحميل التاريخ...</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center gap-3 mb-6">
+            <button id="tab-table-btn" onclick="switchTab('table')" class="tab-btn active px-6 py-2.5 rounded-xl font-bold text-sm border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 transition flex items-center gap-2">
+                <i class="fa-solid fa-table-list"></i> جدول التصاريف الكامل
+            </button>
+            <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="tab-btn px-6 py-2.5 rounded-xl font-bold text-sm border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 transition flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap"></i> اختبار الذاكرة والنفي
+            </button>
+        </div>
+
+        <!-- TAB 1: VERB TABLE VIEW -->
+        <div id="tab-table-view" class="space-y-6">
+            
+            <!-- Controls & Filters Toolbar -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Search Input -->
+                    <div class="relative md:col-span-2">
+                        <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="search-input" oninput="applyFilters()" placeholder="ابحث عن الفعل بالمصدر، تصريف النفي، أو المعنى بالعربية..." class="w-full pr-11 pl-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition text-sm bg-white">
+                    </div>
+
+                    <!-- Category Select Filter -->
+                    <div class="relative">
+                        <select id="category-filter" onchange="applyFilters()" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition text-sm bg-white appearance-none cursor-pointer font-medium text-slate-700">
+                            <option value="all">جميع التصنيفات (Toutes les catégories)</option>
+                            <option value="être">تصريف مع être في الماضي</option>
+                            <option value="avoir">تصريف مع avoir في الماضي</option>
+                            <option value="pronominal">أفعال ضمائرية (Pronominaux)</option>
+                            <option value="movement">أفعال الحركة والقيادة</option>
+                            <option value="daily">أفعال يومية واستعمال شائعة</option>
+                            <option value="mind">أفعال التفكير والإدراك</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                    </div>
+
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="flex justify-between items-center pt-3 border-t border-slate-100 text-xs text-slate-500 font-semibold">
+                    <div>إجمالي الأفعال المعروضة: <span id="displayed-count" class="text-sky-600 font-bold text-sm">0</span> من أصل <span id="total-count" class="font-bold text-sm">70</span> فعل</div>
+                    <div class="hidden sm:block text-slate-400">انقر على أيقونة الصوت للإنصات إلى النطق المباشر</div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right border-collapse min-w-[950px]">
+                        <thead>
+                            <tr class="bg-slate-100/90 text-slate-700 text-xs font-bold border-b border-slate-200">
+                                <th class="p-4 w-12 text-center">#</th>
+                                <th class="p-4">الفعل بالمصدر (Infinitive) والمعنى</th>
+                                <th class="p-4 bg-amber-50/60 text-amber-900">المضارع (Présent)<br><span class="text-xs font-normal">مع Je / J'</span></th>
+                                <th class="p-4 bg-emerald-50/60 text-emerald-900">الماضي المركب الإيجابي (Passé composé)<br><span class="text-xs font-normal">مع Je / J'</span></th>
+                                <th class="p-4 bg-rose-50/60 text-rose-900">الماضي المركب في النفي (Négatif)<br><span class="text-xs font-normal">مع Je / J'</span></th>
+                                <th class="p-4">نوع المساعد / ملاحظة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="verbs-tbody" class="divide-y divide-slate-100 text-sm">
+                            <!-- Dynamic Table Rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="no-results" class="hidden p-12 text-center text-slate-500">
+                    <i class="fa-solid fa-magnifying-glass-minus text-5xl mb-3 text-slate-300"></i>
+                    <p class="font-bold text-lg">لم يتم العثور على أفعال مطابقة للبحث!</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TAB 2: INTERACTIVE QUIZ & PRACTICE -->
+        <div id="tab-quiz-view" class="hidden space-y-6">
+            <div class="max-w-2xl mx-auto glass-card rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 text-center">
+                <div class="inline-block p-3 bg-sky-100 text-sky-700 rounded-full mb-3">
+                    <i class="fa-solid fa-brain text-2xl"></i>
+                </div>
+                <h2 class="text-xl font-black text-slate-800">اختبر نفسك في صيغة النفي والماضي المركب</h2>
+                <p class="text-xs text-slate-500 mt-1 mb-6">اختر الإجابة الصحيحة لتصريف الفعل في زمن الماضي المركب المنفي مع الضمير Je</p>
+
+                <!-- Quiz Card -->
+                <div id="quiz-card" class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-right space-y-4">
+                    <div class="flex justify-between items-center text-xs text-slate-400 font-semibold border-b pb-2">
+                        <span>السؤال الحالي</span>
+                        <span id="quiz-score" class="text-emerald-600 font-bold">النقاط: 0</span>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold text-sky-600 block mb-1">ما هو النفي الصحيح في الماضي المركب لـ:</span>
+                        <div class="flex items-center gap-3">
+                            <h3 id="quiz-verb-inf" class="text-2xl font-black french-text text-slate-900">être</h3>
+                            <span id="quiz-verb-ar" class="text-base font-semibold text-slate-600">(يَكُونُ)</span>
+                        </div>
+                    </div>
+
+                    <div id="quiz-options" class="grid grid-cols-1 gap-3 pt-2">
+                        <!-- Options injected dynamically -->
+                    </div>
+                </div>
+
+                <div id="quiz-feedback" class="mt-4 font-bold text-sm hidden"></div>
+
+                <button id="next-quiz-btn" onclick="generateQuizQuestion()" class="mt-6 w-full py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-xl font-bold transition shadow-lg shadow-sky-600/20">
+                    السؤال التالي <i class="fa-solid fa-arrow-left mr-2"></i>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-center text-xs mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-semibold text-slate-300">تطبيق تعلم وتصريف الأفعال الفرنسية الـ 70 الشامل - صيغ الماضي المركب والمضارع والنفي</p>
+            <p class="text-slate-500 mt-1">يتضمن الأفعال المساعدة Être و Avoir والأفعال الضمائرية Pronominaux</p>
+        </div>
+    </footer>
+
+    <script>
+        // Full Dataset of 70 Verbs
+        const verbsData = [
+            { id: 1, infinitive: "être", arabic: "يَكُونُ", present: "je suis", pcPos: "j'ai été", pcNeg: "je n'ai pas été", aux: "avoir", cat: "daily" },
+            { id: 2, infinitive: "devenir", arabic: "يَصِيرُ / يُصْبِحُ", present: "je deviens", pcPos: "je suis devenu(e)", pcNeg: "je ne suis pas devenu(e)", aux: "être", cat: "movement" },
+            { id: 3, infinitive: "faire", arabic: "يَفْعَلُ / يَعْمَلُ", present: "je fais", pcPos: "j'ai fait", pcNeg: "je n'ai pas fait", aux: "avoir", cat: "daily" },
+            { id: 4, infinitive: "aller", arabic: "يَذْهَبُ", present: "je vais", pcPos: "je suis allé(e)", pcNeg: "je ne suis pas allé(e)", aux: "être", cat: "movement" },
+            { id: 5, infinitive: "venir", arabic: "يَجِيءُ / يَأْتِي", present: "je viens", pcPos: "je suis venu(e)", pcNeg: "je ne suis pas venu(e)", aux: "être", cat: "movement" },
+            { id: 6, infinitive: "prendre", arabic: "يَأْخُذُ", present: "je prends", pcPos: "j'ai pris", pcNeg: "je n'ai pas pris", aux: "avoir", cat: "daily" },
+            { id: 7, infinitive: "donner", arabic: "يُعْطِي", present: "je donne", pcPos: "j'ai donné", pcNeg: "je n'ai pas donné", aux: "avoir", cat: "daily" },
+            { id: 8, infinitive: "recevoir", arabic: "يَحْصُلُ عَلَى / يَسْتَلِمُ", present: "je reçois", pcPos: "j'ai reçu", pcNeg: "je n'ai pas reçu", aux: "avoir", cat: "daily" },
+            { id: 9, infinitive: "voir", arabic: "يَرَى", present: "je vois", pcPos: "j'ai vu", pcNeg: "je n'ai pas vu", aux: "avoir", cat: "mind" },
+            { id: 10, infinitive: "regarder", arabic: "يَنْظُرُ / يُشَاهِدُ", present: "je regarde", pcPos: "j'ai regardé", pcNeg: "je n'ai pas regardé", aux: "avoir", cat: "daily" },
+            { id: 11, infinitive: "entendre", arabic: "يَسْمَعُ", present: "j'entends", pcPos: "j'ai entendu", pcNeg: "je n'ai pas entendu", aux: "avoir", cat: "mind" },
+            { id: 12, infinitive: "écouter", arabic: "يَسْتَمِعُ", present: "j'écoute", pcPos: "j'ai écouté", pcNeg: "je n'ai pas écouté", aux: "avoir", cat: "daily" },
+            { id: 13, infinitive: "dire", arabic: "يَقُولُ / يُخْبِرُ", present: "je dis", pcPos: "j'ai dit", pcNeg: "je n'ai pas dit", aux: "avoir", cat: "daily" },
+            { id: 14, infinitive: "parler", arabic: "يَتَكَلَّمُ / يَتَحَدَّثُ", present: "je parle", pcPos: "j'ai parlé", pcNeg: "je n'ai pas parlé", aux: "avoir", cat: "daily" },
+            { id: 15, infinitive: "demander", arabic: "يَسْأَلُ / يَطْلُبُ", present: "je demande", pcPos: "j'ai demandé", pcNeg: "je n'ai pas demandé", aux: "avoir", cat: "daily" },
+            { id: 16, infinitive: "répondre", arabic: "يُجِيبُ", present: "je réponds", pcPos: "j'ai répondu", pcNeg: "je n'ai pas répondu", aux: "avoir", cat: "daily" },
+            { id: 17, infinitive: "savoir", arabic: "يَعْرِفُ", present: "je sais", pcPos: "j'ai su", pcNeg: "je n'ai pas su", aux: "avoir", cat: "mind" },
+            { id: 18, infinitive: "penser", arabic: "يُفَكِّرُ", present: "je pense", pcPos: "j'ai pensé", pcNeg: "je n'ai pas pensé", aux: "avoir", cat: "mind" },
+            { id: 19, infinitive: "comprendre", arabic: "يَفْهَمُ", present: "je comprends", pcPos: "j'ai compris", pcNeg: "je n'ai pas compris", aux: "avoir", cat: "mind" },
+            { id: 20, infinitive: "apprendre", arabic: "يَتَعَلَّمُ", present: "j'apprends", pcPos: "j'ai appris", pcNeg: "je n'ai pas appris", aux: "avoir", cat: "mind" },
+            { id: 21, infinitive: "lire", arabic: "يَقْرَأُ", present: "je lis", pcPos: "j'ai lu", pcNeg: "je n'ai pas lu", aux: "avoir", cat: "mind" },
+            { id: 22, infinitive: "écrire", arabic: "يَكْتُبُ", present: "j'écris", pcPos: "j'ai écrit", pcNeg: "je n'ai pas écrit", aux: "avoir", cat: "mind" },
+            { id: 23, infinitive: "ouvrir", arabic: "يَفْتَحُ", present: "j'ouvre", pcPos: "j'ai ouvert", pcNeg: "je n'ai pas ouvert", aux: "avoir", cat: "daily" },
+            { id: 24, infinitive: "fermer", arabic: "يُغْلِقُ", present: "je ferme", pcPos: "j'ai fermé", pcNeg: "je n'ai pas fermé", aux: "avoir", cat: "daily" },
+            { id: 25, infinitive: "commencer", arabic: "يَبْدَأُ", present: "je commence", pcPos: "j'ai commencé", pcNeg: "je n'ai pas commencé", aux: "avoir", cat: "daily" },
+            { id: 26, infinitive: "finir", arabic: "يَنْتَهِي / يُنْهِي", present: "je finis", pcPos: "j'ai fini", pcNeg: "je n'ai pas fini", aux: "avoir", cat: "daily" },
+            { id: 27, infinitive: "arrêter", arabic: "يَتَوَقَّفُ / يُوقِفُ", present: "j'arrête", pcPos: "j'ai arrêté", pcNeg: "je n'ai pas arrêté", aux: "avoir", cat: "daily" },
+            { id: 28, infinitive: "travailler", arabic: "يَعْمَلُ", present: "je travaille", pcPos: "j'ai travaillé", pcNeg: "je n'ai pas travaillé", aux: "avoir", cat: "daily" },
+            { id: 29, infinitive: "étudier", arabic: "يَدْرُسُ", present: "j'étudie", pcPos: "j'ai étudié", pcNeg: "je n'ai pas étudié", aux: "avoir", cat: "mind" },
+            { id: 30, infinitive: "vivre", arabic: "يَعِيشُ", present: "je vis", pcPos: "j'ai vécu", pcNeg: "je n'ai pas vécu", aux: "avoir", cat: "daily" },
+            { id: 31, infinitive: "habiter", arabic: "يَسْكُنُ", present: "j'habite", pcPos: "j'ai habité", pcNeg: "je n'ai pas habité", aux: "avoir", cat: "daily" },
+            { id: 32, infinitive: "rester", arabic: "يَبْقَى", present: "je reste", pcPos: "je suis resté(e)", pcNeg: "je ne suis pas resté(e)", aux: "être", cat: "movement" },
+            { id: 33, infinitive: "manger", arabic: "يَأْكُلُ", present: "je mange", pcPos: "j'ai mangé", pcNeg: "je n'ai pas mangé", aux: "avoir", cat: "daily" },
+            { id: 34, infinitive: "boire", arabic: "يَشْرَبُ", present: "je bois", pcPos: "j'ai bu", pcNeg: "je n'ai pas bu", aux: "avoir", cat: "daily" },
+            { id: 35, infinitive: "cuisiner", arabic: "يَطْبُخُ", present: "je cuisine", pcPos: "j'ai cuisiné", pcNeg: "je n'ai pas cuisiné", aux: "avoir", cat: "daily" },
+            { id: 36, infinitive: "acheter", arabic: "يَشْتَرِي", present: "j'achète", pcPos: "j'ai acheté", pcNeg: "je n'ai pas acheté", aux: "avoir", cat: "daily" },
+            { id: 37, infinitive: "vendre", arabic: "je me vends", present: "je me vends", pcPos: "j'ai vendu", pcNeg: "je n'ai pas vendu", aux: "avoir", cat: "daily" },
+            { id: 38, infinitive: "payer", arabic: "يَدْفَعُ", present: "je paie", pcPos: "j'ai payé", pcNeg: "je n'ai pas payé", aux: "avoir", cat: "daily" },
+            { id: 39, infinitive: "utiliser", arabic: "يَسْتَخْدِمُ", present: "j'utilise", pcPos: "j'ai utilisé", pcNeg: "je n'ai pas utilisé", aux: "avoir", cat: "daily" },
+            { id: 40, infinitive: "avoir besoin de", arabic: "يَحْتَاجُ إلَى", present: "j'ai besoin de", pcPos: "j'ai eu besoin de", pcNeg: "je n'ai pas eu besoin de", aux: "avoir", cat: "daily" },
+            { id: 41, infinitive: "vouloir", arabic: "يُرِيدُ", present: "je veux", pcPos: "j'ai voulu", pcNeg: "je n'ai pas voulu", aux: "avoir", cat: "mind" },
+            { id: 42, infinitive: "aimer", arabic: "يُحِبُّ", present: "j'aime", pcPos: "j'ai aimé", pcNeg: "je n'ai pas aimé", aux: "avoir", cat: "mind" },
+            { id: 43, infinitive: "aider", arabic: "يُسَاعِدُ", present: "j'aide", pcPos: "j'ai aidé", pcNeg: "je n'ai pas aidé", aux: "avoir", cat: "daily" },
+            { id: 44, infinitive: "appeler", arabic: "يَتَّصِلُ / يُنَادِي", present: "j'appelle", pcPos: "j'ai appelé", pcNeg: "je n'ai pas appelé", aux: "avoir", cat: "daily" },
+            { id: 45, infinitive: "attendre", arabic: "يَنْتَظِرُ", present: "j'attends", pcPos: "j'ai attendu", pcNeg: "je n'ai pas attendu", aux: "avoir", cat: "daily" },
+            { id: 46, infinitive: "trouver", arabic: "يَجِدُ", present: "je trouve", pcPos: "j'ai trouvé", pcNeg: "je n'ai pas trouvé", aux: "avoir", cat: "daily" },
+            { id: 47, infinitive: "se trouver", arabic: "يَتَوَاجَدُ / يَجِدُ نَفْسَهُ", present: "je me trouve", pcPos: "je me suis trouvé(e)", pcNeg: "je ne me suis pas trouvé(e)", aux: "pronominal", cat: "pronominal" },
+            { id: 48, infinitive: "perdre", arabic: "يَفْقِدُ / يَخْسَرُ", present: "je perds", pcPos: "j'ai perdu", pcNeg: "je n'ai pas perdu", aux: "avoir", cat: "daily" },
+            { id: 49, infinitive: "apporter", arabic: "يُحْضِرُ", present: "j'apporte", pcPos: "j'ai apporté", pcNeg: "je n'ai pas apporté", aux: "avoir", cat: "daily" },
+            { id: 50, infinitive: "porter", arabic: "يَحْمِلُ / يَلْبَسُ", present: "je porte", pcPos: "j'ai porté", pcNeg: "je n'ai pas porté", aux: "avoir", cat: "daily" },
+            { id: 51, infinitive: "mettre", arabic: "يَضَعُ / يَرْتَدِي", present: "je mets", pcPos: "j'ai mis", pcNeg: "je n'ai pas mis", aux: "avoir", cat: "daily" },
+            { id: 52, infinitive: "garder", arabic: "يَحْتَفِظُ", present: "je garde", pcPos: "j'ai gardé", pcNeg: "je n'ai pas gardé", aux: "avoir", cat: "daily" },
+            { id: 53, infinitive: "montrer", arabic: "يُظْهِرُ / يُرِي", present: "je montre", pcPos: "j'ai montré", pcNeg: "je n'ai pas montré", aux: "avoir", cat: "daily" },
+            { id: 54, infinitive: "jouer", arabic: "يَلْعَبُ", present: "je joue", pcPos: "j'ai joué", pcNeg: "je n'ai pas joué", aux: "avoir", cat: "daily" },
+            { id: 55, infinitive: "conduire", arabic: "يَقُودُ", present: "je conduis", pcPos: "j'ai conduit", pcNeg: "je n'ai pas conduit", aux: "avoir", cat: "movement" },
+            { id: 56, infinitive: "marcher", arabic: "يَمْشِي", present: "je marche", pcPos: "j'ai marché", pcNeg: "je n'ai pas marché", aux: "avoir", cat: "movement" },
+            { id: 57, infinitive: "courir", arabic: "يَرْكُضُ / يَجْرِي", present: "je cours", pcPos: "j'ai couru", pcNeg: "je n'ai pas couru", aux: "avoir", cat: "movement" },
+            { id: 58, infinitive: "s'asseoir", arabic: "يَجْلِسُ", present: "je m'assieds", pcPos: "je me suis assis(e)", pcNeg: "je ne me suis pas assis(e)", aux: "pronominal", cat: "pronominal" },
+            { id: 59, infinitive: "se tenir debout", arabic: "يَقِفُ", present: "je me tiens debout", pcPos: "je me suis tenu(e) debout", pcNeg: "je ne me suis pas tenu(e) debout", aux: "pronominal", cat: "pronominal" },
+            { id: 60, infinitive: "dormir", arabic: "يَنَامُ", present: "je dors", pcPos: "j'ai dormi", pcNeg: "je n'ai pas dormi", aux: "avoir", cat: "daily" },
+            { id: 61, infinitive: "se réveiller", arabic: "يَسْتَيْقِظُ", present: "je me réveille", pcPos: "je me suis réveillé(e)", pcNeg: "je ne me suis pas réveillé(e)", aux: "pronominal", cat: "pronominal" },
+            { id: 62, infinitive: "laver", arabic: "يغسل", present: "je lave", pcPos: "j'ai lavé", pcNeg: "je n'ai pas lavé", aux: "avoir", cat: "daily" },
+            { id: 63, infinitive: "se laver", arabic: "يَغْتَسِلُ", present: "je me lave", pcPos: "je me suis lavé(e)", pcNeg: "je ne me suis pas lavé(e)", aux: "pronominal", cat: "pronominal" },
+            { id: 64, infinitive: "nettoyer", arabic: "يُنَظِّفُ", present: "je nettoie", pcPos: "j'ai nettoyé", pcNeg: "je n'ai pas nettoyé", aux: "avoir", cat: "daily" },
+            { id: 65, infinitive: "voyager", arabic: "يُسَافِرُ", present: "je voyage", pcPos: "j'ai voyagé", pcNeg: "je n'ai pas voyagé", aux: "avoir", cat: "movement" },
+            { id: 66, infinitive: "visiter", arabic: "يَزُورُ", present: "je visite", pcPos: "j'ai visité", pcNeg: "je n'ai pas visité", aux: "avoir", cat: "movement" },
+            { id: 67, infinitive: "se souvenir de", arabic: "يَتَذَكَّرُ", present: "je me souviens de", pcPos: "je me suis souvenu(e) de", pcNeg: "je ne me suis pas souvenu(e) de", aux: "pronominal", cat: "pronominal" },
+            { id: 68, infinitive: "oublier", arabic: "يَنْسَى", present: "j'oublie", pcPos: "j'ai oublié", pcNeg: "je n'ai pas oublié", aux: "avoir", cat: "mind" },
+            { id: 69, infinitive: "avoir", arabic: "يَمْلِكُ / لَدَيْهِ", present: "j'ai", pcPos: "j'ai eu", pcNeg: "je n'ai pas eu", aux: "avoir", cat: "daily" },
+            { id: 70, infinitive: "pouvoir", arabic: "يَسْتَطِيعُ", present: "je peux", pcPos: "j'ai pu", pcNeg: "je n'ai pas pu", aux: "avoir", cat: "mind" }
+        ];
+
+        let filteredVerbs = [...verbsData];
+        let currentQuizVerb = null;
+        let score = 0;
+
+        // Dynamic Clock in Arabic
+        function updateClock() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+            document.getElementById('live-time').innerText = now.toLocaleTimeString('ar-EG', timeOptions);
+            document.getElementById('live-date').innerText = now.toLocaleDateString('ar-EG', dateOptions);
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Speech Engine
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.85;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Filters Engine
+        function applyFilters() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const catVal = document.getElementById('category-filter').value;
+
+            filteredVerbs = verbsData.filter(v => {
+                const matchesSearch = v.infinitive.toLowerCase().includes(query) ||
+                                      v.arabic.includes(query) ||
+                                      v.pcPos.toLowerCase().includes(query) ||
+                                      v.pcNeg.toLowerCase().includes(query);
+
+                let matchesCat = true;
+                if (catVal === 'être') matchesCat = (v.aux === 'être');
+                else if (catVal === 'avoir') matchesCat = (v.aux === 'avoir');
+                else if (catVal === 'pronominal') matchesCat = (v.aux === 'pronominal');
+                else if (catVal !== 'all') matchesCat = (v.cat === catVal);
+
+                return matchesSearch && matchesCat;
+            });
+
+            renderTable();
+        }
+
+        // Render Table
+        function renderTable() {
+            const tbody = document.getElementById('verbs-tbody');
+            const noResults = document.getElementById('no-results');
+            document.getElementById('displayed-count').innerText = filteredVerbs.length;
+
+            if (filteredVerbs.length === 0) {
+                tbody.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+
+            tbody.innerHTML = filteredVerbs.map((v, i) => {
+                let badgeClass = "bg-sky-100 text-sky-800";
+                let badgeText = "Aux : Avoir";
+                if (v.aux === 'être') {
+                    badgeClass = "bg-emerald-100 text-emerald-800";
+                    badgeText = "Aux : Être";
+                } else if (v.aux === 'pronominal') {
+                    badgeClass = "bg-purple-100 text-purple-800";
+                    badgeText = "Pronominal";
+                }
+
+                return `
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 text-center font-bold text-slate-400 text-xs">${i + 1}</td>
+                        <td class="p-4">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <span class="font-extrabold text-slate-900 french-text text-base">${v.infinitive}</span>
+                                <button onclick="speak('${v.infinitive.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-sky-600 transition text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                            <div class="text-xs font-semibold text-sky-700 mt-0.5">${v.arabic}</div>
+                        </td>
+                        <td class="p-4 bg-amber-50/30">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold french-text text-amber-950">${v.present}</span>
+                                <button onclick="speak('${v.present.replace(/'/g, "\\'")}')" class="text-amber-500 hover:text-amber-700 transition text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="p-4 bg-emerald-50/30">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold french-text text-emerald-950">${v.pcPos}</span>
+                                <button onclick="speak('${v.pcPos.replace(/'/g, "\\'")}')" class="text-emerald-500 hover:text-emerald-700 transition text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="p-4 bg-rose-50/30">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold french-text text-rose-950">${v.pcNeg}</span>
+                                <button onclick="speak('${v.pcNeg.replace(/'/g, "\\'")}')" class="text-rose-500 hover:text-rose-700 transition text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="p-4">
+                            <span class="${badgeClass} text-[10px] px-2.5 py-1 rounded-full font-bold inline-block">${badgeText}</span>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Tab Switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            if (tab === 'table') {
+                document.getElementById('tab-table-btn').classList.add('active');
+                document.getElementById('tab-table-view').classList.remove('hidden');
+                document.getElementById('tab-quiz-view').classList.add('hidden');
+            } else {
+                document.getElementById('tab-quiz-btn').classList.add('active');
+                document.getElementById('tab-table-view').classList.add('hidden');
+                document.getElementById('tab-quiz-view').classList.remove('hidden');
+                generateQuizQuestion();
+            }
+        }
+
+        // Quiz Generator logic
+        function generateQuizQuestion() {
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            const randomIndex = Math.floor(Math.random() * verbsData.length);
+            currentQuizVerb = verbsData[randomIndex];
+
+            document.getElementById('quiz-verb-inf').innerText = currentQuizVerb.infinitive;
+            document.getElementById('quiz-verb-ar').innerText = `(${currentQuizVerb.arabic})`;
+
+            // Options logic (1 correct + 2 wrong distractors)
+            let options = [currentQuizVerb.pcNeg];
+            
+            while(options.length < 3) {
+                const randomOther = verbsData[Math.floor(Math.random() * verbsData.length)];
+                if (!options.includes(randomOther.pcNeg)) {
+                    options.push(randomOther.pcNeg);
+                }
+            }
+
+            options.sort(() => Math.random() - 0.5);
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = options.map(opt => `
+                <button onclick="checkAnswer('${opt.replace(/'/g, "\\'")}')" class="p-3 bg-white hover:bg-sky-50 rounded-xl border border-slate-200 text-right font-bold text-slate-800 french-text transition hover:border-sky-300">
+                    ${opt}
+                </button>
+            `).join('');
+        }
+
+        function checkAnswer(selectedOpt) {
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.remove('hidden');
+
+            if (selectedOpt === currentQuizVerb.pcNeg) {
+                score += 10;
+                feedback.className = "mt-4 font-bold text-sm text-emerald-600 bg-emerald-50 p-3 rounded-xl border border-emerald-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> إجابة صحيحة ممتاز! النفي الصحيح: <span class="french-text">${currentQuizVerb.pcNeg}</span>`;
+            } else {
+                feedback.className = "mt-4 font-bold text-sm text-rose-600 bg-rose-50 p-3 rounded-xl border border-rose-200";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> إجابة خاطئة. الصحيح هو: <span class="french-text">${currentQuizVerb.pcNeg}</span>`;
+            }
+
+            document.getElementById('quiz-score').innerText = `النقاط: ${score}`;
+        }
+
+        // On Load Initializer
+        window.onload = function() {
+            document.getElementById('total-count').innerText = verbsData.length;
+            renderTable();
+        };
+    </script>
+</body>
+</html>
