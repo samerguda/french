@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم زمن الأمر والمضارع في اللغة الفرنسية - L'Impératif & Le Présent</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome & Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        french: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .french-text {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+    <header class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+                
+                <!-- Title & Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-emerald-600 p-3 rounded-2xl text-white shadow-lg shadow-emerald-600/30">
+                        <i class="fa-solid fa-bullhorn text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-black tracking-wide">صيغة الأمر والمضارع <span class="text-emerald-400 french-text text-lg sm:text-xl font-bold">(L'Impératif & Le Présent)</span></h1>
+                        <p class="text-slate-300 text-xs sm:text-sm font-medium">تصريف أهم 66 فعل في الفرنسية مع الضمائر <span class="french-text text-amber-300 font-bold">Je, Vous</span> والأمر <span class="french-text text-emerald-300 font-bold">(Tu, Nous, Vous)</span></p>
+                    </div>
+                </div>
+
+                <!-- Dynamic Clock & Date Box -->
+                <div class="bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 flex items-center space-x-4 space-x-reverse shadow-inner">
+                    <div class="text-emerald-400 text-xl">
+                        <i class="fa-regular fa-clock animate-pulse"></i>
+                    </div>
+                    <div class="text-right">
+                        <div id="live-time" class="text-base sm:text-lg font-bold tracking-wider font-mono text-white">00:00:00</div>
+                        <div id="live-date" class="text-xs text-slate-300 font-medium">جاري تحديث الوقت...</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <!-- Controls & Filter Toolbar -->
+        <div class="glass-card rounded-2xl p-5 mb-8 shadow-sm space-y-4">
+            
+            <!-- Search & Group Filter Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Search Input -->
+                <div class="relative md:col-span-2">
+                    <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="applyFilters()" placeholder="ابحث عن أي فعل بالمصدر، تصريف الأمر، أو المعنى بالعربية..." class="w-full pr-11 pl-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-sm bg-white">
+                </div>
+
+                <!-- Category Select Filter -->
+                <div class="relative">
+                    <select id="category-filter" onchange="applyFilters()" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-sm bg-white appearance-none cursor-pointer font-medium text-slate-700">
+                        <option value="all">جميع التصنيفات (All Categories)</option>
+                        <option value="movement">أفعال الحركة والقيادة (Mouvement)</option>
+                        <option value="daily">أفعال أنشطة يومية (Quotidien)</option>
+                        <option value="perception">أفعال التواصل والحواس (Perception & Communication)</option>
+                        <option value="mind">أفعال الذهن والتفكير (Mental & Connaissance)</option>
+                        <option value="pronominal">الأفعال الضمائرية (Pronominaux)</option>
+                        <option value="irregular">أفعال أمر شاذة (Irreguliers)</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                </div>
+
+            </div>
+
+            <!-- Fast Filters & Stats Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-slate-500 font-bold ml-1">تصفية سريعة:</span>
+                    <button onclick="setCategoryFilter('all')" class="cat-btn px-3 py-1.5 rounded-xl border font-semibold bg-emerald-600 text-white border-emerald-600 shadow-sm transition">الكل (<span id="count-all">0</span>)</button>
+                    <button onclick="setCategoryFilter('irregular')" class="cat-btn px-3 py-1.5 rounded-xl border font-semibold bg-white text-amber-700 border-amber-200 hover:bg-amber-50 transition">شاذة بالأمر (<span id="count-irregular">0</span>)</button>
+                    <button onclick="setCategoryFilter('pronominal')" class="cat-btn px-3 py-1.5 rounded-xl border font-semibold bg-white text-purple-700 border-purple-200 hover:bg-purple-50 transition">أفعال ضمائرية (<span id="count-pronominal">0</span>)</button>
+                </div>
+
+                <div class="text-slate-500 font-semibold">
+                    عرض <span id="displayed-count" class="text-emerald-600 font-bold">0</span> من أصل <span id="total-count" class="font-bold">66</span> فعل
+                </div>
+            </div>
+
+        </div>
+
+        <div class="glass-card rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+            <div class="overflow-x-auto">
+                <table class="w-full text-right border-collapse min-w-[900px]">
+                    <thead>
+                        <tr class="bg-slate-100/90 text-slate-700 text-xs font-bold border-b border-slate-200">
+                            <th class="p-4 w-12 text-center">#</th>
+                            <th class="p-4">الفعل بالمصدر (Infinitive) والمعنى</th>
+                            <th class="p-4 bg-amber-50/50">المضارع (Présent)<br><span class="text-amber-700 font-semibold">Je / Vous</span></th>
+                            <th class="p-4 bg-emerald-50/50">الأمر (Impératif) - Tu</th>
+                            <th class="p-4 bg-emerald-50/50">الأمر (Impératif) - Nous</th>
+                            <th class="p-4 bg-emerald-50/50">الأمر (Impératif) - Vous</th>
+                            <th class="p-4">ملاحظات وقواعد</th>
+                        </tr>
+                    </thead>
+                    <tbody id="verbs-tbody" class="divide-y divide-slate-100 text-sm">
+                        <!-- Dynamic Rows Injection -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="no-results" class="hidden p-12 text-center text-slate-500">
+                <i class="fa-solid fa-magnifying-glass-minus text-5xl mb-3 text-slate-300"></i>
+                <p class="font-bold text-lg">لم يتم العثور على أفعال تطابق البحث!</p>
+                <p class="text-xs text-slate-400 mt-1">جرب البحث بكلمات أخرى أو تغيير تصنيف الفلترة.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 text-center text-xs mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-semibold text-slate-300">تطبيق قواعد اللغة الفرنسية التفاعلي - صيغة الأمر والمضارع (L'Impératif & Le Présent)</p>
+            <p class="text-slate-500 mt-1">مصمم لتسهيل الحفظ والتطبيق اليومي للنطق والاستخدام.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Full array of 66 verbs with Present and Imperative forms
+        const verbsData = [
+            { id: 1, infinitive: "être", arabic: "يَكُونُ", je: "suis", vousPres: "êtes", tuImp: "Sois", nousImp: "Soyons", vousImp: "Soyez", cat: "irregular", note: "شاذ في الأمر (مأخوذ من subjonctif)" },
+            { id: 2, infinitive: "devenir", arabic: "يَصِيرُ / يُصْبِحُ", je: "deviens", vousPres: "devenez", tuImp: "Deviens", nousImp: "Devenons", vousImp: "Devenez", cat: "movement", note: "" },
+            { id: 3, infinitive: "faire", arabic: "يَفْعَلُ / يَعْمَلُ", je: "fais", vousPres: "faites", tuImp: "Fais", nousImp: "Faisons", vousImp: "Faites", cat: "daily", note: "انتبه لتصريف vous بالمضارع والأمر (faites)" },
+            { id: 4, infinitive: "aller", arabic: "يَذْهَبُ", je: "vais", vousPres: "allez", tuImp: "Va", nousImp: "Allons", vousImp: "Allez", cat: "movement", note: "تحذف حرف s مع Tu في الأمر (Va)" },
+            { id: 5, infinitive: "venir", arabic: "يَجِيءُ / يَأْتِي", je: "viens", vousPres: "venez", tuImp: "Viens", nousImp: "Venons", vousImp: "Venez", cat: "movement", note: "" },
+            { id: 6, infinitive: "prendre", arabic: "يَأْخُذُ", je: "prends", vousPres: "prenez", tuImp: "Prends", nousImp: "Prenons", vousImp: "Prenez", cat: "daily", note: "" },
+            { id: 7, infinitive: "donner", arabic: "يُعْطِي", je: "donne", vousPres: "donnez", tuImp: "Donne", nousImp: "Donnons", vousImp: "Donnez", cat: "daily", note: "حذف حرف s مع Tu في أفعال المجموعة الأولى" },
+            { id: 8, infinitive: "recevoir", arabic: "يَحْصُلُ عَلَى / يَسْتَلِمُ", je: "reçois", vousPres: "recevez", tuImp: "Reçois", nousImp: "Recevons", vousImp: "Recevez", cat: "daily", note: "" },
+            { id: 9, infinitive: "voir", arabic: "يَرَى", je: "vois", vousPres: "voyez", tuImp: "Vois", nousImp: "Voyons", vousImp: "Voyez", cat: "perception", note: "" },
+            { id: 10, infinitive: "regarder", arabic: "يَنْظُرُ / يُشَاهِدُ", je: "regarde", vousPres: "regardez", tuImp: "Regarde", nousImp: "Regardons", vousImp: "Regardez", cat: "perception", note: "حذف حرف s في أمر Tu" },
+            { id: 11, infinitive: "entendre", arabic: "يَسْمَعُ", je: "entends", vousPres: "entendez", tuImp: "Entends", nousImp: "Entendons", vousImp: "Entendez", cat: "perception", note: "" },
+            { id: 12, infinitive: "écouter", arabic: "يَسْتَمِعُ", je: "écoute", vousPres: "écoutez", tuImp: "Écoute", nousImp: "Écoutons", vousImp: "Écoutez", cat: "perception", note: "حذف حرف s في أمر Tu" },
+            { id: 13, infinitive: "dire", arabic: "يَقُولُ / يُخْبِرُ", je: "dis", vousPres: "dites", tuImp: "Dis", nousImp: "Disons", vousImp: "Dites", cat: "perception", note: "انتبه لـ Vous بالمضارع والأمر (dites)" },
+            { id: 14, infinitive: "parler", arabic: "يَتَكَلَّمُ / يَتَحَدَّثُ", je: "parle", vousPres: "parlez", tuImp: "Parle", nousImp: "Parlons", vousImp: "Parlez", cat: "perception", note: "حذف حرف s في أمر Tu" },
+            { id: 15, infinitive: "demander", arabic: "يَسْأَلُ / يَطْلُبُ", je: "demande", vousPres: "demandez", tuImp: "Demande", nousImp: "Demandons", vousImp: "Demandez", cat: "perception", note: "حذف حرف s في أمر Tu" },
+            { id: 16, infinitive: "répondre", arabic: "يُجِيبُ", je: "réponds", vousPres: "répondez", tuImp: "Réponds", nousImp: "Répondons", vousImp: "Répondez", cat: "perception", note: "" },
+            { id: 17, infinitive: "savoir", arabic: "يَعْرِفُ", je: "sais", vousPres: "savez", tuImp: "Sache", nousImp: "Sachons", vousImp: "Sachez", cat: "irregular", note: "شاذ في الأمر (Sache, Sachons, Sachez)" },
+            { id: 18, infinitive: "penser", arabic: "يُفَكِّرُ", je: "pense", vousPres: "pensez", tuImp: "Pense", nousImp: "Pensons", vousImp: "Pensez", cat: "mind", note: "حذف s في أمر Tu" },
+            { id: 19, infinitive: "comprendre", arabic: "يَفْهَمُ", je: "comprends", vousPres: "comprenez", tuImp: "Comprends", nousImp: "Comprenons", vousImp: "Comprenez", cat: "mind", note: "" },
+            { id: 20, infinitive: "apprendre", arabic: "يَتَعَلَّمُ", je: "apprends", vousPres: "apprenez", tuImp: "Apprends", nousImp: "Apprenons", vousImp: "Apprenez", cat: "mind", note: "" },
+            { id: 21, infinitive: "lire", arabic: "يَقْرَأُ", je: "lis", vousPres: "lisez", tuImp: "Lis", nousImp: "Lisons", vousImp: "Lisez", cat: "mind", note: "" },
+            { id: 22, infinitive: "écrire", arabic: "يَكْتُبُ", je: "écris", vousPres: "écrivez", tuImp: "Écris", nousImp: "Écrivons", vousImp: "Écrivez", cat: "mind", note: "" },
+            { id: 23, infinitive: "ouvrir", arabic: "يَفْتَحُ", je: "ouvre", vousPres: "ouvrez", tuImp: "Ouvre", nousImp: "Ouvrons", vousImp: "Ouvrez", cat: "daily", note: "يعامل كأفعال المجموعة الأولى بحذف s في Tu" },
+            { id: 24, infinitive: "fermer", arabic: "يُغْلِقُ", je: "ferme", vousPres: "fermez", tuImp: "Ferme", nousImp: "Fermons", vousImp: "Fermez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 25, infinitive: "commencer", arabic: "يَبْدَأُ", je: "commence", vousPres: "commencez", tuImp: "Commence", nousImp: "Commençons", vousImp: "Commencez", cat: "daily", note: "إضافة (ç) مع Nous للحفاظ على نطق س" },
+            { id: 26, infinitive: "finir", arabic: "يَنْتَهِي / يُنْهِي", je: "finis", vousPres: "finissez", tuImp: "Finis", nousImp: "Finissons", vousImp: "Finissez", cat: "daily", note: "مجموعة ثانية (تثبيت iss)" },
+            { id: 27, infinitive: "arrêter", arabic: "يَتَوَقَّفُ / يُوقِفُ", je: "arrête", vousPres: "arrêtez", tuImp: "Arrête", nousImp: "Arrêtons", vousImp: "Arrêtez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 28, infinitive: "travailler", arabic: "يَعْمَلُ", je: "travaille", vousPres: "travaillez", tuImp: "Travaille", nousImp: "Travaillons", vousImp: "Travaillez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 29, infinitive: "étudier", arabic: "يَدْرُسُ", je: "étudie", vousPres: "étudiez", tuImp: "Étudie", nousImp: "Étudions", vousImp: "Étudiez", cat: "mind", note: "حذف s في أمر Tu" },
+            { id: 30, infinitive: "vivre", arabic: "يَعِيشُ", je: "vis", vousPres: "vivez", tuImp: "Vis", nousImp: "Vivons", vousImp: "Vivez", cat: "daily", note: "" },
+            { id: 31, infinitive: "habiter", arabic: "يَسْكُنُ", je: "habite", vousPres: "habitez", tuImp: "Habite", nousImp: "Habitons", vousImp: "Habitez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 32, infinitive: "rester", arabic: "يَبْقَى", je: "reste", vousPres: "restez", tuImp: "Reste", nousImp: "Restons", vousImp: "Restez", cat: "movement", note: "حذف s في أمر Tu" },
+            { id: 33, infinitive: "manger", arabic: "يَأْكُلُ", je: "mange", vousPres: "mangez", tuImp: "Mange", nousImp: "Mangeons", vousImp: "Mangez", cat: "daily", note: "إضافة e مع Nous للحفاظ على نطق ج" },
+            { id: 34, infinitive: "boire", arabic: "يَشْرَبُ", je: "bois", vousPres: "buvez", tuImp: "Bois", nousImp: "Buvons", vousImp: "Buvez", cat: "daily", note: "" },
+            { id: 35, infinitive: "cuisiner", arabic: "يَطْبُخُ", je: "cuisine", vousPres: "cuisinez", tuImp: "Cuisine", nousImp: "Cuisinons", vousImp: "Cuisinez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 36, infinitive: "acheter", arabic: "يَشْتَرِي", je: "achète", vousPres: "achetez", tuImp: "Achète", nousImp: "Achetons", vousImp: "Achetez", cat: "daily", note: "إضافة نبرة è مع Tu" },
+            { id: 37, infinitive: "vendre", arabic: "يَبِيعُ", je: "vends", vousPres: "vendez", tuImp: "Vends", nousImp: "Vendons", vousImp: "Vendez", cat: "daily", note: "" },
+            { id: 38, infinitive: "payer", arabic: "يَدْفَعُ", je: "paie", vousPres: "payez", tuImp: "Paie", nousImp: "Payons", vousImp: "Payez", cat: "daily", note: "" },
+            { id: 39, infinitive: "utiliser", arabic: "يَسْتَخْدِمُ", je: "utilise", vousPres: "utilisez", tuImp: "Utilise", nousImp: "Utilisons", vousImp: "Utilisez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 40, infinitive: "avoir besoin de", arabic: "يَحْتَاجُ إلَى", je: "ai besoin de", vousPres: "avez besoin de", tuImp: "Aie besoin de", nousImp: "Ayons besoin de", vousImp: "Ayez besoin de", cat: "irregular", note: "يستخدم تصريف Avoir الشاذ بالأمر" },
+            { id: 41, infinitive: "vouloir", arabic: "يُرِيدُ", je: "veux", vousPres: "voulez", tuImp: "Veuille", nousImp: "Voulons", vousImp: "Veuillez", cat: "irregular", note: "Veuillez تُستخدم بشكل شائع لطلب اللطف" },
+            { id: 42, infinitive: "aimer", arabic: "يُحِبُّ", je: "aime", vousPres: "aimez", tuImp: "Aime", nousImp: "Aimons", vousImp: "Aimez", cat: "mind", note: "حذف s في أمر Tu" },
+            { id: 43, infinitive: "aider", arabic: "يُسَاعِدُ", je: "aide", vousPres: "aidez", tuImp: "Aide", nousImp: "Aidons", vousImp: "Aidez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 44, infinitive: "appeler", arabic: "يَتَّصِلُ / يُنَادِي", je: "appelle", vousPres: "appelez", tuImp: "Appelle", nousImp: "Appelons", vousImp: "Appelez", cat: "perception", note: "مضاعفة حرف l مع Tu" },
+            { id: 45, infinitive: "attendre", arabic: "يَنْتَظِرُ", je: "attends", vousPres: "attendez", tuImp: "Attends", nousImp: "Attendons", vousImp: "Attendez", cat: "daily", note: "" },
+            { id: 46, infinitive: "trouver", arabic: "يَجِدُ", je: "trouve", vousPres: "trouvez", tuImp: "Trouve", nousImp: "Trouvons", vousImp: "Trouvez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 47, infinitive: "perdre", arabic: "يَفْقِدُ / يَخْسَرُ", je: "perds", vousPres: "perdez", tuImp: "Perds", nousImp: "Perdons", vousImp: "Perdez", cat: "daily", note: "" },
+            { id: 48, infinitive: "apporter", arabic: "يُحْضِرُ (شياء)", je: "apporte", vousPres: "apportez", tuImp: "Apporte", nousImp: "Apportons", vousImp: "Apportez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 49, infinitive: "porter", arabic: "يَحْمِلُ / يَلْبَسُ", je: "porte", vousPres: "portez", tuImp: "Porte", nousImp: "Portons", vousImp: "Portez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 50, infinitive: "mettre", arabic: "يَضَعُ / يَرْتَدِي", je: "mets", vousPres: "mettez", tuImp: "Mets", nousImp: "Mettons", vousImp: "Mettez", cat: "daily", note: "" },
+            { id: 51, infinitive: "garder", arabic: "يَحْتَفِظُ", je: "garde", vousPres: "gardez", tuImp: "Garde", nousImp: "Gardons", vousImp: "Gardez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 52, infinitive: "montrer", arabic: "يُظْهِرُ / يُرِي", je: "montre", vousPres: "montrez", tuImp: "Montre", nousImp: "Montrons", vousImp: "Montrez", cat: "perception", note: "حذف s في أمر Tu" },
+            { id: 53, infinitive: "jouer", arabic: "يَلْعَبُ", je: "joue", vousPres: "jouez", tuImp: "Joue", nousImp: "Jouons", vousImp: "Jouez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 54, infinitive: "conduire", arabic: "يَقُودُ", je: "conduis", vousPres: "conduisez", tuImp: "Conduis", nousImp: "Conduisons", vousImp: "Conduisez", cat: "movement", note: "" },
+            { id: 55, infinitive: "marcher", arabic: "يَمْشِي", je: "marche", vousPres: "marchez", tuImp: "Marche", nousImp: "Marchons", vousImp: "Marchez", cat: "movement", note: "حذف s في أمر Tu" },
+            { id: 56, infinitive: "courir", arabic: "يَرْكُضُ / يَجْرِي", je: "cours", vousPres: "courez", tuImp: "Cours", nousImp: "Courons", vousImp: "Courez", cat: "movement", note: "" },
+            { id: 57, infinitive: "s'asseoir", arabic: "يَجْلِسُ", je: "m'assieds", vousPres: "vous vous assyez", tuImp: "Assieds-toi", nousImp: "Asseyons-nous", vousImp: "Asseyez-vous", cat: "pronominal", note: "تتحول الضمائر بعد الفعل في الأمر المثبت" },
+            { id: 58, infinitive: "se tenir debout", arabic: "يَقِفُ", je: "me tiens debout", vousPres: "vous vous tenez debout", tuImp: "Tiens-toi debout", nousImp: "Tenons-nous debout", vousImp: "Tenez-vous debout", cat: "pronominal", note: "فعل ضمائري" },
+            { id: 59, infinitive: "dormir", arabic: "يَنَامُ", je: "dors", vousPres: "dormez", tuImp: "Dors", nousImp: "Dormons", vousImp: "Dormez", cat: "daily", note: "" },
+            { id: 60, infinitive: "se réveiller", arabic: "يَسْتَيْقِظُ", je: "me réveille", vousPres: "vous vous réveillez", tuImp: "Réveille-toi", nousImp: "Réveillons-nous", vousImp: "Réveillez-vous", cat: "pronominal", note: "في الأمر المثبت نضع toi-" },
+            { id: 61, infinitive: "laver", arabic: "يَغْسِلُ", je: "lave", vousPres: "lavez", tuImp: "Lave", nousImp: "Lavons", vousImp: "Lavez", cat: "daily", note: "حذف s في أمر Tu" },
+            { id: 62, infinitive: "nettoyer", arabic: "يُنَظِّفُ", je: "nettoie", vousPres: "nettoyez", tuImp: "Nettoie", nousImp: "Nettoyons", vousImp: "Nettoyez", cat: "daily", note: "تحول y إلى i مع Tu" },
+            { id: 63, infinitive: "voyager", arabic: "يُسَافِرُ", je: "voyage", vousPres: "voyagez", tuImp: "Voyage", nousImp: "Voyageons", vousImp: "Voyagez", cat: "movement", note: "إضافة e مع Nous" },
+            { id: 64, infinitive: "visiter", arabic: "يَزُورُ", je: "visite", vousPres: "visitez", tuImp: "Visite", nousImp: "Visitons", vousImp: "Visitez", cat: "movement", note: "حذف s في أمر Tu" },
+            { id: 65, infinitive: "se souvenir de", arabic: "يَتَذَكَّرُ", je: "me souviens de", vousPres: "vous vous souvenez de", tuImp: "Souviens-toi de", nousImp: "Souvenons-nous de", vousImp: "Souvenez-vous de", cat: "pronominal", note: "فعل ضمائري" },
+            { id: 66, infinitive: "oublier", arabic: "يَنْسَى", je: "oublie", vousPres: "oubliez", tuImp: "Oublie", nousImp: "Oublions", vousImp: "Oubliez", cat: "mind", note: "حذف s في أمر Tu" }
+        ];
+
+        let filteredVerbs = [...verbsData];
+
+        // Dynamic Realtime Clock in Arabic
+        function updateClock() {
+            const now = new Date();
+            
+            // Format Time in 12-hour Arabic format
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeString = now.toLocaleTimeString('ar-EG', timeOptions);
+            
+            // Format Full Arabic Date
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('ar-EG', dateOptions);
+
+            document.getElementById('live-time').innerText = timeString;
+            document.getElementById('live-date').innerText = dateString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Audio Text-to-Speech Engine
+        function speakFrench(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Interrupt existing speech
+                const cleanText = text.trim();
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.85; // Natural learning pace
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('عذراً، متصفحك لا يدعم خاصية نطق الصوت المباشر.');
+            }
+        }
+
+        // Calculate and Update Header Stats
+        function updateCounts() {
+            document.getElementById('total-count').innerText = verbsData.length;
+            document.getElementById('count-all').innerText = verbsData.length;
+            document.getElementById('count-irregular').innerText = verbsData.filter(v => v.cat === 'irregular').length;
+            document.getElementById('count-pronominal').innerText = verbsData.filter(v => v.cat === 'pronominal').length;
+        }
+
+        // Primary Filter Engine
+        function applyFilters() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const catValue = document.getElementById('category-filter').value;
+
+            filteredVerbs = verbsData.filter(verb => {
+                const matchesSearch = verb.infinitive.toLowerCase().includes(query) ||
+                                      verb.arabic.includes(query) ||
+                                      verb.je.toLowerCase().includes(query) ||
+                                      verb.tuImp.toLowerCase().includes(query) ||
+                                      verb.vousImp.toLowerCase().includes(query);
+
+                const matchesCat = (catValue === 'all') || (verb.cat === catValue);
+
+                return matchesSearch && matchesCat;
+            });
+
+            renderTable();
+        }
+
+        function setCategoryFilter(cat) {
+            document.getElementById('category-filter').value = cat;
+            
+            // Highlight active button
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+            
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                event.currentTarget.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+            }
+
+            applyFilters();
+        }
+
+        // Render Data Table Rows
+        function renderTable() {
+            const tbody = document.getElementById('verbs-tbody');
+            const noResults = document.getElementById('no-results');
+            document.getElementById('displayed-count').innerText = filteredVerbs.length;
+
+            if (filteredVerbs.length === 0) {
+                tbody.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+
+            tbody.innerHTML = filteredVerbs.map((verb, index) => {
+                
+                const isIrregular = verb.cat === 'irregular';
+                const isPronominal = verb.cat === 'pronominal';
+
+                const categoryBadge = isIrregular ? 
+                    `<span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded-full font-bold">شاذ بالأمر</span>` :
+                    (isPronominal ? `<span class="bg-purple-100 text-purple-800 text-[10px] px-2 py-0.5 rounded-full font-bold">ضمائري</span>` : '');
+
+                return `
+                    <tr class="hover:bg-slate-50/80 transition duration-150">
+                        <!-- Index -->
+                        <td class="p-4 text-center font-bold text-slate-400 text-xs">${index + 1}</td>
+
+                        <!-- Infinitive & Meaning -->
+                        <td class="p-4">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <span class="font-extrabold text-slate-900 french-text text-base">${verb.infinitive}</span>
+                                <button onclick="speakFrench('${verb.infinitive.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-emerald-600 transition text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                            <div class="text-xs font-semibold text-emerald-700 mt-0.5">${verb.arabic}</div>
+                            <div class="mt-1">${categoryBadge}</div>
+                        </td>
+
+                        <!-- Present (Je / Vous) -->
+                        <td class="p-4 bg-amber-50/30">
+                            <div class="text-xs space-y-1">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-slate-400 font-medium">Je:</span>
+                                    <span class="font-bold french-text text-slate-800 bg-white px-2 py-0.5 rounded border border-amber-200/60">${verb.je}</span>
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-slate-400 font-medium">Vous:</span>
+                                    <span class="font-bold french-text text-slate-800 bg-white px-2 py-0.5 rounded border border-amber-200/60">${verb.vousPres}</span>
+                                </div>
+                            </div>
+                        </td>
+
+                        <!-- Imperative - Tu -->
+                        <td class="p-4 bg-emerald-50/20">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-emerald-900 french-text text-base">${verb.tuImp}</span>
+                                <button onclick="speakFrench('${verb.tuImp.replace(/'/g, "\\'")}')" class="w-7 h-7 rounded-full bg-emerald-100/70 hover:bg-emerald-600 hover:text-white text-emerald-700 transition flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+
+                        <!-- Imperative - Nous -->
+                        <td class="p-4 bg-emerald-50/20">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-emerald-900 french-text text-base">${verb.nousImp}</span>
+                                <button onclick="speakFrench('${verb.nousImp.replace(/'/g, "\\'")}')" class="w-7 h-7 rounded-full bg-emerald-100/70 hover:bg-emerald-600 hover:text-white text-emerald-700 transition flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+
+                        <!-- Imperative - Vous -->
+                        <td class="p-4 bg-emerald-50/20">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-emerald-900 french-text text-base">${verb.vousImp}</span>
+                                <button onclick="speakFrench('${verb.vousImp.replace(/'/g, "\\'")}')" class="w-7 h-7 rounded-full bg-emerald-100/70 hover:bg-emerald-600 hover:text-white text-emerald-700 transition flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                </button>
+                            </div>
+                        </td>
+
+                        <!-- Grammatical Notes -->
+                        <td class="p-4 text-xs">
+                            ${verb.note ? `<span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg block font-medium border border-slate-200/80">${verb.note}</span>` : `<span class="text-slate-300">-</span>`}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // On App Load Initialization
+        window.onload = function() {
+            updateCounts();
+            applyFilters();
+        };
+    </script>
+</body>
+</html>
