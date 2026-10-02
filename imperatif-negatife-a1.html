@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصريف الأفعال الفرنسية - صيغة الأمر (Impératif) مع النفي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #d97706;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --danger: #dc2626;
+            --success: #16a34a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header & Dynamic Clock */
+        header {
+            background: linear-gradient(135deg, var(--secondary), #1e293b);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #38bdf8;
+        }
+
+        .header-title p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .clock-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 240px;
+        }
+
+        .clock-time {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fbbf24;
+            font-family: monospace;
+            direction: ltr;
+        }
+
+        .clock-date {
+            font-size: 0.85rem;
+            color: #e2e8f0;
+        }
+
+        /* Controls Section */
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .counter-badge {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Table Design */
+        .table-responsive {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            overflow-x: auto;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            min-width: 900px;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--secondary);
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .verb-infinitive {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.05rem;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .french-text {
+            direction: ltr;
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+
+        .badge-affirmatif {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .badge-negatif {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .speak-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-right: 6px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .speak-btn:hover {
+            opacity: 1;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Rules Box */
+        .rules-card {
+            background: #fffbe3;
+            border-right: 4px solid #f59e0b;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #78350f;
+        }
+
+        .rules-card ul {
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .clock-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header with Dynamic Clock -->
+    <header>
+        <div class="header-title">
+            <h1>الأفعال الفرنسية: صيغة الأمر (Impératif) النفي والإثبات</h1>
+            <p>جدول شامل للـ 70 فعلًا الأكثر استخداماً مع الضمائر (Tu / Vous)</p>
+        </div>
+        <div class="clock-card">
+            <div id="clockTime" class="clock-time">00:00:00</div>
+            <div id="clockDate" class="clock-date">جاري تحميل التاريخ...</div>
+        </div>
+    </header>
+
+    <!-- Quick Rules Note -->
+    <div class="rules-card">
+        <strong>💡 قواعد سريعة لصيغة الأمر (L'impératif):</strong>
+        <ul>
+            <li>لا نذكر الضمائر (Tu / Vous) في صيغة الأمر.</li>
+            <li><strong>النفي:</strong> نضع الفعل بين <code>ne (n')</code> و <code>pas</code> (مثال: <em>Ne parle pas / Ne parlez pas</em>).</li>
+            <li><strong>الأفعال الضمائرية في النفي:</strong> يعود الضمير المنعكس إلى مكانه قبل الفعل (مثال: <em>Ne te réveille pas / Ne vous réveillez pas</em>).</li>
+        </ul>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن فعل بالفرنسية أو المعنى بالعربية...">
+        </div>
+        <div class="counter-badge" id="verbCounter">عدد الأفعال المعروضة: 70</div>
+    </div>
+
+    <!-- Verbs Table -->
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>الفعل (Infinitive)</th>
+                    <th>المعنى بالعربية</th>
+                    <th>الأمر الإيجابي (Tu)</th>
+                    <th>الأمر الإيجابي (Vous)</th>
+                    <th>الأمر المنفي (Tu)</th>
+                    <th>الأمر المنفي (Vous)</th>
+                </tr>
+            </thead>
+            <tbody id="verbsTableBody">
+                <!-- Data inserted via JavaScript -->
+            </tbody>
+        </table>
+        <div id="noResults" class="no-results" style="display: none;">
+            لم يتم العثور على أفعال تطابق بحثك.
+        </div>
+    </div>
+</div>
+
+<script>
+// Dynamic Clock & Date Function
+function updateClock() {
+    const now = new Date();
+    
+    // Time format (HH:MM:SS)
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clockTime').textContent = `${hours}:${minutes}:${seconds}`;
+
+    // Date format in Arabic
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('ar-EG', options);
+    document.getElementById('clockDate').textContent = dateString;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+// Text to Speech
+function speak(text) {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'fr-FR';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+// Complete 70 Verbs Dataset
+const verbsData = [
+    { inf: "être", ar: "يكون", tuAff: "Sois", vousAff: "Soyez", tuNeg: "Ne sois pas", vousNeg: "Ne soyez pas" },
+    { inf: "avoir", ar: "يملك / لديه", tuAff: "Aie", vousAff: "Ayez", tuNeg: "N'aie pas", vousNeg: "N'ayez pas" },
+    { inf: "devenir", ar: "يصبح / يصير", tuAff: "Deviens", vousAff: "Devenez", tuNeg: "Ne deviens pas", vousNeg: "Ne devenez pas" },
+    { inf: "faire", ar: "يفعل / يعمل", tuAff: "Fais", vousAff: "Faites", tuNeg: "Ne fais pas", vousNeg: "Ne faites pas" },
+    { inf: "aller", ar: "يذهب", tuAff: "Va", vousAff: "Allez", tuNeg: "N'va pas", vousNeg: "N'allez pas" },
+    { inf: "venir", ar: "يجئ / يأتي", tuAff: "Viens", vousAff: "Venez", tuNeg: "Ne viens pas", vousNeg: "Ne venez pas" },
+    { inf: "prendre", ar: "يأخذ", tuAff: "Prends", vousAff: "Prenez", tuNeg: "Ne prends pas", vousNeg: "Ne prenez pas" },
+    { inf: "donner", ar: "يعطي", tuAff: "Donne", vousAff: "Donnez", tuNeg: "Ne donne pas", vousNeg: "Ne donnez pas" },
+    { inf: "recevoir", ar: "يتسلم / يحصل على", tuAff: "Reçois", vousAff: "Recevez", tuNeg: "Ne reçois pas", vousNeg: "Ne recevez pas" },
+    { inf: "voir", ar: "يرى", tuAff: "Vois", vousAff: "Voyez", tuNeg: "Ne vois pas", vousNeg: "Ne voyez pas" },
+    { inf: "regarder", ar: "يشاهد / ينظر", tuAff: "Regarde", vousAff: "Regardez", tuNeg: "Ne regarde pas", vousNeg: "Ne regardez pas" },
+    { inf: "entendre", ar: "يسمع", tuAff: "Entends", vousAff: "Entendez", tuNeg: "N'entends pas", vousNeg: "N'entendez pas" },
+    { inf: "écouter", ar: "يستمع", tuAff: "Écoute", vousAff: "Écoutez", tuNeg: "N'écoute pas", vousNeg: "N'écoutez pas" },
+    { inf: "dire", ar: "يقول", tuAff: "Dis", vousAff: "Dites", tuNeg: "Ne dis pas", vousNeg: "Ne dites pas" },
+    { inf: "parler", ar: "يتحدث / يتكلم", tuAff: "Parle", vousAff: "Parlez", tuNeg: "Ne parle pas", vousNeg: "Ne parlez pas" },
+    { inf: "demander", ar: "يطلب / يسأل", tuAff: "Demande", vousAff: "Demandez", tuNeg: "Ne demande pas", vousNeg: "Ne demandez pas" },
+    { inf: "répondre", ar: "يجيب / يرد", tuAff: "Réponds", vousAff: "Répondez", tuNeg: "Ne réponds pas", vousNeg: "Ne répondez pas" },
+    { inf: "savoir", ar: "يعرف", tuAff: "Sache", vousAff: "Sachez", tuNeg: "Ne sache pas", vousNeg: "Ne sachez pas" },
+    { inf: "penser", ar: "يفكر", tuAff: "Pense", vousAff: "Pensez", tuNeg: "Ne pense pas", vousNeg: "Ne pensez pas" },
+    { inf: "comprendre", ar: "يفهم", tuAff: "Comprends", vousAff: "Comprenez", tuNeg: "Ne comprends pas", vousNeg: "Ne comprenez pas" },
+    { inf: "apprendre", ar: "يتعلم", tuAff: "Apprends", vousAff: "Apprenez", tuNeg: "N'apprends pas", vousNeg: "N'apprenez pas" },
+    { inf: "lire", ar: "يقرأ", tuAff: "Lis", vousAff: "Lisez", tuNeg: "Ne lis pas", vousNeg: "Ne lisez pas" },
+    { inf: "écrire", ar: "يكتب", tuAff: "Écris", vousAff: "Écrivez", tuNeg: "N'écris pas", vousNeg: "N'écrivez pas" },
+    { inf: "ouvrir", ar: "يفتح", tuAff: "Ouvre", vousAff: "Ouvrez", tuNeg: "N'ouvre pas", vousNeg: "N'ouvrez pas" },
+    { inf: "fermer", ar: "يغلق", tuAff: "Ferme", vousAff: "Fermez", tuNeg: "Ne ferme pas", vousNeg: "Ne fermez pas" },
+    { inf: "commencer", ar: "يبدأ", tuAff: "Commence", vousAff: "Commencez", tuNeg: "Ne commence pas", vousNeg: "Ne commencez pas" },
+    { inf: "finir", ar: "ينهي / ينتهي", tuAff: "Finis", vousAff: "Finissez", tuNeg: "Ne finis pas", vousNeg: "Ne finissez pas" },
+    { inf: "arrêter", ar: "يتوقف / يوقف", tuAff: "Arrête", vousAff: "Arrêtez", tuNeg: "N'arrête pas", vousNeg: "N'arrêtez pas" },
+    { inf: "travailler", ar: "يعمل", tuAff: "Travaille", vousAff: "Travailliez", tuNeg: "Ne travaille pas", vousNeg: "Ne travaillez pas" },
+    { inf: "étudier", ar: "يدرس", tuAff: "Étudie", vousAff: "Étudiez", tuNeg: "N'étudie pas", vousNeg: "N'étudiez pas" },
+    { inf: "vivre", ar: "يعيش", tuAff: "Vis", vousAff: "Vivez", tuNeg: "Ne vis pas", vousNeg: "Ne vivez pas" },
+    { inf: "habiter", ar: "يسكن", tuAff: "Habite", vousAff: "Habitez", tuNeg: "N'habite pas", vousNeg: "N'habitez pas" },
+    { inf: "rester", ar: "يبقى / يظل", tuAff: "Reste", vousAff: "Restez", tuNeg: "Ne reste pas", vousNeg: "Ne restez pas" },
+    { inf: "manger", ar: "يأكل", tuAff: "Mange", vousAff: "Mangez", tuNeg: "Ne mange pas", vousNeg: "Ne mangez pas" },
+    { inf: "boire", ar: "يشرب", tuAff: "Bois", vousAff: "Buvez", tuNeg: "Ne bois pas", vousNeg: "Ne buvez pas" },
+    { inf: "cuisiner", ar: "يطبخ", tuAff: "Cuisine", vousAff: "Cuisinez", tuNeg: "Ne cuisine pas", vousNeg: "Ne cuisinez pas" },
+    { inf: "acheter", ar: "يشتري", tuAff: "Achète", vousAff: "Achetez", tuNeg: "N'achète pas", vousNeg: "N'achetez pas" },
+    { inf: "vendre", ar: "يبيع", tuAff: "Vends", vousAff: "Vendez", tuNeg: "Ne vends pas", vousNeg: "Ne vendez pas" },
+    { inf: "payer", ar: "يدفع", tuAff: "Paye", vousAff: "Payez", tuNeg: "Ne paye pas", vousNeg: "Ne payez pas" },
+    { inf: "utiliser", ar: "يستخدم", tuAff: "Utilise", vousAff: "Utilisez", tuNeg: "N'utilise pas", vousNeg: "N'utilisez pas" },
+    { inf: "avoir besoin de", ar: "يحتاج إلى", tuAff: "Aie besoin de", vousAff: "Ayez besoin de", tuNeg: "N'aie pas besoin de", vousNeg: "N'ayez pas besoin de" },
+    { inf: "vouloir", ar: "يريد", tuAff: "Veuille", vousAff: "Veuillez", tuNeg: "Ne veuille pas", vousNeg: "Ne veuillez pas" },
+    { inf: "pouvoir", ar: "يستطيع (لا يوجد أمر)", tuAff: "-", vousAff: "-", tuNeg: "-", vousNeg: "-" },
+    { inf: "devoir", ar: "يجب (لا يوجد أمر)", tuAff: "-", vousAff: "-", tuNeg: "-", vousNeg: "-" },
+    { inf: "aimer", ar: "يحب", tuAff: "Aime", vousAff: "Aimez", tuNeg: "N'aime pas", vousNeg: "N'aimez pas" },
+    { inf: "aider", ar: "يساعد", tuAff: "Aide", vousAff: "Aidez", tuNeg: "N'aide pas", vousNeg: "N'aidez pas" },
+    { inf: "appeler", ar: "يتصل / ينادي", tuAff: "Appelle", vousAff: "Appelez", tuNeg: "N'appelle pas", vousNeg: "N'appelez pas" },
+    { inf: "attendre", ar: "ينتظر", tuAff: "Attends", vousAff: "Attendez", tuNeg: "N'attends pas", vousNeg: "N'attendez pas" },
+    { inf: "trouver", ar: "يجد", tuAff: "Trouve", vousAff: "Trouvez", tuNeg: "Ne trouve pas", vousNeg: "Ne trouvez pas" },
+    { inf: "se trouver", ar: "يتواجد", tuAff: "Trouve-toi", vousAff: "Trouvez-vous", tuNeg: "Ne te trouve pas", vousNeg: "Ne vous trouvez pas" },
+    { inf: "perdre", ar: "يفقد / يخسر", tuAff: "Perds", vousAff: "Perdez", tuNeg: "Ne perds pas", vousNeg: "Ne perdez pas" },
+    { inf: "apporter", ar: "يحضر (شيء)", tuAff: "Apporte", vousAff: "Apportez", tuNeg: "N'apporte pas", vousNeg: "N'apportez pas" },
+    { inf: "porter", ar: "يحمل / يرتدي", tuAff: "Porte", vousAff: "Portez", tuNeg: "Ne porte pas", vousNeg: "Ne portez pas" },
+    { inf: "mettre", ar: "يضع / يلبس", tuAff: "Mets", vousAff: "Mettez", tuNeg: "Ne mets pas", vousNeg: "Ne mettez pas" },
+    { inf: "garder", ar: "يحتفظ", tuAff: "Garde", vousAff: "Gardez", tuNeg: "Ne garde pas", vousNeg: "Ne gardez pas" },
+    { inf: "montrer", ar: "يظهر / يري", tuAff: "Montre", vousAff: "Montrez", tuNeg: "Ne montre pas", vousNeg: "Ne montrez pas" },
+    { inf: "jouer", ar: "يلعب", tuAff: "Joue", vousAff: "Jouez", tuNeg: "Ne joue pas", vousNeg: "Ne jouez pas" },
+    { inf: "conduire", ar: "يقود", tuAff: "Conduis", vousAff: "Conduisez", tuNeg: "Ne conduis pas", vousNeg: "Ne conduisez pas" },
+    { inf: "marcher", ar: "يمشي", tuAff: "Marche", vousAff: "Marchez", tuNeg: "Ne marche pas", vousNeg: "Ne marchez pas" },
+    { inf: "courir", ar: "يركض / يجري", tuAff: "Cours", vousAff: "Courez", tuNeg: "Ne cours pas", vousNeg: "Ne courez pas" },
+    { inf: "s'asseoir", ar: "يجلس", tuAff: "Assieds-toi", vousAff: "Asseyez-vous", tuNeg: "Ne t'assieds pas", vousNeg: "Ne vous asseyez pas" },
+    { inf: "se tenir debout", ar: "يقف", tuAff: "Tiens-toi debout", vousAff: "Tenez-vous debout", tuNeg: "Ne te tiens pas debout", vousNeg: "Ne vous tenez pas debout" },
+    { inf: "dormir", ar: "ينام", tuAff: "Dors", vousAff: "Dormez", tuNeg: "Ne dors pas", vousNeg: "Ne dormez pas" },
+    { inf: "se réveiller", ar: "يستيقظ", tuAff: "Réveille-toi", vousAff: "Réveillez-vous", tuNeg: "Ne te réveille pas", vousNeg: "Ne vous réveillez pas" },
+    { inf: "laver", ar: "يغسل", tuAff: "Lave", vousAff: "Lavez", tuNeg: "Ne lave pas", vousNeg: "Ne lavez pas" },
+    { inf: "se laver", ar: "يغتسل", tuAff: "Lave-toi", vousAff: "Lavez-vous", tuNeg: "Ne te lave pas", vousNeg: "Ne vous lavez pas" },
+    { inf: "nettoyer", ar: "ينظف", tuAff: "Nettoie", vousAff: "Nettoyez", tuNeg: "Ne nettoie pas", vousNeg: "Ne nettoyez pas" },
+    { inf: "voyager", ar: "يسافر", tuAff: "Voyage", vousAff: "Voyagez", tuNeg: "Ne voyage pas", vousNeg: "Ne voyagez pas" },
+    { inf: "visiter", ar: "يزور", tuAff: "Visite", vousAff: "Visitez", tuNeg: "Ne visite pas", vousNeg: "Ne visitez pas" },
+    { inf: "se souvenir de", ar: "يتذكر", tuAff: "Souviens-toi de", vousAff: "Souvenez-vous de", tuNeg: "Ne te souviens pas de", vousNeg: "Ne vous souvenez pas de" },
+    { inf: "oublier", ar: "ينسى", tuAff: "Oublie", vousAff: "Oubliez", tuNeg: "N'oublie pas", vousNeg: "N'oubliez pas" }
+];
+
+// Render Verbs Table
+function renderVerbs(data) {
+    const tbody = document.getElementById('verbsTableBody');
+    const noResults = document.getElementById('noResults');
+    const counter = document.getElementById('verbCounter');
+    
+    tbody.innerHTML = '';
+    counter.textContent = `عدد الأفعال المعروضة: ${data.length}`;
+
+    if (data.length === 0) {
+        noResults.style.display = 'block';
+        return;
+    }
+
+    noResults.style.display = 'none';
+
+    data.forEach((verb, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>
+                <span class="verb-infinitive">${verb.inf}</span>
+                <button class="speak-btn" onclick="speak('${verb.inf}')" title="استمع">🔊</button>
+            </td>
+            <td><strong>${verb.ar}</strong></td>
+            <td>
+                <span class="french-text badge-affirmatif">${verb.tuAff}</span>
+                ${verb.tuAff !== '-' ? `<button class="speak-btn" onclick="speak('${verb.tuAff}')">🔊</button>` : ''}
+            </td>
+            <td>
+                <span class="french-text badge-affirmatif">${verb.vousAff}</span>
+                ${verb.vousAff !== '-' ? `<button class="speak-btn" onclick="speak('${verb.vousAff}')">🔊</button>` : ''}
+            </td>
+            <td>
+                <span class="french-text badge-negatif">${verb.tuNeg}</span>
+                ${verb.tuNeg !== '-' ? `<button class="speak-btn" onclick="speak('${verb.tuNeg}')">🔊</button>` : ''}
+            </td>
+            <td>
+                <span class="french-text badge-negatif">${verb.vousNeg}</span>
+                ${verb.vousNeg !== '-' ? `<button class="speak-btn" onclick="speak('${verb.vousNeg}')">🔊</button>` : ''}
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// Search Filter
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase().trim();
+    const filtered = verbsData.filter(v => 
+        v.inf.toLowerCase().includes(query) || 
+        v.ar.includes(query) || 
+        v.tuAff.toLowerCase().includes(query) ||
+        v.vousAff.toLowerCase().includes(query)
+    );
+    renderVerbs(filtered);
+});
+
+// Initial Render
+renderVerbs(verbsData);
+</script>
+</body>
+</html>
