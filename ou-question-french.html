@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Où ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #e0f2fe;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #bae6fd;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Où ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن الأماكن والوجهات بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 قواعد سريعة:</h3>
+        <p>• <strong>Où est... ?</strong> تُستخدم للمفرد (مثال: <em>Où est la gare ?</em>)</p>
+        <p>• <strong>Où sont... ?</strong> تُستخدم للجمع (مثال: <em>Où sont les clés ?</em>)</p>
+        <p>• <strong>D'où viens-tu ?</strong> تعني: من أين أتيت؟ | <strong>Par où... ?</strong> تعني: عبر أين / من أين نمر؟</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="home">المكان والسكن</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="movement">الحركة والاتجاهات</button>
+            <button class="tab-btn" data-cat="daily">التسوق والأنشطة</button>
+            <button class="tab-btn" data-cat="misc">أسئلة متنوعة</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20: المكان والسكن
+        {id: 1, cat: 'home', fr: "Où habites-tu ?", ar: "أين تسكن؟"},
+        {id: 2, cat: 'home', fr: "Où vivez-vous ?", ar: "أين تعيش؟"},
+        {id: 3, cat: 'home', fr: "Où est ta maison ?", ar: "أين منزلك؟"},
+        {id: 4, cat: 'home', fr: "Où est ton appartement ?", ar: "أين شقتك؟"},
+        {id: 5, cat: 'home', fr: "Où est ma chambre ?", ar: "أين غرفتي؟"},
+        {id: 6, cat: 'home', fr: "Où est la salle de bains ?", ar: "أين الحمّام؟"},
+        {id: 7, cat: 'home', fr: "Où est la cuisine ?", ar: "أين المطبخ؟"},
+        {id: 8, cat: 'home', fr: "Où sont les toilettes ?", ar: "أين دورة المياه؟"},
+        {id: 9, cat: 'home', fr: "Où est la porte ?", ar: "أين الباب؟"},
+        {id: 10, cat: 'home', fr: "Où sont les clés ?", ar: "أين المفاتيح؟"},
+        {id: 11, cat: 'home', fr: "Où est mon téléphone ?", ar: "أين هاتفي؟"},
+        {id: 12, cat: 'home', fr: "Où est mon portefeuille ?", ar: "أين محفظتي؟"},
+        {id: 13, cat: 'home', fr: "Où est le supermarché ?", ar: "أين السوبرماركت؟"},
+        {id: 14, cat: 'home', fr: "Où est la pharmacie ?", ar: "أين الصيدلية؟"},
+        {id: 15, cat: 'home', fr: "Où est la banque ?", ar: "أين البنك؟"},
+        {id: 16, cat: 'home', fr: "Où est la gare ?", ar: "أين محطة القطار؟"},
+        {id: 17, cat: 'home', fr: "Où est l’arrêt de bus ?", ar: "أين موقف الحافلات؟"},
+        {id: 18, cat: 'home', fr: "Où est le centre-ville ?", ar: "أين وسط المدينة؟"},
+        {id: 19, cat: 'home', fr: "Où est le parking ?", ar: "أين موقف السيارات؟"},
+        {id: 20, cat: 'home', fr: "Où se trouve cette rue ?", ar: "أين يقع هذا الشارع؟"},
+
+        // 21-40: العمل والدراسة
+        {id: 21, cat: 'work', fr: "Où travailles-tu ?", ar: "أين تعمل؟"},
+        {id: 22, cat: 'work', fr: "Où travaillez-vous ?", ar: "أين تعملون؟"},
+        {id: 23, cat: 'work', fr: "Où est ton bureau ?", ar: "أين مكتبك؟"},
+        {id: 24, cat: 'work', fr: "Où se trouve ton entreprise ?", ar: "أين تقع شركتك؟"},
+        {id: 25, cat: 'work', fr: "Où cherches-tu du travail ?", ar: "أين تبحث عن عمل؟"},
+        {id: 26, cat: 'work', fr: "Où puis-je trouver un emploi ?", ar: "أين يمكنني العثور على وظيفة؟"},
+        {id: 27, cat: 'work', fr: "Où dois-je envoyer mon CV ?", ar: "أين يجب أن أرسل سيرتي الذاتية؟"},
+        {id: 28, cat: 'work', fr: "Où as-tu passé l’entretien ?", ar: "أين أجريت المقابلة؟"},
+        {id: 29, cat: 'work', fr: "Où est le responsable ?", ar: "أين المسؤول؟"},
+        {id: 30, cat: 'work', fr: "Où sont mes collègues ?", ar: "أين زملائي؟"},
+        {id: 31, cat: 'work', fr: "Où étudies-tu ?", ar: "أين تدرس؟"},
+        {id: 32, cat: 'work', fr: "Où est ton université ?", ar: "أين جامعتك؟"},
+        {id: 33, cat: 'work', fr: "Où se trouve la salle de classe ?", ar: "أين يقع الفصل الدراسي؟"},
+        {id: 34, cat: 'work', fr: "Où est le professeur ?", ar: "أين الأستاذ؟"},
+        {id: 35, cat: 'work', fr: "Où peut-on apprendre le français ?", ar: "أين يمكننا تعلم الفرنسية؟"},
+        {id: 36, cat: 'work', fr: "Où peut-on apprendre le néerlandais ?", ar: "أين يمكننا تعلم الهولندية؟"},
+        {id: 37, cat: 'work', fr: "Où fais-tu tes devoirs ?", ar: "أين تحل واجباتك؟"},
+        {id: 38, cat: 'work', fr: "Où as-tu appris l’anglais ?", ar: "أين تعلمت الإنجليزية؟"},
+        {id: 39, cat: 'work', fr: "Où se déroule le cours ?", ar: "أين تُعقد الدورة؟"},
+        {id: 40, cat: 'work', fr: "Où aura lieu l’examen ?", ar: "أين سيُعقد الامتحان؟"},
+
+        // 41-60: الحركة والاتجاهات
+        {id: 41, cat: 'movement', fr: "Où vas-tu ?", ar: "إلى أين تذهب؟"},
+        {id: 42, cat: 'movement', fr: "Où allez-vous ?", ar: "إلى أين تذهبون؟"},
+        {id: 43, cat: 'movement', fr: "Où vas-tu maintenant ?", ar: "إلى أين تذهب الآن؟"},
+        {id: 44, cat: 'movement', fr: "Où vas-tu ce soir ?", ar: "إلى أين ستذهب هذا المساء؟"},
+        {id: 45, cat: 'movement', fr: "Où vas-tu demain ?", ar: "إلى أين ستذهب غدًا؟"},
+        {id: 46, cat: 'movement', fr: "Où veux-tu aller ?", ar: "إلى أين تريد الذهاب؟"},
+        {id: 47, cat: 'movement', fr: "Où pouvons-nous aller ?", ar: "إلى أين يمكننا الذهاب؟"},
+        {id: 48, cat: 'movement', fr: "Où dois-je aller ?", ar: "إلى أين يجب أن أذهب؟"},
+        {id: 49, cat: 'movement', fr: "Où est-ce que je dois descendre ?", ar: "أين يجب أن أنزل؟"},
+        {id: 50, cat: 'movement', fr: "Où dois-je changer de train ?", ar: "أين يجب أن أغيّر القطار؟"},
+        {id: 51, cat: 'movement', fr: "Où puis-je prendre le bus ?", ar: "أين يمكنني ركوب الحافلة؟"},
+        {id: 52, cat: 'movement', fr: "Où puis-je acheter un billet ?", ar: "أين يمكنني شراء تذكرة؟"},
+        {id: 53, cat: 'movement', fr: "Où se trouve la station de métro ?", ar: "أين تقع محطة المترو؟"},
+        {id: 54, cat: 'movement', fr: "Où est l’entrée ?", ar: "أين المدخل؟"},
+        {id: 55, cat: 'movement', fr: "Où est la sortie ?", ar: "أين المخرج؟"},
+        {id: 56, cat: 'movement', fr: "Où est le prochain arrêt ?", ar: "أين المحطة التالية؟"},
+        {id: 57, cat: 'movement', fr: "Où mène cette route ?", ar: "إلى أين يؤدي هذا الطريق؟"},
+        {id: 58, cat: 'movement', fr: "Où faut-il tourner ?", ar: "أين يجب أن ننعطف؟"},
+        {id: 59, cat: 'movement', fr: "Où puis-je garer ma voiture ?", ar: "أين يمكنني ركن سيارتي؟"},
+        {id: 60, cat: 'movement', fr: "Où se termine cette rue ?", ar: "أين ينتهي هذا الشارع؟"},
+
+        // 61-80: الحياة اليومية والتسوق
+        {id: 61, cat: 'daily', fr: "Où achètes-tu tes vêtements ?", ar: "أين تشتري ملابسك؟"},
+        {id: 62, cat: 'daily', fr: "Où fais-tu tes courses ?", ar: "أين تتسوق؟"},
+        {id: 63, cat: 'daily', fr: "Où as-tu acheté ce téléphone ?", ar: "أين اشتريت هذا الهاتف؟"},
+        {id: 64, cat: 'daily', fr: "Où puis-je acheter du pain ?", ar: "أين يمكنني شراء الخبز؟"},
+        {id: 65, cat: 'daily', fr: "Où peut-on manger ici ?", ar: "أين يمكننا تناول الطعام هنا؟"},
+        {id: 66, cat: 'daily', fr: "Où veux-tu déjeuner ?", ar: "أين تريد تناول الغداء؟"},
+        {id: 67, cat: 'daily', fr: "Où allons-nous dîner ?", ar: "أين سنتناول العشاء؟"},
+        {id: 68, cat: 'daily', fr: "Où est le restaurant le plus proche ?", ar: "أين أقرب مطعم؟"},
+        {id: 69, cat: 'daily', fr: "Où puis-je boire un café ?", ar: "أين يمكنني شرب القهوة؟"},
+        {id: 70, cat: 'daily', fr: "Où est le menu ?", ar: "أين قائمة الطعام؟"},
+        {id: 71, cat: 'daily', fr: "Où se trouve le marché ?", ar: "أين يقع السوق؟"},
+        {id: 72, cat: 'daily', fr: "Où puis-je retirer de l’argent ?", ar: "أين يمكنني سحب المال؟"},
+        {id: 73, cat: 'daily', fr: "Où puis-je payer ?", ar: "أين يمكنني الدفع؟"},
+        {id: 74, cat: 'daily', fr: "Où est la caisse ?", ar: "أين صندوق الدفع؟"},
+        {id: 75, cat: 'daily', fr: "Où puis-je essayer ces chaussures ?", ar: "أين يمكنني تجربة هذه الأحذية؟"},
+        {id: 76, cat: 'daily', fr: "Où sont les produits frais ?", ar: "أين المنتجات الطازجة؟"},
+        {id: 77, cat: 'daily', fr: "Où as-tu mis mon sac ?", ar: "أين وضعت حقيبتي؟"},
+        {id: 78, cat: 'daily', fr: "Où dois-je mettre ces affaires ?", ar: "أين يجب أن أضع هذه الأشياء؟"},
+        {id: 79, cat: 'daily', fr: "Où gardes-tu tes documents ?", ar: "أين تحتفظ بمستنداتك؟"},
+        {id: 80, cat: 'daily', fr: "Où puis-je laisser mes bagages ?", ar: "أين يمكنني ترك أمتعتي؟"},
+
+        // 81-100: أسئلة متنوعة مهمة
+        {id: 81, cat: 'misc', fr: "Où es-tu ?", ar: "أين أنت؟"},
+        {id: 82, cat: 'misc', fr: "Où êtes-vous en ce moment ?", ar: "أين أنتم الآن؟"},
+        {id: 83, cat: 'misc', fr: "Où étais-tu hier ?", ar: "أين كنت أمس؟"},
+        {id: 84, cat: 'misc', fr: "Où étais-tu né ?", ar: "أين وُلدت؟ (للمذكر)"},
+        {id: 85, cat: 'misc', fr: "Où est née ta femme ?", ar: "أين وُلدت زوجتك؟"},
+        {id: 86, cat: 'misc', fr: "Où as-tu grandi ?", ar: "أين نشأت؟"},
+        {id: 87, cat: 'misc', fr: "Où as-tu passé tes vacances ?", ar: "أين قضيت إجازتك؟"},
+        {id: 88, cat: 'misc', fr: "Où étais-tu pendant le week-end ?", ar: "أين كنت خلال عطلة نهاية الأسبوع؟"},
+        {id: 89, cat: 'misc', fr: "Où as-tu rencontré ton ami ?", ar: "أين قابلت صديقك؟"},
+        {id: 90, cat: 'misc', fr: "Où avez-vous fait connaissance ?", ar: "أين تعارفتم؟"},
+        {id: 91, cat: 'misc', fr: "Où se trouve l’hôpital le plus proche ?", ar: "أين يقع أقرب مستشفى؟"},
+        {id: 92, cat: 'misc', fr: "Où puis-je consulter un médecin ?", ar: "أين يمكنني زيارة طبيب؟"},
+        {id: 93, cat: 'misc', fr: "Où se trouve le commissariat de police ?", ar: "أين يقع مركز الشرطة؟"},
+        {id: 94, cat: 'misc', fr: "Où puis-je demander des informations ?", ar: "أين يمكنني طلب المعلومات؟"},
+        {id: 95, cat: 'misc', fr: "Où dois-je signer ?", ar: "أين يجب أن أوقّع؟"},
+        {id: 96, cat: 'misc', fr: "Où puis-je obtenir ce document ?", ar: "أين يمكنني الحصول على هذه الوثيقة؟"},
+        {id: 97, cat: 'misc', fr: "Où dois-je m’inscrire ?", ar: "أين يجب أن أسجّل؟"},
+        {id: 98, cat: 'misc', fr: "Où peut-on suivre un cours en ligne ?", ar: "أين يمكن متابعة دورة عبر الإنترنت؟"},
+        {id: 99, cat: 'misc', fr: "Où aimerais-tu vivre à l’avenir ?", ar: "أين تود أن تعيش في المستقبل؟"},
+        {id: 100, cat: 'misc', fr: "Où seras-tu l’année prochaine ?", ar: "أين ستكون العام المقبل؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
