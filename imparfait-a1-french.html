@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>70 Verbes Français - Imparfait</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f1f5f9;color:#172033;font-family:Arial,Tahoma,sans-serif;line-height:1.8}
+header{background:#172554;color:white;padding:24px 14px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{color:#dbeafe}
+main{max-width:900px;margin:auto;padding:16px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+input,select,button{padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px}
+input{flex:1;min-width:170px}
+button{background:#2563eb;color:white;border:0;cursor:pointer}
+.card{background:white;border:1px solid #dbe3ef;border-radius:12px;margin-bottom:14px;overflow:hidden}
+.card h2{font-size:19px;margin:0}
+.heading{padding:12px 15px;background:#dbeafe;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.meaning{font-size:14px;color:#334155}
+.rows{padding:10px 15px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid #edf2f7}
+.row:last-child{border:0}
+.fr{direction:ltr;text-align:left;color:#1d4ed8;font-weight:bold}
+.ar{text-align:right}
+.note{background:#fff7ed;padding:13px;border-radius:10px;margin-bottom:16px}
+.count{text-align:center;color:#475569;margin:12px}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header>
+<h1>🇫🇷 L’Imparfait</h1>
+<p>٧٠ فعلًا فرنسيًا مع التصريف والترجمة العربية</p>
+</header>
+<main>
+<div class="note">
+<strong>القاعدة:</strong> تصريف nous في المضارع، نحذف -ons ثم نضيف:
+<strong>-ais, -ais, -ait, -ions, -iez, -aient</strong>.
+<br>مثال: nous parlons → je parlais = كنت أتكلم.
+</div>
+<div class="tools">
+<input id="search" placeholder="ابحث بالعربي أو الفرنسي..." oninput="render()">
+<select id="filter" onchange="render()">
+<option value="all">كل الضمائر</option>
+<option>Je</option><option>Tu</option>
+<option>Il / Elle</option><option>Nous</option>
+<option>Vous</option><option>Ils / Elles</option>
+</select>
+<button onclick="resetAll()">إعادة ضبط</button>
+</div>
+<div id="count" class="count"></div>
+<div id="list"></div>
+</main>
+<script>
+const pronouns=["Je","Tu","Il / Elle","Nous","Vous","Ils / Elles"];
+const verbs=[
+["être","يكون","étais|étais|était|étions|étiez|étaient"],
+["devenir","يصبح","devenais|devenais|devenait|devenions|deveniez|devenaient"],
+["faire","يفعل / يصنع","faisais|faisais|faisait|faisions|faisiez|faisaient"],
+["aller","يذهب","allais|allais|allait|allions|alliez|allaient"],
+["venir","يأتي","venais|venais|venait|venions|veniez|venaient"],
+["prendre","يأخذ","prenais|prenais|prenait|prenions|preniez|prenaient"],
+["donner","يعطي","donnais|donnais|donnait|donnions|donniez|donnaient"],
+["recevoir","يتلقى / يحصل على","recevais|recevais|recevait|recevions|receviez|recevaient"],
+["voir","يرى","voyais|voyais|voyait|voyions|voyiez|voyaient"],
+["regarder","ينظر / يشاهد","regardais|regardais|regardait|regardions|regardiez|regardaient"],
+["entendre","يسمع","entendais|entendais|entendait|entendions|entendiez|entendaient"],
+["écouter","يستمع","écoutais|écoutais|écoutait|écoutions|écoutiez|écoutaient"],
+["dire","يقول / يخبر","disais|disais|disait|disions|disiez|disaient"],
+["parler","يتكلم / يتحدث","parlais|parlais|parlait|parlions|parliez|parlaient"],
+["demander","يسأل / يطلب","demandais|demandais|demandait|demandions|demandiez|demandaient"],
+["répondre","يجيب","répondais|répondais|répondait|répondions|répondiez|répondaient"],
+["savoir","يعرف","savais|savais|savait|savions|saviez|savaient"],
+["penser","يفكر / يعتقد","pensais|pensais|pensait|pensions|pensiez|pensaient"],
+["comprendre","يفهم","comprenais|comprenais|comprenait|comprenions|compreniez|comprenaient"],
+["apprendre","يتعلم","apprenais|apprenais|apprenait|apprenions|appreniez|apprenaient"],
+["lire","يقرأ","lisais|lisais|lisait|lisions|lisiez|lisaient"],
+["écrire","يكتب","écrivais|écrivais|écrivait|écrivions|écriviez|écrivaient"],
+["ouvrir","يفتح","ouvrais|ouvrais|ouvrait|ouvrions|ouvriez|ouvraient"],
+["fermer","يغلق","fermais|fermais|fermait|fermions|fermiez|fermaient"],
+["commencer","يبدأ","commençais|commençais|commençait|commencions|commenciez|commençaient"],
+["finir","ينتهي","finissais|finissais|finissait|finissions|finissiez|finissaient"],
+["arrêter","يوقف / يتوقف","arrêtais|arrêtais|arrêtait|arrêtions|arrêtiez|arrêtaient"],
+["travailler","يعمل","travaillais|travaillais|travaillait|travaillions|travailliez|travaillaient"],
+["étudier","يدرس","étudiais|étudiais|étudiait|étudiions|étudiiez|étudiaient"],
+["vivre","يعيش","vivais|vivais|vivait|vivions|viviez|vivaient"],
+["habiter","يسكن","habitais|habitais|habitait|habitions|habitiez|habitaient"],
+["rester","يبقى","restais|restais|restait|restions|restiez|restaient"],
+["manger","يأكل","mangeais|mangeais|mangeait|mangions|mangiez|mangeaient"],
+["boire","يشرب","buvais|buvais|buvait|buvions|buviez|buvaient"],
+["cuisiner","يطبخ","cuisinais|cuisinais|cuisinait|cuisinions|cuisiniez|cuisinaient"],
+["acheter","يشتري","achetais|achetais|achetait|achetions|achetiez|achetaient"],
+["vendre","يبيع","vendais|vendais|vendait|vendions|vendiez|vendaient"],
+["payer","يدفع","payais|payais|payait|payions|payiez|payaient"],
+["utiliser","يستخدم","utilisais|utilisais|utilisait|utilisions|utilisiez|utilisaient"],
+["avoir besoin de","يحتاج إلى","avais besoin de|avais besoin de|avait besoin de|avions besoin de|aviez besoin de|avaient besoin de"],
+["vouloir","يريد","voulais|voulais|voulait|voulions|vouliez|voulaient"],
+["aimer","يحب","aimais|aimais|aimait|aimions|aimiez|aimaient"],
+["aider","يساعد","aidais|aidais|aidait|aidions|aidiez|aidaient"],
+["appeler","يتصل / ينادي","appelais|appelais|appelait|appelions|appeliez|appelaient"],
+["attendre","ينتظر","attendais|attendais|attendait|attendions|attendiez|attendaient"],
+["trouver","يجد","trouvais|trouvais|trouvait|trouvions|trouviez|trouvaient"],
+["perdre","يفقد / يخسر","perdais|perdais|perdait|perdions|perdiez|perdaient"],
+["apporter","يحضر / يجلب","apportais|apportais|apportait|apportions|apportiez|apportaient"],
+["porter","يحمل / يرتدي","portais|portais|portait|portions|portiez|portaient"],
+["mettre","يضع","mettais|mettais|mettait|mettions|mettiez|mettaient"],
+["garder","يحتفظ","gardais|gardais|gardait|gardions|gardiez|gardaient"],
+["montrer","يُظهر / يعرض","montrais|montrais|montrait|montrions|montriez|montraient"],
+["jouer","يلعب","jouais|jouais|jouait|jouions|jouiez|jouaient"],
+["conduire","يقود","conduisais|conduisais|conduisait|conduisions|conduisiez|conduisaient"],
+["marcher","يمشي","marchais|marchais|marchait|marchions|marchiez|marchaient"],
+["courir","يركض","courais|courais|courait|courions|couriez|couraient"],
+["s’asseoir","يجلس","m’asseyais|t’asseyais|s’asseyait|nous asseyions|vous asseyiez|s’asseyaient"],
+["se tenir debout","يقف","me tenais debout|te tenais debout|se tenait debout|nous tenions debout|vous teniez debout|se tenaient debout"],
+["dormir","ينام","dormais|dormais|dormait|dormions|dormiez|dormaient"],
+["se réveiller","يستيقظ","me réveillais|te réveillais|se réveillait|nous réveillions|vous réveilliez|se réveillaient"],
+["laver","يغسل","lavais|lavais|lavait|lavions|laviez|lavaient"],
+["nettoyer","ينظف","nettoyais|nettoyais|nettoyait|nettoyions|nettoyiez|nettoyaient"],
+["voyager","يسافر","voyageais|voyageais|voyageait|voyagions|voyagiez|voyageaient"],
+["visiter","يزور","visitais|visitais|visitait|visitions|visitiez|visitaient"],
+["se souvenir de","يتذكر","me souvenais|te souvenais|se souvenait|nous souvenions|vous souveniez|se souvenaient"],
+["oublier","ينسى","oubliais|oubliais|oubliait|oubliions|oubliiez|oubliaient"],
+["pouvoir","يستطيع","pouvais|pouvais|pouvait|pouvions|pouviez|pouvaient"],
+["devoir","يجب عليه","devais|devais|devait|devions|deviez|devaient"],
+["s’appeler","يُدعى / اسمه","m’appelais|t’appelais|s’appelait|nous appelions|vous appeliez|s’appelaient"],
+["choisir","يختار","choisissais|choisissais|choisissait|choisissions|choisissiez|choisissaient"]
+];
+
+function render(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const f=document.getElementById("filter").value;
+ const root=document.getElementById("list");
+ root.innerHTML="";
+ let total=0;
+ verbs.forEach((v,i)=>{
+   const forms=v[2].split("|");
+   const hay=(v[0]+" "+v[1]).toLowerCase();
+   if(q&&!hay.includes(q)) return;
+   total++;
+   const indices=f==="all"?[0,1,2,3,4,5]:[pronouns.indexOf(f)];
+   const rows=indices.map(j=>{
+     let subject=pronouns[j];
+     let form=forms[j];
+     if(j===0 && /^[aeiouéèêëàâîïôùûüœ]/i.test(form)) subject="J’";
+     return `<div class="row"><span class="ar">${subject}</span><span class="fr">${subject==="J’"?"J’":""}${subject==="J’"?form:form}</span></div>`;
+   }).join("");
+   const card=document.createElement("section");
+   card.className="card";
+   card.innerHTML=`<div class="heading"><h2>${i+1}. ${v[0]}</h2><span class="meaning">${v[1]}</span></div><div class="rows">${indices.map(j=>{let s=pronouns[j],form=forms[j];let displayed=s==="Je"&&/^[aeiouéèêëàâîïôùûüœ]/i.test(form)?"J’"+form:s==="Je"? "Je "+form:s==="Tu"?"Tu "+form:s==="Il / Elle"?"Il / Elle "+form:s==="Nous"?"Nous "+form:s==="Vous"?"Vous "+form:"Ils / Elles "+form;return `<div class="row"><span class="ar">${["أنا","أنتَ / أنتِ","هو / هي","نحن","أنتم","هم / هن"][j]}</span><span class="fr">${displayed}</span></div>`}).join("")}<button onclick="copyVerb(${i})">نسخ التصريف</button></div>`;
+   root.appendChild(card);
+ });
+ document.getElementById("count").textContent=`عدد الأفعال الظاهرة: ${total} من ${verbs.length}`;
+}
+function copyVerb(i){
+ const v=verbs[i], forms=v[2].split("|");
+ const txt=v[0]+" — "+v[1]+"\n"+pronouns.map((p,j)=>p+" "+forms[j]).join("\n");
+ if(navigator.clipboard) navigator.clipboard.writeText(txt).then(()=>alert("تم نسخ التصريف"));
+ else alert(txt);
+}
+function resetAll(){
+ document.getElementById("search").value="";
+ document.getElementById("filter").value="all";
+ render();
+}
+render();
+</script>
+</body>
+</html>
