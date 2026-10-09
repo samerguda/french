@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Pourquoi ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-hover: #d97706;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #fef3c7;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-hover);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #fde68a;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Pourquoi ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن الأسباب والتعليل بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 كيف تجيب عن أسئلة Pourquoi ؟</h3>
+        <p>• نستخدم للإجابة: <strong>Parce que ...</strong> (لأن...) أو <strong>Car ...</strong> (لأن...)</p>
+        <p>• مثال: <em>Pourquoi apprends-tu le français ?</em> ➔ <em>Parce que je vis en Belgique.</em></p>
+        <p>• <strong>نكتة بسيطة في الاستخدام:</strong> الصيغة الرسمية <em>Pourquoi es-tu ici ?</em> والصيغة الشائعة في المحادثة <em>Pourquoi tu es ici ?</em> وكلاهما صحيح مستخدم.</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="feelings">العلاقات والمشاعر</button>
+            <button class="tab-btn" data-cat="decisions">الأسباب والقرارات</button>
+            <button class="tab-btn" data-cat="conversation">مواضيع للمحادثة</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20: أسئلة عن الحياة اليومية
+        {id: 1, cat: 'daily', fr: "Pourquoi es-tu ici ?", ar: "لماذا أنت هنا؟"},
+        {id: 2, cat: 'daily', fr: "Pourquoi es-tu en retard ?", ar: "لماذا أنت متأخر؟"},
+        {id: 3, cat: 'daily', fr: "Pourquoi es-tu fatigué ?", ar: "لماذا أنت متعب؟"},
+        {id: 4, cat: 'daily', fr: "Pourquoi es-tu triste ?", ar: "لماذا أنت حزين؟"},
+        {id: 5, cat: 'daily', fr: "Pourquoi es-tu heureux ?", ar: "لماذا أنت سعيد؟"},
+        {id: 6, cat: 'daily', fr: "Pourquoi tu ris ?", ar: "لماذا تضحك؟"},
+        {id: 7, cat: 'daily', fr: "Pourquoi tu pleures ?", ar: "لماذا تبكي؟"},
+        {id: 8, cat: 'daily', fr: "Pourquoi tu cries ?", ar: "لماذا تصرخ؟"},
+        {id: 9, cat: 'daily', fr: "Pourquoi tu dors ?", ar: "لماذا تنام؟"},
+        {id: 10, cat: 'daily', fr: "Pourquoi tu cours ?", ar: "لماذا تجري؟"},
+        {id: 11, cat: 'daily', fr: "Pourquoi tu manges maintenant ?", ar: "لماذا تأكل الآن؟"},
+        {id: 12, cat: 'daily', fr: "Pourquoi tu bois de l’eau ?", ar: "لماذا تشرب الماء؟"},
+        {id: 13, cat: 'daily', fr: "Pourquoi tu portes un manteau ?", ar: "لماذا ترتدي معطفًا؟"},
+        {id: 14, cat: 'daily', fr: "Pourquoi tu fermes la porte ?", ar: "لماذا تغلق الباب؟"},
+        {id: 15, cat: 'daily', fr: "Pourquoi tu ouvres la fenêtre ?", ar: "لماذا تفتح النافذة؟"},
+        {id: 16, cat: 'daily', fr: "Pourquoi tu regardes l’heure ?", ar: "لماذا تنظر إلى الساعة؟"},
+        {id: 17, cat: 'daily', fr: "Pourquoi tu utilises mon téléphone ?", ar: "لماذا تستخدم هاتفي؟"},
+        {id: 18, cat: 'daily', fr: "Pourquoi tu fais du bruit ?", ar: "لماذا تُصدر ضوضاء؟"},
+        {id: 19, cat: 'daily', fr: "Pourquoi tu ne réponds pas ?", ar: "لماذا لا تجيب؟"},
+        {id: 20, cat: 'daily', fr: "Pourquoi tu ne m’écoutes pas ?", ar: "لماذا لا تستمع إليّ؟"},
+
+        // 21-40: العمل والدراسة
+        {id: 21, cat: 'work', fr: "Pourquoi travailles-tu ici ?", ar: "لماذا تعمل هنا؟"},
+        {id: 22, cat: 'work', fr: "Pourquoi cherches-tu un emploi ?", ar: "لماذا تبحث عن وظيفة؟"},
+        {id: 23, cat: 'work', fr: "Pourquoi veux-tu travailler en Belgique ?", ar: "لماذا تريد العمل في بلجيكا؟"},
+        {id: 24, cat: 'work', fr: "Pourquoi as-tu quitté ton emploi ?", ar: "لماذا تركت وظيفتك؟"},
+        {id: 25, cat: 'work', fr: "Pourquoi as-tu changé de travail ?", ar: "لماذا غيّرت عملك؟"},
+        {id: 26, cat: 'work', fr: "Pourquoi veux-tu apprendre le français ?", ar: "لماذا تريد تعلم الفرنسية؟"},
+        {id: 27, cat: 'work', fr: "Pourquoi apprends-tu le néerlandais ?", ar: "لماذا تتعلم الهولندية؟"},
+        {id: 28, cat: 'work', fr: "Pourquoi étudies-tu le management ?", ar: "لماذا تدرس الإدارة؟"},
+        {id: 29, cat: 'work', fr: "Pourquoi es-tu absent aujourd’hui ?", ar: "لماذا أنت غائب اليوم؟"},
+        {id: 30, cat: 'work', fr: "Pourquoi es-tu arrivé en retard au cours ?", ar: "لماذا وصلت متأخرًا إلى الدرس؟"},
+        {id: 31, cat: 'work', fr: "Pourquoi n’as-tu pas fait tes devoirs ?", ar: "لماذا لم تؤدِّ واجباتك؟"},
+        {id: 32, cat: 'work', fr: "Pourquoi as-tu raté l’examen ?", ar: "لماذا لم تنجح في الامتحان؟"},
+        {id: 33, cat: 'work', fr: "Pourquoi veux-tu changer d’université ?", ar: "لماذا تريد تغيير الجامعة؟"},
+        {id: 34, cat: 'work', fr: "Pourquoi as-tu choisi cette formation ?", ar: "لماذا اخترت هذا التدريب؟"},
+        {id: 35, cat: 'work', fr: "Pourquoi as-tu envoyé ce CV ?", ar: "لماذا أرسلت هذه السيرة الذاتية؟"},
+        {id: 36, cat: 'work', fr: "Pourquoi veux-tu travailler dans cette entreprise ?", ar: "لماذا تريد العمل في هذه الشركة؟"},
+        {id: 37, cat: 'work', fr: "Pourquoi as-tu refusé cette offre ?", ar: "لماذا رفضت هذا العرض؟"},
+        {id: 38, cat: 'work', fr: "Pourquoi veux-tu suivre ce cours ?", ar: "لماذا تريد الالتحاق بهذه الدورة؟"},
+        {id: 39, cat: 'work', fr: "Pourquoi est-ce important pour toi ?", ar: "لماذا هذا مهم بالنسبة لك؟"},
+        {id: 40, cat: 'work', fr: "Pourquoi n’as-tu pas posé de questions ?", ar: "لماذا لم تطرح أسئلة؟"},
+
+        // 41-60: العلاقات والمشاعر
+        {id: 41, cat: 'feelings', fr: "Pourquoi m’aimes-tu ?", ar: "لماذا تحبني؟"},
+        {id: 42, cat: 'feelings', fr: "Pourquoi es-tu fâché contre moi ?", ar: "لماذا أنت غاضب مني؟"},
+        {id: 43, cat: 'feelings', fr: "Pourquoi tu ne me parles pas ?", ar: "لماذا لا تتحدث معي؟"},
+        {id: 44, cat: 'feelings', fr: "Pourquoi tu m’évites ?", ar: "لماذا تتجنبني؟"},
+        {id: 45, cat: 'feelings', fr: "Pourquoi tu me regardes comme ça ?", ar: "لماذا تنظر إليّ بهذه الطريقة؟"},
+        {id: 46, cat: 'feelings', fr: "Pourquoi tu ne m’appelles jamais ?", ar: "لماذا لا تتصل بي أبدًا؟"},
+        {id: 47, cat: 'feelings', fr: "Pourquoi tu ne réponds pas à mes messages ?", ar: "لماذا لا ترد على رسائلي؟"},
+        {id: 48, cat: 'feelings', fr: "Pourquoi as-tu changé d’avis ?", ar: "لماذا غيّرت رأيك؟"},
+        {id: 49, cat: 'feelings', fr: "Pourquoi as-tu menti ?", ar: "لماذا كذبت؟"},
+        {id: 50, cat: 'feelings', fr: "Pourquoi as-tu dit cela ?", ar: "لماذا قلت ذلك؟"},
+        {id: 51, cat: 'feelings', fr: "Pourquoi es-tu inquiet ?", ar: "لماذا أنت قلق؟"},
+        {id: 52, cat: 'feelings', fr: "Pourquoi as-tu peur ?", ar: "لماذا أنت خائف؟"},
+        {id: 53, cat: 'feelings', fr: "Pourquoi te sens-tu seul ?", ar: "لماذا تشعر بالوحدة؟"},
+        {id: 54, cat: 'feelings', fr: "Pourquoi es-tu déçu ?", ar: "لماذا أنت محبط؟"},
+        {id: 55, cat: 'feelings', fr: "Pourquoi tu souris ?", ar: "لماذا تابتسم؟"},
+        {id: 56, cat: 'feelings', fr: "Pourquoi tu ne veux pas sortir ?", ar: "لماذا لا تريد الخروج؟"},
+        {id: 57, cat: 'feelings', fr: "Pourquoi veux-tu rester seul ?", ar: "لماذا تريد البقاء وحدك؟"},
+        {id: 58, cat: 'feelings', fr: "Pourquoi as-tu quitté la maison ?", ar: "لماذا غادرت المنزل؟"},
+        {id: 59, cat: 'feelings', fr: "Pourquoi ne veux-tu pas venir avec nous ?", ar: "لماذا لا تريد المجيء معنا؟"},
+        {id: 60, cat: 'feelings', fr: "Pourquoi veux-tu aider cette personne ?", ar: "لماذا تريد مساعدة هذا الشخص؟"},
+
+        // 61-80: الأسباب والقرارات
+        {id: 61, cat: 'decisions', fr: "Pourquoi fais-tu cela ?", ar: "لماذا تفعل ذلك؟"},
+        {id: 62, cat: 'decisions', fr: "Pourquoi dis-tu ça ?", ar: "لماذا تقول هذا؟"},
+        {id: 63, cat: 'decisions', fr: "Pourquoi penses-tu ainsi ?", ar: "لماذا تفكر بهذه الطريقة؟"},
+        {id: 64, cat: 'decisions', fr: "Pourquoi as-tu choisi cette option ?", ar: "لماذا اخترت هذا الخيار؟"},
+        {id: 65, cat: 'decisions', fr: "Pourquoi as-tu acheté cette voiture ?", ar: "لماذا اشتريت هذه السيارة؟"},
+        {id: 66, cat: 'decisions', fr: "Pourquoi as-tu dépensé autant d’argent ?", ar: "لماذا أنفقت كل هذا المال؟"},
+        {id: 67, cat: 'decisions', fr: "Pourquoi veux-tu déménager ?", ar: "لماذا تريد الانتقال إلى منزل آخر؟"},
+        {id: 68, cat: 'decisions', fr: "Pourquoi habites-tu dans cette ville ?", ar: "لماذا تسكن في هذه المدينة؟"},
+        {id: 69, cat: 'decisions', fr: "Pourquoi es-tu venu ici ?", ar: "لماذا جئت إلى هنا؟"},
+        {id: 70, cat: 'decisions', fr: "Pourquoi es-tu parti si tôt ?", ar: "لماذا غادرت مبكرًا جدًا؟"},
+        {id: 71, cat: 'decisions', fr: "Pourquoi as-tu attendu si longtemps ?", ar: "لماذا انتظرت كل هذا الوقت؟"},
+        {id: 72, cat: 'decisions', fr: "Pourquoi as-tu oublié mon anniversaire ?", ar: "لماذا نسيت عيد ميلادي؟"},
+        {id: 73, cat: 'decisions', fr: "Pourquoi n’as-tu pas appelé la police ?", ar: "لماذا لم تتصل بالشرطة؟"},
+        {id: 74, cat: 'decisions', fr: "Pourquoi faut-il payer maintenant ?", ar: "لماذا يجب الدفع الآن؟"},
+        {id: 75, cat: 'decisions', fr: "Pourquoi dois-je signer ce document ?", ar: "لماذا يجب أن أوقّع هذه الوثيقة؟"},
+        {id: 76, cat: 'decisions', fr: "Pourquoi cette porte est-elle fermée ?", ar: "لماذا هذا الباب مغلق؟"},
+        {id: 77, cat: 'decisions', fr: "Pourquoi le magasin est-il fermé ?", ar: "لماذا المتجر مغلق؟"},
+        {id: 78, cat: 'decisions', fr: "Pourquoi le train est-il en retard ?", ar: "لماذا القطار متأخر؟"},
+        {id: 79, cat: 'decisions', fr: "Pourquoi cette situation est-elle difficile ?", ar: "لماذا هذا الوضع صعب؟"},
+        {id: 80, cat: 'decisions', fr: "Pourquoi est-ce que tout coûte si cher ?", ar: "لماذا كل شيء غالي الثمن؟"},
+
+        // 81-100: مواضيع متنوعة للمحادثة
+        {id: 81, cat: 'conversation', fr: "Pourquoi veux-tu vivre en Belgique ?", ar: "لماذا تريد العيش في بلجيكا؟"},
+        {id: 82, cat: 'conversation', fr: "Pourquoi as-tu choisi cette ville ?", ar: "لماذا اخترت هذه المدينة؟"},
+        {id: 83, cat: 'conversation', fr: "Pourquoi veux-tu apprendre une nouvelle langue ?", ar: "لماذا تريد تعلم لغة جديدة؟"},
+        {id: 84, cat: 'conversation', fr: "Pourquoi est-il important de travailler ?", ar: "لماذا من المهم العمل؟"},
+        {id: 85, cat: 'conversation', fr: "Pourquoi faut-il respecter les règles ?", ar: "لماذا يجب احترام القواعد؟"},
+        {id: 86, cat: 'conversation', fr: "Pourquoi les gens parlent-ils plusieurs langues ?", ar: "لماذا يتحدث الناس عدة لغات؟"},
+        {id: 87, cat: 'conversation', fr: "Pourquoi utilises-tu Internet tous les jours ?", ar: "لماذا تستخدم الإنترنت كل يوم؟"},
+        {id: 88, cat: 'conversation', fr: "Pourquoi préfères-tu rester à la maison ?", ar: "لماذا تفضّل البقاء في المنزل؟"},
+        {id: 89, cat: 'conversation', fr: "Pourquoi veux-tu voyager ?", ar: "لماذا تريد السفر؟"},
+        {id: 90, cat: 'conversation', fr: "Pourquoi as-tu besoin de cet argent ?", ar: "لماذا تحتاج إلى هذا المال؟"},
+        {id: 91, cat: 'conversation', fr: "Pourquoi cette personne est-elle célèbre ?", ar: "لماذا هذا الشخص مشهور؟"},
+        {id: 92, cat: 'conversation', fr: "Pourquoi les enfants posent-ils beaucoup de questions ?", ar: "لماذا يطرح الأطفال أسئلة كثيرة؟"},
+        {id: 93, cat: 'conversation', fr: "Pourquoi devons-nous protéger l’environnement ?", ar: "لماذا يجب أن نحمي البيئة؟"},
+        {id: 94, cat: 'conversation', fr: "Pourquoi est-il difficile d’apprendre le français ?", ar: "لماذا يصعب تعلم الفرنسية؟"},
+        {id: 95, cat: 'conversation', fr: "Pourquoi veux-tu améliorer ton niveau ?", ar: "لماذا تريد تحسين مستواك؟"},
+        {id: 96, cat: 'conversation', fr: "Pourquoi n’as-tu pas encore terminé ?", ar: "لماذا لم تنتهِ بعد؟"},
+        {id: 97, cat: 'conversation', fr: "Pourquoi as-tu décidé de partir ?", ar: "لماذا قررت المغادرة؟"},
+        {id: 98, cat: 'conversation', fr: "Pourquoi veux-tu réussir ?", ar: "لماذا تريد النجاح؟"},
+        {id: 99, cat: 'conversation', fr: "Pourquoi faut-il apprendre de ses erreurs ?", ar: "لماذا يجب أن نتعلم من أخطائنا؟"},
+        {id: 100, cat: 'conversation', fr: "Pourquoi es-tu fier de toi ?", ar: "لماذا أنت فخور بنفسك؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
