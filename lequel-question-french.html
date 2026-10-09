@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 سؤال بالفرنسية باستخدام Quel / Quelle / Quels / Quelles ?</title>
+    <title>100 سؤال بالفرنسية باستخدام Lequel / Laquelle / Lesquels / Lesquelles ?</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0284c7;
-            --primary-hover: #0369a1;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #0f172a;
@@ -52,7 +52,7 @@
         }
 
         .grammar-card {
-            background: #e0f2fe;
+            background: #eef2ff;
             border-right: 4px solid var(--primary);
             padding: 16px;
             border-radius: 8px;
@@ -67,7 +67,7 @@
 
         .grammar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 10px;
             margin-top: 8px;
         }
@@ -76,7 +76,7 @@
             background: #ffffff;
             padding: 8px 12px;
             border-radius: 6px;
-            border: 1px solid #bae6fd;
+            border: 1px solid #c7d2fe;
         }
 
         .controls {
@@ -158,7 +158,7 @@
         }
 
         .num {
-            background: #bae6fd;
+            background: #c7d2fe;
             color: var(--primary-hover);
             font-weight: 700;
             padding: 2px 8px;
@@ -199,19 +199,20 @@
 
 <div class="container">
     <header>
-        <h1>🇫🇷 100 سؤال باستخدام Quel / Quelle / Quels / Quelles ?</h1>
-        <p>دليلك التفاعلي الشامل للسؤال عن النوع، التحديد والخيارات بالفرنسية</p>
+        <h1>🇫🇷 100 سؤال باستخدام Lequel / Laquelle / Lesquels / Lesquelles ?</h1>
+        <p>دليلك التفاعلي الشامل للاختيار والتحديد من بين مجموعة خيارات بالفرنسية</p>
     </header>
 
     <div class="grammar-card">
-        <h3>💡 قاعدة التوافق النحوي (Accord de Quel):</h3>
-        <p>يتغير صيغة الأدوات <strong>Quel</strong> بحسب جنس وعدده الخاص بالاسم الذي تبحث عنه أو تسأل عنه بعدها:</p>
+        <h3>💡 قاعدة التوافق والاندماج مع حروف الجر:</h3>
+        <p>نستخدم الضمير للاختيار من بين أشياء معروفة مسبقاً (أيّ واحد؟ / أيّ واحدة؟)، وتتوافق الصيغة مع الاسم المحدّد:</p>
         <div class="grammar-grid">
-            <div class="grammar-item"><strong>Quel</strong> : مذكر مفرد (<em>Quel livre ?</em>)</div>
-            <div class="grammar-item"><strong>Quelle</strong> : مؤنث مفرد (<em>Quelle heure ?</em>)</div>
-            <div class="grammar-item"><strong>Quels</strong> : مذكر جمع (<em>Quels documents ?</em>)</div>
-            <div class="grammar-item"><strong>Quelles</strong> : مؤنث جمع (<em>Quelles langues ?</em>)</div>
+            <div class="grammar-item"><strong>Lequel</strong> : مذكر مفرد (<em>Lequel veux-tu ?</em>)</div>
+            <div class="grammar-item"><strong>Laquelle</strong> : مؤنث مفرد (<em>Laquelle est la meilleure ?</em>)</div>
+            <div class="grammar-item"><strong>Lesquels</strong> : مذكر جمع (<em>Lesquels choisis-tu ?</em>)</div>
+            <div class="grammar-item"><strong>Lesquelles</strong> : مؤنث جمع (<em>Lesquelles sont gratuites ?</em>)</div>
         </div>
+        <p style="margin-top:10px;"><strong>الاندماج مع حروف الجر:</strong> à + lequel = <strong>auquel</strong> | de + lequel = <strong>duquel</strong> | à + lesquels = <strong>auxquels</strong> | de + lesquelles = <strong>desquelles</strong></p>
     </div>
 
     <div class="controls">
@@ -220,11 +221,16 @@
         </div>
         <div class="tabs" id="categoryTabs">
             <button class="tab-btn active" data-cat="all">الكل (100)</button>
-            <button class="tab-btn" data-cat="personal">أسئلة شخصية</button>
-            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
-            <button class="tab-btn" data-cat="home">المنزل والحياة</button>
-            <button class="tab-btn" data-cat="time">الوقت والآراء</button>
-            <button class="tab-btn" data-cat="belgium">الحياة والإجراءات</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="food">الطعام والشراب</button>
+            <button class="tab-btn" data-cat="clothes">الملابس والتسوق</button>
+            <button class="tab-btn" data-cat="home">المنزل والأثاث</button>
+            <button class="tab-btn" data-cat="study">الدراسة والتعلم</button>
+            <button class="tab-btn" data-cat="work">العمل والمهنة</button>
+            <button class="tab-btn" data-cat="travel">السفر والمواصلات</button>
+            <button class="tab-btn" data-cat="tech">التكنولوجيا</button>
+            <button class="tab-btn" data-cat="health">الصحة والرياضة</button>
+            <button class="tab-btn" data-cat="general">أسئلة عامة</button>
         </div>
     </div>
 
@@ -233,115 +239,125 @@
 
 <script>
     const questions = [
-        // 1-20: أسئلة شخصية ويومية
-        {id: 1, cat: 'personal', fr: "Quel est ton nom ?", ar: "ما اسمك؟"},
-        {id: 2, cat: 'personal', fr: "Quel âge as-tu ?", ar: "كم عمرك؟"},
-        {id: 3, cat: 'personal', fr: "Quelle est ta nationalité ?", ar: "ما جنسيتك؟"},
-        {id: 4, cat: 'personal', fr: "Quelle est ton adresse ?", ar: "ما عنوانك؟"},
-        {id: 5, cat: 'personal', fr: "Quel est ton numéro de téléphone ?", ar: "ما رقم هاتفك؟"},
-        {id: 6, cat: 'personal', fr: "Quelle est ta profession ?", ar: "ما مهنتك؟"},
-        {id: 7, cat: 'personal', fr: "Quel est ton métier ?", ar: "ما عملك؟"},
-        {id: 8, cat: 'personal', fr: "Quelle est ta langue maternelle ?", ar: "ما لغتك الأم؟"},
-        {id: 9, cat: 'personal', fr: "Quelles langues parles-tu ?", ar: "ما اللغات التي تتحدثها؟"},
-        {id: 10, cat: 'personal', fr: "Quel est ton pays préféré ?", ar: "ما بلدك المفضل؟"},
-        {id: 11, cat: 'personal', fr: "Quelle est ta ville préférée ?", ar: "ما مدينتك المفضلة؟"},
-        {id: 12, cat: 'personal', fr: "Quel est ton prénom ?", ar: "ما اسمك الأول؟"},
-        {id: 13, cat: 'personal', fr: "Quel est ton nom de famille ?", ar: "ما اسم عائلتك؟"},
-        {id: 14, cat: 'personal', fr: "Quelle est ta date de naissance ?", ar: "ما تاريخ ميلادك؟"},
-        {id: 15, cat: 'personal', fr: "Quel est ton état civil ?", ar: "ما حالتك الاجتماعية؟"},
-        {id: 16, cat: 'personal', fr: "Quelle est ta situation familiale ?", ar: "ما وضعك العائلي؟"},
-        {id: 17, cat: 'personal', fr: "Quel est ton passe-temps préféré ?", ar: "ما هوايتك المفضلة؟"},
-        {id: 18, cat: 'personal', fr: "Quelle est ta couleur préférée ?", ar: "ما لونك المفضل؟"},
-        {id: 19, cat: 'personal', fr: "Quel est ton plat préféré ?", ar: "ما طبقك المفضل؟"},
-        {id: 20, cat: 'personal', fr: "Quelle est ta saison préférée ?", ar: "ما فصلك المفضل من السنة؟"},
+        // 1. الحياة اليومية
+        {id: 1, cat: 'daily', fr: "Lequel préfères-tu ?", ar: "أيّ واحد تفضّل؟"},
+        {id: 2, cat: 'daily', fr: "Laquelle veux-tu ?", ar: "أيّ واحدة تريدين؟"},
+        {id: 3, cat: 'daily', fr: "Lesquels choisis-tu ?", ar: "أيّها تختار؟"},
+        {id: 4, cat: 'daily', fr: "Lesquelles préfères-tu ?", ar: "أيّها تفضّلين؟"},
+        {id: 5, cat: 'daily', fr: "Lequel est à toi ?", ar: "أيّ واحد لك؟"},
+        {id: 6, cat: 'daily', fr: "Laquelle est à moi ?", ar: "أيّ واحدة لي؟"},
+        {id: 7, cat: 'daily', fr: "Lesquels sont disponibles ?", ar: "أيّها متاح؟"},
+        {id: 8, cat: 'daily', fr: "Lesquelles sont gratuites ?", ar: "أيّها مجاني؟"},
+        {id: 9, cat: 'daily', fr: "Lequel est le meilleur ?", ar: "أيّ واحد هو الأفضل؟"},
+        {id: 10, cat: 'daily', fr: "Laquelle est la meilleure ?", ar: "أيّ واحدة هي الأفضل؟"},
 
-        // 21-40: العمل والدراسة
-        {id: 21, cat: 'work', fr: "Quel travail cherches-tu ?", ar: "ما العمل الذي تبحث عنه؟"},
-        {id: 22, cat: 'work', fr: "Quel poste souhaites-tu obtenir ?", ar: "ما الوظيفة التي تريد الحصول عليها؟"},
-        {id: 23, cat: 'work', fr: "Quelle entreprise préfères-tu ?", ar: "ما الشركة التي تفضلها؟"},
-        {id: 24, cat: 'work', fr: "Quel est ton salaire actuel ?", ar: "ما راتبك الحالي؟"},
-        {id: 25, cat: 'work', fr: "Quel salaire souhaites-tu ?", ar: "ما الراتب الذي تريده؟"},
-        {id: 26, cat: 'work', fr: "Quelle est ton expérience professionnelle ?", ar: "ما خبرتك المهنية؟"},
-        {id: 27, cat: 'work', fr: "Quel diplôme as-tu ?", ar: "ما الشهادة التي لديك؟"},
-        {id: 28, cat: 'work', fr: "Quelle formation veux-tu suivre ?", ar: "ما التدريب الذي تريد الالتحاق به؟"},
-        {id: 29, cat: 'work', fr: "Quels métiers t’intéressent ?", ar: "ما المهن التي تهمك؟"},
-        {id: 30, cat: 'work', fr: "Quelles compétences possèdes-tu ?", ar: "ما المهارات التي تمتلكها؟"},
-        {id: 31, cat: 'work', fr: "Quel est ton niveau de français ?", ar: "ما مستواك في الفرنسية؟"},
-        {id: 32, cat: 'work', fr: "Quel est ton niveau de néerlandais ?", ar: "ما مستواك في الهولندية؟"},
-        {id: 33, cat: 'work', fr: "Quelle université fréquentes-tu ?", ar: "ما الجامعة التي تدرس فيها؟"},
-        {id: 34, cat: 'work', fr: "Quels cours suis-tu cette année ?", ar: "ما الدورات التي تتابعها هذا العام؟"},
-        {id: 35, cat: 'work', fr: "Quelles matières étudies-tu ?", ar: "ما المواد التي تدرسها؟"},
-        {id: 36, cat: 'work', fr: "Quel examen passes-tu demain ?", ar: "ما الامتحان الذي ستؤديه غدًا؟"},
-        {id: 37, cat: 'work', fr: "Quelle est la date de l’entretien ?", ar: "ما موعد المقابلة؟"},
-        {id: 38, cat: 'work', fr: "Quel document dois-je envoyer ?", ar: "ما الوثيقة التي يجب أن أرسلها؟"},
-        {id: 39, cat: 'work', fr: "Quels documents dois-je fournir ?", ar: "ما الوثائق التي يجب أن أقدمها؟"},
-        {id: 40, cat: 'work', fr: "Quelle est ta disponibilité ?", ar: "ما الأوقات التي يمكنك العمل فيها؟"},
+        // 2. الطعام والشراب
+        {id: 11, cat: 'food', fr: "Lequel de ces plats veux-tu ?", ar: "أيّ طبق من هذه الأطباق تريد؟"},
+        {id: 12, cat: 'food', fr: "Laquelle de ces pizzas préfères-tu ?", ar: "أيّ بيتزا من هذه البيتزات تفضّل؟"},
+        {id: 13, cat: 'food', fr: "Lesquels de ces fruits aimes-tu ?", ar: "أيّ فواكه من هذه الفواكه تحب؟"},
+        {id: 14, cat: 'food', fr: "Lesquelles de ces boissons préfères-tu ?", ar: "أيّ مشروبات من هذه المشروبات تفضّل؟"},
+        {id: 15, cat: 'food', fr: "Lequel est le plus délicieux ?", ar: "أيّ واحد هو الألذ؟"},
+        {id: 16, cat: 'food', fr: "Laquelle est la moins chère ?", ar: "أيّ واحدة هي الأرخص؟"},
+        {id: 17, cat: 'food', fr: "Lequel veux-tu commander ?", ar: "أيّ واحد تريد أن تطلب؟"},
+        {id: 18, cat: 'food', fr: "Laquelle vas-tu manger ?", ar: "أيّ واحدة ستأكل؟"},
+        {id: 19, cat: 'food', fr: "Lesquels sont végétariens ?", ar: "أيّها نباتي؟"},
+        {id: 20, cat: 'food', fr: "Lesquelles sont sans sucre ?", ar: "أيّها خالٍ من السكر؟"},
 
-        // 41-60: المنزل والحياة اليومية
-        {id: 41, cat: 'home', fr: "Quel appartement cherches-tu ?", ar: "أي شقة تبحث عنها؟"},
-        {id: 42, cat: 'home', fr: "Quelle maison préfères-tu ?", ar: "أي منزل تفضل؟"},
-        {id: 43, cat: 'home', fr: "Quel est le prix du loyer ?", ar: "ما قيمة الإيجار؟"},
-        {id: 44, cat: 'home', fr: "Quelle chambre veux-tu ?", ar: "أي غرفة تريد؟"},
-        {id: 45, cat: 'home', fr: "Quels meubles veux-tu acheter ?", ar: "أي أثاث تريد شراءه؟"},
-        {id: 46, cat: 'home', fr: "Quelles courses dois-tu faire ?", ar: "ما المشتريات التي يجب أن تشتريها؟"},
-        {id: 47, cat: 'home', fr: "Quel magasin préfères-tu ?", ar: "أي متجر تفضل؟"},
-        {id: 48, cat: 'home', fr: "Quelle marque utilises-tu ?", ar: "أي علامة تجارية تستخدم؟"},
-        {id: 49, cat: 'home', fr: "Quel téléphone as-tu ?", ar: "أي هاتف لديك؟"},
-        {id: 50, cat: 'home', fr: "Quelle voiture conduis-tu ?", ar: "أي سيارة تقود؟"},
-        {id: 51, cat: 'home', fr: "Quel bus dois-je prendre ?", ar: "أي حافلة يجب أن أستقل؟"},
-        {id: 52, cat: 'home', fr: "Quelle route devons-nous suivre ?", ar: "أي طريق يجب أن نسلك؟"},
-        {id: 53, cat: 'home', fr: "Quel train va à Bruxelles ?", ar: "أي قطار يذهب إلى بروكسل؟"},
-        {id: 54, cat: 'home', fr: "Quelle station est la plus proche ?", ar: "أي محطة هي الأقرب؟"},
-        {id: 55, cat: 'home', fr: "Quel restaurant recommandes-tu ?", ar: "أي مطعم تنصح به؟"},
-        {id: 56, cat: 'home', fr: "Quelle table préfères-tu ?", ar: "أي طاولة تفضل؟"},
-        {id: 57, cat: 'home', fr: "Quel plat veux-tu commander ?", ar: "أي طبق تريد طلبه؟"},
-        {id: 58, cat: 'home', fr: "Quelle boisson veux-tu ?", ar: "أي مشروب تريد؟"},
-        {id: 59, cat: 'home', fr: "Quels vêtements portes-tu en hiver ?", ar: "أي ملابس ترتدي في الشتاء؟"},
-        {id: 60, cat: 'home', fr: "Quelles chaussures veux-tu acheter ?", ar: "أي أحذية تريد شراءها؟"},
+        // 3. الملابس والتسوق
+        {id: 21, cat: 'clothes', fr: "Lequel de ces pantalons préfères-tu ?", ar: "أيّ بنطال من هذه البناطيل تفضّل؟"},
+        {id: 22, cat: 'clothes', fr: "Laquelle de ces robes veux-tu ?", ar: "أيّ فستان من هذه الفساتين تريد؟"},
+        {id: 23, cat: 'clothes', fr: "Lesquels de ces vêtements sont en promotion ?", ar: "أيّ ملابس من هذه الملابس عليها تخفيض؟"},
+        {id: 24, cat: 'clothes', fr: "Lesquelles de ces chaussures sont à ma taille ?", ar: "أيّ أحذية من هذه الأحذية مقاسي؟"},
+        {id: 25, cat: 'clothes', fr: "Lequel est le moins cher ?", ar: "أيّ واحد هو الأقل سعرًا؟"},
+        {id: 26, cat: 'clothes', fr: "Laquelle est de meilleure qualité ?", ar: "أيّ واحدة جودتها أفضل؟"},
+        {id: 27, cat: 'clothes', fr: "Lequel vas-tu acheter ?", ar: "أيّ واحد ستشتري؟"},
+        {id: 28, cat: 'clothes', fr: "Laquelle vas-tu essayer ?", ar: "أيّ واحدة ستجرّب؟"},
+        {id: 29, cat: 'clothes', fr: "Lesquels préfères-tu porter ?", ar: "أيّها تفضّل أن ترتدي؟"},
+        {id: 30, cat: 'clothes', fr: "Lesquelles veux-tu retourner ?", ar: "أيّها تريد إرجاعها؟"},
 
-        // 61-80: الوقت والاختيارات والآراء
-        {id: 61, cat: 'time', fr: "Quel jour sommes-nous ?", ar: "ما اليوم؟"},
-        {id: 62, cat: 'time', fr: "Quelle heure est-il ?", ar: "كم الساعة؟"},
-        {id: 63, cat: 'time', fr: "Quel jour préfères-tu ?", ar: "أي يوم تفضل؟"},
-        {id: 64, cat: 'time', fr: "Quel mois préfères-tu ?", ar: "أي شهر تفضل؟"},
-        {id: 65, cat: 'time', fr: "Quelle date te convient ?", ar: "أي تاريخ يناسبك؟"},
-        {id: 66, cat: 'time', fr: "Quelle heure te convient ?", ar: "أي ساعة تناسبك؟"},
-        {id: 67, cat: 'time', fr: "Quel moment préfères-tu ?", ar: "أي وقت تفضل؟"},
-        {id: 68, cat: 'time', fr: "Quelle période est la plus pratique ?", ar: "أي فترة هي الأنسب؟"},
-        {id: 69, cat: 'time', fr: "Quel film veux-tu regarder ?", ar: "أي فيلم تريد مشاهدته؟"},
-        {id: 70, cat: 'time', fr: "Quelle série regardes-tu ?", ar: "أي مسلسل تشاهد؟"},
-        {id: 71, cat: 'time', fr: "Quel livre lis-tu ?", ar: "أي كتاب تقرأ؟"},
-        {id: 72, cat: 'time', fr: "Quels sports pratiques-tu ?", ar: "ما الرياضات التي تمارسها؟"},
-        {id: 73, cat: 'time', fr: "Quelle musique écoutes-tu ?", ar: "أي موسيقى تستمع إليها؟"},
-        {id: 74, cat: 'time', fr: "Quels pays veux-tu visiter ?", ar: "أي بلدان تريد زيارتها؟"},
-        {id: 75, cat: 'time', fr: "Quelles villes connais-tu en Belgique ?", ar: "ما المدن التي تعرفها في بلجيكا؟"},
-        {id: 76, cat: 'time', fr: "Quel est ton avis sur ce sujet ?", ar: "ما رأيك في هذا الموضوع؟"},
-        {id: 77, cat: 'time', fr: "Quelle solution proposes-tu ?", ar: "ما الحل الذي تقترحه؟"},
-        {id: 78, cat: 'time', fr: "Quel problème rencontres-tu ?", ar: "ما المشكلة التي تواجهها؟"},
-        {id: 79, cat: 'time', fr: "Quelles difficultés as-tu rencontrées ?", ar: "ما الصعوبات التي واجهتها؟"},
-        {id: 80, cat: 'time', fr: "Quel choix préfères-tu ?", ar: "أي خيار تفضل؟"},
+        // 4. المنزل والأثاث
+        {id: 31, cat: 'home', fr: "Lequel de ces canapés préfères-tu ?", ar: "أيّ أريكة من هذه الأرائك تفضّل؟"},
+        {id: 32, cat: 'home', fr: "Laquelle de ces chambres est libre ?", ar: "أيّ غرفة من هذه الغرف شاغرة؟"},
+        {id: 33, cat: 'home', fr: "Lesquels de ces meubles sont neufs ?", ar: "أيّ قطع أثاث من هذه القطع جديدة؟"},
+        {id: 34, cat: 'home', fr: "Lesquelles de ces tables sont disponibles ?", ar: "أيّ طاولات من هذه الطاولات متاحة؟"},
+        {id: 35, cat: 'home', fr: "Lequel est dans le salon ?", ar: "أيّ واحد موجود في غرفة المعيشة؟"},
+        {id: 36, cat: 'home', fr: "Laquelle est dans la cuisine ?", ar: "أيّ واحدة موجودة في المطبخ؟"},
+        {id: 37, cat: 'home', fr: "Lequel veux-tu déplacer ?", ar: "أيّ واحد تريد نقله؟"},
+        {id: 38, cat: 'home', fr: "Laquelle dois-je nettoyer ?", ar: "أيّ واحدة يجب أن أنظّف؟"},
+        {id: 39, cat: 'home', fr: "Lesquels dois-je réparer ?", ar: "أيّها يجب أن أصلحه؟"},
+        {id: 40, cat: 'home', fr: "Lesquelles sont à vendre ?", ar: "أيّها معروض للبيع؟"},
 
-        // 81-100: أسئلة مهمة للعيش في بلجيكا
-        {id: 81, cat: 'belgium', fr: "Quel document faut-il pour s’inscrire à la commune ?", ar: "ما الوثيقة المطلوبة للتسجيل في البلدية؟"},
-        {id: 82, cat: 'belgium', fr: "Quelle commune habites-tu ?", ar: "في أي بلدية تسكن؟"},
-        {id: 83, cat: 'belgium', fr: "Quel titre de séjour possèdes-tu ?", ar: "ما نوع تصريح الإقامة الذي لديك؟"},
-        {id: 84, cat: 'belgium', fr: "Quelle carte dois-je présenter ?", ar: "أي بطاقة يجب أن أقدم؟"},
-        {id: 85, cat: 'belgium', fr: "Quels documents faut-il pour travailler ?", ar: "ما الوثائق المطلوبة للعمل؟"},
-        {id: 86, cat: 'belgium', fr: "Quelle assurance maladie as-tu ?", ar: "ما التأمين الصحي الذي لديك؟"},
-        {id: 87, cat: 'belgium', fr: "Quel organisme dois-je contacter ?", ar: "ما الجهة التي يجب أن أتواصل معها؟"},
-        {id: 88, cat: 'belgium', fr: "Quelle formation de néerlandais choisis-tu ?", ar: "أي دورة هولندية تختار؟"},
-        {id: 89, cat: 'belgium', fr: "Quels cours sont disponibles en ligne ?", ar: "ما الدورات المتاحة عبر الإنترنت؟"},
-        {id: 90, cat: 'belgium', fr: "Quelles écoles proposent des cours intensifs ?", ar: "ما المدارس التي تقدم دورات مكثفة؟"},
-        {id: 91, cat: 'belgium', fr: "Quel est le prix de cette formation ?", ar: "ما سعر هذا التدريب؟"},
-        {id: 92, cat: 'belgium', fr: "Quelle est la durée du cours ?", ar: "ما مدة الدورة؟"},
-        {id: 93, cat: 'belgium', fr: "Quels emplois sont disponibles près de chez toi ?", ar: "ما الوظائف المتاحة بالقرب من منزلك؟"},
-        {id: 94, cat: 'belgium', fr: "Quelles entreprises recrutent des ingénieurs ?", ar: "ما الشركات التي توظف مهندسين؟"},
-        {id: 95, cat: 'belgium', fr: "Quel type de contrat proposes-tu ?", ar: "ما نوع العقد الذي تقترحه؟"},
-        {id: 96, cat: 'belgium', fr: "Quelle est la date de début du contrat ?", ar: "ما تاريخ بدء العقد؟"},
-        {id: 97, cat: 'belgium', fr: "Quels horaires de travail préfères-tu ?", ar: "ما ساعات العمل التي تفضلها؟"},
-        {id: 98, cat: 'belgium', fr: "Quelle est la procédure à suivre ?", ar: "ما الإجراءات التي يجب اتباعها؟"},
-        {id: 99, cat: 'belgium', fr: "Quel est le prochain rendez-vous ?", ar: "متى الموعد القادم؟"},
-        {id: 100, cat: 'belgium', fr: "Quelles sont tes priorités cette année ?", ar: "ما أولوياتك هذا العام؟"}
+        // 5. الدراسة والتعلم
+        {id: 41, cat: 'study', fr: "Lequel de ces cours préfères-tu ?", ar: "أيّ دورة من هذه الدورات تفضّل؟"},
+        {id: 42, cat: 'study', fr: "Laquelle de ces matières est difficile ?", ar: "أيّ مادة من هذه المواد صعبة؟"},
+        {id: 43, cat: 'study', fr: "Lesquels de ces livres as-tu lus ?", ar: "أيّ كتب من هذه الكتب قرأت؟"},
+        {id: 44, cat: 'study', fr: "Lesquelles de ces langues parles-tu ?", ar: "أيّ لغات من هذه اللغات تتحدث؟"},
+        {id: 45, cat: 'study', fr: "Lequel est obligatoire ?", ar: "أيّ واحد إلزامي؟"},
+        {id: 46, cat: 'study', fr: "Laquelle est facultative ?", ar: "أيّ واحدة اختيارية؟"},
+        {id: 47, cat: 'study', fr: "Lequel dois-je étudier en premier ?", ar: "أيّ واحد يجب أن أدرسه أولًا؟"},
+        {id: 48, cat: 'study', fr: "Laquelle veux-tu apprendre ?", ar: "أيّ واحدة تريد أن تتعلّمها؟"},
+        {id: 49, cat: 'study', fr: "Lesquels sont les plus utiles ?", ar: "أيّها الأكثر فائدة؟"},
+        {id: 50, cat: 'study', fr: "Lesquelles dois-je réviser ?", ar: "أيّها يجب أن أراجعها؟"},
+
+        // 6. العمل والمهنة
+        {id: 51, cat: 'work', fr: "Lequel de ces emplois t’intéresse ?", ar: "أيّ وظيفة من هذه الوظائف تهمّك؟"},
+        {id: 52, cat: 'work', fr: "Laquelle de ces entreprises recrute ?", ar: "أيّ شركة من هذه الشركات توظّف؟"},
+        {id: 53, cat: 'work', fr: "Lesquels de ces postes sont à temps plein ?", ar: "أيّ وظائف من هذه الوظائف بدوام كامل؟"},
+        {id: 54, cat: 'work', fr: "Lesquelles de ces offres sont récentes ?", ar: "أيّ إعلانات من هذه الإعلانات حديثة؟"},
+        {id: 55, cat: 'work', fr: "Lequel préfères-tu : le bureau ou le chantier ?", ar: "أيّهما تفضّل: المكتب أم موقع العمل؟"},
+        {id: 56, cat: 'work', fr: "Laquelle est la plus intéressante ?", ar: "أيّ واحدة هي الأكثر إثارة للاهتمام؟"},
+        {id: 57, cat: 'work', fr: "Lequel dois-je accepter ?", ar: "أيّ عرض يجب أن أقبل؟"},
+        {id: 58, cat: 'work', fr: "Laquelle dois-je contacter ?", ar: "أيّ شركة يجب أن أتواصل معها؟"},
+        {id: 59, cat: 'work', fr: "Lesquels correspondent à mon expérience ?", ar: "أيّها يتناسب مع خبرتي؟"},
+        {id: 60, cat: 'work', fr: "Lesquelles exigent un diplôme ?", ar: "أيّها تتطلب شهادة؟"},
+
+        // 7. السفر والمواصلات
+        {id: 61, cat: 'travel', fr: "Lequel de ces trains va à Bruxelles ?", ar: "أيّ قطار من هذه القطارات يذهب إلى بروكسل؟"},
+        {id: 62, cat: 'travel', fr: "Laquelle de ces lignes dois-je prendre ?", ar: "أيّ خط من هذه الخطوط يجب أن أستقل؟"},
+        {id: 63, cat: 'travel', fr: "Lesquels de ces bus passent ici ?", ar: "أيّ حافلات من هذه الحافلات تمرّ من هنا؟"},
+        {id: 64, cat: 'travel', fr: "Lesquelles de ces villes veux-tu visiter ?", ar: "أيّ مدن من هذه المدن تريد زيارتها؟"},
+        {id: 65, cat: 'travel', fr: "Lequel est le plus rapide ?", ar: "أيّ واحد هو الأسرع؟"},
+        {id: 66, cat: 'travel', fr: "Laquelle est la plus proche ?", ar: "أيّ واحدة هي الأقرب؟"},
+        {id: 67, cat: 'travel', fr: "Lequel dois-je réserver ?", ar: "أيّ واحد يجب أن أحجز؟"},
+        {id: 68, cat: 'travel', fr: "Laquelle préfères-tu pour les vacances ?", ar: "أيّ واحدة تفضّل لقضاء العطلة؟"},
+        {id: 69, cat: 'travel', fr: "Lesquels sont directs ?", ar: "أيّها مباشر؟"},
+        {id: 70, cat: 'travel', fr: "Lesquelles sont moins chères ?", ar: "أيّها أقل تكلفة؟"},
+
+        // 8. التكنولوجيا والإنترنت
+        {id: 71, cat: 'tech', fr: "Lequel de ces ordinateurs préfères-tu ?", ar: "أيّ كمبيوتر من هذه الكمبيوترات تفضّل؟"},
+        {id: 72, cat: 'tech', fr: "Laquelle de ces applications utilises-tu ?", ar: "أيّ تطبيق من هذه التطبيقات تستخدم؟"},
+        {id: 73, cat: 'tech', fr: "Lesquels de ces fichiers dois-je envoyer ?", ar: "أيّ ملفات من هذه الملفات يجب أن أرسل؟"},
+        {id: 74, cat: 'tech', fr: "Lesquelles de ces photos veux-tu garder ?", ar: "أيّ صور من هذه الصور تريد الاحتفاظ بها؟"},
+        {id: 75, cat: 'tech', fr: "Lequel fonctionne le mieux ?", ar: "أيّ واحد يعمل بأفضل شكل؟"},
+        {id: 76, cat: 'tech', fr: "Laquelle est compatible avec mon téléphone ?", ar: "أيّ واحدة متوافقة مع هاتفي؟"},
+        {id: 77, cat: 'tech', fr: "Lequel dois-je télécharger ?", ar: "أيّ واحد يجب أن أنزّله؟"},
+        {id: 78, cat: 'tech', fr: "Laquelle dois-je installer ?", ar: "أيّ واحدة يجب أن أثبّتها؟"},
+        {id: 79, cat: 'tech', fr: "Lesquels sont gratuits ?", ar: "أيّها مجاني؟"},
+        {id: 80, cat: 'tech', fr: "Lesquelles sont sécurisées ?", ar: "أيّها آمن؟"},
+
+        // 9. الصحة والرياضة
+        {id: 81, cat: 'health', fr: "Lequel de ces exercices préfères-tu ?", ar: "أيّ تمرين من هذه التمارين تفضّل؟"},
+        {id: 82, cat: 'health', fr: "Laquelle de ces activités est la plus facile ?", ar: "أيّ نشاط من هذه الأنشطة هو الأسهل؟"},
+        {id: 83, cat: 'health', fr: "Lesquels de ces sports pratiques-tu ?", ar: "أيّ رياضات من هذه الرياضات تمارس؟"},
+        {id: 84, cat: 'health', fr: "Lesquelles de ces habitudes sont bonnes pour la santé ?", ar: "أيّ عادات من هذه العادات مفيدة للصحة؟"},
+        {id: 85, cat: 'health', fr: "Lequel est le plus efficace ?", ar: "أيّ واحد هو الأكثر فعالية؟"},
+        {id: 86, cat: 'health', fr: "Laquelle dois-je choisir pour commencer ?", ar: "أيّ واحدة يجب أن أختار للبدء؟"},
+        {id: 87, cat: 'health', fr: "Lequel préfères-tu : courir ou nager ?", ar: "أيّهما تفضّل: الجري أم السباحة؟"},
+        {id: 88, cat: 'health', fr: "Laquelle est adaptée aux débutants ?", ar: "أيّ واحدة مناسبة للمبتدئين؟"},
+        {id: 89, cat: 'health', fr: "Lesquels dois-je faire chaque jour ?", ar: "أيّ تمارين يجب أن أمارس كل يوم؟"},
+        {id: 90, cat: 'health', fr: "Lesquelles sont recommandées ?", ar: "أيّها يُنصح بها؟"},
+
+        // 10. أسئلة عامة ومحادثات
+        {id: 91, cat: 'general', fr: "Lequel de ces deux livres est à toi ?", ar: "أيّ واحد من هذين الكتابين لك؟"},
+        {id: 92, cat: 'general', fr: "Laquelle de ces deux réponses est correcte ?", ar: "أيّ واحدة من هاتين الإجابتين صحيحة؟"},
+        {id: 93, cat: 'general', fr: "Lesquels de ces candidats ont réussi ?", ar: "أيّ مرشحين من هؤلاء نجحوا؟"},
+        {id: 94, cat: 'general', fr: "Lesquelles de ces propositions acceptes-tu ?", ar: "أيّ مقترحات من هذه المقترحات تقبل؟"},
+        {id: 95, cat: 'general', fr: "Lequel choisirais-tu à ma place ?", ar: "أيّ واحد كنت ستختار لو كنت مكاني؟"},
+        {id: 96, cat: 'general', fr: "Laquelle te semble la plus logique ?", ar: "أيّ واحدة تبدو لك الأكثر منطقية؟"},
+        {id: 97, cat: 'general', fr: "Lesquels connais-tu personnellement ?", ar: "أيّ أشخاص من هؤلاء تعرفهم شخصيًا؟"},
+        {id: 98, cat: 'general', fr: "Lesquelles as-tu déjà visitées ?", ar: "أيّ أماكن من هذه الأماكن زرتها بالفعل؟"},
+        {id: 99, cat: 'general', fr: "Lequel te convient le mieux ?", ar: "أيّ واحد يناسبك أكثر؟"},
+        {id: 100, cat: 'general', fr: "Laquelle choisirais-tu si tu avais le choix ?", ar: "أيّ واحدة كنت ستختار لو كان لديك الاختيار؟"}
     ];
 
     const grid = document.getElementById('grid');
