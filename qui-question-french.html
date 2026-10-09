@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Qui ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent: #22c55e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .num {
+            background: #e0e7ff;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .questions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Qui ?</h1>
+        <p>دليلك الشامل للسؤال عن الأشخاص باللغة الفرنسية مع الترجمة العربية</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="family">العائلة والأشخاص</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="tense">الأزمنة</button>
+            <button class="tab-btn" data-cat="misc">أسئلة متنوعة</button>
+        </div>
+    </div>
+
+    <div class="questions-grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20
+        {id: 1, cat: 'family', fr: "Qui es-tu ?", ar: "مَن أنت؟"},
+        {id: 2, cat: 'family', fr: "Qui êtes-vous ?", ar: "مَن حضرتك؟"},
+        {id: 3, cat: 'family', fr: "Qui est-il ?", ar: "مَن هو؟"},
+        {id: 4, cat: 'family', fr: "Qui est-elle ?", ar: "مَن هي؟"},
+        {id: 5, cat: 'family', fr: "Qui sont-ils ?", ar: "مَن هم؟"},
+        {id: 6, cat: 'family', fr: "Qui sont-elles ?", ar: "مَن هنّ؟"},
+        {id: 7, cat: 'family', fr: "Qui est-ce ?", ar: "مَن هذا؟"},
+        {id: 8, cat: 'family', fr: "Qui est ton père ?", ar: "مَن هو والدك؟"},
+        {id: 9, cat: 'family', fr: "Qui est ta mère ?", ar: "مَن هي والدتك؟"},
+        {id: 10, cat: 'family', fr: "Qui sont tes parents ?", ar: "مَن والداك؟"},
+        {id: 11, cat: 'family', fr: "Qui est ton frère ?", ar: "مَن هو أخوك؟"},
+        {id: 12, cat: 'family', fr: "Qui est ta sœur ?", ar: "مَن هي أختك؟"},
+        {id: 13, cat: 'family', fr: "Qui est ton mari ?", ar: "مَن هو زوجك؟"},
+        {id: 14, cat: 'family', fr: "Qui est ta femme ?", ar: "مَن هي زوجتك؟"},
+        {id: 15, cat: 'family', fr: "Qui est ton meilleur ami ?", ar: "مَن هو أفضل صديق لك؟"},
+        {id: 16, cat: 'family', fr: "Qui est ta meilleure amie ?", ar: "مَن هي أفضل صديقة لك؟"},
+        {id: 17, cat: 'family', fr: "Qui habite avec toi ?", ar: "مَن يسكن معك؟"},
+        {id: 18, cat: 'family', fr: "Qui vit dans cette maison ?", ar: "مَن يعيش في هذا المنزل؟"},
+        {id: 19, cat: 'family', fr: "Qui est le plus âgé de ta famille ?", ar: "مَن أكبر شخص في عائلتك؟"},
+        {id: 20, cat: 'family', fr: "Qui est le plus jeune de la famille ?", ar: "مَن أصغر شخص في العائلة؟"},
+        
+        // 21-40
+        {id: 21, cat: 'work', fr: "Qui est ton professeur ?", ar: "مَن هو أستاذك؟"},
+        {id: 22, cat: 'work', fr: "Qui enseigne le français ?", ar: "مَن يُدرّس اللغة الفرنسية؟"},
+        {id: 23, cat: 'work', fr: "Qui est ton directeur ?", ar: "مَن هو مديرك؟"},
+        {id: 24, cat: 'work', fr: "Qui travaille avec toi ?", ar: "مَن يعمل معك؟"},
+        {id: 25, cat: 'work', fr: "Qui est ton collègue ?", ar: "مَن هو زميلك في العمل؟"},
+        {id: 26, cat: 'work', fr: "Qui cherche un emploi ?", ar: "مَن يبحث عن وظيفة؟"},
+        {id: 27, cat: 'work', fr: "Qui veut travailler en Belgique ?", ar: "مَن يريد العمل في بلجيكا؟"},
+        {id: 28, cat: 'work', fr: "Qui a un entretien demain ?", ar: "مَن لديه مقابلة غدًا؟"},
+        {id: 29, cat: 'work', fr: "Qui a envoyé ce CV ?", ar: "مَن أرسل هذه السيرة الذاتية؟"},
+        {id: 30, cat: 'work', fr: "Qui a appelé le responsable ?", ar: "مَن اتصل بالمسؤول؟"},
+        {id: 31, cat: 'work', fr: "Qui est le responsable de cette équipe ?", ar: "مَن المسؤول عن هذا الفريق؟"},
+        {id: 32, cat: 'work', fr: "Qui travaille dans ce bureau ?", ar: "مَن يعمل في هذا المكتب؟"},
+        {id: 33, cat: 'work', fr: "Qui est étudiant ?", ar: "مَن هو الطالب؟"},
+        {id: 34, cat: 'work', fr: "Qui étudie le français ?", ar: "مَن يدرس اللغة الفرنسية؟"},
+        {id: 35, cat: 'work', fr: "Qui parle néerlandais ?", ar: "مَن يتحدث الهولندية؟"},
+        {id: 36, cat: 'work', fr: "Qui parle anglais ?", ar: "مَن يتحدث الإنجليزية؟"},
+        {id: 37, cat: 'work', fr: "Qui a réussi l’examen ?", ar: "مَن نجح في الامتحان؟"},
+        {id: 38, cat: 'work', fr: "Qui a raté le cours ?", ar: "مَن فاته الدرس؟"},
+        {id: 39, cat: 'work', fr: "Qui veut apprendre avec moi ?", ar: "مَن يريد أن يتعلم معي؟"},
+        {id: 40, cat: 'work', fr: "Qui va à l’université aujourd’hui ?", ar: "مَن سيذهب إلى الجامعة اليوم؟"},
+
+        // 41-60
+        {id: 41, cat: 'daily', fr: "Qui prépare le petit-déjeuner ?", ar: "مَن يُحضّر الإفطار؟"},
+        {id: 42, cat: 'daily', fr: "Qui fait la cuisine ?", ar: "مَن يطبخ؟"},
+        {id: 43, cat: 'daily', fr: "Qui fait le ménage ?", ar: "مَن ينظف المنزل؟"},
+        {id: 44, cat: 'daily', fr: "Qui lave les vêtements ?", ar: "مَن يغسل الملابس؟"},
+        {id: 45, cat: 'daily', fr: "Qui fait les courses ?", ar: "مَن يتسوق؟"},
+        {id: 46, cat: 'daily', fr: "Qui ouvre la porte ?", ar: "مَن يفتح الباب؟"},
+        {id: 47, cat: 'daily', fr: "Qui ferme la fenêtre ?", ar: "مَن يغلق النافذة؟"},
+        {id: 48, cat: 'daily', fr: "Qui a pris mon téléphone ?", ar: "مَن أخذ هاتفي؟"},
+        {id: 49, cat: 'daily', fr: "Qui a vu mes clés ?", ar: "مَن رأى مفاتيحي؟"},
+        {id: 50, cat: 'daily', fr: "Qui a acheté ce pain ?", ar: "مَن اشترى هذا الخبز؟"},
+        {id: 51, cat: 'daily', fr: "Qui a préparé le dîner ?", ar: "مَن حضّر العشاء؟"},
+        {id: 52, cat: 'daily', fr: "Qui va faire les courses ?", ar: "مَن سيذهب للتسوق؟"},
+        {id: 53, cat: 'daily', fr: "Qui peut m’aider ?", ar: "مَن يستطيع مساعدتي؟"},
+        {id: 54, cat: 'daily', fr: "Qui veut du café ?", ar: "مَن يريد القهوة؟"},
+        {id: 55, cat: 'daily', fr: "Qui a faim ?", ar: "مَن يشعر بالجوع؟"},
+        {id: 56, cat: 'daily', fr: "Qui a soif ?", ar: "مَن يشعر بالعطش؟"},
+        {id: 57, cat: 'daily', fr: "Qui est à la maison ?", ar: "مَن في المنزل؟"},
+        {id: 58, cat: 'daily', fr: "Qui est dans la cuisine ?", ar: "مَن في المطبخ؟"},
+        {id: 59, cat: 'daily', fr: "Qui dort dans cette chambre ?", ar: "مَن ينام في هذه الغرفة؟"},
+        {id: 60, cat: 'daily', fr: "Qui va sortir ce soir ?", ar: "مَن سيخرج هذا المساء؟"},
+
+        // 61-80
+        {id: 61, cat: 'tense', fr: "Qui est venu hier ?", ar: "مَن جاء أمس؟"},
+        {id: 62, cat: 'tense', fr: "Qui est parti tôt ?", ar: "مَن غادر مبكرًا؟"},
+        {id: 63, cat: 'tense', fr: "Qui a téléphoné ce matin ?", ar: "مَن اتصل هذا الصباح؟"},
+        {id: 64, cat: 'tense', fr: "Qui a dit cela ?", ar: "مَن قال ذلك؟"},
+        {id: 65, cat: 'tense', fr: "Qui a fait cette erreur ?", ar: "مَن ارتكب هذا الخطأ؟"},
+        {id: 66, cat: 'tense', fr: "Qui a cassé le verre ?", ar: "مَن كسر الكوب؟"},
+        {id: 67, cat: 'tense', fr: "Qui a gagné le match ?", ar: "مَن فاز بالمباراة؟"},
+        {id: 68, cat: 'tense', fr: "Qui a perdu son portefeuille ?", ar: "مَن أضاع محفظته؟"},
+        {id: 69, cat: 'tense', fr: "Qui a payé l’addition ?", ar: "مَن دفع الفاتورة؟"},
+        {id: 70, cat: 'tense', fr: "Qui a réservé la table ?", ar: "مَن حجز الطاولة؟"},
+        {id: 71, cat: 'tense', fr: "Qui va venir demain ?", ar: "مَن سيأتي غدًا؟"},
+        {id: 72, cat: 'tense', fr: "Qui va nous accompagner ?", ar: "مَن سيرافقنا؟"},
+        {id: 73, cat: 'tense', fr: "Qui va conduire la voiture ?", ar: "مَن سيقود السيارة؟"},
+        {id: 74, cat: 'tense', fr: "Qui va commencer le travail ?", ar: "مَن سيبدأ العمل؟"},
+        {id: 75, cat: 'tense', fr: "Qui va répondre à la question ?", ar: "مَن سيجيب عن السؤال؟"},
+        {id: 76, cat: 'tense', fr: "Qui va gagner le concours ?", ar: "مَن سيفوز بالمسابقة؟"},
+        {id: 77, cat: 'tense', fr: "Qui sera présent demain ?", ar: "مَن سيكون حاضرًا غدًا؟"},
+        {id: 78, cat: 'tense', fr: "Qui viendra avec nous ?", ar: "مَن سيأتي معنا؟"},
+        {id: 79, cat: 'tense', fr: "Qui va m’appeler plus tard ?", ar: "مَن سيتصل بي لاحقًا؟"},
+        {id: 80, cat: 'tense', fr: "Qui va s’occuper des enfants ?", ar: "مَن سيعتني بالأطفال؟"},
+
+        // 81-100
+        {id: 81, cat: 'misc', fr: "Qui a raison ?", ar: "مَن على حق؟"},
+        {id: 82, cat: 'misc', fr: "Qui a tort ?", ar: "مَن المخطئ؟"},
+        {id: 83, cat: 'misc', fr: "Qui est responsable ?", ar: "مَن المسؤول؟"},
+        {id: 84, cat: 'misc', fr: "Qui est disponible maintenant ?", ar: "مَن المتاح الآن؟"},
+        {id: 85, cat: 'misc', fr: "Qui est intéressé par ce poste ?", ar: "مَن المهتم بهذه الوظيفة؟"},
+        {id: 86, cat: 'misc', fr: "Qui connaît cette personne ?", ar: "مَن يعرف هذا الشخص؟"},
+        {id: 87, cat: 'misc', fr: "Qui comprend la question ?", ar: "مَن يفهم السؤال؟"},
+        {id: 88, cat: 'misc', fr: "Qui peut expliquer cette règle ?", ar: "مَن يستطيع شرح هذه القاعدة؟"},
+        {id: 89, cat: 'misc', fr: "Qui a besoin d’aide ?", ar: "مَن يحتاج إلى المساعدة؟"},
+        {id: 90, cat: 'misc', fr: "Qui veut participer ?", ar: "مَن يريد المشاركة؟"},
+        {id: 91, cat: 'misc', fr: "Qui a laissé ce message ?", ar: "مَن ترك هذه الرسالة؟"},
+        {id: 92, cat: 'misc', fr: "Qui m’a envoyé cet e-mail ?", ar: "مَن أرسل لي هذا البريد الإلكتروني؟"},
+        {id: 93, cat: 'misc', fr: "Qui t’a appris le français ?", ar: "مَن علّمك الفرنسية؟"},
+        {id: 94, cat: 'misc', fr: "Qui t’a dit ça ?", ar: "مَن قال لك ذلك؟"},
+        {id: 95, cat: 'misc', fr: "À qui parles-tu ?", ar: "مع مَن تتحدث؟"},
+        {id: 96, cat: 'misc', fr: "Avec qui habites-tu ?", ar: "مع مَن تسكن؟"},
+        {id: 97, cat: 'misc', fr: "Avec qui travailles-tu ?", ar: "مع مَن تعمل؟"},
+        {id: 98, cat: 'misc', fr: "De qui parles-tu ?", ar: "عمّن تتحدث؟"},
+        {id: 99, cat: 'misc', fr: "Pour qui travailles-tu ?", ar: "لِمَن تعمل؟"},
+        {id: 100, cat: 'misc', fr: "Chez qui vas-tu ?", ar: "إلى منزل مَن ستذهب؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
