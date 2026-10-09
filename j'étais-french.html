@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة بالفرنسية — J’étais (كنتُ)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #eef2ff;
+            border-right: 4px solid var(--primary);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 10px;
+        }
+
+        .conjugation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            direction: ltr;
+        }
+
+        .conj-item {
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #e0e7ff;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 جملة باستخدام J’étais</h1>
+        <p>دليلك الشامل لاستخدام الفعل être في الماضي المستمر (L'imparfait)</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 تصريف الفعل être في l'imparfait:</h3>
+        <div class="conjugation-grid">
+            <div class="conj-item">J'étais (كنتُ)</div>
+            <div class="conj-item">Tu étais (كنتَ/كنتِ)</div>
+            <div class="conj-item">Il / Elle était (كان/كانت)</div>
+            <div class="conj-item">Nous étions (كنا)</div>
+            <div class="conj-item">Vous étiez (كنتم/حضرتك)</div>
+            <div class="conj-item">Ils / Elles étaient (كانوا/كُنّ)</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن جملة بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="feelings">المشاعر والحالة</button>
+            <button class="tab-btn" data-cat="places">الأماكن والموقع</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="relations">العائلة والعلاقات</button>
+            <button class="tab-btn" data-cat="situations">مواقف واقعية</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const sentences = [
+        // 1-20: المشاعر والحالة
+        {id: 1, cat: 'feelings', fr: "J’étais fatigué.", ar: "كنتُ متعبًا."},
+        {id: 2, cat: 'feelings', fr: "J’étais malade.", ar: "كنتُ مريضًا."},
+        {id: 3, cat: 'feelings', fr: "J’étais heureux.", ar: "كنتُ سعيدًا."},
+        {id: 4, cat: 'feelings', fr: "J’étais triste.", ar: "كنتُ حزينًا."},
+        {id: 5, cat: 'feelings', fr: "J’étais occupé.", ar: "كنتُ مشغولًا."},
+        {id: 6, cat: 'feelings', fr: "J’étais calme.", ar: "كنتُ هادئًا."},
+        {id: 7, cat: 'feelings', fr: "J’étais stressé.", ar: "كنتُ متوترًا."},
+        {id: 8, cat: 'feelings', fr: "J’étais inquiet.", ar: "كنتُ قلقًا."},
+        {id: 9, cat: 'feelings', fr: "J’étais nerveux.", ar: "كنتُ عصبيًا."},
+        {id: 10, cat: 'feelings', fr: "J’étais content.", ar: "كنتُ مسرورًا."},
+        {id: 11, cat: 'feelings', fr: "J’étais en colère.", ar: "كنتُ غاضبًا."},
+        {id: 12, cat: 'feelings', fr: "J’étais surpris.", ar: "كنتُ متفاجئًا."},
+        {id: 13, cat: 'feelings', fr: "J’étais déçu.", ar: "كنتُ محبطًا."},
+        {id: 14, cat: 'feelings', fr: "J’étais motivé.", ar: "كنتُ متحمسًا."},
+        {id: 15, cat: 'feelings', fr: "J’étais courageux.", ar: "كنتُ شجاعًا."},
+        {id: 16, cat: 'feelings', fr: "J’étais timide.", ar: "كنتُ خجولًا."},
+        {id: 17, cat: 'feelings', fr: "J’étais seul.", ar: "كنتُ وحدي."},
+        {id: 18, cat: 'feelings', fr: "J’étais prêt.", ar: "كنتُ مستعدًا."},
+        {id: 19, cat: 'feelings', fr: "J’étais sérieux.", ar: "كنتُ جادًا."},
+        {id: 20, cat: 'feelings', fr: "J’étais très heureux.", ar: "كنتُ سعيدًا جدًا."},
+
+        // 21-40: الأماكن والأوضاع
+        {id: 21, cat: 'places', fr: "J’étais à la maison.", ar: "كنتُ في المنزل."},
+        {id: 22, cat: 'places', fr: "J’étais au travail.", ar: "كنتُ في العمل."},
+        {id: 23, cat: 'places', fr: "J’étais à l’école.", ar: "كنتُ في المدرسة."},
+        {id: 24, cat: 'places', fr: "J’étais à l’université.", ar: "كنتُ في الجامعة."},
+        {id: 25, cat: 'places', fr: "J’étais au restaurant.", ar: "كنتُ في المطعم."},
+        {id: 26, cat: 'places', fr: "J’étais dans ma chambre.", ar: "كنتُ في غرفتي."},
+        {id: 27, cat: 'places', fr: "J’étais dans la cuisine.", ar: "كنتُ في المطبخ."},
+        {id: 28, cat: 'places', fr: "J’étais dans le jardin.", ar: "كنتُ في الحديقة."},
+        {id: 29, cat: 'places', fr: "J’étais dans le bus.", ar: "كنتُ في الحافلة."},
+        {id: 30, cat: 'places', fr: "J’étais dans le train.", ar: "كنتُ في القطار."},
+        {id: 31, cat: 'places', fr: "J’étais à Bruxelles.", ar: "كنتُ في بروكسل."},
+        {id: 32, cat: 'places', fr: "J’étais au Portugal.", ar: "كنتُ في البرتغال."},
+        {id: 33, cat: 'places', fr: "J’étais en Belgique.", ar: "كنتُ في بلجيكا."},
+        {id: 34, cat: 'places', fr: "J’étais à la gare.", ar: "كنتُ في محطة القطار."},
+        {id: 35, cat: 'places', fr: "J’étais à l’aéroport.", ar: "كنتُ في المطار."},
+        {id: 36, cat: 'places', fr: "J’étais chez un ami.", ar: "كنتُ في منزل صديق."},
+        {id: 37, cat: 'places', fr: "J’étais chez le médecin.", ar: "كنتُ عند الطبيب."},
+        {id: 38, cat: 'places', fr: "J’étais au supermarché.", ar: "كنتُ في السوبر ماركت."},
+        {id: 39, cat: 'places', fr: "J’étais près de la maison.", ar: "كنتُ بالقرب من المنزل."},
+        {id: 40, cat: 'places', fr: "J’étais loin de la ville.", ar: "كنتُ بعيدًا عن المدينة."},
+
+        // 41-60: العمل والدراسة
+        {id: 41, cat: 'work', fr: "J’étais étudiant.", ar: "كنتُ طالبًا."},
+        {id: 42, cat: 'work', fr: "J’étais ingénieur.", ar: "كنتُ مهندسًا."},
+        {id: 43, cat: 'work', fr: "J’étais responsable.", ar: "كنتُ مسؤولًا."},
+        {id: 44, cat: 'work', fr: "J’étais directeur.", ar: "كنتُ مديرًا."},
+        {id: 45, cat: 'work', fr: "J’étais employé.", ar: "كنتُ موظفًا."},
+        {id: 46, cat: 'work', fr: "J’étais au chômage.", ar: "كنتُ عاطلًا عن العمل."},
+        {id: 47, cat: 'work', fr: "J’étais en réunion.", ar: "كنتُ في اجتماع."},
+        {id: 48, cat: 'work', fr: "J’étais en formation.", ar: "كنتُ في تدريب."},
+        {id: 49, cat: 'work', fr: "J’étais en classe.", ar: "كنتُ في الفصل."},
+        {id: 50, cat: 'work', fr: "J’étais en retard.", ar: "كنتُ متأخرًا."},
+        {id: 51, cat: 'work', fr: "J’étais à l’heure.", ar: "كنتُ في الموعد."},
+        {id: 52, cat: 'work', fr: "J’étais très occupé au travail.", ar: "كنتُ مشغولًا جدًا في العمل."},
+        {id: 53, cat: 'work', fr: "J’étais responsable du projet.", ar: "كنتُ مسؤولًا عن المشروع."},
+        {id: 54, cat: 'work', fr: "J’étais chargé de cette tâche.", ar: "كنتُ مكلّفًا بهذه المهمة."},
+        {id: 55, cat: 'work', fr: "J’étais satisfait du résultat.", ar: "كنتُ راضيًا عن النتيجة."},
+        {id: 56, cat: 'work', fr: "J’étais prêt pour l’examen.", ar: "كنتُ مستعدًا للامتحان."},
+        {id: 57, cat: 'work', fr: "J’étais bon en mathématiques.", ar: "كنتُ جيدًا في الرياضيات."},
+        {id: 58, cat: 'work', fr: "J’étais mauvais en français.", ar: "كنتُ ضعيفًا في الفرنسية."},
+        {id: 59, cat: 'work', fr: "J’étais intéressé par ce cours.", ar: "كنتُ مهتمًا بهذه الدورة."},
+        {id: 60, cat: 'work', fr: "J’étais fier de mon travail.", ar: "كنتُ فخورًا بعملي."},
+
+        // 61-80: العلاقات
+        {id: 61, cat: 'relations', fr: "J’étais avec ma famille.", ar: "كنتُ مع عائلتي."},
+        {id: 62, cat: 'relations', fr: "J’étais avec mes amis.", ar: "كنتُ مع أصدقائي."},
+        {id: 63, cat: 'relations', fr: "J’étais avec ma femme.", ar: "كنتُ مع زوجتي."},
+        {id: 64, cat: 'relations', fr: "J’étais avec mon frère.", ar: "كنتُ مع أخي."},
+        {id: 65, cat: 'relations', fr: "J’étais avec ma sœur.", ar: "كنتُ مع أختي."},
+        {id: 66, cat: 'relations', fr: "J’étais chez mes parents.", ar: "كنتُ في منزل والديّ."},
+        {id: 67, cat: 'relations', fr: "J’étais très proche de lui.", ar: "كنتُ قريبًا جدًا منه."},
+        {id: 68, cat: 'relations', fr: "J’étais heureux avec eux.", ar: "كنتُ سعيدًا معهم."},
+        {id: 69, cat: 'relations', fr: "J’étais fier de ma famille.", ar: "كنتُ فخورًا بعائلتي."},
+        {id: 70, cat: 'relations', fr: "J’étais gentil avec tout le monde.", ar: "كنتُ لطيفًا مع الجميع."},
+        {id: 71, cat: 'relations', fr: "J’étais ami avec lui.", ar: "كنتُ صديقًا له."},
+        {id: 72, cat: 'relations', fr: "J’étais en contact avec elle.", ar: "كنتُ على تواصل معها."},
+        {id: 73, cat: 'relations', fr: "J’étais marié.", ar: "كنتُ متزوجًا."},
+        {id: 74, cat: 'relations', fr: "J’étais célibataire.", ar: "كنتُ أعزب."},
+        {id: 75, cat: 'relations', fr: "J’étais très jeune.", ar: "كنتُ صغيرًا جدًا."},
+        {id: 76, cat: 'relations', fr: "J’étais un enfant calme.", ar: "كنتُ طفلًا هادئًا."},
+        {id: 77, cat: 'relations', fr: "J’étais différent avant.", ar: "كنتُ مختلفًا من قبل."},
+        {id: 78, cat: 'relations', fr: "J’étais toujours avec eux.", ar: "كنتُ دائمًا معهم."},
+        {id: 79, cat: 'relations', fr: "J’étais là pour toi.", ar: "كنتُ موجودًا من أجلك."},
+        {id: 80, cat: 'relations', fr: "J’étais heureux de te voir.", ar: "كنتُ سعيدًا برؤيتك."},
+
+        // 81-100: مواقف واقعية
+        {id: 81, cat: 'situations', fr: "J’étais en train de travailler.", ar: "كنتُ أعمل في تلك اللحظة."},
+        {id: 82, cat: 'situations', fr: "J’étais en train de manger.", ar: "كنتُ أتناول الطعام."},
+        {id: 83, cat: 'situations', fr: "J’étais en train d’étudier.", ar: "كنتُ أدرس في تلك اللحظة."},
+        {id: 84, cat: 'situations', fr: "J’étais en train de dormir.", ar: "كنتُ نائمًا في تلك اللحظة."},
+        {id: 85, cat: 'situations', fr: "J’étais en train de regarder la télévision.", ar: "كنتُ أشاهد التلفاز."},
+        {id: 86, cat: 'situations', fr: "J’étais en train de parler au téléphone.", ar: "كنتُ أتحدث في الهاتف."},
+        {id: 87, cat: 'situations', fr: "J’étais en train d’attendre le bus.", ar: "كنتُ أنتظر الحافلة."},
+        {id: 88, cat: 'situations', fr: "J’étais en train de chercher un emploi.", ar: "كنتُ أبحث عن وظيفة."},
+        {id: 89, cat: 'situations', fr: "J’étais en train d’apprendre le français.", ar: "كنتُ أتعلم الفرنسية."},
+        {id: 90, cat: 'situations', fr: "J’étais en train de préparer le dîner.", ar: "كنتُ أحضّر العشاء."},
+        {id: 91, cat: 'situations', fr: "J’étais très occupé quand tu as appelé.", ar: "كنتُ مشغولًا جدًا عندما اتصلت."},
+        {id: 92, cat: 'situations', fr: "J’étais à la maison quand il est arrivé.", ar: "كنتُ في المنزل عندما وصل."},
+        {id: 93, cat: 'situations', fr: "J’étais fatigué parce que j’avais beaucoup travaillé.", ar: "كنتُ متعبًا لأنني كنتُ قد عملت كثيرًا."},
+        {id: 94, cat: 'situations', fr: "J’étais heureux parce que j’avais réussi.", ar: "كنتُ سعيدًا لأنني نجحت."},
+        {id: 95, cat: 'situations', fr: "J’étais malade, alors je suis resté chez moi.", ar: "كنتُ مريضًا، لذلك بقيتُ في المنزل."},
+        {id: 96, cat: 'situations', fr: "J’étais perdu et je ne savais pas où aller.", ar: "كنتُ تائهًا ولم أكن أعرف إلى أين أذهب."},
+        {id: 97, cat: 'situations', fr: "J’étais sûr de ma réponse.", ar: "كنتُ واثقًا من إجابتي."},
+        {id: 98, cat: 'situations', fr: "J’étais intéressé par cette opportunité.", ar: "كنتُ مهتمًا بهذه الفرصة."},
+        {id: 99, cat: 'situations', fr: "J’étais content de pouvoir vous aider.", ar: "كنتُ سعيدًا لأنني استطعت مساعدتكم."},
+        {id: 100, cat: 'situations', fr: "J’étais heureux de commencer une nouvelle vie en Belgique.", ar: "كنتُ سعيدًا ببدء حياة جديدة في بلجيكا."}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = sentences.filter(s => {
+            const matchesCat = currentCat === 'all' || s.cat === currentCat;
+            const matchesSearch = s.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  s.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${s.id}</span>
+                    <button class="audio-btn" onclick="speak('${s.fr.replace(/'/g, "\\'")}')" title="استمع لنطق الجملة">🔊</button>
+                </div>
+                <div class="french">${s.fr}</div>
+                <div class="arabic">${s.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
