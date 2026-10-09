@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Combien de / d' ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #e0f2fe;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .grammar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .grammar-item {
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #bae6fd;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #bae6fd;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Combien de / d' ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن العدد والكميات بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 ملخص القاعدة الأساسية:</h3>
+        <p>تستخدم <strong>Combien de</strong> للسؤال عن كمية أو عدد الأشياء والأشخاص، ولا تتغير de حسب الجمع بل تبقى ثابتة:</p>
+        <div class="grammar-grid">
+            <div class="grammar-item"><strong>Combien de + حرف ساكن</strong>: <em>Combien de livres ?</em></div>
+            <div class="grammar-item"><strong>Combien d' + حرف متحرك / h</strong>: <em>Combien d'amis ?</em></div>
+            <div class="grammar-item"><strong>Combien de temps ?</strong>: كم من الوقت؟</div>
+            <div class="grammar-item"><strong>Combien de fois ?</strong>: كم مرة؟</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="family">الأسرة والأصدقاء</button>
+            <button class="tab-btn" data-cat="food">الطعام والشراب</button>
+            <button class="tab-btn" data-cat="shopping">التسوق والملابس</button>
+            <button class="tab-btn" data-cat="home">المنزل والسكن</button>
+            <button class="tab-btn" data-cat="study">الدراسة واللغات</button>
+            <button class="tab-btn" data-cat="work">العمل والمهنة</button>
+            <button class="tab-btn" data-cat="money">المال والبنوك</button>
+            <button class="tab-btn" data-cat="travel">السفر والمواصلات</button>
+            <button class="tab-btn" data-cat="health">الصحة والوقت</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1. الحياة اليومية
+        {id: 1, cat: 'daily', fr: "Combien de frères as-tu ?", ar: "كم أخًا لديك؟"},
+        {id: 2, cat: 'daily', fr: "Combien de sœurs as-tu ?", ar: "كم أختًا لديك؟"},
+        {id: 3, cat: 'daily', fr: "Combien de personnes habitent chez toi ?", ar: "كم شخصًا يعيش في منزلك؟"},
+        {id: 4, cat: 'daily', fr: "Combien de langues parles-tu ?", ar: "كم لغة تتحدث؟"},
+        {id: 5, cat: 'daily', fr: "Combien de téléphones as-tu ?", ar: "كم هاتفًا لديك؟"},
+        {id: 6, cat: 'daily', fr: "Combien de clés as-tu ?", ar: "كم مفتاحًا لديك؟"},
+        {id: 7, cat: 'daily', fr: "Combien de fois sors-tu par semaine ?", ar: "كم مرة تخرج في الأسبوع؟"},
+        {id: 8, cat: 'daily', fr: "Combien de temps dors-tu chaque nuit ?", ar: "كم من الوقت تنام كل ليلة؟"},
+        {id: 9, cat: 'daily', fr: "Combien de messages reçois-tu par jour ?", ar: "كم رسالة تستقبل يوميًا؟"},
+        {id: 10, cat: 'daily', fr: "Combien de choses dois-tu faire aujourd’hui ?", ar: "كم شيئًا يجب أن تفعله اليوم؟"},
+
+        // 2. الأسرة والأصدقاء
+        {id: 11, cat: 'family', fr: "Combien d’enfants as-tu ?", ar: "كم طفلًا لديك؟"},
+        {id: 12, cat: 'family', fr: "Combien de cousins as-tu ?", ar: "كم ابن عم أو ابن خال لديك؟"},
+        {id: 13, cat: 'family', fr: "Combien de personnes y a-t-il dans ta famille ?", ar: "كم شخصًا يوجد في عائلتك؟"},
+        {id: 14, cat: 'family', fr: "Combien d’amis proches as-tu ?", ar: "كم صديقًا مقرّبًا لديك؟"},
+        {id: 15, cat: 'family', fr: "Combien de fois vois-tu tes parents ?", ar: "كم مرة ترى والديك؟"},
+        {id: 16, cat: 'family', fr: "Combien de jours passes-tu avec ta famille ?", ar: "كم يومًا تقضيه مع عائلتك؟"},
+        {id: 17, cat: 'family', fr: "Combien de personnes viennent à la fête ?", ar: "كم شخصًا سيأتي إلى الحفلة؟"},
+        {id: 18, cat: 'family', fr: "Combien de cadeaux as-tu achetés ?", ar: "كم هدية اشتريت؟"},
+        {id: 19, cat: 'family', fr: "Combien de photos de famille possèdes-tu ?", ar: "كم صورة عائلية تمتلك؟"},
+        {id: 20, cat: 'family', fr: "Combien de fois par mois retrouves-tu tes amis ?", ar: "كم مرة تلتقي بأصدقائك في الشهر؟"},
+
+        // 3. الطعام والشراب
+        {id: 21, cat: 'food', fr: "Combien de pommes manges-tu par jour ?", ar: "كم تفاحة تأكل يوميًا؟"},
+        {id: 22, cat: 'food', fr: "Combien de repas prends-tu par jour ?", ar: "كم وجبة تتناول يوميًا؟"},
+        {id: 23, cat: 'food', fr: "Combien de tasses de café bois-tu ?", ar: "كم كوب قهوة تشرب؟"},
+        {id: 24, cat: 'food', fr: "Combien de bouteilles d’eau achètes-tu ?", ar: "كم زجاجة ماء تشتري؟"},
+        {id: 25, cat: 'food', fr: "Combien d’œufs veux-tu ?", ar: "كم بيضة تريد؟"},
+        {id: 26, cat: 'food', fr: "Combien de kilos de riz faut-il ?", ar: "كم كيلوغرامًا من الأرز نحتاج؟"},
+        {id: 27, cat: 'food', fr: "Combien de sucre mets-tu dans ton café ?", ar: "كم سكرًا تضع في قهوتك؟"},
+        {id: 28, cat: 'food', fr: "Combien de minutes faut-il pour préparer ce repas ?", ar: "كم دقيقة نحتاج لإعداد هذه الوجبة؟"},
+        {id: 29, cat: 'food', fr: "Combien de légumes manges-tu chaque semaine ?", ar: "كم خضارًا تأكل كل أسبوع؟"},
+        {id: 30, cat: 'food', fr: "Combien de personnes peuvent manger ici ?", ar: "كم شخصًا يمكنه تناول الطعام هنا؟"},
+
+        // 4. التسوق والملابس
+        {id: 31, cat: 'shopping', fr: "Combien de chemises as-tu ?", ar: "كم قميصًا لديك؟"},
+        {id: 32, cat: 'shopping', fr: "Combien de pantalons veux-tu acheter ?", ar: "كم بنطالًا تريد أن تشتري؟"},
+        {id: 33, cat: 'shopping', fr: "Combien de paires de chaussures possèdes-tu ?", ar: "كم زوجًا من الأحذية تمتلك؟"},
+        {id: 34, cat: 'shopping', fr: "Combien de robes a-t-elle achetées ?", ar: "كم فستانًا اشترت؟"},
+        {id: 35, cat: 'shopping', fr: "Combien de magasins y a-t-il dans ce centre commercial ?", ar: "كم متجرًا يوجد في هذا المركز التجاري؟"},
+        {id: 36, cat: 'shopping', fr: "Combien d’argent dépenses-tu en vêtements ?", ar: "كم من المال تنفق على الملابس؟"},
+        {id: 37, cat: 'shopping', fr: "Combien de produits veux-tu commander ?", ar: "كم منتجًا تريد أن تطلب؟"},
+        {id: 38, cat: 'shopping', fr: "Combien de jours faut-il pour recevoir la commande ?", ar: "كم يومًا نحتاج لاستلام الطلب؟"},
+        {id: 39, cat: 'shopping', fr: "Combien de sacs as-tu achetés ?", ar: "كم حقيبة اشتريت؟"},
+        {id: 40, cat: 'shopping', fr: "Combien de clients attendent devant le magasin ?", ar: "كم عميلًا ينتظر أمام المتجر؟"},
+
+        // 5. المنزل والسكن
+        {id: 41, cat: 'home', fr: "Combien de chambres y a-t-il dans ton appartement ?", ar: "كم غرفة نوم توجد في شقتك؟"},
+        {id: 42, cat: 'home', fr: "Combien de pièces y a-t-il dans ta maison ?", ar: "كم غرفة توجد في منزلك؟"},
+        {id: 43, cat: 'home', fr: "Combien de fenêtres as-tu dans ta chambre ?", ar: "كم نافذة لديك في غرفتك؟"},
+        {id: 44, cat: 'home', fr: "Combien de chaises faut-il acheter ?", ar: "كم كرسيًا يجب أن نشتري؟"},
+        {id: 45, cat: 'home', fr: "Combien de personnes vivent dans cet immeuble ?", ar: "كم شخصًا يعيش في هذا المبنى؟"},
+        {id: 46, cat: 'home', fr: "Combien de loyers as-tu payés cette année ?", ar: "كم دفعة إيجار دفعت هذا العام؟"},
+        {id: 47, cat: 'home', fr: "Combien d’argent faut-il pour meubler un appartement ?", ar: "كم من المال نحتاج لتأثيث شقة؟"},
+        {id: 48, cat: 'home', fr: "Combien de temps passes-tu à nettoyer la maison ?", ar: "كم من الوقت تقضيه في تنظيف المنزل؟"},
+        {id: 49, cat: 'home', fr: "Combien de salles de bains y a-t-il ?", ar: "كم حمّامًا يوجد؟"},
+        {id: 50, cat: 'home', fr: "Combien de clés dois-je te donner ?", ar: "كم مفتاحًا يجب أن أعطيك؟"},
+
+        // 6. الدراسة واللغات
+        {id: 51, cat: 'study', fr: "Combien de langues veux-tu apprendre ?", ar: "كم لغة تريد أن تتعلم؟"},
+        {id: 52, cat: 'study', fr: "Combien de mots français apprends-tu par jour ?", ar: "كم كلمة فرنسية تتعلم يوميًا؟"},
+        {id: 53, cat: 'study', fr: "Combien de livres lis-tu par mois ?", ar: "كم كتابًا تقرأ في الشهر؟"},
+        {id: 54, cat: 'study', fr: "Combien de cours suis-tu cette année ?", ar: "كم دورة تدرس هذا العام؟"},
+        {id: 55, cat: 'study', fr: "Combien d’heures étudies-tu chaque jour ?", ar: "كم ساعة تدرس يوميًا؟"},
+        {id: 56, cat: 'study', fr: "Combien d’examens dois-tu passer ?", ar: "كم امتحانًا يجب أن تؤدي؟"},
+        {id: 57, cat: 'study', fr: "Combien de questions y a-t-il dans cet exercice ?", ar: "كم سؤالًا يوجد في هذا التمرين؟"},
+        {id: 58, cat: 'study', fr: "Combien de pages dois-tu lire ?", ar: "كم صفحة يجب أن تقرأ؟"},
+        {id: 59, cat: 'study', fr: "Combien d’étudiants sont dans ta classe ?", ar: "كم طالبًا يوجد في فصلك؟"},
+        {id: 60, cat: 'study', fr: "Combien de temps faut-il pour atteindre le niveau B1 ?", ar: "كم من الوقت نحتاج للوصول إلى مستوى B1؟"},
+
+        // 7. العمل والمهنة
+        {id: 61, cat: 'work', fr: "Combien d’années d’expérience as-tu ?", ar: "كم سنة من الخبرة لديك؟"},
+        {id: 62, cat: 'work', fr: "Combien de personnes travaillent dans ton entreprise ?", ar: "كم شخصًا يعمل في شركتك؟"},
+        {id: 63, cat: 'work', fr: "Combien d’heures travailles-tu par jour ?", ar: "كم ساعة تعمل يوميًا؟"},
+        {id: 64, cat: 'work', fr: "Combien de jours travailles-tu par semaine ?", ar: "كم يومًا تعمل في الأسبوع؟"},
+        {id: 65, cat: 'work', fr: "Combien de réunions as-tu aujourd’hui ?", ar: "كم اجتماعًا لديك اليوم؟"},
+        {id: 66, cat: 'work', fr: "Combien de projets gérez-vous ?", ar: "كم مشروعًا تديرون؟"},
+        {id: 67, cat: 'work', fr: "Combien de collègues as-tu ?", ar: "كم زميل عمل لديك؟"},
+        {id: 68, cat: 'work', fr: "Combien d’offres d’emploi as-tu trouvées ?", ar: "كم إعلان وظيفة وجدت؟"},
+        {id: 69, cat: 'work', fr: "Combien de candidatures as-tu envoyées ?", ar: "كم طلب توظيف أرسلت؟"},
+        {id: 70, cat: 'work', fr: "Combien de temps faut-il pour terminer ce projet ?", ar: "كم من الوقت نحتاج لإنهاء هذا المشروع؟"},
+
+        // 8. المال والبنوك
+        {id: 71, cat: 'money', fr: "Combien d’argent gagnes-tu par mois ?", ar: "كم من المال تكسب شهريًا؟"},
+        {id: 72, cat: 'money', fr: "Combien d’euros as-tu sur ton compte ?", ar: "كم يورو لديك في حسابك؟"},
+        {id: 73, cat: 'money', fr: "Combien de factures dois-tu payer ?", ar: "كم فاتورة يجب أن تدفع؟"},
+        {id: 74, cat: 'money', fr: "Combien d’argent dépenses-tu chaque semaine ?", ar: "كم من المال تنفق كل أسبوع؟"},
+        {id: 75, cat: 'money', fr: "Combien coûte le loyer par mois ?", ar: "كم تبلغ قيمة الإيجار شهريًا؟"},
+        {id: 76, cat: 'money', fr: "Combien d’économies as-tu ?", ar: "كم من المدخرات لديك؟"},
+        {id: 77, cat: 'money', fr: "Combien de temps faut-il pour ouvrir un compte bancaire ?", ar: "كم من الوقت نحتاج لفتح حساب بنكي؟"},
+        {id: 78, cat: 'money', fr: "Combien de cartes bancaires possèdes-tu ?", ar: "كم بطاقة بنكية تمتلك؟"},
+        {id: 79, cat: 'money', fr: "Combien d’impôts dois-je payer ?", ar: "كم ضريبة يجب أن أدفع؟"},
+        {id: 80, cat: 'money', fr: "Combien de temps faut-il pour rembourser ce prêt ?", ar: "كم من الوقت نحتاج لسداد هذا القرض؟"},
+
+        // 9. السفر والمواصلات
+        {id: 81, cat: 'travel', fr: "Combien de pays as-tu visités ?", ar: "كم دولة زرت؟"},
+        {id: 82, cat: 'travel', fr: "Combien de jours restes-tu en France ?", ar: "كم يومًا ستبقى في فرنسا؟"},
+        {id: 83, cat: 'travel', fr: "Combien de kilomètres y a-t-il jusqu’à Bruxelles ?", ar: "كم كيلومترًا حتى بروكسل؟"},
+        {id: 84, cat: 'travel', fr: "Combien de temps dure le voyage ?", ar: "كم تستغرق الرحلة؟"},
+        {id: 85, cat: 'travel', fr: "Combien de billets dois-je réserver ?", ar: "كم تذكرة يجب أن أحجز؟"},
+        {id: 86, cat: 'travel', fr: "Combien de trains partent chaque heure ?", ar: "كم قطارًا ينطلق كل ساعة؟"},
+        {id: 87, cat: 'travel', fr: "Combien de fois changes-tu de bus ?", ar: "كم مرة تغيّر الحافلة؟"},
+        {id: 88, cat: 'travel', fr: "Combien de bagages peux-tu emporter ?", ar: "كم قطعة أمتعة يمكنك اصطحابها؟"},
+        {id: 89, cat: 'travel', fr: "Combien de kilomètres marches-tu chaque jour ?", ar: "كم كيلومترًا تمشي يوميًا؟"},
+        {id: 90, cat: 'travel', fr: "Combien de temps faut-il pour aller à l’aéroport ?", ar: "كم من الوقت نحتاج للوصول إلى المطار؟"},
+
+        // 10. الصحة والوقت والحياة العامة
+        {id: 91, cat: 'health', fr: "Combien d’heures dors-tu chaque nuit ?", ar: "كم ساعة تنام كل ليلة؟"},
+        {id: 92, cat: 'health', fr: "Combien de litres d’eau bois-tu par jour ?", ar: "كم لتر ماء تشرب يوميًا؟"},
+        {id: 93, cat: 'health', fr: "Combien de fois fais-tu du sport par semaine ?", ar: "كم مرة تمارس الرياضة أسبوعيًا؟"},
+        {id: 94, cat: 'health', fr: "Combien de kilomètres cours-tu chaque semaine ?", ar: "كم كيلومترًا تجري كل أسبوع؟"},
+        {id: 95, cat: 'health', fr: "Combien de rendez-vous as-tu cette semaine ?", ar: "كم موعدًا لديك هذا الأسبوع؟"},
+        {id: 96, cat: 'health', fr: "Combien de temps passes-tu sur Internet ?", ar: "كم من الوقت تقضيه على الإنترنت؟"},
+        {id: 97, cat: 'health', fr: "Combien de jours de vacances te reste-t-il ?", ar: "كم يوم إجازة متبقيًا لك؟"},
+        {id: 98, cat: 'health', fr: "Combien de fois as-tu déménagé ?", ar: "كم مرة انتقلت من منزل إلى آخر؟"},
+        {id: 99, cat: 'health', fr: "Combien d’années veux-tu encore travailler ?", ar: "كم سنة أخرى تريد أن تعمل؟"},
+        {id: 100, cat: 'health', fr: "Combien de choses veux-tu changer dans ta vie ?", ar: "كم شيئًا تريد أن تغيّره في حياتك؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
