@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Comment ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-hover: #047857;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #d1fae5;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #a7f3d0;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Comment ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن الطريقة، الحال، والوصف بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 ملخص الاستخدام والتراكيب الشائعة:</h3>
+        <p>• <strong>Comment ça va ?</strong> (كيف حالك؟) | <strong>Comment tu t'appelles ?</strong> (ما اسمك؟)</p>
+        <p>• <strong>Comment faire ?</strong> (كيف نفعل ذلك؟) | <strong>Comment ça marche ?</strong> (كيف يعمل هذا؟)</p>
+        <p>• <strong>الصيغة اليومية:</strong> <em>Comment tu fais ?</em> مقارنة بالرسمية <em>Comment fais-tu ?</em> وكلاهما شائع.</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">أساسية يومية</button>
+            <button class="tab-btn" data-cat="learning">التعلم واللغات</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="services">الخدمات والحياة</button>
+            <button class="tab-btn" data-cat="misc">أسئلة متنوعة</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20: أسئلة يومية أساسية
+        {id: 1, cat: 'daily', fr: "Comment ça va ?", ar: "كيف حالك؟"},
+        {id: 2, cat: 'daily', fr: "Comment vas-tu ?", ar: "كيف حالك؟"},
+        {id: 3, cat: 'daily', fr: "Comment allez-vous ?", ar: "كيف حال حضرتك؟"},
+        {id: 4, cat: 'daily', fr: "Comment tu t’appelles ?", ar: "ما اسمك؟"},
+        {id: 5, cat: 'daily', fr: "Comment vous appelez-vous ?", ar: "ما اسم حضرتك؟"},
+        {id: 6, cat: 'daily', fr: "Comment ça se passe ?", ar: "كيف تسير الأمور؟"},
+        {id: 7, cat: 'daily', fr: "Comment te sens-tu ?", ar: "كيف تشعر؟"},
+        {id: 8, cat: 'daily', fr: "Comment tu te sens aujourd’hui ?", ar: "كيف تشعر اليوم؟"},
+        {id: 9, cat: 'daily', fr: "Comment est ta journée ?", ar: "كيف يسير يومك؟"},
+        {id: 10, cat: 'daily', fr: "Comment s’est passée ta journée ?", ar: "كيف كان يومك؟"},
+        {id: 11, cat: 'daily', fr: "Comment va ta famille ?", ar: "كيف حال عائلتك؟"},
+        {id: 12, cat: 'daily', fr: "Comment vont tes parents ?", ar: "كيف حال والديك؟"},
+        {id: 13, cat: 'daily', fr: "Comment est ton travail ?", ar: "كيف هو عملك؟"},
+        {id: 14, cat: 'daily', fr: "Comment est ta maison ?", ar: "كيف هو منزلك؟"},
+        {id: 15, cat: 'daily', fr: "Comment est ton appartement ?", ar: "كيف هي شقتك؟"},
+        {id: 16, cat: 'daily', fr: "Comment est la météo ?", ar: "كيف حالة الطقس؟"},
+        {id: 17, cat: 'daily', fr: "Comment est la nourriture ?", ar: "كيف الطعام؟"},
+        {id: 18, cat: 'daily', fr: "Comment trouves-tu ce restaurant ?", ar: "ما رأيك في هذا المطعم؟"},
+        {id: 19, cat: 'daily', fr: "Comment est-ce possible ?", ar: "كيف يكون ذلك ممكنًا؟"},
+        {id: 20, cat: 'daily', fr: "Comment tu sais ça ?", ar: "كيف تعرف ذلك؟"},
+
+        // 21-40: التعلم واللغات
+        {id: 21, cat: 'learning', fr: "Comment apprends-tu le français ?", ar: "كيف تتعلم الفرنسية؟"},
+        {id: 22, cat: 'learning', fr: "Comment apprends-tu le néerlandais ?", ar: "كيف تتعلم الهولندية؟"},
+        {id: 23, cat: 'learning', fr: "Comment améliorer mon français ?", ar: "كيف أحسّن لغتي الفرنسية؟"},
+        {id: 24, cat: 'learning', fr: "Comment prononcer ce mot ?", ar: "كيف أنطق هذه الكلمة؟"},
+        {id: 25, cat: 'learning', fr: "Comment écrit-on ce mot ?", ar: "كيف تُكتب هذه الكلمة؟"},
+        {id: 26, cat: 'learning', fr: "Comment dit-on cela en français ?", ar: "كيف نقول ذلك بالفرنسية؟"},
+        {id: 27, cat: 'learning', fr: "Comment dit-on cela en néerlandais ?", ar: "كيف نقول ذلك بالهولندية؟"},
+        {id: 28, cat: 'learning', fr: "Comment comprendre cette phrase ?", ar: "كيف أفهم هذه الجملة؟"},
+        {id: 29, cat: 'learning', fr: "Comment traduire ce texte ?", ar: "كيف أترجم هذا النص؟"},
+        {id: 30, cat: 'learning', fr: "Comment mémoriser ces mots ?", ar: "كيف أحفظ هذه الكلمات؟"},
+        {id: 31, cat: 'learning', fr: "Comment apprendre rapidement ?", ar: "كيف أتعلم بسرعة؟"},
+        {id: 32, cat: 'learning', fr: "Comment faire cet exercice ?", ar: "كيف أحل هذا التمرين؟"},
+        {id: 33, cat: 'learning', fr: "Comment répondre à cette question ?", ar: "كيف أجيب عن هذا السؤال؟"},
+        {id: 34, cat: 'learning', fr: "Comment expliquer cette règle ?", ar: "كيف أشرح هذه القاعدة؟"},
+        {id: 35, cat: 'learning', fr: "Comment écrire une lettre ?", ar: "كيف أكتب رسالة؟"},
+        {id: 36, cat: 'learning', fr: "Comment parler plus couramment ?", ar: "كيف أتحدث بطلاقة أكبر؟"},
+        {id: 37, cat: 'learning', fr: "Comment améliorer ma prononciation ?", ar: "كيف أحسّن نطقي؟"},
+        {id: 38, cat: 'learning', fr: "Comment pratiquer tous les jours ?", ar: "كيف أتدرب كل يوم؟"},
+        {id: 39, cat: 'learning', fr: "Comment utiliser ce dictionnaire ?", ar: "كيف أستخدم هذا القاموس؟"},
+        {id: 40, cat: 'learning', fr: "Comment savoir si ma réponse est correcte ?", ar: "كيف أعرف إن كانت إجابتي صحيحة؟"},
+
+        // 41-60: العمل والدراسة
+        {id: 41, cat: 'work', fr: "Comment trouver un emploi ?", ar: "كيف أجد وظيفة؟"},
+        {id: 42, cat: 'work', fr: "Comment rédiger un CV ?", ar: "كيف أكتب سيرة ذاتية؟"},
+        {id: 43, cat: 'work', fr: "Comment préparer un entretien ?", ar: "كيف أستعد لمقابلة عمل؟"},
+        {id: 44, cat: 'work', fr: "Comment réussir un entretien d’embauche ?", ar: "كيف أنجح في مقابلة التوظيف؟"},
+        {id: 45, cat: 'work', fr: "Comment postuler à ce poste ?", ar: "كيف أتقدم لهذه الوظيفة؟"},
+        {id: 46, cat: 'work', fr: "Comment contacter le responsable ?", ar: "كيف أتواصل مع المسؤول؟"},
+        {id: 47, cat: 'work', fr: "Comment envoyer ma candidature ?", ar: "كيف أرسل طلب التوظيف؟"},
+        {id: 48, cat: 'work', fr: "Comment trouver un stage ?", ar: "كيف أجد تدريبًا عمليًا؟"},
+        {id: 49, cat: 'work', fr: "Comment commencer ce travail ?", ar: "كيف أبدأ هذا العمل؟"},
+        {id: 50, cat: 'work', fr: "Comment résoudre ce problème ?", ar: "كيف أحل هذه المشكلة؟"},
+        {id: 51, cat: 'work', fr: "Comment organiser mon temps ?", ar: "كيف أنظم وقتي؟"},
+        {id: 52, cat: 'work', fr: "Comment être plus productif ?", ar: "كيف أكون أكثر إنتاجية؟"},
+        {id: 53, cat: 'work', fr: "Comment travailler en équipe ?", ar: "كيف أعمل ضمن فريق؟"},
+        {id: 54, cat: 'work', fr: "Comment devenir ingénieur en Belgique ?", ar: "كيف أصبح مهندسًا في بلجيكا؟"},
+        {id: 55, cat: 'work', fr: "Comment obtenir un diplôme ?", ar: "كيف أحصل على شهادة؟"},
+        {id: 56, cat: 'work', fr: "Comment s’inscrire à l’université ?", ar: "كيف أسجّل في الجامعة؟"},
+        {id: 57, cat: 'work', fr: "Comment réussir cet examen ?", ar: "كيف أنجح في هذا الامتحان؟"},
+        {id: 58, cat: 'work', fr: "Comment obtenir de bonnes notes ?", ar: "كيف أحصل على درجات جيدة؟"},
+        {id: 59, cat: 'work', fr: "Comment suivre ce cours en ligne ?", ar: "كيف أتابع هذه الدورة عبر الإنترنت؟"},
+        {id: 60, cat: 'work', fr: "Comment contacter mon professeur ?", ar: "كيف أتواصل مع أستاذي؟"},
+
+        // 61-80: الحياة اليومية والخدمات
+        {id: 61, cat: 'services', fr: "Comment aller à la gare ?", ar: "كيف أذهب إلى محطة القطار؟"},
+        {id: 62, cat: 'services', fr: "Comment aller au centre-ville ?", ar: "كيف أذهب إلى وسط المدينة؟"},
+        {id: 63, cat: 'services', fr: "Comment puis-je prendre le bus ?", ar: "كيف يمكنني ركوب الحافلة؟"},
+        {id: 64, cat: 'services', fr: "Comment acheter un billet ?", ar: "كيف أشتري تذكرة؟"},
+        {id: 65, cat: 'services', fr: "Comment payer cette facture ?", ar: "كيف أدفع هذه الفاتورة؟"},
+        {id: 66, cat: 'services', fr: "Comment ouvrir un compte bancaire ?", ar: "كيف أفتح حسابًا بنكيًا؟"},
+        {id: 67, cat: 'services', fr: "Comment retirer de l’argent ?", ar: "كيف أسحب المال؟"},
+        {id: 68, cat: 'services', fr: "Comment prendre un rendez-vous ?", ar: "كيف أحجز موعدًا؟"},
+        {id: 69, cat: 'services', fr: "Comment contacter la commune ?", ar: "كيف أتواصل مع البلدية؟"},
+        {id: 70, cat: 'services', fr: "Comment s’inscrire au VDAB ?", ar: "كيف أسجّل في VDAB؟"},
+        {id: 71, cat: 'services', fr: "Comment obtenir une carte de séjour ?", ar: "كيف أحصل على بطاقة إقامة؟"},
+        {id: 72, cat: 'services', fr: "Comment renouveler mon document ?", ar: "كيف أجدد وثيقتي؟"},
+        {id: 73, cat: 'services', fr: "Comment remplir ce formulaire ?", ar: "كيف أملأ هذا النموذج؟"},
+        {id: 74, cat: 'services', fr: "Comment signer ce document ?", ar: "كيف أوقّع هذه الوثيقة؟"},
+        {id: 75, cat: 'services', fr: "Comment utiliser cette machine ?", ar: "كيف أستخدم هذه الآلة؟"},
+        {id: 76, cat: 'services', fr: "Comment fonctionne ce téléphone ?", ar: "كيف يعمل هذا الهاتف؟"},
+        {id: 77, cat: 'services', fr: "Comment réparer cette porte ?", ar: "كيف أصلح هذا الباب؟"},
+        {id: 78, cat: 'services', fr: "Comment cuisiner ce plat ?", ar: "كيف أطبخ هذا الطبق؟"},
+        {id: 79, cat: 'services', fr: "Comment préparer un café ?", ar: "كيف أحضّر القهوة؟"},
+        {id: 80, cat: 'services', fr: "Comment nettoyer cette pièce ?", ar: "كيف أنظف هذه الغرفة؟"},
+
+        // 81-100: أسئلة متنوعة ومهمة
+        {id: 81, cat: 'misc', fr: "Comment as-tu fait ça ?", ar: "كيف فعلت ذلك؟"},
+        {id: 82, cat: 'misc', fr: "Comment as-tu appris cela ?", ar: "كيف تعلمت ذلك؟"},
+        {id: 83, cat: 'misc', fr: "Comment as-tu rencontré ton ami ?", ar: "كيف قابلت صديقك؟"},
+        {id: 84, cat: 'misc', fr: "Comment es-tu arrivé ici ?", ar: "كيف وصلت إلى هنا؟"},
+        {id: 85, cat: 'misc', fr: "Comment as-tu trouvé mon adresse ?", ar: "كيف وجدت عنواني؟"},
+        {id: 86, cat: 'misc', fr: "Comment s’est passé ton voyage ?", ar: "كيف كانت رحلتك؟"},
+        {id: 87, cat: 'misc', fr: "Comment s’est déroulée la réunion ?", ar: "كيف سار الاجتماع؟"},
+        {id: 88, cat: 'misc', fr: "Comment as-tu résolu ce problème ?", ar: "كيف حللت هذه المشكلة؟"},
+        {id: 89, cat: 'misc', fr: "Comment as-tu réussi ?", ar: "كيف نجحت؟"},
+        {id: 90, cat: 'misc', fr: "Comment as-tu dépensé tout cet argent ?", ar: "كيف أنفق كل هذا المال؟"},
+        {id: 91, cat: 'misc', fr: "Comment veux-tu vivre à l’avenir ?", ar: "كيف تريد أن تعيش في المستقبل؟"},
+        {id: 92, cat: 'misc', fr: "Comment imagines-tu ta vie dans cinq ans ?", ar: "كيف تتخيل حياتك بعد خمس سنوات؟"},
+        {id: 93, cat: 'misc', fr: "Comment peut-on protéger l’environnement ?", ar: "كيف يمكننا حماية البيئة؟"},
+        {id: 94, cat: 'misc', fr: "Comment rester en bonne santé ?", ar: "كيف نحافظ على صحتنا؟"},
+        {id: 95, cat: 'misc', fr: "Comment gérer le stress ?", ar: "كيف نتعامل مع التوتر؟"},
+        {id: 96, cat: 'misc', fr: "Comment prendre une bonne décision ?", ar: "كيف نتخذ قرارًا جيدًا؟"},
+        {id: 97, cat: 'misc', fr: "Comment faire confiance à quelqu’un ?", ar: "كيف نثق بشخص ما؟"},
+        {id: 98, cat: 'misc', fr: "Comment puis-je vous aider ?", ar: "كيف يمكنني مساعدتكم؟"},
+        {id: 99, cat: 'misc', fr: "Comment pouvons-nous travailler ensemble ?", ar: "كيف يمكننا العمل معًا؟"},
+        {id: 100, cat: 'misc', fr: "Comment puis-je m’améliorer chaque jour ?", ar: "كيف يمكنني تطوير نفسي كل يوم؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
