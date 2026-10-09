@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة بالفرنسية — Je serai (سأكون)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #eff6ff;
+            border-right: 4px solid var(--primary);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 10px;
+        }
+
+        .conjugation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            direction: ltr;
+        }
+
+        .conj-item {
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #dbeafe;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 جملة باستخدام Je serai</h1>
+        <p>دليلك الشامل لاستخدام الفعل être في المستقبل البسيط (Le Futur Simple)</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 تصريف الفعل être في Le Futur Simple:</h3>
+        <div class="conjugation-grid">
+            <div class="conj-item">Je serai (سأكون)</div>
+            <div class="conj-item">Tu seras (ستكون)</div>
+            <div class="conj-item">Il / Elle sera (سيكون / ستكون)</div>
+            <div class="conj-item">Nous serons (سنكون)</div>
+            <div class="conj-item">Vous serez (ستكونون / حضرتك ستكون)</div>
+            <div class="conj-item">Ils / Elles seront (سيكونون / سيكونّ)</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن جملة بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="feelings">المشاعر والحالة</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="future">المستقبل والخطط</button>
+            <button class="tab-btn" data-cat="misc">مواقف متنوعة</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const sentences = [
+        // 1-20: الحياة اليومية
+        {id: 1, cat: 'daily', fr: "Je serai prêt.", ar: "سأكون مستعدًا."},
+        {id: 2, cat: 'daily', fr: "Je serai occupé.", ar: "سأكون مشغولًا."},
+        {id: 3, cat: 'daily', fr: "Je serai libre demain.", ar: "سأكون متفرغًا غدًا."},
+        {id: 4, cat: 'daily', fr: "Je serai à la maison.", ar: "سأكون في المنزل."},
+        {id: 5, cat: 'daily', fr: "Je serai au travail.", ar: "سأكون في العمل."},
+        {id: 6, cat: 'daily', fr: "Je serai en retard.", ar: "سأتأخر."},
+        {id: 7, cat: 'daily', fr: "Je serai à l’heure.", ar: "سأكون في الموعد."},
+        {id: 8, cat: 'daily', fr: "Je serai disponible.", ar: "سأكون متاحًا."},
+        {id: 9, cat: 'daily', fr: "Je serai absent demain.", ar: "سأكون غائبًا غدًا."},
+        {id: 10, cat: 'daily', fr: "Je serai présent à la réunion.", ar: "سأكون حاضرًا في الاجتماع."},
+        {id: 11, cat: 'daily', fr: "Je serai fatigué.", ar: "سأكون متعبًا."},
+        {id: 12, cat: 'daily', fr: "Je serai en vacances.", ar: "سأكون في إجازة."},
+        {id: 13, cat: 'daily', fr: "Je serai chez moi ce soir.", ar: "سأكون في بيتي هذا المساء."},
+        {id: 14, cat: 'daily', fr: "Je serai dehors.", ar: "سأكون بالخارج."},
+        {id: 15, cat: 'daily', fr: "Je serai dans ma chambre.", ar: "سأكون في غرفتي."},
+        {id: 16, cat: 'daily', fr: "Je serai avec toi.", ar: "سأكون معك."},
+        {id: 17, cat: 'daily', fr: "Je serai seul.", ar: "سأكون وحدي."},
+        {id: 18, cat: 'daily', fr: "Je serai accompagné.", ar: "سأكون برفقة شخص آخر."},
+        {id: 19, cat: 'daily', fr: "Je serai de retour bientôt.", ar: "سأعود قريبًا."},
+        {id: 20, cat: 'daily', fr: "Je serai là à huit heures.", ar: "سأكون هناك الساعة الثامنة."},
+
+        // 21-40: المشاعر والحالة
+        {id: 21, cat: 'feelings', fr: "Je serai heureux.", ar: "سأكون سعيدًا."},
+        {id: 22, cat: 'feelings', fr: "Je serai triste.", ar: "سأكون حزينًا."},
+        {id: 23, cat: 'feelings', fr: "Je serai content de te voir.", ar: "سأكون سعيدًا برؤيتك."},
+        {id: 24, cat: 'feelings', fr: "Je serai calme.", ar: "سأكون هادئًا."},
+        {id: 25, cat: 'feelings', fr: "Je serai nerveux.", ar: "سأكون متوترًا."},
+        {id: 26, cat: 'feelings', fr: "Je serai inquiet.", ar: "سأكون قلقًا."},
+        {id: 27, cat: 'feelings', fr: "Je serai confiant.", ar: "سأكون واثقًا."},
+        {id: 28, cat: 'feelings', fr: "Je serai optimiste.", ar: "سأكون متفائلًا."},
+        {id: 29, cat: 'feelings', fr: "Je serai patient.", ar: "سأكون صبورًا."},
+        {id: 30, cat: 'feelings', fr: "Je serai courageux.", ar: "سأكون شجاعًا."},
+        {id: 31, cat: 'feelings', fr: "Je serai fier de toi.", ar: "سأكون فخورًا بك."},
+        {id: 32, cat: 'feelings', fr: "Je serai satisfait.", ar: "سأكون راضيًا."},
+        {id: 33, cat: 'feelings', fr: "Je serai surpris.", ar: "سأكون متفاجئًا."},
+        {id: 34, cat: 'feelings', fr: "Je serai déçu.", ar: "سأشعر بخيبة أمل."},
+        {id: 35, cat: 'feelings', fr: "Je serai motivé.", ar: "سأكون متحمسًا."},
+        {id: 36, cat: 'feelings', fr: "Je serai déterminé.", ar: "سأكون مصممًا."},
+        {id: 37, cat: 'feelings', fr: "Je serai plus fort.", ar: "سأكون أقوى."},
+        {id: 38, cat: 'feelings', fr: "Je serai en forme.", ar: "سأكون في حالة جيدة."},
+        {id: 39, cat: 'feelings', fr: "Je serai malade si je ne me repose pas.", ar: "سأكون مريضًا إذا لم أسترح."},
+        {id: 40, cat: 'feelings', fr: "Je serai heureux avec ma famille.", ar: "سأكون سعيدًا مع عائلتي."},
+
+        // 41-60: العمل والدراسة
+        {id: 41, cat: 'work', fr: "Je serai ingénieur.", ar: "سأكون مهندسًا."},
+        {id: 42, cat: 'work', fr: "Je serai manager.", ar: "سأكون مديرًا."},
+        {id: 43, cat: 'work', fr: "Je serai étudiant.", ar: "سأكون طالبًا."},
+        {id: 44, cat: 'work', fr: "Je serai employé dans une entreprise.", ar: "سأكون موظفًا في شركة."},
+        {id: 45, cat: 'work', fr: "Je serai responsable de ce projet.", ar: "سأكون مسؤولًا عن هذا المشروع."},
+        {id: 46, cat: 'work', fr: "Je serai en réunion.", ar: "سأكون في اجتماع."},
+        {id: 47, cat: 'work', fr: "Je serai au bureau demain.", ar: "سأكون في المكتب غدًا."},
+        {id: 48, cat: 'work', fr: "Je serai occupé toute la journée.", ar: "سأكون مشغولًا طوال اليوم."},
+        {id: 49, cat: 'work', fr: "Je serai prêt pour l’entretien.", ar: "سأكون مستعدًا للمقابلة."},
+        {id: 50, cat: 'work', fr: "Je serai à la recherche d’un emploi.", ar: "سأكون أبحث عن وظيفة."},
+        {id: 51, cat: 'work', fr: "Je serai mieux préparé.", ar: "سأكون أكثر استعدادًا."},
+        {id: 52, cat: 'work', fr: "Je serai capable de le faire.", ar: "سأكون قادرًا على فعل ذلك."},
+        {id: 53, cat: 'work', fr: "Je serai responsable de l’équipe.", ar: "سأكون مسؤولًا عن الفريق."},
+        {id: 54, cat: 'work', fr: "Je serai en formation.", ar: "سأكون في دورة تدريبية."},
+        {id: 55, cat: 'work', fr: "Je serai en classe à neuf heures.", ar: "سأكون في الفصل الساعة التاسعة."},
+        {id: 56, cat: 'work', fr: "Je serai diplômé l’année prochaine.", ar: "سأكون حاصلًا على الشهادة العام المقبل."},
+        {id: 57, cat: 'work', fr: "Je serai fier de mon travail.", ar: "سأكون فخورًا بعملي."},
+        {id: 58, cat: 'work', fr: "Je serai plus expérimenté.", ar: "سأكون أكثر خبرة."},
+        {id: 59, cat: 'work', fr: "Je serai disponible pour un entretien.", ar: "سأكون متاحًا لإجراء مقابلة."},
+        {id: 60, cat: 'work', fr: "Je serai heureux de travailler avec vous.", ar: "سأكون سعيدًا بالعمل معكم."},
+
+        // 61-80: المستقبل والخطط
+        {id: 61, cat: 'future', fr: "Je serai riche un jour.", ar: "سأكون ثريًا يومًا ما."},
+        {id: 62, cat: 'future', fr: "Je serai célèbre.", ar: "سأكون مشهورًا."},
+        {id: 63, cat: 'future', fr: "Je serai indépendant.", ar: "سأكون مستقلًا."},
+        {id: 64, cat: 'future', fr: "Je serai plus organisé.", ar: "سأكون أكثر تنظيمًا."},
+        {id: 65, cat: 'future', fr: "Je serai meilleur en français.", ar: "سأكون أفضل في الفرنسية."},
+        {id: 66, cat: 'future', fr: "Je serai capable de parler français.", ar: "سأكون قادرًا على التحدث بالفرنسية."},
+        {id: 67, cat: 'future', fr: "Je serai en Belgique l’année prochaine.", ar: "سأكون في بلجيكا العام المقبل."},
+        {id: 68, cat: 'future', fr: "Je serai en France cet été.", ar: "سأكون في فرنسا هذا الصيف."},
+        {id: 69, cat: 'future', fr: "Je serai à Paris la semaine prochaine.", ar: "سأكون في باريس الأسبوع المقبل."},
+        {id: 70, cat: 'future', fr: "Je serai en voyage demain.", ar: "سأكون مسافرًا غدًا."},
+        {id: 71, cat: 'future', fr: "Je serai bientôt de retour.", ar: "سأعود قريبًا."},
+        {id: 72, cat: 'future', fr: "Je serai là pour t’aider.", ar: "سأكون هنا لمساعدتك."},
+        {id: 73, cat: 'future', fr: "Je serai toujours à tes côtés.", ar: "سأكون دائمًا بجانبك."},
+        {id: 74, cat: 'future', fr: "Je serai prêt à partir.", ar: "سأكون مستعدًا للمغادرة."},
+        {id: 75, cat: 'future', fr: "Je serai heureux de participer.", ar: "سأكون سعيدًا بالمشاركة."},
+        {id: 76, cat: 'future', fr: "Je serai là si tu as besoin de moi.", ar: "سأكون موجودًا إذا احتجت إليّ."},
+        {id: 77, cat: 'future', fr: "Je serai plus attentif.", ar: "سأكون أكثر انتباهًا."},
+        {id: 78, cat: 'future', fr: "Je serai plus prudent.", ar: "سأكون أكثر حذرًا."},
+        {id: 79, cat: 'future', fr: "Je serai différent à l’avenir.", ar: "سأكون مختلفًا في المستقبل."},
+        {id: 80, cat: 'future', fr: "Je serai fier de mes progrès.", ar: "سأكون فخورًا بتقدمي."},
+
+        // 81-100: مواقف متنوعة
+        {id: 81, cat: 'misc', fr: "Je serai chez le médecin demain.", ar: "سأكون عند الطبيب غدًا."},
+        {id: 82, cat: 'misc', fr: "Je serai au supermarché.", ar: "سأكون في السوبرماركت."},
+        {id: 83, cat: 'misc', fr: "Je serai à la gare.", ar: "سأكون في محطة القطار."},
+        {id: 84, cat: 'misc', fr: "Je serai à l’aéroport.", ar: "سأكون في المطار."},
+        {id: 85, cat: 'misc', fr: "Je serai dans le train.", ar: "سأكون في القطار."},
+        {id: 86, cat: 'misc', fr: "Je serai dans la voiture.", ar: "سأكون في السيارة."},
+        {id: 87, cat: 'misc', fr: "Je serai au restaurant ce soir.", ar: "سأكون في المطعم هذا المساء."},
+        {id: 88, cat: 'misc', fr: "Je serai à une fête samedi.", ar: "سأكون في حفلة يوم السبت."},
+        {id: 89, cat: 'misc', fr: "Je serai chez mes amis.", ar: "سأكون عند أصدقائي."},
+        {id: 90, cat: 'misc', fr: "Je serai avec ma femme.", ar: "سأكون مع زوجتي."},
+        {id: 91, cat: 'misc', fr: "Je serai en sécurité.", ar: "سأكون بأمان."},
+        {id: 92, cat: 'misc', fr: "Je serai en difficulté.", ar: "سأكون في ورطة."},
+        {id: 93, cat: 'misc', fr: "Je serai au courant.", ar: "سأكون على علم بالأمر."},
+        {id: 94, cat: 'misc', fr: "Je serai d’accord avec toi.", ar: "سأكون موافقًا عليك."},
+        {id: 95, cat: 'misc', fr: "Je serai contre cette décision.", ar: "سأكون ضد هذا القرار."},
+        {id: 96, cat: 'misc', fr: "Je serai attentif à tes conseils.", ar: "سأنتبه إلى نصائحك."},
+        {id: 97, cat: 'misc', fr: "Je serai reconnaissant.", ar: "سأكون ممتنًا."},
+        {id: 98, cat: 'misc', fr: "Je serai heureux de vous rencontrer.", ar: "سأكون سعيدًا بمقابلتكم."},
+        {id: 99, cat: 'misc', fr: "Je serai là demain matin.", ar: "سأكون هناك صباح الغد."},
+        {id: 100, cat: 'misc', fr: "Je serai fier de moi.", ar: "سأكون فخورًا بنفسي."}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = sentences.filter(s => {
+            const matchesCat = currentCat === 'all' || s.cat === currentCat;
+            const matchesSearch = s.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  s.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${s.id}</span>
+                    <button class="audio-btn" onclick="speak('${s.fr.replace(/'/g, "\\'")}')" title="استمع لنطق الجملة">🔊</button>
+                </div>
+                <div class="french">${s.fr}</div>
+                <div class="arabic">${s.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
