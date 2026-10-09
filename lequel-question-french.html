@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Quel / Quelle / Quels / Quelles ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #e0f2fe;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .grammar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .grammar-item {
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #bae6fd;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #bae6fd;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Quel / Quelle / Quels / Quelles ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن النوع، التحديد والخيارات بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 قاعدة التوافق النحوي (Accord de Quel):</h3>
+        <p>يتغير صيغة الأدوات <strong>Quel</strong> بحسب جنس وعدده الخاص بالاسم الذي تبحث عنه أو تسأل عنه بعدها:</p>
+        <div class="grammar-grid">
+            <div class="grammar-item"><strong>Quel</strong> : مذكر مفرد (<em>Quel livre ?</em>)</div>
+            <div class="grammar-item"><strong>Quelle</strong> : مؤنث مفرد (<em>Quelle heure ?</em>)</div>
+            <div class="grammar-item"><strong>Quels</strong> : مذكر جمع (<em>Quels documents ?</em>)</div>
+            <div class="grammar-item"><strong>Quelles</strong> : مؤنث جمع (<em>Quelles langues ?</em>)</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="personal">أسئلة شخصية</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="home">المنزل والحياة</button>
+            <button class="tab-btn" data-cat="time">الوقت والآراء</button>
+            <button class="tab-btn" data-cat="belgium">الحياة والإجراءات</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20: أسئلة شخصية ويومية
+        {id: 1, cat: 'personal', fr: "Quel est ton nom ?", ar: "ما اسمك؟"},
+        {id: 2, cat: 'personal', fr: "Quel âge as-tu ?", ar: "كم عمرك؟"},
+        {id: 3, cat: 'personal', fr: "Quelle est ta nationalité ?", ar: "ما جنسيتك؟"},
+        {id: 4, cat: 'personal', fr: "Quelle est ton adresse ?", ar: "ما عنوانك؟"},
+        {id: 5, cat: 'personal', fr: "Quel est ton numéro de téléphone ?", ar: "ما رقم هاتفك؟"},
+        {id: 6, cat: 'personal', fr: "Quelle est ta profession ?", ar: "ما مهنتك؟"},
+        {id: 7, cat: 'personal', fr: "Quel est ton métier ?", ar: "ما عملك؟"},
+        {id: 8, cat: 'personal', fr: "Quelle est ta langue maternelle ?", ar: "ما لغتك الأم؟"},
+        {id: 9, cat: 'personal', fr: "Quelles langues parles-tu ?", ar: "ما اللغات التي تتحدثها؟"},
+        {id: 10, cat: 'personal', fr: "Quel est ton pays préféré ?", ar: "ما بلدك المفضل؟"},
+        {id: 11, cat: 'personal', fr: "Quelle est ta ville préférée ?", ar: "ما مدينتك المفضلة؟"},
+        {id: 12, cat: 'personal', fr: "Quel est ton prénom ?", ar: "ما اسمك الأول؟"},
+        {id: 13, cat: 'personal', fr: "Quel est ton nom de famille ?", ar: "ما اسم عائلتك؟"},
+        {id: 14, cat: 'personal', fr: "Quelle est ta date de naissance ?", ar: "ما تاريخ ميلادك؟"},
+        {id: 15, cat: 'personal', fr: "Quel est ton état civil ?", ar: "ما حالتك الاجتماعية؟"},
+        {id: 16, cat: 'personal', fr: "Quelle est ta situation familiale ?", ar: "ما وضعك العائلي؟"},
+        {id: 17, cat: 'personal', fr: "Quel est ton passe-temps préféré ?", ar: "ما هوايتك المفضلة؟"},
+        {id: 18, cat: 'personal', fr: "Quelle est ta couleur préférée ?", ar: "ما لونك المفضل؟"},
+        {id: 19, cat: 'personal', fr: "Quel est ton plat préféré ?", ar: "ما طبقك المفضل؟"},
+        {id: 20, cat: 'personal', fr: "Quelle est ta saison préférée ?", ar: "ما فصلك المفضل من السنة؟"},
+
+        // 21-40: العمل والدراسة
+        {id: 21, cat: 'work', fr: "Quel travail cherches-tu ?", ar: "ما العمل الذي تبحث عنه؟"},
+        {id: 22, cat: 'work', fr: "Quel poste souhaites-tu obtenir ?", ar: "ما الوظيفة التي تريد الحصول عليها؟"},
+        {id: 23, cat: 'work', fr: "Quelle entreprise préfères-tu ?", ar: "ما الشركة التي تفضلها؟"},
+        {id: 24, cat: 'work', fr: "Quel est ton salaire actuel ?", ar: "ما راتبك الحالي؟"},
+        {id: 25, cat: 'work', fr: "Quel salaire souhaites-tu ?", ar: "ما الراتب الذي تريده؟"},
+        {id: 26, cat: 'work', fr: "Quelle est ton expérience professionnelle ?", ar: "ما خبرتك المهنية؟"},
+        {id: 27, cat: 'work', fr: "Quel diplôme as-tu ?", ar: "ما الشهادة التي لديك؟"},
+        {id: 28, cat: 'work', fr: "Quelle formation veux-tu suivre ?", ar: "ما التدريب الذي تريد الالتحاق به؟"},
+        {id: 29, cat: 'work', fr: "Quels métiers t’intéressent ?", ar: "ما المهن التي تهمك؟"},
+        {id: 30, cat: 'work', fr: "Quelles compétences possèdes-tu ?", ar: "ما المهارات التي تمتلكها؟"},
+        {id: 31, cat: 'work', fr: "Quel est ton niveau de français ?", ar: "ما مستواك في الفرنسية؟"},
+        {id: 32, cat: 'work', fr: "Quel est ton niveau de néerlandais ?", ar: "ما مستواك في الهولندية؟"},
+        {id: 33, cat: 'work', fr: "Quelle université fréquentes-tu ?", ar: "ما الجامعة التي تدرس فيها؟"},
+        {id: 34, cat: 'work', fr: "Quels cours suis-tu cette année ?", ar: "ما الدورات التي تتابعها هذا العام؟"},
+        {id: 35, cat: 'work', fr: "Quelles matières étudies-tu ?", ar: "ما المواد التي تدرسها؟"},
+        {id: 36, cat: 'work', fr: "Quel examen passes-tu demain ?", ar: "ما الامتحان الذي ستؤديه غدًا؟"},
+        {id: 37, cat: 'work', fr: "Quelle est la date de l’entretien ?", ar: "ما موعد المقابلة؟"},
+        {id: 38, cat: 'work', fr: "Quel document dois-je envoyer ?", ar: "ما الوثيقة التي يجب أن أرسلها؟"},
+        {id: 39, cat: 'work', fr: "Quels documents dois-je fournir ?", ar: "ما الوثائق التي يجب أن أقدمها؟"},
+        {id: 40, cat: 'work', fr: "Quelle est ta disponibilité ?", ar: "ما الأوقات التي يمكنك العمل فيها؟"},
+
+        // 41-60: المنزل والحياة اليومية
+        {id: 41, cat: 'home', fr: "Quel appartement cherches-tu ?", ar: "أي شقة تبحث عنها؟"},
+        {id: 42, cat: 'home', fr: "Quelle maison préfères-tu ?", ar: "أي منزل تفضل؟"},
+        {id: 43, cat: 'home', fr: "Quel est le prix du loyer ?", ar: "ما قيمة الإيجار؟"},
+        {id: 44, cat: 'home', fr: "Quelle chambre veux-tu ?", ar: "أي غرفة تريد؟"},
+        {id: 45, cat: 'home', fr: "Quels meubles veux-tu acheter ?", ar: "أي أثاث تريد شراءه؟"},
+        {id: 46, cat: 'home', fr: "Quelles courses dois-tu faire ?", ar: "ما المشتريات التي يجب أن تشتريها؟"},
+        {id: 47, cat: 'home', fr: "Quel magasin préfères-tu ?", ar: "أي متجر تفضل؟"},
+        {id: 48, cat: 'home', fr: "Quelle marque utilises-tu ?", ar: "أي علامة تجارية تستخدم؟"},
+        {id: 49, cat: 'home', fr: "Quel téléphone as-tu ?", ar: "أي هاتف لديك؟"},
+        {id: 50, cat: 'home', fr: "Quelle voiture conduis-tu ?", ar: "أي سيارة تقود؟"},
+        {id: 51, cat: 'home', fr: "Quel bus dois-je prendre ?", ar: "أي حافلة يجب أن أستقل؟"},
+        {id: 52, cat: 'home', fr: "Quelle route devons-nous suivre ?", ar: "أي طريق يجب أن نسلك؟"},
+        {id: 53, cat: 'home', fr: "Quel train va à Bruxelles ?", ar: "أي قطار يذهب إلى بروكسل؟"},
+        {id: 54, cat: 'home', fr: "Quelle station est la plus proche ?", ar: "أي محطة هي الأقرب؟"},
+        {id: 55, cat: 'home', fr: "Quel restaurant recommandes-tu ?", ar: "أي مطعم تنصح به؟"},
+        {id: 56, cat: 'home', fr: "Quelle table préfères-tu ?", ar: "أي طاولة تفضل؟"},
+        {id: 57, cat: 'home', fr: "Quel plat veux-tu commander ?", ar: "أي طبق تريد طلبه؟"},
+        {id: 58, cat: 'home', fr: "Quelle boisson veux-tu ?", ar: "أي مشروب تريد؟"},
+        {id: 59, cat: 'home', fr: "Quels vêtements portes-tu en hiver ?", ar: "أي ملابس ترتدي في الشتاء؟"},
+        {id: 60, cat: 'home', fr: "Quelles chaussures veux-tu acheter ?", ar: "أي أحذية تريد شراءها؟"},
+
+        // 61-80: الوقت والاختيارات والآراء
+        {id: 61, cat: 'time', fr: "Quel jour sommes-nous ?", ar: "ما اليوم؟"},
+        {id: 62, cat: 'time', fr: "Quelle heure est-il ?", ar: "كم الساعة؟"},
+        {id: 63, cat: 'time', fr: "Quel jour préfères-tu ?", ar: "أي يوم تفضل؟"},
+        {id: 64, cat: 'time', fr: "Quel mois préfères-tu ?", ar: "أي شهر تفضل؟"},
+        {id: 65, cat: 'time', fr: "Quelle date te convient ?", ar: "أي تاريخ يناسبك؟"},
+        {id: 66, cat: 'time', fr: "Quelle heure te convient ?", ar: "أي ساعة تناسبك؟"},
+        {id: 67, cat: 'time', fr: "Quel moment préfères-tu ?", ar: "أي وقت تفضل؟"},
+        {id: 68, cat: 'time', fr: "Quelle période est la plus pratique ?", ar: "أي فترة هي الأنسب؟"},
+        {id: 69, cat: 'time', fr: "Quel film veux-tu regarder ?", ar: "أي فيلم تريد مشاهدته؟"},
+        {id: 70, cat: 'time', fr: "Quelle série regardes-tu ?", ar: "أي مسلسل تشاهد؟"},
+        {id: 71, cat: 'time', fr: "Quel livre lis-tu ?", ar: "أي كتاب تقرأ؟"},
+        {id: 72, cat: 'time', fr: "Quels sports pratiques-tu ?", ar: "ما الرياضات التي تمارسها؟"},
+        {id: 73, cat: 'time', fr: "Quelle musique écoutes-tu ?", ar: "أي موسيقى تستمع إليها؟"},
+        {id: 74, cat: 'time', fr: "Quels pays veux-tu visiter ?", ar: "أي بلدان تريد زيارتها؟"},
+        {id: 75, cat: 'time', fr: "Quelles villes connais-tu en Belgique ?", ar: "ما المدن التي تعرفها في بلجيكا؟"},
+        {id: 76, cat: 'time', fr: "Quel est ton avis sur ce sujet ?", ar: "ما رأيك في هذا الموضوع؟"},
+        {id: 77, cat: 'time', fr: "Quelle solution proposes-tu ?", ar: "ما الحل الذي تقترحه؟"},
+        {id: 78, cat: 'time', fr: "Quel problème rencontres-tu ?", ar: "ما المشكلة التي تواجهها؟"},
+        {id: 79, cat: 'time', fr: "Quelles difficultés as-tu rencontrées ?", ar: "ما الصعوبات التي واجهتها؟"},
+        {id: 80, cat: 'time', fr: "Quel choix préfères-tu ?", ar: "أي خيار تفضل؟"},
+
+        // 81-100: أسئلة مهمة للعيش في بلجيكا
+        {id: 81, cat: 'belgium', fr: "Quel document faut-il pour s’inscrire à la commune ?", ar: "ما الوثيقة المطلوبة للتسجيل في البلدية؟"},
+        {id: 82, cat: 'belgium', fr: "Quelle commune habites-tu ?", ar: "في أي بلدية تسكن؟"},
+        {id: 83, cat: 'belgium', fr: "Quel titre de séjour possèdes-tu ?", ar: "ما نوع تصريح الإقامة الذي لديك؟"},
+        {id: 84, cat: 'belgium', fr: "Quelle carte dois-je présenter ?", ar: "أي بطاقة يجب أن أقدم؟"},
+        {id: 85, cat: 'belgium', fr: "Quels documents faut-il pour travailler ?", ar: "ما الوثائق المطلوبة للعمل؟"},
+        {id: 86, cat: 'belgium', fr: "Quelle assurance maladie as-tu ?", ar: "ما التأمين الصحي الذي لديك؟"},
+        {id: 87, cat: 'belgium', fr: "Quel organisme dois-je contacter ?", ar: "ما الجهة التي يجب أن أتواصل معها؟"},
+        {id: 88, cat: 'belgium', fr: "Quelle formation de néerlandais choisis-tu ?", ar: "أي دورة هولندية تختار؟"},
+        {id: 89, cat: 'belgium', fr: "Quels cours sont disponibles en ligne ?", ar: "ما الدورات المتاحة عبر الإنترنت؟"},
+        {id: 90, cat: 'belgium', fr: "Quelles écoles proposent des cours intensifs ?", ar: "ما المدارس التي تقدم دورات مكثفة؟"},
+        {id: 91, cat: 'belgium', fr: "Quel est le prix de cette formation ?", ar: "ما سعر هذا التدريب؟"},
+        {id: 92, cat: 'belgium', fr: "Quelle est la durée du cours ?", ar: "ما مدة الدورة؟"},
+        {id: 93, cat: 'belgium', fr: "Quels emplois sont disponibles près de chez toi ?", ar: "ما الوظائف المتاحة بالقرب من منزلك؟"},
+        {id: 94, cat: 'belgium', fr: "Quelles entreprises recrutent des ingénieurs ?", ar: "ما الشركات التي توظف مهندسين؟"},
+        {id: 95, cat: 'belgium', fr: "Quel type de contrat proposes-tu ?", ar: "ما نوع العقد الذي تقترحه؟"},
+        {id: 96, cat: 'belgium', fr: "Quelle est la date de début du contrat ?", ar: "ما تاريخ بدء العقد؟"},
+        {id: 97, cat: 'belgium', fr: "Quels horaires de travail préfères-tu ?", ar: "ما ساعات العمل التي تفضلها؟"},
+        {id: 98, cat: 'belgium', fr: "Quelle est la procédure à suivre ?", ar: "ما الإجراءات التي يجب اتباعها؟"},
+        {id: 99, cat: 'belgium', fr: "Quel est le prochain rendez-vous ?", ar: "متى الموعد القادم؟"},
+        {id: 100, cat: 'belgium', fr: "Quelles sont tes priorités cette année ?", ar: "ما أولوياتك هذا العام؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
