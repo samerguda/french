@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Quand ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #f3e8ff;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #e9d5ff;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Quand ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن الوقت والمواعيد بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 قواعد سريعة (3 طرق للسؤال باستخدام Quand):</h3>
+        <p>• <strong>رسمية (مباشرة):</strong> <em>Quand pars-tu ?</em> (متى تغادر؟)</p>
+        <p>• <strong>شائعة (مع est-ce que):</strong> <em>Quand est-ce que tu pars ?</em> (متى ستغادر؟)</p>
+        <p>• <strong>محادثة يومية:</strong> <em>Tu pars quand ?</em> (ستغادر متى؟)</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">أساسية يومية</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="tenses">الأزمنة والتنقل</button>
+            <button class="tab-btn" data-cat="planning">المواعيد والتخطيط</button>
+            <button class="tab-btn" data-cat="belgium">أسئلة الإجراءات</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20: أسئلة يومية أساسية
+        {id: 1, cat: 'daily', fr: "Quand te réveilles-tu ?", ar: "متى تستيقظ؟"},
+        {id: 2, cat: 'daily', fr: "Quand est-ce que tu te lèves ?", ar: "متى تنهض من السرير؟"},
+        {id: 3, cat: 'daily', fr: "Quand prends-tu ton petit-déjeuner ?", ar: "متى تتناول الإفطار؟"},
+        {id: 4, cat: 'daily', fr: "Quand pars-tu au travail ?", ar: "متى تذهب إلى العمل؟"},
+        {id: 5, cat: 'daily', fr: "Quand rentres-tu à la maison ?", ar: "متى تعود إلى المنزل؟"},
+        {id: 6, cat: 'daily', fr: "Quand déjeunes-tu ?", ar: "متى تتناول الغداء؟"},
+        {id: 7, cat: 'daily', fr: "Quand dînes-tu ?", ar: "متى تتناول العشاء؟"},
+        {id: 8, cat: 'daily', fr: "Quand vas-tu dormir ?", ar: "متى ستذهب للنوم؟"},
+        {id: 9, cat: 'daily', fr: "Quand te couches-tu ?", ar: "متى تخلد إلى النوم؟"},
+        {id: 10, cat: 'daily', fr: "Quand prends-tu une douche ?", ar: "متى تستحم؟"},
+        {id: 11, cat: 'daily', fr: "Quand fais-tu le ménage ?", ar: "متى تنظف المنزل؟"},
+        {id: 12, cat: 'daily', fr: "Quand fais-tu les courses ?", ar: "متى تتسوق؟"},
+        {id: 13, cat: 'daily', fr: "Quand cuisines-tu ?", ar: "متى تطبخ؟"},
+        {id: 14, cat: 'daily', fr: "Quand regardes-tu la télévision ?", ar: "متى تشاهد التلفاز؟"},
+        {id: 15, cat: 'daily', fr: "Quand écoutes-tu de la musique ?", ar: "متى تستمع إلى الموسيقى؟"},
+        {id: 16, cat: 'daily', fr: "Quand lis-tu un livre ?", ar: "متى تقرأ كتابًا؟"},
+        {id: 17, cat: 'daily', fr: "Quand fais-tu du sport ?", ar: "متى تمارس الرياضة؟"},
+        {id: 18, cat: 'daily', fr: "Quand te reposes-tu ?", ar: "متى تستريح؟"},
+        {id: 19, cat: 'daily', fr: "Quand téléphones-tu à ta famille ?", ar: "متى تتصل بعائلتك؟"},
+        {id: 20, cat: 'daily', fr: "Quand as-tu du temps libre ?", ar: "متى يكون لديك وقت فراغ؟"},
+
+        // 21-40: العمل والدراسة
+        {id: 21, cat: 'work', fr: "Quand commences-tu le travail ?", ar: "متى تبدأ العمل؟"},
+        {id: 22, cat: 'work', fr: "Quand finis-tu le travail ?", ar: "متى تنهي العمل؟"},
+        {id: 23, cat: 'work', fr: "Quand commences-tu les cours ?", ar: "متى تبدأ الدروس؟"},
+        {id: 24, cat: 'work', fr: "Quand se termine le cours ?", ar: "متى ينتهي الدرس؟"},
+        {id: 25, cat: 'work', fr: "Quand vas-tu à l’université ?", ar: "متى تذهب إلى الجامعة؟"},
+        {id: 26, cat: 'work', fr: "Quand étudies-tu le français ?", ar: "متى تدرس الفرنسية؟"},
+        {id: 27, cat: 'work', fr: "Quand apprends-tu le néerlandais ?", ar: "متى تتعلم الهولندية؟"},
+        {id: 28, cat: 'work', fr: "Quand fais-tu tes devoirs ?", ar: "متى تحل واجباتك؟"},
+        {id: 29, cat: 'work', fr: "Quand as-tu un examen ?", ar: "متى لديك امتحان؟"},
+        {id: 30, cat: 'work', fr: "Quand recevras-tu tes résultats ?", ar: "متى ستتلقى نتائجك؟"},
+        {id: 31, cat: 'work', fr: "Quand dois-tu rendre ce travail ?", ar: "متى يجب أن تسلّم هذا العمل؟"},
+        {id: 32, cat: 'work', fr: "Quand as-tu un entretien d’embauche ?", ar: "متى لديك مقابلة عمل؟"},
+        {id: 33, cat: 'work', fr: "Quand peux-tu commencer à travailler ?", ar: "متى يمكنك البدء في العمل؟"},
+        {id: 34, cat: 'work', fr: "Quand as-tu envoyé ton CV ?", ar: "متى أرسلت سيرتك الذاتية؟"},
+        {id: 35, cat: 'work', fr: "Quand le responsable sera-t-il disponible ?", ar: "متى سيكون المسؤول متاحًا؟"},
+        {id: 36, cat: 'work', fr: "Quand a lieu la réunion ?", ar: "متى يُعقد الاجتماع؟"},
+        {id: 37, cat: 'work', fr: "Quand commence la formation ?", ar: "متى يبدأ التدريب؟"},
+        {id: 38, cat: 'work', fr: "Quand se termine la formation ?", ar: "متى ينتهي التدريب؟"},
+        {id: 39, cat: 'work', fr: "Quand dois-je m’inscrire ?", ar: "متى يجب أن أسجّل؟"},
+        {id: 40, cat: 'work', fr: "Quand recevrai-je une réponse ?", ar: "متى سأتلقى ردًا؟"},
+
+        // 41-60: الماضي والحاضر والمستقبل
+        {id: 41, cat: 'tenses', fr: "Quand es-tu arrivé ?", ar: "متى وصلت؟"},
+        {id: 42, cat: 'tenses', fr: "Quand es-tu parti ?", ar: "متى غادرت؟"},
+        {id: 43, cat: 'tenses', fr: "Quand as-tu commencé à apprendre le français ?", ar: "متى بدأت تعلم الفرنسية؟"},
+        {id: 44, cat: 'tenses', fr: "Quand as-tu déménagé ?", ar: "متى انتقلت إلى منزل آخر؟"},
+        {id: 45, cat: 'tenses', fr: "Quand as-tu rencontré ta femme ?", ar: "متى قابلت زوجتك؟"},
+        {id: 46, cat: 'tenses', fr: "Quand as-tu acheté cette voiture ?", ar: "متى اشتريت هذه السيارة؟"},
+        {id: 47, cat: 'tenses', fr: "Quand as-tu terminé tes études ?", ar: "متى أنهيت دراستك؟"},
+        {id: 48, cat: 'tenses', fr: "Quand as-tu reçu ce message ?", ar: "متى تلقيت هذه الرسالة؟"},
+        {id: 49, cat: 'tenses', fr: "Quand as-tu appelé le médecin ?", ar: "متى اتصلت بالطبيب؟"},
+        {id: 50, cat: 'tenses', fr: "Quand as-tu réservé ton billet ?", ar: "متى حجزت تذكرتك؟"},
+        {id: 51, cat: 'tenses', fr: "Quand vas-tu partir ?", ar: "متى ستغادر؟"},
+        {id: 52, cat: 'tenses', fr: "Quand vas-tu revenir ?", ar: "متى ستعود؟"},
+        {id: 53, cat: 'tenses', fr: "Quand arriveras-tu ?", ar: "متى ستصل؟"},
+        {id: 54, cat: 'tenses', fr: "Quand commencera le film ?", ar: "متى سيبدأ الفيلم؟"},
+        {id: 55, cat: 'tenses', fr: "Quand finira la réunion ?", ar: "متى سينتهي الاجتماع؟"},
+        {id: 56, cat: 'tenses', fr: "Quand reviendras-tu au travail ?", ar: "متى ستعود إلى العمل؟"},
+        {id: 57, cat: 'tenses', fr: "Quand pourrons-nous nous rencontrer ?", ar: "متى يمكننا أن نلتقي؟"},
+        {id: 58, cat: 'tenses', fr: "Quand seras-tu libre ?", ar: "متى ستكون متفرغًا؟"},
+        {id: 59, cat: 'tenses', fr: "Quand déménageras-tu ?", ar: "متى ستنتقل إلى منزل آخر؟"},
+        {id: 60, cat: 'tenses', fr: "Quand prendras-tu tes vacances ?", ar: "متى ستأخذ إجازتك؟"},
+
+        // 61-80: المواعيد والوقت والتخطيط
+        {id: 61, cat: 'planning', fr: "Quand est ton anniversaire ?", ar: "متى عيد ميلادك؟"},
+        {id: 62, cat: 'planning', fr: "Quand sont les vacances scolaires ?", ar: "متى العطلة المدرسية؟"},
+        {id: 63, cat: 'planning', fr: "Quand commence la semaine ?", ar: "متى يبدأ الأسبوع؟"},
+        {id: 64, cat: 'planning', fr: "Quand se termine le mois ?", ar: "متى ينتهي الشهر؟"},
+        {id: 65, cat: 'planning', fr: "Quand sommes-nous en congé ?", ar: "متى نكون في إجازة؟"},
+        {id: 66, cat: 'planning', fr: "Quand est le prochain rendez-vous ?", ar: "متى الموعد القادم؟"},
+        {id: 67, cat: 'planning', fr: "Quand dois-je revenir ?", ar: "متى يجب أن أعود؟"},
+        {id: 68, cat: 'planning', fr: "Quand puis-je vous appeler ?", ar: "متى يمكنني الاتصال بك؟"},
+        {id: 69, cat: 'planning', fr: "Quand êtes-vous disponible ?", ar: "متى تكون متاحًا؟"},
+        {id: 70, cat: 'planning', fr: "Quand pouvons-nous commencer ?", ar: "متى يمكننا البدء؟"},
+        {id: 71, cat: 'planning', fr: "Quand faut-il payer ?", ar: "متى يجب الدفع؟"},
+        {id: 72, cat: 'planning', fr: "Quand le magasin ouvre-t-il ?", ar: "متى يفتح المتجر؟"},
+        {id: 73, cat: 'planning', fr: "Quand le magasin ferme-t-il ?", ar: "متى يغلق المتجر؟"},
+        {id: 74, cat: 'planning', fr: "Quand passe le prochain bus ?", ar: "متى تمر الحافلة التالية؟"},
+        {id: 75, cat: 'planning', fr: "Quand arrive le train ?", ar: "متى يصل القطار؟"},
+        {id: 76, cat: 'planning', fr: "Quand part le dernier train ?", ar: "متى يغادر آخر قطار؟"},
+        {id: 77, cat: 'planning', fr: "Quand commence le match ?", ar: "متى تبدأ المباراة؟"},
+        {id: 78, cat: 'planning', fr: "Quand finit le spectacle ?", ar: "متى ينتهي العرض؟"},
+        {id: 79, cat: 'planning', fr: "Quand aura lieu la fête ?", ar: "متى سيُقام الحفل؟"},
+        {id: 80, cat: 'planning', fr: "Quand partirons-nous en voyage ?", ar: "متى سنسافر؟"},
+
+        // 81-100: أسئلة مهمة للحياة في بلجيكا والإجراءات
+        {id: 81, cat: 'belgium', fr: "Quand puis-je m’inscrire au VDAB ?", ar: "متى يمكنني التسجيل في VDAB؟"},
+        {id: 82, cat: 'belgium', fr: "Quand commence le cours de néerlandais ?", ar: "متى تبدأ دورة الهولندية؟"},
+        {id: 83, cat: 'belgium', fr: "Quand puis-je commencer une formation ?", ar: "متى يمكنني بدء تدريب؟"},
+        {id: 84, cat: 'belgium', fr: "Quand recevrai-je ma carte de séjour ?", ar: "متى سأتلقى بطاقة الإقامة؟"},
+        {id: 85, cat: 'belgium', fr: "Quand dois-je renouveler mon titre de séjour ?", ar: "متى يجب أن أجدد تصريح إقامتي؟"},
+        {id: 86, cat: 'belgium', fr: "Quand puis-je demander un rendez-vous à la commune ?", ar: "متى يمكنني طلب موعد في البلدية؟"},
+        {id: 87, cat: 'belgium', fr: "Quand dois-je présenter mes documents ?", ar: "متى يجب أن أقدّم مستنداتي؟"},
+        {id: 88, cat: 'belgium', fr: "Quand recevrai-je une réponse de la commune ?", ar: "متى سأتلقى ردًا من البلدية؟"},
+        {id: 89, cat: 'belgium', fr: "Quand puis-je commencer à travailler ?", ar: "متى يمكنني البدء في العمل؟"},
+        {id: 90, cat: 'belgium', fr: "Quand serai-je payé ?", ar: "متى سأتقاضى راتبي؟"},
+        {id: 91, cat: 'belgium', fr: "Quand le contrat commence-t-il ?", ar: "متى يبدأ العقد؟"},
+        {id: 92, cat: 'belgium', fr: "Quand le contrat se termine-t-il ?", ar: "متى ينتهي العقد؟"},
+        {id: 93, cat: 'belgium', fr: "Quand dois-je payer le loyer ?", ar: "متى يجب أن أدفع الإيجار؟"},
+        {id: 94, cat: 'belgium', fr: "Quand puis-je consulter un médecin ?", ar: "متى يمكنني زيارة طبيب؟"},
+        {id: 95, cat: 'belgium', fr: "Quand la pharmacie ouvre-t-elle ?", ar: "متى تفتح الصيدلية؟"},
+        {id: 96, cat: 'belgium', fr: "Quand dois-je prendre ce médicament ?", ar: "متى يجب أن أتناول هذا الدواء؟"},
+        {id: 97, cat: 'belgium', fr: "Quand puis-je récupérer mon document ?", ar: "متى يمكنني استلام مستندي؟"},
+        {id: 98, cat: 'belgium', fr: "Quand dois-je envoyer ma candidature ?", ar: "متى يجب أن أرسل طلب التوظيف؟"},
+        {id: 99, cat: 'belgium', fr: "Quand pourrons-nous signer le contrat ?", ar: "متى يمكننا توقيع العقد؟"},
+        {id: 100, cat: 'belgium', fr: "Quand pourras-tu venir me voir ?", ar: "متى ستتمكن من المجيء لزيارتي؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
