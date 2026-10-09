@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Avec quoi ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent: #10b981;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text-main); padding: 20px; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 25px; }
+        header h1 { color: var(--primary); font-size: 2rem; margin-bottom: 5px; }
+        header p { color: var(--text-sub); }
+
+        .view-modes { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .mode-btn { padding: 10px 20px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 700; border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .mode-btn.active, .mode-btn:hover { background: var(--primary); color: #fff; }
+
+        .controls { background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px; }
+        .search-box input { width: 100%; padding: 10px 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; outline: none; }
+        .search-box input:focus { border-color: var(--primary); }
+        .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tab-btn { padding: 6px 14px; border: none; background: #e2e8f0; color: var(--text-sub); border-radius: 20px; cursor: pointer; font-family: inherit; font-weight: 500; font-size: 0.9rem; }
+        .tab-btn.active { background: var(--primary); color: #fff; }
+
+        /* Grid View */
+        .questions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .num { background: #dbeafe; color: var(--primary); font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 0.85rem; }
+        .audio-btn { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); }
+        .french { font-family: 'Poppins', sans-serif; font-weight: 600; direction: ltr; text-align: left; font-size: 1.1rem; }
+        .arabic { color: var(--text-sub); font-size: 0.95rem; margin-top: 4px; }
+
+        /* Flashcard View */
+        .flashcard-container { display: none; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0; }
+        .flashcard { width: 100%; max-width: 450px; height: 250px; perspective: 1000px; cursor: pointer; }
+        .flashcard-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; border-radius: 16px; background: var(--card-bg); border: 2px solid var(--primary); text-align: center; }
+        .flashcard-back { transform: rotateY(180deg); background: #f0fdf4; border-color: var(--accent); }
+        .flash-nav { display: flex; gap: 15px; align-items: center; }
+        .nav-btn { padding: 8px 18px; background: var(--primary); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; }
+
+        /* Quiz View */
+        .quiz-container { display: none; background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border); max-width: 600px; margin: 0 auto; text-align: center; }
+        .options { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .option-btn { padding: 12px; border: 1px solid var(--border); background: #fff; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 1rem; text-align: right; transition: all 0.2s; }
+        .option-btn:hover { background: #f1f5f9; }
+        .option-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
+        .option-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال مع Avec quoi ?</h1>
+        <p>تعلم أسئلة الأدوات والشغف بالفرنسية بطريقة تفاعلية</p>
+    </header>
+
+    <div class="view-modes">
+        <button class="mode-btn active" onclick="switchView('grid')">قائمة الأسئلة</button>
+        <button class="mode-btn" onclick="switchView('flashcard')">بطاقات تعليمية</button>
+        <button class="mode-btn" onclick="switchView('quiz')">اختبار سريع</button>
+    </div>
+
+    <!-- Grid Controls -->
+    <div class="controls" id="gridControls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" onclick="filterCat('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterCat('daily', this)">الحياة اليومية</button>
+            <button class="tab-btn" onclick="filterCat('kitchen', this)">المطبخ والطعام</button>
+            <button class="tab-btn" onclick="filterCat('work', this)">الدراسة والعمل</button>
+            <button class="tab-btn" onclick="filterCat('tech', this)">التكنولوجيا</button>
+            <button class="tab-btn" onclick="filterCat('travel', this)">السفر والمواقف</button>
+        </div>
+    </div>
+
+    <!-- Grid View -->
+    <div class="questions-grid" id="grid"></div>
+
+    <!-- Flashcard View -->
+    <div class="flashcard-container" id="flashcardView">
+        <div class="flashcard" id="card" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <span style="color:var(--text-sub); font-size:0.85rem; margin-bottom:10px;">اضغط لإظهار الترجمة</span>
+                    <div class="french" id="flashFr" style="font-size: 1.4rem;">...</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="arabic" id="flashAr" style="font-size: 1.3rem; color: #065f46; font-weight: 700;">...</div>
+                </div>
+            </div>
+        </div>
+        <div class="flash-nav">
+            <button class="nav-btn" onclick="prevCard()">السابق</button>
+            <span id="cardCounter">1 / 100</span>
+            <button class="nav-btn" onclick="nextCard()">التالي</button>
+        </div>
+    </div>
+
+    <!-- Quiz View -->
+    <div class="quiz-container" id="quizView">
+        <h3 style="color:var(--text-sub); font-size:0.9rem;">اختر الترجمة الصحيحة للسؤال:</h3>
+        <div class="french" id="quizFr" style="font-size:1.4rem; text-align:center; margin: 15px 0;">...</div>
+        <div class="options" id="quizOptions"></div>
+        <button class="nav-btn" style="margin-top:10px;" onclick="nextQuiz()">السؤال التالي ➔</button>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        // 1-20 Daily
+        {id: 1, cat: 'daily', fr: "Avec quoi écris-tu ?", ar: "بماذا تكتب؟"},
+        {id: 2, cat: 'daily', fr: "Avec quoi ouvres-tu la porte ?", ar: "بماذا تفتح الباب؟"},
+        {id: 3, cat: 'daily', fr: "Avec quoi coupes-tu le pain ?", ar: "بماذا تقطع الخبز؟"},
+        {id: 4, cat: 'daily', fr: "Avec quoi manges-tu ?", ar: "بماذا تأكل؟"},
+        {id: 5, cat: 'daily', fr: "Avec quoi bois-tu le café ?", ar: "بماذا تشرب القهوة؟"},
+        {id: 6, cat: 'daily', fr: "Avec quoi nettoies-tu la maison ?", ar: "بماذا تنظف المنزل؟"},
+        {id: 7, cat: 'daily', fr: "Avec quoi te laves-tu les mains ?", ar: "بماذا تغسل يديك؟"},
+        {id: 8, cat: 'daily', fr: "Avec quoi te brosses-tu les dents ?", ar: "بماذا تنظف أسنانك؟"},
+        {id: 9, cat: 'daily', fr: "Avec quoi te coiffes-tu ?", ar: "بماذا تمشط شعرك؟"},
+        {id: 10, cat: 'daily', fr: "Avec quoi te rases-tu ?", ar: "بماذا تحلق ذقنك؟"},
+        {id: 11, cat: 'daily', fr: "Avec quoi essuies-tu la table ?", ar: "بماذا تمسح الطاولة؟"},
+        {id: 12, cat: 'daily', fr: "Avec quoi balayes-tu le sol ?", ar: "بماذا تكنس الأرض؟"},
+        {id: 13, cat: 'daily', fr: "Avec quoi laves-tu les vêtements ?", ar: "بماذا تغسل الملابس؟"},
+        {id: 14, cat: 'daily', fr: "Avec quoi repasses-tu tes chemises ?", ar: "بماذا تكوي قمصانك؟"},
+        {id: 15, cat: 'daily', fr: "Avec quoi fais-tu le ménage ?", ar: "بماذا تنظف المنزل؟"},
+        {id: 16, cat: 'daily', fr: "Avec quoi allumes-tu la lumière ?", ar: "بماذا تشغّل الضوء؟"},
+        {id: 17, cat: 'daily', fr: "Avec quoi fermes-tu la bouteille ?", ar: "بماذا تغلق الزجاجة؟"},
+        {id: 18, cat: 'daily', fr: "Avec quoi attaches-tu tes chaussures ?", ar: "بماذا تربط حذاءك؟"},
+        {id: 19, cat: 'daily', fr: "Avec quoi portes-tu tes affaires ?", ar: "بماذا تحمل أغراضك؟"},
+        {id: 20, cat: 'daily', fr: "Avec quoi prends-tu ta douche ?", ar: "بماذا تستحم؟"},
+
+        // 21-40 Kitchen
+        {id: 21, cat: 'kitchen', fr: "Avec quoi cuisines-tu ?", ar: "بماذا تطبخ؟"},
+        {id: 22, cat: 'kitchen', fr: "Avec quoi coupes-tu les légumes ?", ar: "بماذا تقطع الخضراوات؟"},
+        {id: 23, cat: 'kitchen', fr: "Avec quoi épluches-tu les pommes de terre ?", ar: "بماذا تقشّر البطاطس؟"},
+        {id: 24, cat: 'kitchen', fr: "Avec quoi mélanges-tu la soupe ?", ar: "بماذا تقلّب الشوربة؟"},
+        {id: 25, cat: 'kitchen', fr: "Avec quoi fais-tu une omelette ?", ar: "بماذا تحضّر عجة البيض؟"},
+        {id: 26, cat: 'kitchen', fr: "Avec quoi fais-tu du café ?", ar: "بماذا تحضّر القهوة؟"},
+        {id: 27, cat: 'kitchen', fr: "Avec quoi prépares-tu le thé ?", ar: "بماذا تحضّر الشاي؟"},
+        {id: 28, cat: 'kitchen', fr: "Avec quoi ouvres-tu une boîte de conserve ?", ar: "بماذا تفتح علبة الطعام المعدنية؟"},
+        {id: 29, cat: 'kitchen', fr: "Avec quoi casses-tu les noix ?", ar: "بماذا تكسر الجوز؟"},
+        {id: 30, cat: 'kitchen', fr: "Avec quoi écrases-tu les pommes de terre ?", ar: "بماذا تهرس البطاطس؟"},
+        {id: 31, cat: 'kitchen', fr: "Avec quoi bats-tu les œufs ?", ar: "بماذا تخفق البيض؟"},
+        {id: 32, cat: 'kitchen', fr: "Avec quoi pétris-tu la pâte ?", ar: "بماذا تعجن العجين؟"},
+        {id: 33, cat: 'kitchen', fr: "Avec quoi fais-tu cuire le riz ?", ar: "بماذا تطبخ الأرز؟"},
+        {id: 34, cat: 'kitchen', fr: "Avec quoi fais-tu frire les pommes de terre ?", ar: "بماذا تقلي البطاطس؟"},
+        {id: 35, cat: 'kitchen', fr: "Avec quoi sers-tu la soupe ?", ar: "بماذا تغرف الشوربة؟"},
+        {id: 36, cat: 'kitchen', fr: "Avec quoi couvres-tu la casserole ?", ar: "بماذا تغطي القدر؟"},
+        {id: 37, cat: 'kitchen', fr: "Avec quoi remplis-tu le verre ?", ar: "بماذا تملأ الكوب؟"},
+        {id: 38, cat: 'kitchen', fr: "Avec quoi conserves-tu les aliments ?", ar: "بماذا تحفظ الطعام؟"},
+        {id: 39, cat: 'kitchen', fr: "Avec quoi coupes-tu la viande ?", ar: "بماذا تقطع اللحم؟"},
+        {id: 40, cat: 'kitchen', fr: "Avec quoi assaisonnes-tu la salade ?", ar: "بماذا تتبّل السلطة؟"},
+
+        // 41-60 Work
+        {id: 41, cat: 'work', fr: "Avec quoi prends-tu des notes ?", ar: "بماذا تدوّن الملاحظات؟"},
+        {id: 42, cat: 'work', fr: "Avec quoi écris-tu au tableau ?", ar: "بماذا تكتب على السبورة؟"},
+        {id: 43, cat: 'work', fr: "Avec quoi effaces-tu le tableau ?", ar: "بماذا تمسح السبورة؟"},
+        {id: 44, cat: 'work', fr: "Avec quoi calcules-tu les résultats ?", ar: "بماذا تحسب النتائج؟"},
+        {id: 45, cat: 'work', fr: "Avec quoi fais-tu tes devoirs ?", ar: "بماذا تنجز واجباتك؟"},
+        {id: 46, cat: 'work', fr: "Avec quoi traduis-tu les textes ?", ar: "بماذا تترجم النصوص؟"},
+        {id: 47, cat: 'work', fr: "Avec quoi apprends-tu le français ?", ar: "بماذا تتعلم الفرنسية؟"},
+        {id: 48, cat: 'work', fr: "Avec quoi pratiques-tu la prononciation ?", ar: "بماذا تتدرب على النطق؟"},
+        {id: 49, cat: 'work', fr: "Avec quoi recherches-tu des informations ?", ar: "بماذا تبحث عن المعلومات؟"},
+        {id: 50, cat: 'work', fr: "Avec quoi imprimes-tu les documents ?", ar: "بماذا تطبع المستندات؟"},
+        {id: 51, cat: 'work', fr: "Avec quoi scannes-tu les papiers ?", ar: "بماذا تمسح الأوراق ضوئيًا؟"},
+        {id: 52, cat: 'work', fr: "Avec quoi signes-tu les documents ?", ar: "بماذا توقّع المستندات؟"},
+        {id: 53, cat: 'work', fr: "Avec quoi envoies-tu tes e-mails ?", ar: "بماذا ترسل رسائل البريد الإلكتروني؟"},
+        {id: 54, cat: 'work', fr: "Avec quoi participes-tu aux réunions en ligne ?", ar: "بماذا تشارك في الاجتماعات عبر الإنترنت؟"},
+        {id: 55, cat: 'work', fr: "Avec quoi présentes-tu ton projet ?", ar: "بماذا تعرض مشروعك؟"},
+        {id: 56, cat: 'work', fr: "Avec quoi organises-tu ton travail ?", ar: "بماذا تنظّم عملك؟"},
+        {id: 57, cat: 'work', fr: "Avec quoi vérifies-tu les calculs ?", ar: "بماذا تتحقق من الحسابات؟"},
+        {id: 58, cat: 'work', fr: "Avec quoi dessines-tu les plans ?", ar: "بماذا ترسم المخططات؟"},
+        {id: 59, cat: 'work', fr: "Avec quoi mesures-tu la température ?", ar: "بماذا تقيس درجة الحرارة؟"},
+        {id: 60, cat: 'work', fr: "Avec quoi répares-tu les machines ?", ar: "بماذا تصلح الآلات؟"},
+
+        // 61-80 Tech
+        {id: 61, cat: 'tech', fr: "Avec quoi téléphones-tu à tes amis ?", ar: "بماذا تتصل بأصدقائك؟"},
+        {id: 62, cat: 'tech', fr: "Avec quoi prends-tu des photos ?", ar: "بماذا تلتقط الصور؟"},
+        {id: 63, cat: 'tech', fr: "Avec quoi filmes-tu les vidéos ?", ar: "بماذا تصوّر الفيديوهات؟"},
+        {id: 64, cat: 'tech', fr: "Avec quoi écoutes-tu de la musique ?", ar: "بماذا تستمع إلى الموسيقى؟"},
+        {id: 65, cat: 'tech', fr: "Avec quoi regardes-tu des films ?", ar: "بماذا تشاهد الأفلام؟"},
+        {id: 66, cat: 'tech', fr: "Avec quoi te connectes-tu à Internet ?", ar: "بماذا تتصل بالإنترنت؟"},
+        {id: 67, cat: 'tech', fr: "Avec quoi écris-tu tes messages ?", ar: "بماذا تكتب رسائلك؟"},
+        {id: 68, cat: 'tech', fr: "Avec quoi télécharges-tu les fichiers ?", ar: "بماذا تحمّل الملفات؟"},
+        {id: 69, cat: 'tech', fr: "Avec quoi modifies-tu les photos ?", ar: "بماذا تعدّل الصور؟"},
+        {id: 70, cat: 'tech', fr: "Avec quoi montes-tu les vidéos ?", ar: "بماذا تحرّر الفيديوهات؟"},
+        {id: 71, cat: 'tech', fr: "Avec quoi imprimes-tu les photos ?", ar: "بماذا تطبع الصور؟"},
+        {id: 72, cat: 'tech', fr: "Avec quoi charges-tu ton téléphone ?", ar: "بماذا تشحن هاتفك؟"},
+        {id: 73, cat: 'tech', fr: "Avec quoi connectes-tu ton ordinateur à l’écran ?", ar: "بماذا توصل الكمبيوتر بالشاشة؟"},
+        {id: 74, cat: 'tech', fr: "Avec quoi contrôles-tu la télévision ?", ar: "بماذا تتحكم في التلفاز؟"},
+        {id: 75, cat: 'tech', fr: "Avec quoi stockes-tu tes fichiers ?", ar: "بماذا تخزّن ملفاتك؟"},
+        {id: 76, cat: 'tech', fr: "Avec quoi protèges-tu ton ordinateur ?", ar: "بماذا تحمي الكمبيوتر؟"},
+        {id: 77, cat: 'tech', fr: "Avec quoi fais-tu des appels vidéo ?", ar: "بماذا تجري مكالمات الفيديو؟"},
+        {id: 78, cat: 'tech', fr: "Avec quoi crées-tu un site web ?", ar: "بماذا تنشئ موقعًا إلكترونيًا؟"},
+        {id: 79, cat: 'tech', fr: "Avec quoi programmes-tu ?", ar: "بماذا تبرمج؟"},
+        {id: 80, cat: 'tech', fr: "Avec quoi partages-tu tes documents ?", ar: "بماذا تشارك مستنداتك؟"},
+
+        // 81-100 Travel
+        {id: 81, cat: 'travel', fr: "Avec quoi vas-tu au travail ?", ar: "بماذا تذهب إلى العمل؟"},
+        {id: 82, cat: 'travel', fr: "Avec quoi te déplaces-tu en ville ?", ar: "بماذا تتنقل في المدينة؟"},
+        {id: 83, cat: 'travel', fr: "Avec quoi voyages-tu ?", ar: "بماذا تسافر؟"},
+        {id: 84, cat: 'travel', fr: "Avec quoi transportes-tu tes bagages ?", ar: "بماذا تنقل أمتعتك؟"},
+        {id: 85, cat: 'travel', fr: "Avec quoi paies-tu ton billet ?", ar: "بماذا تدفع ثمن تذكرتك؟"},
+        {id: 86, cat: 'travel', fr: "Avec quoi réserves-tu un hôtel ?", ar: "بماذا تحجز فندقًا؟"},
+        {id: 87, cat: 'travel', fr: "Avec quoi trouves-tu ton chemin ?", ar: "بماذا تجد طريقك؟"},
+        {id: 88, cat: 'travel', fr: "Avec quoi consultes-tu une carte ?", ar: "بماذا تطّلع على الخريطة؟"},
+        {id: 89, cat: 'travel', fr: "Avec quoi ouvres-tu ta voiture ?", ar: "بماذا تفتح سيارتك؟"},
+        {id: 90, cat: 'travel', fr: "Avec quoi démarres-tu la voiture ?", ar: "بماذا تشغّل السيارة؟"},
+        {id: 91, cat: 'travel', fr: "Avec quoi gonfles-tu les pneus ?", ar: "بماذا تنفخ الإطارات؟"},
+        {id: 92, cat: 'travel', fr: "Avec quoi répares-tu un pneu crevé ?", ar: "بماذا تصلح إطارًا مثقوبًا؟"},
+        {id: 93, cat: 'travel', fr: "Avec quoi mesures-tu une distance ?", ar: "بماذا تقيس المسافة؟"},
+        {id: 94, cat: 'travel', fr: "Avec quoi paies-tu tes achats ?", ar: "بماذا تدفع ثمن مشترياتك؟"},
+        {id: 95, cat: 'travel', fr: "Avec quoi nettoies-tu tes lunettes ?", ar: "بماذا تنظف نظارتك؟"},
+        {id: 96, cat: 'travel', fr: "Avec quoi protèges-tu tes mains du froid ?", ar: "بماذا تحمي يديك من البرد؟"},
+        {id: 97, cat: 'travel', fr: "Avec quoi te protèges-tu de la pluie ?", ar: "بماذا تحتمي من المطر؟"},
+        {id: 98, cat: 'travel', fr: "Avec quoi fais-tu du sport ?", ar: "بماذا تمارس الرياضة؟"},
+        {id: 99, cat: 'travel', fr: "Avec quoi répares-tu un robinet ?", ar: "بماذا تصلح صنبور المياه؟"},
+        {id: 100, cat: 'travel', fr: "Avec quoi préfères-tu travailler ?", ar: "بماذا تفضّل العمل؟"}
+    ];
+
+    let currentCat = 'all';
+    let searchTerm = '';
+    let currentFlashIndex = 0;
+    let currentQuizItem = null;
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function switchView(mode) {
+        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+
+        document.getElementById('gridControls').style.display = mode === 'grid' ? 'flex' : 'none';
+        document.getElementById('grid').style.display = mode === 'grid' ? 'grid' : 'none';
+        document.getElementById('flashcardView').style.display = mode === 'flashcard' ? 'flex' : 'none';
+        document.getElementById('quizView').style.display = mode === 'quiz' ? 'block' : 'none';
+
+        if(mode === 'flashcard') updateFlashcard();
+        if(mode === 'quiz') nextQuiz();
+    }
+
+    function filterCat(cat, btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = cat;
+        renderGrid();
+    }
+
+    function renderGrid() {
+        const grid = document.getElementById('grid');
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        renderGrid();
+    });
+
+    // Flashcard Logic
+    function updateFlashcard() {
+        const cardElem = document.getElementById('card');
+        cardElem.classList.remove('flipped');
+        const q = questions[currentFlashIndex];
+        document.getElementById('flashFr').innerText = q.fr;
+        document.getElementById('flashAr').innerText = q.ar;
+        document.getElementById('cardCounter').innerText = `${currentFlashIndex + 1} / ${questions.length}`;
+    }
+
+    function nextCard() {
+        currentFlashIndex = (currentFlashIndex + 1) % questions.length;
+        updateFlashcard();
+    }
+
+    function prevCard() {
+        currentFlashIndex = (currentFlashIndex - 1 + questions.length) % questions.length;
+        updateFlashcard();
+    }
+
+    // Quiz Logic
+    function nextQuiz() {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        currentQuizItem = questions[randomIndex];
+
+        document.getElementById('quizFr').innerText = currentQuizItem.fr;
+
+        // Distractors
+        let options = [currentQuizItem.ar];
+        while(options.length < 3) {
+            let opt = questions[Math.floor(Math.random() * questions.length)].ar;
+            if(!options.includes(opt)) options.push(opt);
+        }
+        options.sort(() => Math.random() - 0.5);
+
+        const optionsElem = document.getElementById('quizOptions');
+        optionsElem.innerHTML = '';
+        options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if(opt === currentQuizItem.ar) {
+                    btn.classList.add('correct');
+                } else {
+                    btn.classList.add('wrong');
+                }
+            };
+            optionsElem.appendChild(btn);
+        });
+    }
+
+    renderGrid();
+</script>
+</body>
+</html>
