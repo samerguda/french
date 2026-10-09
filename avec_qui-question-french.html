@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية باستخدام Avec qui ?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #eef2ff;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .grammar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .grammar-item {
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #c7d2fe;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #c7d2fe;
+            color: var(--primary-hover);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Avec qui ?</h1>
+        <p>دليلك التفاعلي الشامل للسؤال عن الأشخاص والأمصاحبة بالفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 قاعدة حروف الجر مع Qui (السؤال عن الأشخاص):</h3>
+        <p>في اللغة الفرنسية، يأتي حرف الجر دائماً قبل أداة الاستفهام <strong>Qui</strong>:</p>
+        <div class="grammar-grid">
+            <div class="grammar-item"><strong>Avec qui ?</strong> : مع مَن؟</div>
+            <div class="grammar-item"><strong>Pour qui ?</strong> : من أجل مَن؟ / لِمَن؟</div>
+            <div class="grammar-item"><strong>De qui ?</strong> : عن مَن؟ / مِمَّن؟</div>
+            <div class="grammar-item"><strong>À qui ?</strong> : لِمَن؟ / إلى مَن؟</div>
+            <div class="grammar-item"><strong>Chez qui ?</strong> : في منزل مَن؟</div>
+        </div>
+        <p style="margin-top:10px;"><strong>صيغ بناء السؤال:</strong> رسمية (<em>Avec qui travailles-tu ?</em>) | شائعة (<em>Avec qui est-ce que tu travailles ?</em>) | عامية محادثة (<em>Tu travailles avec qui ?</em>)</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">الحياة اليومية</button>
+            <button class="tab-btn" data-cat="family">الأسرة والعلاقات</button>
+            <button class="tab-btn" data-cat="friends">الأصدقاء والمجتمع</button>
+            <button class="tab-btn" data-cat="study">الدراسة واللغات</button>
+            <button class="tab-btn" data-cat="work">العمل والمهنة</button>
+            <button class="tab-btn" data-cat="travel">السفر والمواصلات</button>
+            <button class="tab-btn" data-cat="food">الطعام والمطاعم</button>
+            <button class="tab-btn" data-cat="sports">الرياضة والهوايات</button>
+            <button class="tab-btn" data-cat="tech">التكنولوجيا والإنترنت</button>
+            <button class="tab-btn" data-cat="plans">الخطط والمستقبل</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1. الحياة اليومية
+        {id: 1, cat: 'daily', fr: "Avec qui habites-tu ?", ar: "مع مَن تعيش؟"},
+        {id: 2, cat: 'daily', fr: "Avec qui manges-tu ?", ar: "مع مَن تأكل؟"},
+        {id: 3, cat: 'daily', fr: "Avec qui prends-tu le petit-déjeuner ?", ar: "مع مَن تتناول الإفطار؟"},
+        {id: 4, cat: 'daily', fr: "Avec qui passes-tu tes journées ?", ar: "مع مَن تقضي أيامك؟"},
+        {id: 5, cat: 'daily', fr: "Avec qui sors-tu le soir ?", ar: "مع مَن تخرج مساءً؟"},
+        {id: 6, cat: 'daily', fr: "Avec qui regardes-tu la télévision ?", ar: "مع مَن تشاهد التلفاز؟"},
+        {id: 7, cat: 'daily', fr: "Avec qui fais-tu les courses ?", ar: "مع مَن تتسوّق؟"},
+        {id: 8, cat: 'daily', fr: "Avec qui cuisines-tu ?", ar: "مع مَن تطبخ؟"},
+        {id: 9, cat: 'daily', fr: "Avec qui te promènes-tu ?", ar: "مع مَن تتمشّى؟"},
+        {id: 10, cat: 'daily', fr: "Avec qui passes-tu ton temps libre ?", ar: "مع مَن تقضي وقت فراغك؟"},
+
+        // 2. الأسرة والعلاقات
+        {id: 11, cat: 'family', fr: "Avec qui vis-tu en Belgique ?", ar: "مع مَن تعيش في بلجيكا؟"},
+        {id: 12, cat: 'family', fr: "Avec qui parles-tu le plus souvent ?", ar: "مع مَن تتحدث غالبًا؟"},
+        {id: 13, cat: 'family', fr: "Avec qui célèbres-tu ton anniversaire ?", ar: "مع مَن تحتفل بعيد ميلادك؟"},
+        {id: 14, cat: 'family', fr: "Avec qui pars-tu en vacances ?", ar: "مع مَن تذهب في العطلة؟"},
+        {id: 15, cat: 'family', fr: "Avec qui partages-tu tes secrets ?", ar: "مع مَن تشارك أسرارك؟"},
+        {id: 16, cat: 'family', fr: "Avec qui te sens-tu à l’aise ?", ar: "مع مَن تشعر بالراحة؟"},
+        {id: 17, cat: 'family', fr: "Avec qui passes-tu les fêtes ?", ar: "مع مَن تقضي الأعياد؟"},
+        {id: 18, cat: 'family', fr: "Avec qui prends-tu des photos ?", ar: "مع مَن تلتقط الصور؟"},
+        {id: 19, cat: 'family', fr: "Avec qui gardes-tu contact ?", ar: "مع مَن تحافظ على التواصل؟"},
+        {id: 20, cat: 'family', fr: "Avec qui aimerais-tu vivre ?", ar: "مع مَن تودّ أن تعيش؟"},
+
+        // 3. الأصدقاء والتواصل الاجتماعي
+        {id: 21, cat: 'friends', fr: "Avec qui sors-tu habituellement ?", ar: "مع مَن تخرج عادةً؟"},
+        {id: 22, cat: 'friends', fr: "Avec qui vas-tu au café ?", ar: "مع مَن تذهب إلى المقهى؟"},
+        {id: 23, cat: 'friends', fr: "Avec qui joues-tu au football ?", ar: "مع مَن تلعب كرة القدم؟"},
+        {id: 24, cat: 'friends', fr: "Avec qui discutes-tu sur Internet ?", ar: "مع مَن تتحدث عبر الإنترنت؟"},
+        {id: 25, cat: 'friends', fr: "Avec qui organises-tu les soirées ?", ar: "مع مَن تنظّم السهرات؟"},
+        {id: 26, cat: 'friends', fr: "Avec qui préfères-tu voyager ?", ar: "مع مَن تفضّل السفر؟"},
+        {id: 27, cat: 'friends', fr: "Avec qui fais-tu du sport ?", ar: "مع مَن تمارس الرياضة؟"},
+        {id: 28, cat: 'friends', fr: "Avec qui vas-tu au restaurant ?", ar: "مع مَن تذهب إلى المطعم؟"},
+        {id: 29, cat: 'friends', fr: "Avec qui célèbres-tu les bonnes nouvelles ?", ar: "مع مَن تحتفل بالأخبار السعيدة؟"},
+        {id: 30, cat: 'friends', fr: "Avec qui voudrais-tu passer le week-end ?", ar: "مع مَن تريد قضاء عطلة نهاية الأسبوع؟"},
+
+        // 4. الدراسة وتعلّم اللغات
+        {id: 31, cat: 'study', fr: "Avec qui étudies-tu le français ?", ar: "مع مَن تدرس الفرنسية؟"},
+        {id: 32, cat: 'study', fr: "Avec qui fais-tu tes devoirs ?", ar: "مع مَن تؤدي واجباتك؟"},
+        {id: 33, cat: 'study', fr: "Avec qui travailles-tu en classe ?", ar: "مع مَن تعمل داخل الفصل؟"},
+        {id: 34, cat: 'study', fr: "Avec qui apprends-tu le néerlandais ?", ar: "مع مَن تتعلّم الهولندية؟"},
+        {id: 35, cat: 'study', fr: "Avec qui pratiques-tu la conversation ?", ar: "مع مَن تتدرّب على المحادثة؟"},
+        {id: 36, cat: 'study', fr: "Avec qui révises-tu avant les examens ?", ar: "مع مَن تراجع قبل الامتحانات؟"},
+        {id: 37, cat: 'study', fr: "Avec qui fais-tu les exercices ?", ar: "مع مَن تحلّ التمارين؟"},
+        {id: 38, cat: 'study', fr: "Avec qui participes-tu aux cours en ligne ?", ar: "مع مَن تشارك في الدروس عبر الإنترنت؟"},
+        {id: 39, cat: 'study', fr: "Avec qui veux-tu pratiquer ton français ?", ar: "مع مَن تريد ممارسة الفرنسية؟"},
+        {id: 40, cat: 'study', fr: "Avec qui aimerais-tu étudier à l’université ?", ar: "مع مَن تودّ الدراسة في الجامعة؟"},
+
+        // 5. العمل والمهنة
+        {id: 41, cat: 'work', fr: "Avec qui travailles-tu ?", ar: "مع مَن تعمل؟"},
+        {id: 42, cat: 'work', fr: "Avec qui participes-tu aux réunions ?", ar: "مع مَن تشارك في الاجتماعات؟"},
+        {id: 43, cat: 'work', fr: "Avec qui prépares-tu les rapports ?", ar: "مع مَن تُعِدّ التقارير؟"},
+        {id: 44, cat: 'work', fr: "Avec qui discutes-tu des projets ?", ar: "مع مَن تناقش المشروعات؟"},
+        {id: 45, cat: 'work', fr: "Avec qui communiques-tu au bureau ?", ar: "مع مَن تتواصل في المكتب؟"},
+        {id: 46, cat: 'work', fr: "Avec qui collabores-tu sur ce chantier ?", ar: "مع مَن تتعاون في موقع العمل هذا؟"},
+        {id: 47, cat: 'work', fr: "Avec qui vérifies-tu les plans techniques ?", ar: "مع مَن تراجع المخططات الفنية؟"},
+        {id: 48, cat: 'work', fr: "Avec qui négocies-tu les contrats ?", ar: "مع مَن تتفاوض بشأن العقود؟"},
+        {id: 49, cat: 'work', fr: "Avec qui aimerais-tu travailler ?", ar: "مع مَن تودّ العمل؟"},
+        {id: 50, cat: 'work', fr: "Avec qui dois-tu prendre rendez-vous ?", ar: "مع مَن يجب أن تحدّد موعدًا؟"},
+
+        // 6. السفر والمواصلات
+        {id: 51, cat: 'travel', fr: "Avec qui voyages-tu habituellement ?", ar: "مع مَن تسافر عادةً؟"},
+        {id: 52, cat: 'travel', fr: "Avec qui vas-tu à Bruxelles ?", ar: "مع مَن تذهب إلى بروكسل؟"},
+        {id: 53, cat: 'travel', fr: "Avec qui prends-tu le train ?", ar: "مع مَن تستقل القطار؟"},
+        {id: 54, cat: 'travel', fr: "Avec qui voyages-tu en avion ?", ar: "مع مَن تسافر بالطائرة؟"},
+        {id: 55, cat: 'travel', fr: "Avec qui visites-tu les nouvelles villes ?", ar: "مع مَن تزور المدن الجديدة؟"},
+        {id: 56, cat: 'travel', fr: "Avec qui réserves-tu les hôtels ?", ar: "مع مَن تحجز الفنادق؟"},
+        {id: 57, cat: 'travel', fr: "Avec qui partages-tu une chambre d’hôtel ?", ar: "مع مَن تتشارك غرفة الفندق؟"},
+        {id: 58, cat: 'travel', fr: "Avec qui vas-tu à la gare ?", ar: "مع مَن تذهب إلى محطة القطار؟"},
+        {id: 59, cat: 'travel', fr: "Avec qui voudrais-tu faire le tour de l’Europe ?", ar: "مع مَن تودّ القيام بجولة في أوروبا؟"},
+        {id: 60, cat: 'travel', fr: "Avec qui rentres-tu à la maison ?", ar: "مع مَن تعود إلى المنزل؟"},
+
+        // 7. الطعام والمطاعم
+        {id: 61, cat: 'food', fr: "Avec qui déjeunes-tu aujourd’hui ?", ar: "مع مَن تتناول الغداء اليوم؟"},
+        {id: 62, cat: 'food', fr: "Avec qui dînes-tu ce soir ?", ar: "مع مَن تتناول العشاء الليلة؟"},
+        {id: 63, cat: 'food', fr: "Avec qui prends-tu un café ?", ar: "مع مَن تشرب القهوة؟"},
+        {id: 64, cat: 'food', fr: "Avec qui partages-tu ton repas ?", ar: "مع مَن تتشارك وجبتك؟"},
+        {id: 65, cat: 'food', fr: "Avec qui vas-tu essayer ce restaurant ?", ar: "مع مَن ستجرّب هذا المطعم؟"},
+        {id: 66, cat: 'food', fr: "Avec qui prépares-tu le dîner ?", ar: "مع مَن تحضّر العشاء؟"},
+        {id: 67, cat: 'food', fr: "Avec qui commandes-tu à manger ?", ar: "مع مَن تطلب الطعام؟"},
+        {id: 68, cat: 'food', fr: "Avec qui aimes-tu cuisiner ?", ar: "مع مَن تحب الطبخ؟"},
+        {id: 69, cat: 'food', fr: "Avec qui veux-tu découvrir la cuisine française ?", ar: "مع مَن تريد اكتشاف المطبخ الفرنسي؟"},
+        {id: 70, cat: 'food', fr: "Avec qui vas-tu au supermarché ?", ar: "مع مَن تذهب إلى السوبرماركت؟"},
+
+        // 8. الرياضة والهوايات
+        {id: 71, cat: 'sports', fr: "Avec qui fais-tu de la musculation ?", ar: "مع مَن تمارس تمارين بناء العضلات؟"},
+        {id: 72, cat: 'sports', fr: "Avec qui cours-tu le matin ?", ar: "مع مَن تجري في الصباح؟"},
+        {id: 73, cat: 'sports', fr: "Avec qui joues-tu aux échecs ?", ar: "مع مَن تلعب الشطرنج؟"},
+        {id: 74, cat: 'sports', fr: "Avec qui vas-tu à la salle de sport ?", ar: "مع مَن تذهب إلى صالة الرياضة؟"},
+        {id: 75, cat: 'sports', fr: "Avec qui regardes-tu les matchs ?", ar: "مع مَن تشاهد المباريات؟"},
+        {id: 76, cat: 'sports', fr: "Avec qui fais-tu du vélo ?", ar: "مع مَن تركب الدراجة؟"},
+        {id: 77, cat: 'sports', fr: "Avec qui joues-tu aux jeux vidéo ?", ar: "مع مَن تلعب ألعاب الفيديو؟"},
+        {id: 78, cat: 'sports', fr: "Avec qui vas-tu au cinéma ?", ar: "مع مَن تذهب إلى السينما؟"},
+        {id: 79, cat: 'sports', fr: "Avec qui apprends-tu à danser ?", ar: "مع مَن تتعلّم الرقص؟"},
+        {id: 80, cat: 'sports', fr: "Avec qui voudrais-tu pratiquer un nouveau sport ?", ar: "مع مَن تودّ ممارسة رياضة جديدة؟"},
+
+        // 9. التكنولوجيا والإنترنت
+        {id: 81, cat: 'tech', fr: "Avec qui fais-tu des appels vidéo ?", ar: "مع مَن تجري مكالمات الفيديو؟"},
+        {id: 82, cat: 'tech', fr: "Avec qui partages-tu tes fichiers ?", ar: "مع مَن تشارك ملفاتك؟"},
+        {id: 83, cat: 'tech', fr: "Avec qui travailles-tu sur un ordinateur ?", ar: "مع مَن تعمل على الكمبيوتر؟"},
+        {id: 84, cat: 'tech', fr: "Avec qui développes-tu ce site web ?", ar: "مع مَن تطوّر هذا الموقع الإلكتروني؟"},
+        {id: 85, cat: 'tech', fr: "Avec qui échanges-tu des messages ?", ar: "مع مَن تتبادل الرسائل؟"},
+        {id: 86, cat: 'tech', fr: "Avec qui joues-tu en ligne ?", ar: "مع مَن تلعب عبر الإنترنت؟"},
+        {id: 87, cat: 'tech', fr: "Avec qui suis-tu des cours à distance ?", ar: "مع مَن تتابع الدروس عن بُعد؟"},
+        {id: 88, cat: 'tech', fr: "Avec qui partages-tu tes photos ?", ar: "مع مَن تشارك صورك؟"},
+        {id: 89, cat: 'tech', fr: "Avec qui veux-tu créer une application ?", ar: "مع مَن تريد إنشاء تطبيق؟"},
+        {id: 90, cat: 'tech', fr: "Avec qui discutes-tu sur les réseaux sociaux ?", ar: "مع مَن تتحدث على وسائل التواصل الاجتماعي؟"},
+
+        // 10. الخطط والمستقبل
+        {id: 91, cat: 'plans', fr: "Avec qui veux-tu travailler à l’avenir ?", ar: "مع مَن تريد العمل في المستقبل؟"},
+        {id: 92, cat: 'plans', fr: "Avec qui aimerais-tu créer une entreprise ?", ar: "مع مَن تودّ إنشاء شركة؟"},
+        {id: 93, cat: 'plans', fr: "Avec qui voudrais-tu habiter dans cinq ans ?", ar: "مع مَن تودّ العيش بعد خمس سنوات؟"},
+        {id: 94, cat: 'plans', fr: "Avec qui souhaites-tu réaliser tes projets ?", ar: "مع مَن تتمنى تحقيق مشروعاتك؟"},
+        {id: 95, cat: 'plans', fr: "Avec qui vas-tu célébrer cette réussite ?", ar: "مع مَن ستحتفل بهذا النجاح؟"},
+        {id: 96, cat: 'plans', fr: "Avec qui aimerais-tu visiter le Portugal ?", ar: "مع مَن تودّ زيارة البرتغال؟"},
+        {id: 97, cat: 'plans', fr: "Avec qui voudrais-tu apprendre une nouvelle compétence ?", ar: "مع مَن تريد تعلّم مهارة جديدة؟"},
+        {id: 98, cat: 'plans', fr: "Avec qui comptes-tu passer les prochaines vacances ?", ar: "مع مَن تنوي قضاء العطلة القادمة؟"},
+        {id: 99, cat: 'plans', fr: "Avec qui partagerais-tu un million d’euros ?", ar: "مع مَن ستتقاسم مليون يورو؟"},
+        {id: 100, cat: 'plans', fr: "Avec qui aimerais-tu passer le reste de ta vie ?", ar: "مع مَن تودّ قضاء بقية حياتك؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
