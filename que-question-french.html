@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 سؤال بالفرنسية: Que? / Qu'est-ce que...? / Quoi?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .grammar-card {
+            background: #eff6ff;
+            border-right: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .grammar-card h3 {
+            color: var(--primary-hover);
+            margin-bottom: 8px;
+        }
+
+        .controls {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            border: none;
+            background: #f1f5f9;
+            color: var(--text-sub);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .num {
+            background: #dbeafe;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .french {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 6px;
+        }
+
+        .arabic {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 100 سؤال باستخدام Que? / Quoi?</h1>
+        <p>دليلك الشامل لتعلم أدوات الاستفهام عن الأشياء باللغة الفرنسية</p>
+    </header>
+
+    <div class="grammar-card">
+        <h3>💡 قاعدة سريعة:</h3>
+        <p>• <strong>Que ... ?</strong>: رسمية وتأتي في البداية (مثل: <em>Que fais-tu ?</em>)</p>
+        <p>• <strong>Qu'est-ce que ... ?</strong>: الصيغة الأكثر استخداماً في الكلام اليومي (مثل: <em>Qu'est-ce que tu fais ?</em>)</p>
+        <p>• <strong>Quoi ?</strong>: تأتي في نهاية الجملة أو بعد حرف جر (مثل: <em>Tu fais quoi ? / À quoi tu penses ?</em>)</p>
+    </div>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن سؤال بالفرنسية أو العربية...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" data-cat="all">الكل (100)</button>
+            <button class="tab-btn" data-cat="daily">أساسية يومية</button>
+            <button class="tab-btn" data-cat="home">المنزل والطعام</button>
+            <button class="tab-btn" data-cat="work">العمل والدراسة</button>
+            <button class="tab-btn" data-cat="life">الحياة والمواقف</button>
+            <button class="tab-btn" data-cat="quoi">استخدامات Quoi</button>
+        </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<script>
+    const questions = [
+        // 1-25: أسئلة يومية أساسية
+        {id: 1, cat: 'daily', fr: "Qu'est-ce que tu fais ?", ar: "ماذا تفعل؟"},
+        {id: 2, cat: 'daily', fr: "Qu'est-ce que tu veux ?", ar: "ماذا تريد؟"},
+        {id: 3, cat: 'daily', fr: "Qu'est-ce que tu manges ?", ar: "ماذا تأكل؟"},
+        {id: 4, cat: 'daily', fr: "Qu'est-ce que tu bois ?", ar: "ماذا تشرب؟"},
+        {id: 5, cat: 'daily', fr: "Qu'est-ce que tu regardes ?", ar: "ماذا تشاهد؟"},
+        {id: 6, cat: 'daily', fr: "Qu'est-ce que tu lis ?", ar: "ماذا تقرأ؟"},
+        {id: 7, cat: 'daily', fr: "Qu'est-ce que tu écris ?", ar: "ماذا تكتب؟"},
+        {id: 8, cat: 'daily', fr: "Qu'est-ce que tu cherches ?", ar: "ماذا تبحث عنه؟"},
+        {id: 9, cat: 'daily', fr: "Qu'est-ce que tu achètes ?", ar: "ماذا تشتري؟"},
+        {id: 10, cat: 'daily', fr: "Qu'est-ce que tu prépares ?", ar: "ماذا تحضّر؟"},
+        {id: 11, cat: 'daily', fr: "Qu'est-ce que tu écoutes ?", ar: "ماذا تستمع إليه؟"},
+        {id: 12, cat: 'daily', fr: "Qu'est-ce que tu apprends ?", ar: "ماذا تتعلم؟"},
+        {id: 13, cat: 'daily', fr: "Qu'est-ce que tu comprends ?", ar: "ماذا تفهم؟"},
+        {id: 14, cat: 'daily', fr: "Qu'est-ce que tu dis ?", ar: "ماذا تقول؟"},
+        {id: 15, cat: 'daily', fr: "Qu'est-ce que tu demandes ?", ar: "ماذا تطلب؟"},
+        {id: 16, cat: 'daily', fr: "Qu'est-ce que tu préfères ?", ar: "ماذا تفضّل؟"},
+        {id: 17, cat: 'daily', fr: "Qu'est-ce que tu aimes ?", ar: "ماذا تحب؟"},
+        {id: 18, cat: 'daily', fr: "Qu'est-ce que tu détestes ?", ar: "ماذا تكره؟"},
+        {id: 19, cat: 'daily', fr: "Qu'est-ce que tu attends ?", ar: "ماذا تنتظر؟"},
+        {id: 20, cat: 'daily', fr: "Qu'est-ce que tu utilises ?", ar: "ماذا تستخدم؟"},
+        {id: 21, cat: 'daily', fr: "Qu'est-ce que c'est ?", ar: "ما هذا؟"},
+        {id: 22, cat: 'daily', fr: "Qu'est-ce que cela signifie ?", ar: "ماذا يعني ذلك؟"},
+        {id: 23, cat: 'daily', fr: "Qu'est-ce qui se passe ?", ar: "ماذا يحدث؟"},
+        {id: 24, cat: 'daily', fr: "Qu'est-ce qui ne va pas ?", ar: "ما المشكلة؟"},
+        {id: 25, cat: 'daily', fr: "Qu'est-ce que tu as ?", ar: "ماذا بك؟ / ماذا لديك؟"},
+
+        // 26-50: المنزل والطعام والتسوق
+        {id: 26, cat: 'home', fr: "Qu'est-ce que tu cuisines ?", ar: "ماذا تطبخ؟"},
+        {id: 27, cat: 'home', fr: "Qu'est-ce que tu manges au petit-déjeuner ?", ar: "ماذا تأكل في الإفطار؟"},
+        {id: 28, cat: 'home', fr: "Qu'est-ce que tu veux boire ?", ar: "ماذا تريد أن تشرب؟"},
+        {id: 29, cat: 'home', fr: "Qu'est-ce qu'on mange ce soir ?", ar: "ماذا سنأكل هذا المساء؟"},
+        {id: 30, cat: 'home', fr: "Qu'est-ce qu'il y a dans le réfrigérateur ?", ar: "ماذا يوجد في الثلاجة؟"},
+        {id: 31, cat: 'home', fr: "Qu'est-ce que tu achètes au supermarché ?", ar: "ماذا تشتري من السوبرماركت؟"},
+        {id: 32, cat: 'home', fr: "Qu'est-ce que tu cherches dans ce magasin ?", ar: "ماذا تبحث عنه في هذا المتجر؟"},
+        {id: 33, cat: 'home', fr: "Qu'est-ce que ça coûte ?", ar: "كم ثمن هذا؟"},
+        {id: 34, cat: 'home', fr: "Qu'est-ce que tu veux acheter ?", ar: "ماذا تريد أن تشتري؟"},
+        {id: 35, cat: 'home', fr: "Qu'est-ce que tu portes aujourd'hui ?", ar: "ماذا ترتدي اليوم؟"},
+        {id: 36, cat: 'home', fr: "Qu'est-ce que tu fais à la maison ?", ar: "ماذا تفعل في المنزل؟"},
+        {id: 37, cat: 'home', fr: "Qu'est-ce que tu nettoies ?", ar: "ماذا تنظف؟"},
+        {id: 38, cat: 'home', fr: "Qu'est-ce que tu laves ?", ar: "ماذا تغسل؟"},
+        {id: 39, cat: 'home', fr: "Qu'est-ce que tu répares ?", ar: "ماذا تصلح؟"},
+        {id: 40, cat: 'home', fr: "Qu'est-ce que tu as acheté ?", ar: "ماذا اشتريت؟"},
+        {id: 41, cat: 'home', fr: "Qu'est-ce que tu as préparé ?", ar: "ماذا حضرت؟"},
+        {id: 42, cat: 'home', fr: "Qu'est-ce que tu as mangé ?", ar: "ماذا أكلت؟"},
+        {id: 43, cat: 'home', fr: "Qu'est-ce que tu as bu ?", ar: "ماذا شربت؟"},
+        {id: 44, cat: 'home', fr: "Qu'est-ce que tu vas cuisiner ?", ar: "ماذا ستطبخ؟"},
+        {id: 45, cat: 'home', fr: "Qu'est-ce que tu vas commander ?", ar: "ماذا ستطلب؟"},
+        {id: 46, cat: 'home', fr: "Qu'est-ce que tu veux pour le dîner ?", ar: "ماذا تريد للعشاء؟"},
+        {id: 47, cat: 'home', fr: "Qu'est-ce qu'il te faut ?", ar: "ماذا تحتاج؟"},
+        {id: 48, cat: 'home', fr: "Qu'est-ce qu'il manque ?", ar: "ما الشيء الناقص؟"},
+        {id: 49, cat: 'home', fr: "Qu'est-ce que tu jettes ?", ar: "ماذا ترمي؟"},
+        {id: 50, cat: 'home', fr: "Qu'est-ce que tu gardes ?", ar: "ماذا تحتفظ به؟"},
+
+        // 51-75: العمل والدراسة
+        {id: 51, cat: 'work', fr: "Qu'est-ce que tu étudies ?", ar: "ماذا تدرس؟"},
+        {id: 52, cat: 'work', fr: "Qu'est-ce que tu apprends en français ?", ar: "ماذا تتعلم في الفرنسية؟"},
+        {id: 53, cat: 'work', fr: "Qu'est-ce que tu fais comme travail ?", ar: "ما طبيعة عملك؟"},
+        {id: 54, cat: 'work', fr: "Qu'est-ce que tu fais dans la vie ?", ar: "ماذا تعمل في حياتك؟"},
+        {id: 55, cat: 'work', fr: "Qu'est-ce que tu cherches comme emploi ?", ar: "ما نوع الوظيفة التي تبحث عنها؟"},
+        {id: 56, cat: 'work', fr: "Qu'est-ce que tu sais faire ?", ar: "ماذا تستطيع أن تفعل؟"},
+        {id: 57, cat: 'work', fr: "Qu'est-ce que tu peux faire ?", ar: "ماذا يمكنك أن تفعل؟"},
+        {id: 58, cat: 'work', fr: "Qu'est-ce que tu dois faire ?", ar: "ماذا يجب أن تفعل؟"},
+        {id: 59, cat: 'work', fr: "Qu'est-ce que tu veux apprendre ?", ar: "ماذا تريد أن تتعلم؟"},
+        {id: 60, cat: 'work', fr: "Qu'est-ce que tu as étudié ?", ar: "ماذا درست؟"},
+        {id: 61, cat: 'work', fr: "Qu'est-ce que tu as compris ?", ar: "ماذا فهمت؟"},
+        {id: 62, cat: 'work', fr: "Qu'est-ce que tu n'as pas compris ?", ar: "ما الذي لم تفهمه؟"},
+        {id: 63, cat: 'work', fr: "Qu'est-ce que le professeur a expliqué ?", ar: "ماذا شرح الأستاذ؟"},
+        {id: 64, cat: 'work', fr: "Qu'est-ce que tu dois préparer ?", ar: "ماذا يجب أن تحضّر؟"},
+        {id: 65, cat: 'work', fr: "Qu'est-ce que tu écris dans ce document ?", ar: "ماذا تكتب في هذه الوثيقة؟"},
+        {id: 66, cat: 'work', fr: "Qu'est-ce que tu mets dans ton CV ?", ar: "ماذا تضع في سيرتك الذاتية؟"},
+        {id: 67, cat: 'work', fr: "Qu'est-ce que tu as envoyé ?", ar: "ماذا أرسلت؟"},
+        {id: 68, cat: 'work', fr: "Qu'est-ce que ton responsable a dit ?", ar: "ماذا قال مسؤولك؟"},
+        {id: 69, cat: 'work', fr: "Qu'est-ce que tu proposes ?", ar: "ماذا تقترح؟"},
+        {id: 70, cat: 'work', fr: "Qu'est-ce que tu penses de ce projet ?", ar: "ما رأيك في هذا المشروع؟"},
+        {id: 71, cat: 'work', fr: "Qu'est-ce qui t'intéresse ?", ar: "ما الذي يثير اهتمامك؟"},
+        {id: 72, cat: 'work', fr: "Qu'est-ce qui te motive ?", ar: "ما الذي يحفزك؟"},
+        {id: 73, cat: 'work', fr: "Qu'est-ce qui est important pour toi ?", ar: "ما المهم بالنسبة لك؟"},
+        {id: 74, cat: 'work', fr: "Qu'est-ce que tu veux améliorer ?", ar: "ماذا تريد أن تحسّن؟"},
+        {id: 75, cat: 'work', fr: "Qu'est-ce que tu feras demain ?", ar: "ماذا ستفعل غدًا؟"},
+
+        // 76-90: الحياة والمواقف
+        {id: 76, cat: 'life', fr: "Qu'est-ce qui te rend heureux ?", ar: "ما الذي يجعلك سعيدًا؟"},
+        {id: 77, cat: 'life', fr: "Qu'est-ce qui te fait peur ?", ar: "ما الذي يخيفك؟"},
+        {id: 78, cat: 'life', fr: "Qu'est-ce qui te dérange ?", ar: "ما الذي يزعجك؟"},
+        {id: 79, cat: 'life', fr: "Qu'est-ce qui t'est arrivé ?", ar: "ماذا حدث لك؟"},
+        {id: 80, cat: 'life', fr: "Qu'est-ce qui a changé ?", ar: "ما الذي تغيّر؟"},
+        {id: 81, cat: 'life', fr: "Qu'est-ce que tu veux dire ?", ar: "ماذا تقصد؟"},
+        {id: 82, cat: 'life', fr: "Qu'est-ce que tu racontes ?", ar: "ماذا تحكي؟"},
+        {id: 83, cat: 'life', fr: "Qu'est-ce que tu proposes de faire ?", ar: "ماذا تقترح أن نفعل؟"},
+        {id: 84, cat: 'life', fr: "Qu'est-ce que tu ferais à ma place ?", ar: "ماذا كنت ستفعل لو كنت مكاني؟"},
+        {id: 85, cat: 'life', fr: "Qu'est-ce que tu ferais si tu avais le temps ?", ar: "ماذا كنت ستفعل لو كان لديك وقت؟"},
+        {id: 86, cat: 'life', fr: "Qu'est-ce que tu ferais avec un million d'euros ?", ar: "ماذا كنت ستفعل بمليون يورو؟"},
+        {id: 87, cat: 'life', fr: "Qu'est-ce que tu as prévu pour demain ?", ar: "ماذا خططت للغد؟"},
+        {id: 88, cat: 'life', fr: "Qu'est-ce que tu veux changer dans ta vie ?", ar: "ماذا تريد أن تغيّر في حياتك؟"},
+        {id: 89, cat: 'life', fr: "Qu'est-ce que tu espères ?", ar: "ماذا تأمل؟"},
+        {id: 90, cat: 'life', fr: "Qu'est-ce que tu souhaites pour l'avenir ?", ar: "ماذا تتمنى للمستقبل؟"},
+
+        // 91-100: أسئلة باستخدام Quoi?
+        {id: 91, cat: 'quoi', fr: "Tu fais quoi ?", ar: "ماذا تفعل؟"},
+        {id: 92, cat: 'quoi', fr: "Tu veux quoi ?", ar: "ماذا تريد؟"},
+        {id: 93, cat: 'quoi', fr: "Tu manges quoi ?", ar: "ماذا تأكل؟"},
+        {id: 94, cat: 'quoi', fr: "Tu regardes quoi ?", ar: "ماذا تشاهد؟"},
+        {id: 95, cat: 'quoi', fr: "Tu cherches quoi ?", ar: "ماذا تبحث عنه؟"},
+        {id: 96, cat: 'quoi', fr: "Tu parles de quoi ?", ar: "عمّ تتحدث؟"},
+        {id: 97, cat: 'quoi', fr: "Tu penses à quoi ?", ar: "فيمَ تفكر؟"},
+        {id: 98, cat: 'quoi', fr: "Tu joues à quoi ?", ar: "ماذا تلعب؟"},
+        {id: 99, cat: 'quoi', fr: "Tu t'intéresses à quoi ?", ar: "بماذا تهتم؟"},
+        {id: 100, cat: 'quoi', fr: "Tu as besoin de quoi ?", ar: "ماذا تحتاج؟"}
+    ];
+
+    const grid = document.getElementById('grid');
+    const searchInput = document.getElementById('searchInput');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    let currentCat = 'all';
+    let searchTerm = '';
+
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function render() {
+        grid.innerHTML = '';
+        const filtered = questions.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}')" title="استمع لنطق السؤال">🔊</button>
+                </div>
+                <div class="french">${q.fr}</div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        render();
+    });
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCat = btn.dataset.cat;
+            render();
+        });
+    });
+
+    render();
+</script>
+</body>
+</html>
