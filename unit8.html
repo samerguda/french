@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض لقطات الشاشة (Screenshots)</title>
+    <!-- استدعاء Tailwind CSS للتصميم المتجاوب والسريع -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- عنوان المعرض -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-white">معرض لقطات الشاشة</h1>
+            <p class="text-gray-400 text-sm sm:text-base">استعرض أحدث لقطات الشاشة بتصميم متجاوب لجميع الأجهزة</p>
+        </header>
+
+        <!-- شبكة عرض الصور (Grid) -->
+        <!-- 
+          - على الموبايل (افتراضي): عمود واحد (grid-cols-1)
+          - على التابلت (sm / md): عمودين أو 3 أعمدة (sm:grid-cols-2 md:grid-cols-3)
+          - على الكمبيوتر (lg / xl): 4 أو 5 أعمدة (lg:grid-cols-4 xl:grid-cols-4)
+        -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- سيتم تكرار هذا العنصر 14 مرة للـ 14 صورة -->
+            
+            <!-- صورة 1 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <!-- استبدل رابط الصورة الرابط الفعلي للصورة الخاصة بك -->
+                    <img src="img4/IMG_3178.PNG" alt="سكرين شوت 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #1</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الأولى.</p>
+                </div>
+            </div>
+
+            <!-- صورة 2 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3179.PNG" alt="سكرين شوت 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #2</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الثانية.</p>
+                </div>
+            </div>
+
+            <!-- صورة 3 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3180.PNG" alt="سكرين شوت 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #3</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الثالثة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 4 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3181.PNG" alt="سكرين شوت 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #4</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الرابعة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 5 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3182.PNG" alt="سكرين شوت 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #5</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الخامسة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 6 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3183.PNG" alt="سكرين شوت 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #6</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة السادسة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 7 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3184.PNG" alt="سكرين شوت 7" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #7</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة السابعة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 8 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3185.PNG" alt="سكرين شوت 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #8</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الثامنة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 9 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3186.PNG" alt="سكرين شوت 9" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #9</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة التاسعة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 10 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3187.PNG" alt="سكرين شوت 10" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #10</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة العاشرة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 11 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3188.PNG" alt="سكرين شوت 11" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #11</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الحادية عشرة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 12 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3189.PNG" alt="سكرين شوت 12" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #12</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الثانية عشرة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 13 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3190.PNG" alt="سكرين شوت 13" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #13</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الثالثة عشرة.</p>
+                </div>
+            </div>
+
+            <!-- صورة 14 -->
+            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+                <div class="aspect-video bg-gray-700 overflow-hidden relative group">
+                    <img src="img4/IMG_3191.PNG" alt="سكرين شوت 14" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base text-white mb-1">لقطة الشاشة #14</h3>
+                    <p class="text-xs text-gray-400">وصف قصير أو عنوان فرعي للصورة الرابعة عشرة.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
