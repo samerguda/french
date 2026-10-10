@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة تفاعلية: فرنسي - هولندي بلجيكي - عربي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --accent-be: #f59e0b;
+            --accent-fr: #3b82f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); color: var(--text-main); padding: 20px; line-height: 1.6; }
+        .container { max-width: 1050px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 25px; }
+        header h1 { color: var(--primary); font-size: 2rem; margin-bottom: 8px; }
+        header p { color: var(--text-sub); font-size: 1.05rem; }
+
+        .view-modes { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .mode-btn { padding: 10px 22px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 700; border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .mode-btn.active, .mode-btn:hover { background: var(--primary); color: #fff; }
+
+        .controls { background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .search-box input { width: 100%; padding: 12px 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; outline: none; }
+        .search-box input:focus { border-color: var(--primary); }
+        .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tab-btn { padding: 8px 16px; border: none; background: #e2e8f0; color: var(--text-sub); border-radius: 20px; cursor: pointer; font-family: inherit; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; }
+        .tab-btn.active { background: var(--primary); color: #fff; }
+
+        /* Grid View */
+        .questions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .num { background: #e0e7ff; color: var(--primary); font-weight: 700; padding: 2px 10px; border-radius: 6px; font-size: 0.85rem; }
+        .audio-group { display: flex; gap: 8px; }
+        .audio-btn { background: #f1f5f9; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; transition: background 0.2s; }
+        .audio-btn:hover { background: #e2e8f0; }
+
+        .lang-block { margin-bottom: 8px; text-align: left; direction: ltr; }
+        .lang-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; }
+        .french { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--accent-fr); font-size: 1.05rem; }
+        .dutch { font-family: 'Poppins', sans-serif; font-weight: 600; color: #d97706; font-size: 1.05rem; }
+        .arabic { color: var(--text-main); font-size: 1rem; font-weight: 500; text-align: right; direction: rtl; margin-top: 6px; border-top: 1px dashed var(--border); padding-top: 8px; }
+
+        /* Flashcard View */
+        .flashcard-container { display: none; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0; }
+        .flashcard { width: 100%; max-width: 500px; height: 280px; perspective: 1000px; cursor: pointer; }
+        .flashcard-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); }
+        .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; border-radius: 16px; background: var(--card-bg); border: 2px solid var(--primary); text-align: center; }
+        .flashcard-back { transform: rotateY(180deg); background: #fefce8; border-color: var(--accent-be); }
+        .flash-nav { display: flex; gap: 15px; align-items: center; }
+        .nav-btn { padding: 10px 20px; background: var(--primary); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: 700; }
+
+        /* Quiz View */
+        .quiz-container { display: none; background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border); max-width: 650px; margin: 0 auto; text-align: center; }
+        .options { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        .option-btn { padding: 14px; border: 1px solid var(--border); background: #fff; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 1rem; text-align: right; transition: all 0.2s; }
+        .option-btn:hover { background: #f1f5f9; }
+        .option-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; font-weight: bold; }
+        .option-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇫🇷 🇧🇪 100 جملة بالفرنسية والهولندية البلجيكية</h1>
+        <p>دليلك الشامل لتعلم الضمائر والتركيبات اللغوية مع الصوت والبطاقات التفاعلية</p>
+    </header>
+
+    <div class="view-modes">
+        <button class="mode-btn active" onclick="switchView('grid', this)">عرض القائمة</button>
+        <button class="mode-btn" onclick="switchView('flashcard', this)">بطاقات تعليمية</button>
+        <button class="mode-btn" onclick="switchView('quiz', this)">اختبار سريع</button>
+    </div>
+
+    <!-- Grid Controls -->
+    <div class="controls" id="gridControls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث بكل اللغات (فرنسي، هولندي، عربي)...">
+        </div>
+        <div class="tabs" id="categoryTabs">
+            <button class="tab-btn active" onclick="filterCat('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterCat('verbs', this)">1-25 أفعال يومية</button>
+            <button class="tab-btn" onclick="filterCat('pronouns1', this)">26-50 me, te, nous, vous</button>
+            <button class="tab-btn" onclick="filterCat('pronouns2', this)">51-75 lui, leur, y, en</button>
+            <button class="tab-btn" onclick="filterCat('misc', this)">76-100 النفي والأسئلة</button>
+        </div>
+    </div>
+
+    <!-- Grid View -->
+    <div class="questions-grid" id="grid"></div>
+
+    <!-- Flashcard View -->
+    <div class="flashcard-container" id="flashcardView">
+        <div class="flashcard" id="card" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <span style="color:var(--text-sub); font-size:0.85rem; margin-bottom:12px;">اضغط لإظهار الترجمة الهولندية والعربية</span>
+                    <div class="lang-label" style="color:var(--accent-fr);">Français 🇫🇷</div>
+                    <div class="french" id="flashFr" style="font-size: 1.3rem;">...</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="lang-label" style="color:#d97706;">Nederlands 🇧🇪</div>
+                    <div class="dutch" id="flashNl" style="font-size: 1.2rem; margin-bottom: 12px;">...</div>
+                    <div class="arabic" id="flashAr" style="font-size: 1.1rem; border:none; padding:0;">...</div>
+                </div>
+            </div>
+        </div>
+        <div class="flash-nav">
+            <button class="nav-btn" onclick="prevCard()">السابق</button>
+            <span id="cardCounter" style="font-weight: bold; color: var(--text-sub);">1 / 100</span>
+            <button class="nav-btn" onclick="nextCard()">التالي</button>
+        </div>
+    </div>
+
+    <!-- Quiz View -->
+    <div class="quiz-container" id="quizView">
+        <h3 style="color:var(--text-sub); font-size:0.95rem;">اختر الترجمة الهولندية الصحيحة للجملة التالية:</h3>
+        <div class="french" id="quizFr" style="font-size:1.4rem; text-align:center; margin: 15px 0;">...</div>
+        <div class="arabic" id="quizAr" style="text-align:center; color:var(--text-sub); font-size:1.05rem; margin-bottom:15px; border:none;">...</div>
+        <div class="options" id="quizOptions"></div>
+        <button class="nav-btn" style="margin-top:10px;" onclick="nextQuiz()">الجملة التالية ➔</button>
+    </div>
+</div>
+
+<script>
+    const data = [
+        // 1-25
+        {id: 1, cat: 'verbs', fr: "Je veux te parler.", nl: "Ik wil met je praten.", ar: "أريد أن أتحدث إليك."},
+        {id: 2, cat: 'verbs', fr: "Je vais te dire la vérité.", nl: "Ik ga je de waarheid vertellen.", ar: "سأقول لك الحقيقة."},
+        {id: 3, cat: 'verbs', fr: "Je peux t’aider.", nl: "Ik kan je helpen.", ar: "أستطيع مساعدتك."},
+        {id: 4, cat: 'verbs', fr: "Je veux te voir.", nl: "Ik wil je zien.", ar: "أريد أن أراك."},
+        {id: 5, cat: 'verbs', fr: "Je vais t’appeler.", nl: "Ik ga je bellen.", ar: "سأتصل بك."},
+        {id: 6, cat: 'verbs', fr: "Je peux te comprendre.", nl: "Ik kan je begrijpen.", ar: "أستطيع أن أفهمك."},
+        {id: 7, cat: 'verbs', fr: "Je veux te connaître.", nl: "Ik wil je leren kennen.", ar: "أريد أن أتعرف عليك."},
+        {id: 8, cat: 'verbs', fr: "Je vais te montrer ma maison.", nl: "Ik ga je mijn huis laten zien.", ar: "سأريك منزلي."},
+        {id: 9, cat: 'verbs', fr: "Je peux te poser une question.", nl: "Ik kan je een vraag stellen.", ar: "أستطيع أن أطرح عليك سؤالًا."},
+        {id: 10, cat: 'verbs', fr: "Je veux te donner un conseil.", nl: "Ik wil je een advies geven.", ar: "أريد أن أعطيك نصيحة."},
+        {id: 11, cat: 'verbs', fr: "Je vais t’expliquer la règle.", nl: "Ik ga je de regel uitleggen.", ar: "سأشرح لك القاعدة."},
+        {id: 12, cat: 'verbs', fr: "Je peux te répondre maintenant.", nl: "Ik kan je nu antwoorden.", ar: "أستطيع أن أجيبك الآن."},
+        {id: 13, cat: 'verbs', fr: "Je veux t’écouter.", nl: "Ik wil naar je luisteren.", ar: "أريد أن أستمع إليك."},
+        {id: 14, cat: 'verbs', fr: "Je vais te raconter une histoire.", nl: "Ik ga je een verhaal vertellen.", ar: "سأحكي لك قصة."},
+        {id: 15, cat: 'verbs', fr: "Je peux te prêter mon téléphone.", nl: "Ik kan je mijn telefoon lenen.", ar: "أستطيع أن أعيرك هاتفي."},
+        {id: 16, cat: 'verbs', fr: "Je veux te remercier.", nl: "Ik wil je bedanken.", ar: "أريد أن أشكرك."},
+        {id: 17, cat: 'verbs', fr: "Je vais te chercher demain.", nl: "Ik kom je morgen ophalen.", ar: "سأذهب لإحضارك غدًا."},
+        {id: 18, cat: 'verbs', fr: "Je peux te raccompagner.", nl: "Ik kan je naar huis brengen.", ar: "أستطيع أن أوصلك إلى المنزل."},
+        {id: 19, cat: 'verbs', fr: "Je veux te présenter mon ami.", nl: "Ik wil je aan mijn vriend voorstellen.", ar: "أريد أن أعرّفك على صديقي."},
+        {id: 20, cat: 'verbs', fr: "Je vais te rappeler ce soir.", nl: "Ik ga je vanavond terugbellen.", ar: "سأتصل بك مجددًا هذا المساء."},
+        {id: 21, cat: 'verbs', fr: "Je peux te réserver une place.", nl: "Ik kan een plaats voor je reserveren.", ar: "أستطيع أن أحجز لك مكانًا."},
+        {id: 22, cat: 'verbs', fr: "Je veux te poser une question importante.", nl: "Ik wil je een belangrijke vraag stellen.", ar: "أريد أن أسألك سؤالًا مهمًا."},
+        {id: 23, cat: 'verbs', fr: "Je vais te laisser travailler.", nl: "Ik ga je laten werken.", ar: "سأدعك تعمل."},
+        {id: 24, cat: 'verbs', fr: "Je peux te rejoindre plus tard.", nl: "Ik kan me later bij je voegen.", ar: "أستطيع أن أنضم إليك لاحقًا."},
+        {id: 25, cat: 'verbs', fr: "Je veux te souhaiter bonne chance.", nl: "Ik wil je veel succes wensen.", ar: "أريد أن أتمنى لك حظًا سعيدًا."},
+
+        // 26-50
+        {id: 26, cat: 'pronouns1', fr: "Tu peux me parler.", nl: "Je kunt met me praten.", ar: "يمكنك التحدث إليّ."},
+        {id: 27, cat: 'pronouns1', fr: "Tu veux me voir ?", nl: "Wil je me zien?", ar: "هل تريد أن تراني؟"},
+        {id: 28, cat: 'pronouns1', fr: "Tu peux m’appeler demain.", nl: "Je kunt me morgen bellen.", ar: "يمكنك الاتصال بي غدًا."},
+        {id: 29, cat: 'pronouns1', fr: "Tu vas me dire ton nom.", nl: "Je gaat me je naam vertellen.", ar: "ستخبرني باسمك."},
+        {id: 30, cat: 'pronouns1', fr: "Tu peux m’aider à comprendre.", nl: "Je kunt me helpen om het te begrijpen.", ar: "يمكنك مساعدتي على الفهم."},
+        {id: 31, cat: 'pronouns1', fr: "Il veut me rencontrer.", nl: "Hij wil me ontmoeten.", ar: "هو يريد مقابلتي."},
+        {id: 32, cat: 'pronouns1', fr: "Elle va me donner le document.", nl: "Ze gaat me het document geven.", ar: "ستعطيني المستند."},
+        {id: 33, cat: 'pronouns1', fr: "Ils peuvent nous accompagner.", nl: "Ze kunnen met ons meegaan.", ar: "يمكنهم مرافقتنا."},
+        {id: 34, cat: 'pronouns1', fr: "Nous voulons vous aider.", nl: "We willen jullie helpen.", ar: "نريد مساعدتكم."},
+        {id: 35, cat: 'pronouns1', fr: "Je vais vous expliquer le problème.", nl: "Ik ga jullie het probleem uitleggen.", ar: "سأشرح لكم المشكلة."},
+        {id: 36, cat: 'pronouns1', fr: "Tu peux nous attendre ici.", nl: "Je kunt hier op ons wachten.", ar: "يمكنك انتظارنا هنا."},
+        {id: 37, cat: 'pronouns1', fr: "Je veux vous poser une question.", nl: "Ik wil jullie een vraag stellen.", ar: "أريد أن أطرح عليكم سؤالًا."},
+        {id: 38, cat: 'pronouns1', fr: "Elle va nous montrer le chemin.", nl: "Ze gaat ons de weg wijzen.", ar: "سترينا الطريق."},
+        {id: 39, cat: 'pronouns1', fr: "Nous allons vous appeler demain.", nl: "We gaan jullie morgen bellen.", ar: "سنتصل بكم غدًا."},
+        {id: 40, cat: 'pronouns1', fr: "Il veut nous inviter à dîner.", nl: "Hij wil ons uitnodigen om te komen eten.", ar: "يريد دعوتنا إلى العشاء."},
+        {id: 41, cat: 'pronouns1', fr: "Je peux vous accompagner.", nl: "Ik kan met jullie meegaan.", ar: "أستطيع مرافقتكم."},
+        {id: 42, cat: 'pronouns1', fr: "Tu vas nous raconter ton voyage.", nl: "Je gaat ons over je reis vertellen.", ar: "ستحكي لنا عن رحلتك."},
+        {id: 43, cat: 'pronouns1', fr: "Elle veut me présenter à son père.", nl: "Ze wil me aan haar vader voorstellen.", ar: "تريد أن تعرّفني على والدها."},
+        {id: 44, cat: 'pronouns1', fr: "Je vais vous envoyer un message.", nl: "Ik ga jullie een bericht sturen.", ar: "سأرسل لكم رسالة."},
+        {id: 45, cat: 'pronouns1', fr: "Nous pouvons vous aider à préparer le repas.", nl: "We kunnen jullie helpen om de maaltijd klaar te maken.", ar: "نستطيع مساعدتكم في إعداد الطعام."},
+        {id: 46, cat: 'pronouns1', fr: "Il veut te montrer ses photos.", nl: "Hij wil je zijn foto’s laten zien.", ar: "يريد أن يريك صوره."},
+        {id: 47, cat: 'pronouns1', fr: "Je vais me reposer.", nl: "Ik ga uitrusten.", ar: "سأستريح."},
+        {id: 48, cat: 'pronouns1', fr: "Tu dois te préparer.", nl: "Je moet je voorbereiden.", ar: "يجب أن تستعد."},
+        {id: 49, cat: 'pronouns1', fr: "Elle veut se marier.", nl: "Ze wil trouwen.", ar: "تريد أن تتزوج."},
+        {id: 50, cat: 'pronouns1', fr: "Nous allons nous rencontrer demain.", nl: "We gaan elkaar morgen ontmoeten.", ar: "سنلتقي غدًا."},
+
+        // 51-75
+        {id: 51, cat: 'pronouns2', fr: "Je veux lui parler.", nl: "Ik wil met hem/haar praten.", ar: "أريد أن أتحدث إليه/إليها."},
+        {id: 52, cat: 'pronouns2', fr: "Je vais lui donner un cadeau.", nl: "Ik ga hem/haar een cadeau geven.", ar: "سأعطيه/أعطيها هدية."},
+        {id: 53, cat: 'pronouns2', fr: "Tu peux lui expliquer la situation.", nl: "Je kunt hem/haar de situatie uitleggen.", ar: "يمكنك شرح الموقف له/لها."},
+        {id: 54, cat: 'pronouns2', fr: "Nous voulons leur écrire.", nl: "We willen hun schrijven.", ar: "نريد أن نكتب لهم."},
+        {id: 55, cat: 'pronouns2', fr: "Je vais leur téléphoner.", nl: "Ik ga hen bellen.", ar: "سأتصل بهم هاتفيًا."},
+        {id: 56, cat: 'pronouns2', fr: "Elle veut lui poser une question.", nl: "Ze wil hem/haar een vraag stellen.", ar: "تريد أن تطرح عليه/عليها سؤالًا."},
+        {id: 57, cat: 'pronouns2', fr: "Je peux leur montrer le bureau.", nl: "Ik kan hun het kantoor laten zien.", ar: "أستطيع أن أريهم المكتب."},
+        {id: 58, cat: 'pronouns2', fr: "Il va lui acheter des fleurs.", nl: "Hij gaat bloemen voor hem/haar kopen.", ar: "سيشتري له/لها زهورًا."},
+        {id: 59, cat: 'pronouns2', fr: "Nous voulons leur proposer une solution.", nl: "We willen hun een oplossing voorstellen.", ar: "نريد أن نقترح عليهم حلًا."},
+        {id: 60, cat: 'pronouns2', fr: "Tu peux lui répondre maintenant.", nl: "Je kunt hem/haar nu antwoorden.", ar: "يمكنك الرد عليه/عليها الآن."},
+        {id: 61, cat: 'pronouns2', fr: "Je vais y aller.", nl: "Ik ga erheen.", ar: "سأذهب إلى هناك."},
+        {id: 62, cat: 'pronouns2', fr: "Je veux y retourner.", nl: "Ik wil er terug naartoe gaan.", ar: "أريد العودة إلى هناك."},
+        {id: 63, cat: 'pronouns2', fr: "Nous allons y rester.", nl: "We gaan daar blijven.", ar: "سنبقى هناك."},
+        {id: 64, cat: 'pronouns2', fr: "Tu peux y penser.", nl: "Je kunt erover nadenken.", ar: "يمكنك التفكير في ذلك."},
+        {id: 65, cat: 'pronouns2', fr: "Je dois y travailler.", nl: "Ik moet daar werken.", ar: "يجب أن أعمل هناك."},
+        {id: 66, cat: 'pronouns2', fr: "Elle veut en acheter.", nl: "Ze wil er kopen.", ar: "تريد شراء بعض منها."},
+        {id: 67, cat: 'pronouns2', fr: "Je vais en parler.", nl: "Ik ga erover praten.", ar: "سأتحدث عن ذلك."},
+        {id: 68, cat: 'pronouns2', fr: "Tu peux en prendre.", nl: "Je kunt er wat van nemen.", ar: "يمكنك أن تأخذ بعضًا منه."},
+        {id: 69, cat: 'pronouns2', fr: "Nous voulons en apprendre davantage.", nl: "We willen er meer over leren.", ar: "نريد أن نتعلم المزيد عنه."},
+        {id: 70, cat: 'pronouns2', fr: "Il va en avoir besoin.", nl: "Hij zal het nodig hebben.", ar: "سيحتاج إليه."},
+        {id: 71, cat: 'pronouns2', fr: "Je veux lui en parler.", nl: "Ik wil er met hem/haar over praten.", ar: "أريد أن أتحدث معه/معها عن ذلك."},
+        {id: 72, cat: 'pronouns2', fr: "Je vais lui en donner.", nl: "Ik ga hem/haar er wat van geven.", ar: "سأعطيه/أعطيها بعضًا منه."},
+        {id: 73, cat: 'pronouns2', fr: "Tu peux leur en acheter.", nl: "Je kunt er voor hen kopen.", ar: "يمكنك شراء بعض منه لهم."},
+        {id: 74, cat: 'pronouns2', fr: "Nous allons y réfléchir.", nl: "We gaan erover nadenken.", ar: "سنفكر في ذلك."},
+        {id: 75, cat: 'pronouns2', fr: "Elle veut en savoir plus.", nl: "Ze wil er meer over weten.", ar: "تريد معرفة المزيد عنه."},
+
+        // 76-100
+        {id: 76, cat: 'misc', fr: "Je ne veux pas te déranger.", nl: "Ik wil je niet storen.", ar: "لا أريد إزعاجك."},
+        {id: 77, cat: 'misc', fr: "Je ne peux pas t’aider aujourd’hui.", nl: "Ik kan je vandaag niet helpen.", ar: "لا أستطيع مساعدتك اليوم."},
+        {id: 78, cat: 'misc', fr: "Je ne vais pas lui répondre.", nl: "Ik ga hem/haar niet antwoorden.", ar: "لن أرد عليه/عليها."},
+        {id: 79, cat: 'misc', fr: "Je ne veux pas vous faire attendre.", nl: "Ik wil jullie niet laten wachten.", ar: "لا أريد أن أجعلكم تنتظرون."},
+        {id: 80, cat: 'misc', fr: "Je ne peux pas leur parler maintenant.", nl: "Ik kan nu niet met hen praten.", ar: "لا أستطيع التحدث إليهم الآن."},
+        {id: 81, cat: 'misc', fr: "Pourquoi veux-tu me voir ?", nl: "Waarom wil je me zien?", ar: "لماذا تريد رؤيتي؟"},
+        {id: 82, cat: 'misc', fr: "Quand vas-tu me téléphoner ?", nl: "Wanneer ga je me bellen?", ar: "متى ستتصل بي؟"},
+        {id: 83, cat: 'misc', fr: "Comment puis-je t’aider ?", nl: "Hoe kan ik je helpen?", ar: "كيف يمكنني مساعدتك؟"},
+        {id: 84, cat: 'misc', fr: "Où puis-je te trouver ?", nl: "Waar kan ik je vinden?", ar: "أين يمكنني أن أجدك؟"},
+        {id: 85, cat: 'misc', fr: "Que veux-tu me dire ?", nl: "Wat wil je me vertellen?", ar: "ماذا تريد أن تقول لي؟"},
+        {id: 86, cat: 'misc', fr: "Tu veux me suivre ?", nl: "Wil je me volgen?", ar: "هل تريد أن تتبعني؟"},
+        {id: 87, cat: 'misc', fr: "Peux-tu m’expliquer cela ?", nl: "Kun je me dat uitleggen?", ar: "هل يمكنك أن تشرح لي ذلك؟"},
+        {id: 88, cat: 'misc', fr: "Est-ce que je peux te poser une question ?", nl: "Mag ik je een vraag stellen?", ar: "هل يمكنني أن أسألك سؤالًا؟"},
+        {id: 89, cat: 'misc', fr: "Pourquoi ne veux-tu pas me parler ?", nl: "Waarom wil je niet met me praten?", ar: "لماذا لا تريد التحدث إليّ؟"},
+        {id: 90, cat: 'misc', fr: "Vas-tu nous rejoindre ce soir ?", nl: "Kom je vanavond bij ons?", ar: "هل ستنضم إلينا هذا المساء؟"},
+        {id: 91, cat: 'misc', fr: "Je préfère te le dire maintenant.", nl: "Ik zeg het je liever nu.", ar: "أفضّل أن أخبرك بذلك الآن."},
+        {id: 92, cat: 'misc', fr: "Je dois te le montrer.", nl: "Ik moet het je laten zien.", ar: "يجب أن أريك ذلك."},
+        {id: 93, cat: 'misc', fr: "Je veux te le donner.", nl: "Ik wil het je geven.", ar: "أريد أن أعطيك إياه."},
+        {id: 94, cat: 'misc', fr: "Je vais te les envoyer.", nl: "Ik ga ze je sturen.", ar: "سأرسلها لك."},
+        {id: 95, cat: 'misc', fr: "Il faut me le dire.", nl: "Je moet het me vertellen.", ar: "يجب أن تخبرني بذلك."},
+        {id: 96, cat: 'misc', fr: "Je peux vous le confirmer.", nl: "Ik kan het jullie bevestigen.", ar: "أستطيع أن أؤكد لكم ذلك."},
+        {id: 97, cat: 'misc', fr: "Elle veut nous les présenter.", nl: "Ze wil ze aan ons voorstellen.", ar: "تريد أن تعرّفنا عليهم."},
+        {id: 98, cat: 'misc', fr: "Tu dois lui en parler.", nl: "Je moet er met hem/haar over praten.", ar: "يجب أن تتحدث معه/معها عن ذلك."},
+        {id: 99, cat: 'misc', fr: "Je voudrais vous rencontrer.", nl: "Ik zou jullie graag ontmoeten.", ar: "أود مقابلتكم."},
+        {id: 100, cat: 'misc', fr: "J’aimerais te connaître davantage.", nl: "Ik zou je graag beter leren kennen.", ar: "أود أن أتعرف عليك أكثر."}
+    ];
+
+    let currentCat = 'all';
+    let searchTerm = '';
+    let currentFlashIndex = 0;
+    let currentQuizItem = null;
+
+    function speak(text, lang) {
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function switchView(mode, btn) {
+        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        document.getElementById('gridControls').style.display = mode === 'grid' ? 'flex' : 'none';
+        document.getElementById('grid').style.display = mode === 'grid' ? 'grid' : 'none';
+        document.getElementById('flashcardView').style.display = mode === 'flashcard' ? 'flex' : 'none';
+        document.getElementById('quizView').style.display = mode === 'quiz' ? 'block' : 'none';
+
+        if(mode === 'flashcard') updateFlashcard();
+        if(mode === 'quiz') nextQuiz();
+    }
+
+    function filterCat(cat, btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = cat;
+        renderGrid();
+    }
+
+    function renderGrid() {
+        const grid = document.getElementById('grid');
+        grid.innerHTML = '';
+        const filtered = data.filter(q => {
+            const matchesCat = currentCat === 'all' || q.cat === currentCat;
+            const matchesSearch = q.fr.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.nl.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                                  q.ar.includes(searchTerm);
+            return matchesCat && matchesSearch;
+        });
+
+        filtered.forEach(q => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="num">#${q.id}</span>
+                    <div class="audio-group">
+                        <button class="audio-btn" onclick="speak('${q.fr.replace(/'/g, "\\'")}', 'fr-FR')" title="نطق فرنسي">🇫🇷 🔊</button>
+                        <button class="audio-btn" onclick="speak('${q.nl.replace(/'/g, "\\'")}', 'nl-BE')" title="نطق هولندي بلجيكي">🇧🇪 🔊</button>
+                    </div>
+                </div>
+                <div class="lang-block">
+                    <div class="french">${q.fr}</div>
+                </div>
+                <div class="lang-block">
+                    <div class="dutch">${q.nl}</div>
+                </div>
+                <div class="arabic">${q.ar}</div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        renderGrid();
+    });
+
+    // Flashcard Logic
+    function updateFlashcard() {
+        const cardElem = document.getElementById('card');
+        cardElem.classList.remove('flipped');
+        const q = data[currentFlashIndex];
+        document.getElementById('flashFr').innerText = q.fr;
+        document.getElementById('flashNl').innerText = q.nl;
+        document.getElementById('flashAr').innerText = q.ar;
+        document.getElementById('cardCounter').innerText = `${currentFlashIndex + 1} / ${data.length}`;
+    }
+
+    function nextCard() {
+        currentFlashIndex = (currentFlashIndex + 1) % data.length;
+        updateFlashcard();
+    }
+
+    function prevCard() {
+        currentFlashIndex = (currentFlashIndex - 1 + data.length) % data.length;
+        updateFlashcard();
+    }
+
+    // Quiz Logic
+    function nextQuiz() {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        currentQuizItem = data[randomIndex];
+
+        document.getElementById('quizFr').innerText = currentQuizItem.fr;
+        document.getElementById('quizAr').innerText = currentQuizItem.ar;
+
+        let options = [currentQuizItem.nl];
+        while(options.length < 3) {
+            let opt = data[Math.floor(Math.random() * data.length)].nl;
+            if(!options.includes(opt)) options.push(opt);
+        }
+        options.sort(() => Math.random() - 0.5);
+
+        const optionsElem = document.getElementById('quizOptions');
+        optionsElem.innerHTML = '';
+        options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if(opt === currentQuizItem.nl) {
+                    btn.classList.add('correct');
+                } else {
+                    btn.classList.add('wrong');
+                }
+            };
+            optionsElem.appendChild(btn);
+        });
+    }
+
+    renderGrid();
+</script>
+</body>
+</html>
