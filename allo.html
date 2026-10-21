@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جمل فرنسية للمكالمات الهاتفية | Français au téléphone</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+    line-height: 1.8;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  header p {
+    font-size: 1.05em;
+    opacity: 0.9;
+  }
+
+  .flags {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #fff8e1;
+    border-right: 6px solid #fdbb2d;
+    padding: 20px 25px;
+    margin: 25px 30px;
+    border-radius: 10px;
+    font-size: 0.98em;
+    color: #5d4037;
+  }
+
+  section {
+    padding: 10px 30px 30px;
+  }
+
+  h2 {
+    color: #203a43;
+    font-size: 1.4em;
+    margin: 30px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #fdbb2d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h2 .badge {
+    background: linear-gradient(135deg, #b21f1f, #fdbb2d);
+    color: #fff;
+    font-size: 0.7em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: normal;
+  }
+
+  .phrase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    transition: all 0.25s ease;
+    border-right: 4px solid #203a43;
+    flex-wrap: wrap;
+  }
+
+  .phrase:hover {
+    background: #e8f4f8;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-right-color: #fdbb2d;
+  }
+
+  .fr {
+    font-weight: 600;
+    color: #0f2027;
+    flex: 1;
+    min-width: 250px;
+    direction: ltr;
+    text-align: left;
+  }
+
+  .ar {
+    color: #b21f1f;
+    flex: 1;
+    min-width: 250px;
+    text-align: right;
+    font-size: 0.96em;
+  }
+
+  .num {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #203a43;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8em;
+    flex-shrink: 0;
+  }
+
+  /* المحادثة */
+  .dialogue {
+    background: #f0f4f8;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 15px;
+    border: 2px dashed #203a43;
+  }
+
+  .dialogue .line {
+    margin-bottom: 18px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    max-width: 85%;
+  }
+
+  .dialogue .employeur {
+    background: #203a43;
+    color: #fff;
+    margin-left: auto;
+    border-bottom-left-radius: 2px;
+  }
+
+  .dialogue .vous {
+    background: #fff;
+    border: 2px solid #fdbb2d;
+    margin-right: auto;
+    border-bottom-right-radius: 2px;
+  }
+
+  .dialogue .fr-line {
+    direction: ltr;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .dialogue .ar-line {
+    font-size: 0.92em;
+    opacity: 0.9;
+  }
+
+  .dialogue .employeur .ar-line { color: #fdbb2d; }
+  .dialogue .vous .ar-line { color: #b21f1f; }
+
+  .tip {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-right: 6px solid #2e7d32;
+    padding: 20px 25px;
+    margin: 30px;
+    border-radius: 12px;
+    color: #1b5e20;
+    font-size: 1em;
+  }
+
+  .tip strong { display: block; margin-bottom: 8px; font-size: 1.1em; }
+
+  footer {
+    background: #0f2027;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    section { padding: 10px 15px 20px; }
+    .intro, .tip { margin: 15px; }
+    header h1 { font-size: 1.4em; }
+    .fr, .ar { min-width: 100%; }
+    .phrase { padding: 12px 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="flags">🇫🇷 📞 🇪🇬</div>
+    <h1>١٠٠ جملة فرنسية لإجراء مكالمة تليفونية</h1>
+    <p>جمل عملية بالفرنسية مع الترجمة المصرية — مستوى A1–A2</p>
+  </header>
+
+  <div class="intro">
+    💡 <strong>ملاحظة:</strong> هذه الجمل مناسبة للمستوى المبتدئ (A1–A2)، وتشمل بداية المكالمة، والرد على الهاتف، وحجز المواعيد، ومكالمات الشغل، وإنهاء المكالمة. اضغط على أي جملة لتتدرب على نطقها.
+  </div>
+
+  <section>
+    <h2>أولًا: بداية المكالمة والرد على الهاتف <span class="badge">1 – 20</span></h2>
+    <div class="phrase"><span class="num">1</span><span class="fr">Allô ?</span><span class="ar">ألو؟</span></div>
+    <div class="phrase"><span class="num">2</span><span class="fr">Bonjour, c’est Samer.</span><span class="ar">صباح الخير، أنا سامر.</span></div>
+    <div class="phrase"><span class="num">3</span><span class="fr">Bonjour, je m’appelle Samer.</span><span class="ar">صباح الخير، اسمي سامر.</span></div>
+    <div class="phrase"><span class="num">4</span><span class="fr">Vous m’entendez ?</span><span class="ar">هل تسمعني؟</span></div>
+    <div class="phrase"><span class="num">5</span><span class="fr">Est-ce que vous m’entendez bien ?</span><span class="ar">هل تسمعني كويس؟</span></div>
+    <div class="phrase"><span class="num">6</span><span class="fr">Je vous appelle pour une information.</span><span class="ar">أنا بتصل بحضرتك علشان أستفسر عن معلومة.</span></div>
+    <div class="phrase"><span class="num">7</span><span class="fr">Je vous appelle au sujet de mon rendez-vous.</span><span class="ar">أنا بتصل بخصوص موعدي.</span></div>
+    <div class="phrase"><span class="num">8</span><span class="fr">Puis-je vous parler, s’il vous plaît ?</span><span class="ar">ممكن أتكلم مع حضرتك، لو سمحت؟</span></div>
+    <div class="phrase"><span class="num">9</span><span class="fr">Est-ce que je peux parler à Monsieur Dupont ?</span><span class="ar">ممكن أتكلم مع السيد دوبون؟</span></div>
+    <div class="phrase"><span class="num">10</span><span class="fr">Je voudrais parler à Madame Martin.</span><span class="ar">أنا عايز أتكلم مع السيدة مارتان.</span></div>
+    <div class="phrase"><span class="num">11</span><span class="fr">Qui est à l’appareil, s’il vous plaît ?</span><span class="ar">مين معايا على الخط، لو سمحت؟</span></div>
+    <div class="phrase"><span class="num">12</span><span class="fr">C’est de la part de qui ?</span><span class="ar">مين المتصل؟</span></div>
+    <div class="phrase"><span class="num">13</span><span class="fr">Un instant, s’il vous plaît.</span><span class="ar">لحظة من فضلك.</span></div>
+    <div class="phrase"><span class="num">14</span><span class="fr">Ne quittez pas, s’il vous plaît.</span><span class="ar">من فضلك ما تقفلش الخط.</span></div>
+    <div class="phrase"><span class="num">15</span><span class="fr">Je vous passe mon collègue.</span><span class="ar">هحوّلك لزميلي.</span></div>
+    <div class="phrase"><span class="num">16</span><span class="fr">Je vous écoute.</span><span class="ar">أنا سامع حضرتك، اتفضل.</span></div>
+    <div class="phrase"><span class="num">17</span><span class="fr">Je suis désolé de vous déranger.</span><span class="ar">أنا آسف إني أزعجتك.</span></div>
+    <div class="phrase"><span class="num">18</span><span class="fr">Est-ce que je vous dérange ?</span><span class="ar">هل أنا بزعج حضرتك؟</span></div>
+    <div class="phrase"><span class="num">19</span><span class="fr">Avez-vous quelques minutes ?</span><span class="ar">هل عند حضرتك كام دقيقة؟</span></div>
+    <div class="phrase"><span class="num">20</span><span class="fr">Merci d’avoir répondu à mon appel.</span><span class="ar">شكرًا إنك رديت على مكالمتي.</span></div>
+  </section>
+
+  <section>
+    <h2>ثانيًا: فهم الكلام أثناء المكالمة <span class="badge">21 – 40</span></h2>
+    <div class="phrase"><span class="num">21</span><span class="fr">Pouvez-vous répéter, s’il vous plaît ?</span><span class="ar">ممكن تكرر، لو سمحت؟</span></div>
+    <div class="phrase"><span class="num">22</span><span class="fr">Pouvez-vous parler plus lentement ?</span><span class="ar">ممكن تتكلم ببطء أكتر؟</span></div>
+    <div class="phrase"><span class="num">23</span><span class="fr">Je n’ai pas bien compris.</span><span class="ar">أنا مفهمتش كويس.</span></div>
+    <div class="phrase"><span class="num">24</span><span class="fr">Je n’ai pas entendu.</span><span class="ar">أنا مسمعتش.</span></div>
+    <div class="phrase"><span class="num">25</span><span class="fr">La ligne est mauvaise.</span><span class="ar">الخط مش واضح.</span></div>
+    <div class="phrase"><span class="num">26</span><span class="fr">Le son est coupé.</span><span class="ar">الصوت بيقطع.</span></div>
+    <div class="phrase"><span class="num">27</span><span class="fr">Je vous entends mal.</span><span class="ar">أنا مش سامعك كويس.</span></div>
+    <div class="phrase"><span class="num">28</span><span class="fr">Vous pouvez parler plus fort ?</span><span class="ar">ممكن تعلي صوتك؟</span></div>
+    <div class="phrase"><span class="num">29</span><span class="fr">Pouvez-vous épeler votre nom ?</span><span class="ar">ممكن تهجّي اسمك؟</span></div>
+    <div class="phrase"><span class="num">30</span><span class="fr">Comment ça s’écrit ?</span><span class="ar">إزاي بتتكتب؟</span></div>
+    <div class="phrase"><span class="num">31</span><span class="fr">Qu’est-ce que vous avez dit ?</span><span class="ar">حضرتك قلت إيه؟</span></div>
+    <div class="phrase"><span class="num">32</span><span class="fr">Vous pouvez répéter le numéro ?</span><span class="ar">ممكن تكرر الرقم؟</span></div>
+    <div class="phrase"><span class="num">33</span><span class="fr">Je vais noter ça.</span><span class="ar">هدوّن ده.</span></div>
+    <div class="phrase"><span class="num">34</span><span class="fr">Attendez une seconde, s’il vous plaît.</span><span class="ar">استنى ثانية، لو سمحت.</span></div>
+    <div class="phrase"><span class="num">35</span><span class="fr">Je cherche un stylo.</span><span class="ar">أنا بدوّر على قلم.</span></div>
+    <div class="phrase"><span class="num">36</span><span class="fr">Je vous entends maintenant.</span><span class="ar">أنا سامعك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">37</span><span class="fr">La connexion est mauvaise.</span><span class="ar">الاتصال ضعيف.</span></div>
+    <div class="phrase"><span class="num">38</span><span class="fr">Je crois que le téléphone a un problème.</span><span class="ar">أعتقد إن فيه مشكلة في التليفون.</span></div>
+    <div class="phrase"><span class="num">39</span><span class="fr">Vous pouvez m’envoyer un message ?</span><span class="ar">ممكن تبعتلي رسالة؟</span></div>
+    <div class="phrase"><span class="num">40</span><span class="fr">Pouvez-vous m’envoyer les informations par e-mail ?</span><span class="ar">ممكن تبعتلي المعلومات على الإيميل؟</span></div>
+  </section>
+
+  <section>
+    <h2>ثالثًا: إجراء مكالمة رسمية وحجز موعد <span class="badge">41 – 60</span></h2>
+    <div class="phrase"><span class="num">41</span><span class="fr">Je voudrais prendre un rendez-vous.</span><span class="ar">أنا عايز أحجز موعد.</span></div>
+    <div class="phrase"><span class="num">42</span><span class="fr">Avez-vous un rendez-vous disponible ?</span><span class="ar">هل فيه موعد متاح؟</span></div>
+    <div class="phrase"><span class="num">43</span><span class="fr">Quand êtes-vous disponible ?</span><span class="ar">إمتى حضرتك متاح؟</span></div>
+    <div class="phrase"><span class="num">44</span><span class="fr">Est-ce que demain vous convient ?</span><span class="ar">هل بكرة مناسب لحضرتك؟</span></div>
+    <div class="phrase"><span class="num">45</span><span class="fr">Je suis disponible lundi matin.</span><span class="ar">أنا متاح يوم الاثنين الصبح.</span></div>
+    <div class="phrase"><span class="num">46</span><span class="fr">À quelle heure puis-je venir ?</span><span class="ar">أقدر أجي الساعة كام؟</span></div>
+    <div class="phrase"><span class="num">47</span><span class="fr">Pouvez-vous confirmer le rendez-vous ?</span><span class="ar">ممكن تأكد الموعد؟</span></div>
+    <div class="phrase"><span class="num">48</span><span class="fr">Je voudrais déplacer mon rendez-vous.</span><span class="ar">عايز أغيّر موعدي.</span></div>
+    <div class="phrase"><span class="num">49</span><span class="fr">Je dois annuler mon rendez-vous.</span><span class="ar">لازم ألغي موعدي.</span></div>
+    <div class="phrase"><span class="num">50</span><span class="fr">Je suis désolé, je serai en retard.</span><span class="ar">أنا آسف، هتأخر.</span></div>
+    <div class="phrase"><span class="num">51</span><span class="fr">Je vous appelle pour confirmer ma réservation.</span><span class="ar">أنا بتصل علشان أأكد الحجز بتاعي.</span></div>
+    <div class="phrase"><span class="num">52</span><span class="fr">Quel est votre numéro de téléphone ?</span><span class="ar">إيه رقم تليفون حضرتك؟</span></div>
+    <div class="phrase"><span class="num">53</span><span class="fr">Pouvez-vous me donner votre adresse ?</span><span class="ar">ممكن تديني عنوان حضرتك؟</span></div>
+    <div class="phrase"><span class="num">54</span><span class="fr">À quelle adresse dois-je me présenter ?</span><span class="ar">أروح على أي عنوان؟</span></div>
+    <div class="phrase"><span class="num">55</span><span class="fr">Quels documents dois-je apporter ?</span><span class="ar">إيه المستندات اللي لازم أجيبها؟</span></div>
+    <div class="phrase"><span class="num">56</span><span class="fr">Combien de temps cela va-t-il prendre ?</span><span class="ar">الموضوع هياخد وقت قد إيه؟</span></div>
+    <div class="phrase"><span class="num">57</span><span class="fr">Y a-t-il des frais à payer ?</span><span class="ar">هل فيه رسوم لازم أدفعها؟</span></div>
+    <div class="phrase"><span class="num">58</span><span class="fr">Je voudrais avoir plus de renseignements.</span><span class="ar">عايز أعرف معلومات أكتر.</span></div>
+    <div class="phrase"><span class="num">59</span><span class="fr">Merci pour ces informations.</span><span class="ar">شكرًا على المعلومات دي.</span></div>
+    <div class="phrase"><span class="num">60</span><span class="fr">Je vous remercie pour votre aide.</span><span class="ar">بشكر حضرتك على مساعدتك.</span></div>
+  </section>
+
+  <section>
+    <h2>رابعًا: مكالمات العمل والتقديم على وظيفة <span class="badge">61 – 80</span></h2>
+    <div class="phrase"><span class="num">61</span><span class="fr">Je vous appelle au sujet de votre offre d’emploi.</span><span class="ar">أنا بتصل بخصوص إعلان الوظيفة بتاعكم.</span></div>
+    <div class="phrase"><span class="num">62</span><span class="fr">Je cherche un emploi en Belgique.</span><span class="ar">أنا بدوّر على شغل في بلجيكا.</span></div>
+    <div class="phrase"><span class="num">63</span><span class="fr">Je suis ingénieur en mécanique.</span><span class="ar">أنا مهندس ميكانيكا.</span></div>
+    <div class="phrase"><span class="num">64</span><span class="fr">J’ai plus de dix ans d’expérience.</span><span class="ar">عندي خبرة أكتر من عشر سنين.</span></div>
+    <div class="phrase"><span class="num">65</span><span class="fr">Je travaille dans le domaine du chauffage et de la climatisation.</span><span class="ar">أنا بشتغل في مجال التدفئة والتكييف.</span></div>
+    <div class="phrase"><span class="num">66</span><span class="fr">Est-ce que le poste est toujours disponible ?</span><span class="ar">هل الوظيفة لسه متاحة؟</span></div>
+    <div class="phrase"><span class="num">67</span><span class="fr">Quelles sont les conditions de travail ?</span><span class="ar">إيه شروط العمل؟</span></div>
+    <div class="phrase"><span class="num">68</span><span class="fr">Quel est le salaire proposé ?</span><span class="ar">إيه الراتب المعروض؟</span></div>
+    <div class="phrase"><span class="num">69</span><span class="fr">Quels sont les horaires de travail ?</span><span class="ar">إيه مواعيد الشغل؟</span></div>
+    <div class="phrase"><span class="num">70</span><span class="fr">Le travail est-il à temps plein ?</span><span class="ar">هل الشغل دوام كامل؟</span></div>
+    <div class="phrase"><span class="num">71</span><span class="fr">Acceptez-vous les candidatures spontanées ?</span><span class="ar">هل بتقبلوا طلبات التوظيف المباشرة؟</span></div>
+    <div class="phrase"><span class="num">72</span><span class="fr">J’ai envoyé mon CV par e-mail.</span><span class="ar">أنا بعت السيرة الذاتية على الإيميل.</span></div>
+    <div class="phrase"><span class="num">73</span><span class="fr">Avez-vous reçu mon CV ?</span><span class="ar">هل استلمتوا السيرة الذاتية بتاعتي؟</span></div>
+    <div class="phrase"><span class="num">74</span><span class="fr">Je voudrais parler au responsable du recrutement.</span><span class="ar">عايز أتكلم مع مسؤول التوظيف.</span></div>
+    <div class="phrase"><span class="num">75</span><span class="fr">Serait-il possible d’organiser un entretien ?</span><span class="ar">هل ممكن نحدد مقابلة؟</span></div>
+    <div class="phrase"><span class="num">76</span><span class="fr">Je suis disponible pour un entretien téléphonique.</span><span class="ar">أنا متاح لمقابلة تليفونية.</span></div>
+    <div class="phrase"><span class="num">77</span><span class="fr">Je peux commencer immédiatement.</span><span class="ar">أقدر أبدأ فورًا.</span></div>
+    <div class="phrase"><span class="num">78</span><span class="fr">Je suis également ouvert au travail temporaire.</span><span class="ar">أنا كمان منفتح على الشغل المؤقت.</span></div>
+    <div class="phrase"><span class="num">79</span><span class="fr">Pouvez-vous me rappeler plus tard ?</span><span class="ar">ممكن تتصل بيا تاني بعدين؟</span></div>
+    <div class="phrase"><span class="num">80</span><span class="fr">Je reste à votre disposition.</span><span class="ar">أنا تحت أمركم لو احتجتم أي معلومات إضافية.</span></div>
+  </section>
+
+  <section>
+    <h2>خامسًا: مشكلات المكالمات وإنهاء الحديث <span class="badge">81 – 100</span></h2>
+    <div class="phrase"><span class="num">81</span><span class="fr">Je suis occupé en ce moment.</span><span class="ar">أنا مشغول دلوقتي.</span></div>
+    <div class="phrase"><span class="num">82</span><span class="fr">Je ne peux pas parler maintenant.</span><span class="ar">مش قادر أتكلم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">83</span><span class="fr">Puis-je vous rappeler plus tard ?</span><span class="ar">ممكن أتصل بحضرتك تاني بعدين؟</span></div>
+    <div class="phrase"><span class="num">84</span><span class="fr">Je vous rappellerai cet après-midi.</span><span class="ar">هتصل بحضرتك تاني بعد الظهر.</span></div>
+    <div class="phrase"><span class="num">85</span><span class="fr">Appelez-moi quand vous serez disponible.</span><span class="ar">اتصل بيا لما تكون متاح.</span></div>
+    <div class="phrase"><span class="num">86</span><span class="fr">Je n’ai plus de batterie.</span><span class="ar">بطارية التليفون قربت تخلص.</span></div>
+    <div class="phrase"><span class="num">87</span><span class="fr">Mon téléphone va s’éteindre.</span><span class="ar">التليفون هيفصل.</span></div>
+    <div class="phrase"><span class="num">88</span><span class="fr">Je pense que la communication va être coupée.</span><span class="ar">أعتقد إن المكالمة هتقطع.</span></div>
+    <div class="phrase"><span class="num">89</span><span class="fr">Je vais perdre la connexion.</span><span class="ar">الاتصال هينقطع عندي.</span></div>
+    <div class="phrase"><span class="num">90</span><span class="fr">Excusez-moi, j’ai reçu un autre appel.</span><span class="ar">معلش، جالي اتصال تاني.</span></div>
+    <div class="phrase"><span class="num">91</span><span class="fr">Je dois vous laisser.</span><span class="ar">لازم أقفل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">92</span><span class="fr">Je ne veux pas vous retenir.</span><span class="ar">مش عايز أعطّل حضرتك.</span></div>
+    <div class="phrase"><span class="num">93</span><span class="fr">Merci pour votre temps.</span><span class="ar">شكرًا على وقت حضرتك.</span></div>
+    <div class="phrase"><span class="num">94</span><span class="fr">C’était un plaisir de vous parler.</span><span class="ar">كان من دواعي سروري إني أتكلم مع حضرتك.</span></div>
+    <div class="phrase"><span class="num">95</span><span class="fr">Je vous souhaite une bonne journée.</span><span class="ar">أتمنى لحضرتك يومًا سعيدًا.</span></div>
+    <div class="phrase"><span class="num">96</span><span class="fr">Bonne soirée et à bientôt.</span><span class="ar">مساء سعيد وإلى اللقاء قريبًا.</span></div>
+    <div class="phrase"><span class="num">97</span><span class="fr">Nous restons en contact.</span><span class="ar">هنفضل على تواصل.</span></div>
+    <div class="phrase"><span class="num">98</span><span class="fr">J’attends votre appel.</span><span class="ar">أنا مستني مكالمتك.</span></div>
+    <div class="phrase"><span class="num">99</span><span class="fr">Merci, au revoir.</span><span class="ar">شكرًا، مع السلامة.</span></div>
+    <div class="phrase"><span class="num">100</span><span class="fr">À bientôt, bonne continuation !</span><span class="ar">أشوفك قريب، وأتمنى لك التوفيق!</span></div>
+  </section>
+
+  <section>
+    <h2>🎭 محادثة كاملة للتدريب</h2>
+    <p style="margin-bottom:15px; color:#555; font-weight:600;">الموقف: الاتصال بشركة للسؤال عن وظيفة</p>
+    <div class="dialogue">
+      <div class="line employeur">
+        <div class="fr-line">Employeur : Bonjour, société ABC, je vous écoute.</div>
+        <div class="ar-line">صاحب العمل: صباح الخير، شركة ABC، اتفضل.</div>
+      </div>
+      <div class="line vous">
+        <div class="fr-line">Vous : Bonjour, je m’appelle Samer. Je vous appelle au sujet de votre offre d’emploi.</div>
+        <div class="ar-line">أنت: صباح الخير، اسمي سامر. بتصل بخصوص إعلان الوظيفة.</div>
+      </div>
+      <div class="line employeur">
+        <div class="fr-line">Employeur : Oui, bien sûr. Quel poste vous intéresse ?</div>
+        <div class="ar-line">صاحب العمل: طبعًا، أنهي وظيفة مهتم بيها؟</div>
+      </div>
+      <div class="line vous">
+        <div class="fr-line">Vous : Je suis ingénieur en mécanique et j’ai plus de dix ans d’expérience.</div>
+        <div class="ar-line">أنت: أنا مهندس ميكانيكا وعندي خبرة أكتر من عشر سنين.</div>
+      </div>
+      <div class="line employeur">
+        <div class="fr-line">Employeur : Avez-vous envoyé votre CV ?</div>
+        <div class="ar-line">صاحب العمل: هل بعت السيرة الذاتية؟</div>
+      </div>
+      <div class="line vous">
+        <div class="fr-line">Vous : Oui, je l’ai envoyé par e-mail. Avez-vous besoin d’autres informations ?</div>
+        <div class="ar-line">أنت: أيوه، بعتها بالإيميل. هل تحتاجون معلومات إضافية؟</div>
+      </div>
+      <div class="line employeur">
+        <div class="fr-line">Employeur : Nous allons examiner votre candidature.</div>
+        <div class="ar-line">صاحب العمل: هنراجع طلب التوظيف بتاعك.</div>
+      </div>
+      <div class="line vous">
+        <div class="fr-line">Vous : Merci beaucoup. Je reste à votre disposition. Bonne journée !</div>
+        <div class="ar-line">أنت: شكرًا جزيلًا. أنا تحت أمركم لو احتجتم معلومات. يوم سعيد!</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tip">
+    <strong>🗣️ نصيحة للنطق</strong>
+    في المكالمات الرسمية بفرنسا وبلجيكا، استخدم <strong>vous</strong> بدل <strong>tu</strong> مع الأشخاص اللي متعرفهمش، وابدأ بـ <strong>Bonjour</strong> بدل <strong>Salut</strong>.
+  </div>
+
+  <footer>
+    📞 ١٠٠ جملة فرنسية للمكالمات الهاتفية — مناسب لمستوى A1–A2 🇫🇷
+  </footer>
+</div>
+
+<script>
+  // إضافة تفاعل بسيط: الضغط على الجملة يبرزها
+  document.querySelectorAll('.phrase').forEach(phrase => {
+    phrase.addEventListener('click', () => {
+      phrase.style.background = '#fff3cd';
+      setTimeout(() => { phrase.style.background = ''; }, 600);
+    });
+  });
+</script>
+
+</body>
+</html>
