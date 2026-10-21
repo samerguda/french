@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 فعل وجملة في Passé composé بـ Être | Le passé composé</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #134e5e, #71b280);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+    line-height: 1.8;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #134e5e, #71b280);
+    color: #fff;
+    padding: 45px 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 1.9em;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+
+  header p {
+    font-size: 1.05em;
+    opacity: 0.95;
+  }
+
+  .flags {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .warning {
+    background: linear-gradient(135deg, #fff3cd, #ffe082);
+    border-right: 6px solid #ff9800;
+    padding: 20px 25px;
+    margin: 25px 30px;
+    border-radius: 12px;
+    color: #6d4c00;
+    font-size: 1em;
+  }
+
+  .warning strong { color: #e65100; }
+
+  .formula {
+    display: inline-block;
+    background: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    margin: 8px 4px;
+    font-weight: 700;
+    color: #134e5e;
+    direction: ltr;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  section { padding: 10px 30px 20px; }
+
+  h2 {
+    color: #134e5e;
+    font-size: 1.35em;
+    margin: 35px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #71b280;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  h2 .badge {
+    background: linear-gradient(135deg, #134e5e, #71b280);
+    color: #fff;
+    font-size: 0.65em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: normal;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 600px;
+  }
+
+  thead {
+    background: linear-gradient(135deg, #134e5e, #2b7a5e);
+    color: #fff;
+  }
+
+  thead th {
+    padding: 14px 12px;
+    text-align: right;
+    font-size: 0.95em;
+    font-weight: 600;
+  }
+
+  thead th:first-child { text-align: center; width: 45px; }
+
+  tbody tr {
+    border-bottom: 1px solid #e8eef0;
+    transition: background 0.2s ease;
+  }
+
+  tbody tr:hover {
+    background: #e8f5f0;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f7faf9;
+  }
+
+  tbody tr:nth-child(even):hover {
+    background: #e8f5f0;
+  }
+
+  td {
+    padding: 12px;
+    font-size: 0.93em;
+    vertical-align: middle;
+  }
+
+  td:first-child {
+    text-align: center;
+    color: #71b280;
+    font-weight: 700;
+  }
+
+  td.verb {
+    color: #134e5e;
+    font-weight: 700;
+    direction: ltr;
+    text-align: left;
+  }
+
+  td.example {
+    direction: ltr;
+    text-align: left;
+    color: #1b5e20;
+    font-weight: 600;
+  }
+
+  td.example .past {
+    color: #e65100;
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    padding: 0 2px;
+  }
+
+  td.meaning {
+    color: #b71c1c;
+    text-align: right;
+  }
+
+  .note-inline {
+    background: #fff8e1;
+    border-right: 4px solid #ff9800;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 0.92em;
+    color: #6d4c00;
+  }
+
+  .rules {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-right: 6px solid #2e7d32;
+    padding: 25px 30px;
+    margin: 30px;
+    border-radius: 12px;
+    color: #1b5e20;
+  }
+
+  .rules h3 {
+    font-size: 1.2em;
+    margin-bottom: 18px;
+    color: #1b5e20;
+  }
+
+  .rules ul { list-style: none; }
+
+  .rules li {
+    margin-bottom: 15px;
+    padding-right: 28px;
+    position: relative;
+  }
+
+  .rules li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .rules .example {
+    display: inline-block;
+    background: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin: 3px;
+    direction: ltr;
+    font-weight: 600;
+    color: #134e5e;
+    font-family: 'Courier New', monospace;
+  }
+
+  .alert-box {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    border-right: 6px solid #c62828;
+    padding: 20px 25px;
+    margin: 30px;
+    border-radius: 12px;
+    color: #b71c1c;
+    font-size: 0.95em;
+  }
+
+  .alert-box strong { color: #b71c1c; font-size: 1.05em; display: block; margin-bottom: 8px; }
+
+  footer {
+    background: #134e5e;
+    color: #cfe8dc;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    section { padding: 10px 15px 15px; }
+    .warning, .rules, .alert-box { margin: 15px; padding: 18px; }
+    header { padding: 30px 20px; }
+    header h1 { font-size: 1.35em; }
+    thead th, td { padding: 10px 8px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="flags">🇫🇷 ✨</div>
+    <h1>١٠٠ فعل وجملة في Passé composé باستخدام ÊTRE</h1>
+    <p>أفعال الحركة + تغيير الحالة + الأفعال الانعكاسية</p>
+  </header>
+
+  <div class="warning">
+    <strong>⚠️ مهم:</strong> مش كل الأفعال المئة بتاخد <strong>être</strong> مباشرةً في الماضي المركب. الأفعال الأساسية للحركة وتغيير الحالة وبعض الأفعال الانعكاسية بتستخدم être، لكن كثيرًا من الأفعال الأخرى بتستخدم <strong>avoir</strong>.
+    <br><br>
+    <strong>الصيغة:</strong>
+    <span class="formula">être (مصرّف) + participe passé</span>
+    <span class="formula">Je suis allé(e)</span>
+    <span class="formula">Je me suis réveillé(e)</span>
+  </div>
+
+  <!-- القسم 1 -->
+  <section>
+    <h2>أولًا: أفعال الحركة والانتقال <span class="badge">1 – 25</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الفعل</th><th>الماضي مع être</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td class="verb">Aller</td><td class="example">Je suis <span class="past">allé(e)</span>.</td><td class="meaning">ذهبت</td></tr>
+          <tr><td>2</td><td class="verb">Venir</td><td class="example">Je suis <span class="past">venu(e)</span>.</td><td class="meaning">أتيت</td></tr>
+          <tr><td>3</td><td class="verb">Revenir</td><td class="example">Je suis <span class="past">revenu(e)</span>.</td><td class="meaning">رجعت</td></tr>
+          <tr><td>4</td><td class="verb">Devenir</td><td class="example">Je suis <span class="past">devenu(e)</span>.</td><td class="meaning">أصبحت</td></tr>
+          <tr><td>5</td><td class="verb">Parvenir</td><td class="example">Je suis <span class="past">parvenu(e)</span>.</td><td class="meaning">تمكنت من الوصول</td></tr>
+          <tr><td>6</td><td class="verb">Survenir</td><td class="example">C'est <span class="past">survenu</span>.</td><td class="meaning">حدث فجأة</td></tr>
+          <tr><td>7</td><td class="verb">Advenir</td><td class="example">C'est <span class="past">advenu</span>.</td><td class="meaning">حدث / وقع</td></tr>
+          <tr><td>8</td><td class="verb">Intervenir</td><td class="example">Il est <span class="past">intervenu</span>.</td><td class="meaning">تدخّل</td></tr>
+          <tr><td>9</td><td class="verb">Arriver</td><td class="example">Je suis <span class="past">arrivé(e)</span>.</td><td class="meaning">وصلت</td></tr>
+          <tr><td>10</td><td class="verb">Partir</td><td class="example">Je suis <span class="past">parti(e)</span>.</td><td class="meaning">غادرت</td></tr>
+          <tr><td>11</td><td class="verb">Repartir</td><td class="example">Je suis <span class="past">reparti(e)</span>.</td><td class="meaning">غادرت مرة أخرى</td></tr>
+          <tr><td>12</td><td class="verb">Sortir</td><td class="example">Je suis <span class="past">sorti(e)</span>.</td><td class="meaning">خرجت</td></tr>
+          <tr><td>13</td><td class="verb">Rentrer</td><td class="example">Je suis <span class="past">rentré(e)</span>.</td><td class="meaning">رجعت إلى البيت</td></tr>
+          <tr><td>14</td><td class="verb">Entrer</td><td class="example">Je suis <span class="past">entré(e)</span>.</td><td class="meaning">دخلت</td></tr>
+          <tr><td>15</td><td class="verb">Rentrer à nouveau</td><td class="example">Je suis <span class="past">rentré(e)</span> à nouveau.</td><td class="meaning">رجعت مرة أخرى</td></tr>
+          <tr><td>16</td><td class="verb">Monter</td><td class="example">Je suis <span class="past">monté(e)</span>.</td><td class="meaning">صعدت</td></tr>
+          <tr><td>17</td><td class="verb">Remonter</td><td class="example">Je suis <span class="past">remonté(e)</span>.</td><td class="meaning">صعدت مرة أخرى</td></tr>
+          <tr><td>18</td><td class="verb">Descendre</td><td class="example">Je suis <span class="past">descendu(e)</span>.</td><td class="meaning">نزلت</td></tr>
+          <tr><td>19</td><td class="verb">Redescendre</td><td class="example">Je suis <span class="past">redescendu(e)</span>.</td><td class="meaning">نزلت مرة أخرى</td></tr>
+          <tr><td>20</td><td class="verb">Tomber</td><td class="example">Je suis <span class="past">tombé(e)</span>.</td><td class="meaning">وقعت</td></tr>
+          <tr><td>21</td><td class="verb">Retomber</td><td class="example">Je suis <span class="past">retombé(e)</span>.</td><td class="meaning">وقعت مرة أخرى</td></tr>
+          <tr><td>22</td><td class="verb">Repartir</td><td class="example">Nous sommes <span class="past">repartis</span>.</td><td class="meaning">غادرنا مرة أخرى</td></tr>
+          <tr><td>23</td><td class="verb">Accourir</td><td class="example">Elle est <span class="past">accourue</span>.</td><td class="meaning">أسرعت إلى المكان</td></tr>
+          <tr><td>24</td><td class="verb">Survenir</td><td class="example">Un problème est <span class="past">survenu</span>.</td><td class="meaning">ظهرت مشكلة فجأة</td></tr>
+          <tr><td>25</td><td class="verb">Échoir</td><td class="example">L'échéance est <span class="past">échue</span>.</td><td class="meaning">حلّ موعد الاستحقاق</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- القسم 2 -->
+  <section>
+    <h2>ثانيًا: أفعال الوصول والبقاء وتغيير الحالة <span class="badge">26 – 40</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الفعل</th><th>الماضي مع être</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>26</td><td class="verb">Rester</td><td class="example">Je suis <span class="past">resté(e)</span>.</td><td class="meaning">بقيت</td></tr>
+          <tr><td>27</td><td class="verb">Demeurer</td><td class="example">Je suis <span class="past">demeuré(e)</span>.</td><td class="meaning">مكثت / بقيت</td></tr>
+          <tr><td>28</td><td class="verb">Retourner</td><td class="example">Je suis <span class="past">retourné(e)</span>.</td><td class="meaning">عدت</td></tr>
+          <tr><td>29</td><td class="verb">Naître</td><td class="example">Je suis <span class="past">né(e)</span>.</td><td class="meaning">وُلدت</td></tr>
+          <tr><td>30</td><td class="verb">Mourir</td><td class="example">Il est <span class="past">mort</span>.</td><td class="meaning">مات</td></tr>
+          <tr><td>31</td><td class="verb">Décéder</td><td class="example">Elle est <span class="past">décédée</span>.</td><td class="meaning">تُوفيت</td></tr>
+          <tr><td>32</td><td class="verb">Apparaître</td><td class="example">Il est <span class="past">apparu</span>.</td><td class="meaning">ظهر</td></tr>
+          <tr><td>33</td><td class="verb">Réapparaître</td><td class="example">Il est <span class="past">réapparu</span>.</td><td class="meaning">ظهر مرة أخرى</td></tr>
+          <tr><td>34</td><td class="verb">Disparaître</td><td class="example">Il <span class="past">a disparu</span>.</td><td class="meaning">اختفى (بـ avoir)</td></tr>
+          <tr><td>35</td><td class="verb">Devenir</td><td class="example">Elle est <span class="past">devenue</span> médecin.</td><td class="meaning">أصبحت طبيبة</td></tr>
+          <tr><td>36</td><td class="verb">Redevenir</td><td class="example">Il est <span class="past">redevenu</span> calme.</td><td class="meaning">أصبح هادئًا مرة أخرى</td></tr>
+          <tr><td>37</td><td class="verb">Éclore</td><td class="example">La fleur est <span class="past">éclose</span>.</td><td class="meaning">تفتحت الزهرة</td></tr>
+          <tr><td>38</td><td class="verb">Émerger</td><td class="example">Il est <span class="past">émergé</span> des eaux.</td><td class="meaning">ظهر من المياه</td></tr>
+          <tr><td>39</td><td class="verb">S'élever</td><td class="example">Le prix s'est <span class="past">élevé</span>.</td><td class="meaning">ارتفع السعر</td></tr>
+          <tr><td>40</td><td class="verb">Se développer</td><td class="example">Le projet s'est <span class="past">développé</span>.</td><td class="meaning">تطوّر المشروع</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-inline">
+      💡 <strong>ملحوظة:</strong> الأفعال من ٣٤ وما بعدها ليست كلها من مجموعة أفعال être التقليدية؛ بعض الأمثلة هنا تستخدم être لأن الفعل انعكاسي، بينما <em>disparaître</em> في المثال يستخدم avoir — وده مثال للتفرقة بين الأفعال.
+    </div>
+  </section>
+
+  <!-- القسم 3 -->
+  <section>
+    <h2>ثالثًا: الأفعال الانعكاسية (Verbes pronominaux) <span class="badge">41 – 75</span></h2>
+    <p style="color:#555; margin-bottom:15px; font-size:0.95em;">الأفعال الانعكاسية تستخدم <strong>être</strong> في passé composé، مثل <em>se lever</em> و<em>se réveiller</em>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الفعل</th><th>الماضي</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>41</td><td class="verb">Se lever</td><td class="example">Je me suis <span class="past">levé(e)</span>.</td><td class="meaning">قمت</td></tr>
+          <tr><td>42</td><td class="verb">Se réveiller</td><td class="example">Je me suis <span class="past">réveillé(e)</span>.</td><td class="meaning">استيقظت</td></tr>
+          <tr><td>43</td><td class="verb">Se coucher</td><td class="example">Je me suis <span class="past">couché(e)</span>.</td><td class="meaning">نمت / ذهبت للفراش</td></tr>
+          <tr><td>44</td><td class="verb">S'endormir</td><td class="example">Je me suis <span class="past">endormi(e)</span>.</td><td class="meaning">غفوت</td></tr>
+          <tr><td>45</td><td class="verb">Se laver</td><td class="example">Je me suis <span class="past">lavé(e)</span>.</td><td class="meaning">اغتسلت</td></tr>
+          <tr><td>46</td><td class="verb">Se doucher</td><td class="example">Je me suis <span class="past">douché(e)</span>.</td><td class="meaning">استحممت</td></tr>
+          <tr><td>47</td><td class="verb">Se brosser les dents</td><td class="example">Je me suis <span class="past">brossé</span> les dents.</td><td class="meaning">غسلت أسناني</td></tr>
+          <tr><td>48</td><td class="verb">S'habiller</td><td class="example">Je me suis <span class="past">habillé(e)</span>.</td><td class="meaning">ارتديت ملابسي</td></tr>
+          <tr><td>49</td><td class="verb">Se déshabiller</td><td class="example">Je me suis <span class="past">déshabillé(e)</span>.</td><td class="meaning">خلعت ملابسي</td></tr>
+          <tr><td>50</td><td class="verb">Se préparer</td><td class="example">Je me suis <span class="past">préparé(e)</span>.</td><td class="meaning">استعددت</td></tr>
+          <tr><td>51</td><td class="verb">Se dépêcher</td><td class="example">Je me suis <span class="past">dépêché(e)</span>.</td><td class="meaning">أسرعت</td></tr>
+          <tr><td>52</td><td class="verb">Se promener</td><td class="example">Je me suis <span class="past">promené(e)</span>.</td><td class="meaning">تمشيت</td></tr>
+          <tr><td>53</td><td class="verb">Se reposer</td><td class="example">Je me suis <span class="past">reposé(e)</span>.</td><td class="meaning">استرحت</td></tr>
+          <tr><td>54</td><td class="verb">S'asseoir</td><td class="example">Je me suis <span class="past">assis(e)</span>.</td><td class="meaning">جلست</td></tr>
+          <tr><td>55</td><td class="verb">Se sentir</td><td class="example">Je me suis <span class="past">senti(e)</span> bien.</td><td class="meaning">شعرت أنني بخير</td></tr>
+          <tr><td>56</td><td class="verb">Se tromper</td><td class="example">Je me suis <span class="past">trompé(e)</span>.</td><td class="meaning">أخطأت</td></tr>
+          <tr><td>57</td><td class="verb">Se souvenir</td><td class="example">Je me suis <span class="past">souvenu(e)</span>.</td><td class="meaning">تذكرت</td></tr>
+          <tr><td>58</td><td class="verb">S'inquiéter</td><td class="example">Je me suis <span class="past">inquiété(e)</span>.</td><td class="meaning">قلقت</td></tr>
+          <tr><td>59</td><td class="verb">S'amuser</td><td class="example">Je me suis <span class="past">amusé(e)</span>.</td><td class="meaning">استمتعت</td></tr>
+          <tr><td>60</td><td class="verb">Se fâcher</td><td class="example">Je me suis <span class="past">fâché(e)</span>.</td><td class="meaning">غضبت</td></tr>
+          <tr><td>61</td><td class="verb">Se calmer</td><td class="example">Je me suis <span class="past">calmé(e)</span>.</td><td class="meaning">هدأت</td></tr>
+          <tr><td>62</td><td class="verb">Se dépêcher</td><td class="example">Nous nous sommes <span class="past">dépêchés</span>.</td><td class="meaning">أسرعنا</td></tr>
+          <tr><td>63</td><td class="verb">Se rencontrer</td><td class="example">Nous nous sommes <span class="past">rencontrés</span>.</td><td class="meaning">تقابلنا</td></tr>
+          <tr><td>64</td><td class="verb">Se marier</td><td class="example">Ils se sont <span class="past">mariés</span>.</td><td class="meaning">تزوجوا</td></tr>
+          <tr><td>65</td><td class="verb">Se séparer</td><td class="example">Ils se sont <span class="past">séparés</span>.</td><td class="meaning">انفصلوا</td></tr>
+          <tr><td>66</td><td class="verb">Se retrouver</td><td class="example">Nous nous sommes <span class="past">retrouvés</span>.</td><td class="meaning">التقينا مجددًا</td></tr>
+          <tr><td>67</td><td class="verb">Se parler</td><td class="example">Nous nous sommes <span class="past">parlé</span>.</td><td class="meaning">تحدثنا مع بعضنا</td></tr>
+          <tr><td>68</td><td class="verb">Se téléphoner</td><td class="example">Nous nous sommes <span class="past">téléphoné</span>.</td><td class="meaning">اتصلنا ببعضنا</td></tr>
+          <tr><td>69</td><td class="verb">Se regarder</td><td class="example">Ils se sont <span class="past">regardés</span>.</td><td class="meaning">نظروا إلى بعضهم</td></tr>
+          <tr><td>70</td><td class="verb">Se voir</td><td class="example">Nous nous sommes <span class="past">vus</span>.</td><td class="meaning">رأينا بعضنا</td></tr>
+          <tr><td>71</td><td class="verb">Se comprendre</td><td class="example">Nous nous sommes <span class="past">compris</span>.</td><td class="meaning">فهمنا بعضنا</td></tr>
+          <tr><td>72</td><td class="verb">Se connaître</td><td class="example">Nous nous sommes <span class="past">connus</span>.</td><td class="meaning">تعرفنا على بعضنا</td></tr>
+          <tr><td>73</td><td class="verb">Se retrouver</td><td class="example">Elles se sont <span class="past">retrouvées</span>.</td><td class="meaning">التقين مجددًا</td></tr>
+          <tr><td>74</td><td class="verb">Se promener</td><td class="example">Elles se sont <span class="past">promenées</span>.</td><td class="meaning">تمشين</td></tr>
+          <tr><td>75</td><td class="verb">Se reposer</td><td class="example">Ils se sont <span class="past">reposés</span>.</td><td class="meaning">استراحوا</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- القسم 4 -->
+  <section>
+    <h2>رابعًا: أفعال انعكاسية إضافية مهمة <span class="badge">76 – 90</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الفعل</th><th>الماضي</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>76</td><td class="verb">Se dépêcher</td><td class="example">Il s'est <span class="past">dépêché</span>.</td><td class="meaning">أسرع</td></tr>
+          <tr><td>77</td><td class="verb">Se maquiller</td><td class="example">Elle s'est <span class="past">maquillée</span>.</td><td class="meaning">وضعت المكياج</td></tr>
+          <tr><td>78</td><td class="verb">Se raser</td><td class="example">Il s'est <span class="past">rasé</span>.</td><td class="meaning">حلق ذقنه</td></tr>
+          <tr><td>79</td><td class="verb">Se coiffer</td><td class="example">Elle s'est <span class="past">coiffée</span>.</td><td class="meaning">صففت شعرها</td></tr>
+          <tr><td>80</td><td class="verb">Se couper</td><td class="example">Il s'est <span class="past">coupé</span>.</td><td class="meaning">جرح نفسه</td></tr>
+          <tr><td>81</td><td class="verb">Se blesser</td><td class="example">Elle s'est <span class="past">blessée</span>.</td><td class="meaning">أصابت نفسها</td></tr>
+          <tr><td>82</td><td class="verb">Se casser la jambe</td><td class="example">Il s'est <span class="past">cassé</span> la jambe.</td><td class="meaning">كسر ساقه</td></tr>
+          <tr><td>83</td><td class="verb">Se perdre</td><td class="example">Je me suis <span class="past">perdu(e)</span>.</td><td class="meaning">تهت</td></tr>
+          <tr><td>84</td><td class="verb">Se retrouver seul</td><td class="example">Je me suis <span class="past">retrouvé(e)</span> seul(e).</td><td class="meaning">وجدت نفسي وحيدًا</td></tr>
+          <tr><td>85</td><td class="verb">S'arrêter</td><td class="example">Je me suis <span class="past">arrêté(e)</span>.</td><td class="meaning">توقفت</td></tr>
+          <tr><td>86</td><td class="verb">Se retourner</td><td class="example">Je me suis <span class="past">retourné(e)</span>.</td><td class="meaning">استدرت</td></tr>
+          <tr><td>87</td><td class="verb">S'approcher</td><td class="example">Je me suis <span class="past">approché(e)</span>.</td><td class="meaning">اقتربت</td></tr>
+          <tr><td>88</td><td class="verb">S'éloigner</td><td class="example">Je me suis <span class="past">éloigné(e)</span>.</td><td class="meaning">ابتعدت</td></tr>
+          <tr><td>89</td><td class="verb">Se déplacer</td><td class="example">Je me suis <span class="past">déplacé(e)</span>.</td><td class="meaning">انتقلت / تحركت</td></tr>
+          <tr><td>90</td><td class="verb">S'en aller</td><td class="example">Je m'en suis <span class="past">allé(e)</span>.</td><td class="meaning">انصرفت</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- القسم 5 -->
+  <section>
+    <h2>خامسًا: أفعال انعكاسية أخرى تستخدمها يوميًا <span class="badge">91 – 100</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الفعل</th><th>الماضي</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>91</td><td class="verb">Se décider</td><td class="example">Je me suis <span class="past">décidé(e)</span>.</td><td class="meaning">اتخذت قرارًا</td></tr>
+          <tr><td>92</td><td class="verb">Se rendre compte</td><td class="example">Je me suis <span class="past">rendu</span> compte.</td><td class="meaning">أدركت</td></tr>
+          <tr><td>93</td><td class="verb">Se mettre en colère</td><td class="example">Je me suis <span class="past">mis(e)</span> en colère.</td><td class="meaning">غضبت</td></tr>
+          <tr><td>94</td><td class="verb">S'habituer</td><td class="example">Je me suis <span class="past">habitué(e)</span>.</td><td class="meaning">اعتدت</td></tr>
+          <tr><td>95</td><td class="verb">S'intéresser à</td><td class="example">Je me suis <span class="past">intéressé(e)</span> à ce sujet.</td><td class="meaning">اهتممت بهذا الموضوع</td></tr>
+          <tr><td>96</td><td class="verb">Se présenter</td><td class="example">Je me suis <span class="past">présenté(e)</span>.</td><td class="meaning">عرّفت بنفسي</td></tr>
+          <tr><td>97</td><td class="verb">Se connecter</td><td class="example">Je me suis <span class="past">connecté(e)</span>.</td><td class="meaning">سجلت الدخول</td></tr>
+          <tr><td>98</td><td class="verb">Se déconnecter</td><td class="example">Je me suis <span class="past">déconnecté(e)</span>.</td><td class="meaning">سجلت الخروج</td></tr>
+          <tr><td>99</td><td class="verb">Se renseigner</td><td class="example">Je me suis <span class="past">renseigné(e)</span>.</td><td class="meaning">استفسرت</td></tr>
+          <tr><td>100</td><td class="verb">Se débrouiller</td><td class="example">Je me suis <span class="past">débrouillé(e)</span>.</td><td class="meaning">تصرفت / دبرت أموري</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- القواعد -->
+  <div class="rules">
+    <h3>📚 قواعد لازم تحفظها</h3>
+    <ul>
+      <li>
+        <strong>être + participe passé:</strong> مثل
+        <span class="example">Je suis arrivé.</span>
+      </li>
+      <li>
+        مع المؤنث نضيف غالبًا <strong>e</strong>:
+        <span class="example">Je suis arrivée.</span>
+      </li>
+      <li>
+        مع الجمع نضيف <strong>s</strong>:
+        <span class="example">Ils sont arrivés.</span>
+      </li>
+      <li>
+        الأفعال الانعكاسية تستخدم <strong>être</strong>:
+        <span class="example">Je me suis réveillé.</span>
+      </li>
+      <li>
+        بعض الأفعال الانعكاسية لا تتطابق دائمًا مع الفاعل؛ مثل
+        <span class="example">Elle s'est lavé les mains.</span>
+        لأن المفعول به (les mains) يأتي <strong>بعد</strong> الفعل.
+      </li>
+    </ul>
+  </div>
+
+  <!-- تنبيه لغوي -->
+  <div class="alert-box">
+    <strong>🔔 تنبيه لغوي مهم</strong>
+    القائمة تشمل أفعالًا غير انعكاسية تستخدم <em>être</em>، وأفعالًا انعكاسية، وبعض الأفعال المركبة. ليست هناك <strong>١٠٠ فعل شائع مستقل</strong> كلها تستخدم <em>être</em> مباشرةً؛ كثير من الأفعال الفرنسية تستخدم <strong>avoir</strong> في passé composé — زي <em>disparaître</em> في المثال رقم 34.
+  </div>
+
+  <footer>
+    🇫🇷 ١٠٠ فعل وجملة في Passé composé بـ Être — للممارسة اليومية ✨
+  </footer>
+</div>
+
+<script>
+  // تأثير بسيط عند الضغط على صفوف الجدول
+  document.querySelectorAll('tbody tr').forEach(row => {
+    row.addEventListener('click', () => {
+      row.style.background = '#fff9c4';
+      setTimeout(() => {
+        row.style.background = '';
+      }, 600);
+    });
+  });
+</script>
+
+</body>
+</html>
