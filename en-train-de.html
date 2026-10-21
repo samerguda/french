@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>150 جملة فرنسية بـ En train de | Français pratique</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+    line-height: 1.8;
+  }
+
+  .container {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0052d4, #4364f7);
+    color: #fff;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.9em;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+
+  header p {
+    font-size: 1.05em;
+    opacity: 0.92;
+  }
+
+  .flags {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .rule-box {
+    background: linear-gradient(135deg, #fff3cd, #ffe082);
+    border-right: 6px solid #ff9800;
+    padding: 20px 25px;
+    margin: 25px 30px;
+    border-radius: 12px;
+    color: #6d4c00;
+    font-size: 1em;
+  }
+
+  .rule-box strong { color: #e65100; }
+
+  .rule-box .formula {
+    display: inline-block;
+    background: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-weight: 700;
+    color: #0052d4;
+    direction: ltr;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  section { padding: 10px 30px 20px; }
+
+  h2 {
+    color: #0052d4;
+    font-size: 1.35em;
+    margin: 30px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #6fb1fc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  h2 .badge {
+    background: linear-gradient(135deg, #0052d4, #6fb1fc);
+    color: #fff;
+    font-size: 0.65em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: normal;
+  }
+
+  .phrase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #f5f8ff;
+    border-radius: 12px;
+    padding: 13px 18px;
+    margin-bottom: 9px;
+    transition: all 0.25s ease;
+    border-right: 4px solid #4364f7;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+
+  .phrase:hover {
+    background: #e3ecff;
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(67,100,247,0.2);
+    border-right-color: #ff9800;
+  }
+
+  .fr {
+    font-weight: 600;
+    color: #0d2b6b;
+    flex: 1;
+    min-width: 260px;
+    direction: ltr;
+    text-align: left;
+  }
+
+  .fr .highlight {
+    color: #e65100;
+    background: linear-gradient(transparent 60%, #ffe082 60%);
+    padding: 0 2px;
+  }
+
+  .ar {
+    color: #b71c1c;
+    flex: 1;
+    min-width: 250px;
+    text-align: right;
+    font-size: 0.96em;
+  }
+
+  .num {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #0052d4;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8em;
+    flex-shrink: 0;
+  }
+
+  .notes {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-right: 6px solid #2e7d32;
+    padding: 25px 30px;
+    margin: 30px;
+    border-radius: 12px;
+    color: #1b5e20;
+  }
+
+  .notes h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #1b5e20;
+  }
+
+  .notes ul { list-style: none; }
+
+  .notes li {
+    margin-bottom: 14px;
+    padding-right: 28px;
+    position: relative;
+  }
+
+  .notes li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .notes .example {
+    display: inline-block;
+    background: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin: 3px 3px;
+    direction: ltr;
+    font-weight: 600;
+    color: #0052d4;
+    font-family: 'Courier New', monospace;
+  }
+
+  .notes .wrong {
+    color: #c62828;
+    text-decoration: line-through;
+  }
+
+  footer {
+    background: #0052d4;
+    color: #dbe7ff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  .counter-bar {
+    background: #e3ecff;
+    padding: 12px 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #0052d4;
+    border-bottom: 2px solid #6fb1fc;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    section { padding: 10px 15px 15px; }
+    .rule-box, .notes { margin: 15px; padding: 18px; }
+    header h1 { font-size: 1.35em; }
+    .fr, .ar { min-width: 100%; }
+    .phrase { padding: 12px 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="flags">🇫🇷 ✨ 🇪🇬</div>
+    <h1>١٥٠ جملة فرنسية باستخدام <span style="direction:ltr; display:inline-block;">En train de</span></h1>
+    <p>أمثلة من الحياة اليومية، المكالمات، الشغل، التسوق، ومواقف في بلجيكا</p>
+  </header>
+
+  <div class="rule-box">
+    <strong>📌 القاعدة الأساسية:</strong> التركيب بيوضّح إنك في وسط الفعل دلوقتي.
+    <div class="formula">الفاعل + être + en train de / d' + الفعل في المصدر</div>
+    <br>
+    <strong>أمثلة على التصريف:</strong>
+    <span class="example" style="direction:ltr;">Je suis</span>
+    <span class="example" style="direction:ltr;">Tu es</span>
+    <span class="example" style="direction:ltr;">Il/Elle est</span>
+    <span class="example" style="direction:ltr;">Nous sommes</span>
+    <span class="example" style="direction:ltr;">Vous êtes</span>
+    <span class="example" style="direction:ltr;">Ils/Elles sont</span>
+  </div>
+
+  <div class="counter-bar">📞 ١٥٠ جملة عملية — مستوى A1–A2</div>
+
+  <!-- 1. الحياة اليومية -->
+  <section>
+    <h2>1. الحياة اليومية <span class="badge">1 – 30</span></h2>
+    <div class="phrase"><span class="num">1</span><span class="fr">Je suis <span class="highlight">en train de</span> manger.</span><span class="ar">أنا باكل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">2</span><span class="fr">Je suis <span class="highlight">en train de</span> boire de l'eau.</span><span class="ar">أنا بشرب مياه دلوقتي.</span></div>
+    <div class="phrase"><span class="num">3</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer le petit-déjeuner.</span><span class="ar">أنا بحضّر الفطار دلوقتي.</span></div>
+    <div class="phrase"><span class="num">4</span><span class="fr">Je suis <span class="highlight">en train de</span> cuisiner.</span><span class="ar">أنا بطبخ دلوقتي.</span></div>
+    <div class="phrase"><span class="num">5</span><span class="fr">Je suis <span class="highlight">en train de</span> nettoyer la cuisine.</span><span class="ar">أنا بنضّف المطبخ دلوقتي.</span></div>
+    <div class="phrase"><span class="num">6</span><span class="fr">Je suis <span class="highlight">en train de</span> faire la vaisselle.</span><span class="ar">أنا بغسل المواعين دلوقتي.</span></div>
+    <div class="phrase"><span class="num">7</span><span class="fr">Je suis <span class="highlight">en train de</span> nettoyer la salle de bains.</span><span class="ar">أنا بنضّف الحمام دلوقتي.</span></div>
+    <div class="phrase"><span class="num">8</span><span class="fr">Je suis <span class="highlight">en train de</span> ranger ma chambre.</span><span class="ar">أنا برتّب أوضتي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">9</span><span class="fr">Je suis <span class="highlight">en train de</span> faire le ménage.</span><span class="ar">أنا بنضّف البيت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">10</span><span class="fr">Je suis <span class="highlight">en train de</span> faire la lessive.</span><span class="ar">أنا بغسل الهدوم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">11</span><span class="fr">Je suis <span class="highlight">en train de</span> repasser mes vêtements.</span><span class="ar">أنا بكوي هدومي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">12</span><span class="fr">Je suis <span class="highlight">en train de</span> prendre une douche.</span><span class="ar">أنا باخد دش دلوقتي.</span></div>
+    <div class="phrase"><span class="num">13</span><span class="fr">Je suis <span class="highlight">en train de</span> me brosser les dents.</span><span class="ar">أنا بغسل سناني دلوقتي.</span></div>
+    <div class="phrase"><span class="num">14</span><span class="fr">Je suis <span class="highlight">en train de</span> m'habiller.</span><span class="ar">أنا بلبس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">15</span><span class="fr">Je suis <span class="highlight">en train de</span> me préparer.</span><span class="ar">أنا بجهّز نفسي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">16</span><span class="fr">Je suis <span class="highlight">en train de</span> me reposer.</span><span class="ar">أنا بستريح دلوقتي.</span></div>
+    <div class="phrase"><span class="num">17</span><span class="fr">Je suis <span class="highlight">en train de</span> dormir.</span><span class="ar">أنا نايم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">18</span><span class="fr">Je suis <span class="highlight">en train de</span> me réveiller.</span><span class="ar">أنا بصحى دلوقتي.</span></div>
+    <div class="phrase"><span class="num">19</span><span class="fr">Je suis <span class="highlight">en train de</span> me lever.</span><span class="ar">أنا بقوم من السرير دلوقتي.</span></div>
+    <div class="phrase"><span class="num">20</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer le dîner.</span><span class="ar">أنا بحضّر العشا دلوقتي.</span></div>
+    <div class="phrase"><span class="num">21</span><span class="fr">Je suis <span class="highlight">en train de</span> couper les légumes.</span><span class="ar">أنا بقطّع الخضار دلوقتي.</span></div>
+    <div class="phrase"><span class="num">22</span><span class="fr">Je suis <span class="highlight">en train de</span> faire du café.</span><span class="ar">أنا بعمل قهوة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">23</span><span class="fr">Je suis <span class="highlight">en train de</span> manger une pomme.</span><span class="ar">أنا باكل تفاحة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">24</span><span class="fr">Je suis <span class="highlight">en train de</span> sortir les poubelles.</span><span class="ar">أنا بطلّع الزبالة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">25</span><span class="fr">Je suis <span class="highlight">en train d'</span>ouvrir la fenêtre.</span><span class="ar">أنا بفتح الشباك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">26</span><span class="fr">Je suis <span class="highlight">en train de</span> fermer la porte.</span><span class="ar">أنا بقفل الباب دلوقتي.</span></div>
+    <div class="phrase"><span class="num">27</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher mes clés.</span><span class="ar">أنا بدوّر على مفاتيحي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">28</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer mes affaires.</span><span class="ar">أنا بجهّز حاجتي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">29</span><span class="fr">Je suis <span class="highlight">en train de</span> faire les courses.</span><span class="ar">أنا بشتري مستلزمات البيت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">30</span><span class="fr">Je suis <span class="highlight">en train de</span> rentrer à la maison.</span><span class="ar">أنا راجع البيت دلوقتي.</span></div>
+  </section>
+
+  <!-- 2. التليفون والتواصل -->
+  <section>
+    <h2>2. التليفون والتواصل <span class="badge">31 – 50</span></h2>
+    <div class="phrase"><span class="num">31</span><span class="fr">Je suis <span class="highlight">en train de</span> téléphoner.</span><span class="ar">أنا بتكلم في التليفون دلوقتي.</span></div>
+    <div class="phrase"><span class="num">32</span><span class="fr">Je suis <span class="highlight">en train de</span> vous appeler.</span><span class="ar">أنا بتصل بحضرتك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">33</span><span class="fr">Je suis <span class="highlight">en train de</span> parler avec mon ami.</span><span class="ar">أنا بتكلم مع صاحبي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">34</span><span class="fr">Je suis <span class="highlight">en train de</span> répondre à un appel.</span><span class="ar">أنا بردّ على مكالمة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">35</span><span class="fr">Je suis <span class="highlight">en train d'</span>envoyer un message.</span><span class="ar">أنا ببعت رسالة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">36</span><span class="fr">Je suis <span class="highlight">en train d'</span>écrire un SMS.</span><span class="ar">أنا بكتب رسالة نصية دلوقتي.</span></div>
+    <div class="phrase"><span class="num">37</span><span class="fr">Je suis <span class="highlight">en train de</span> lire vos messages.</span><span class="ar">أنا بقرأ رسايل حضرتك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">38</span><span class="fr">Je suis <span class="highlight">en train d'</span>écouter un message vocal.</span><span class="ar">أنا بسمع رسالة صوتية دلوقتي.</span></div>
+    <div class="phrase"><span class="num">39</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier mes e-mails.</span><span class="ar">أنا براجع الإيميلات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">40</span><span class="fr">Je suis <span class="highlight">en train d'</span>envoyer un e-mail.</span><span class="ar">أنا ببعت إيميل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">41</span><span class="fr">Je suis <span class="highlight">en train de</span> participer à une réunion en ligne.</span><span class="ar">أنا بحضر اجتماع أونلاين دلوقتي.</span></div>
+    <div class="phrase"><span class="num">42</span><span class="fr">Je suis <span class="highlight">en train de</span> parler avec le responsable.</span><span class="ar">أنا بتكلم مع المسؤول دلوقتي.</span></div>
+    <div class="phrase"><span class="num">43</span><span class="fr">Je suis <span class="highlight">en train de</span> prendre des notes.</span><span class="ar">أنا بكتب ملاحظات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">44</span><span class="fr">Je suis <span class="highlight">en train d'</span>expliquer le problème.</span><span class="ar">أنا بشرح المشكلة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">45</span><span class="fr">Je suis <span class="highlight">en train d'</span>attendre votre réponse.</span><span class="ar">أنا مستني رد حضرتك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">46</span><span class="fr">Je suis <span class="highlight">en train de</span> vous écouter.</span><span class="ar">أنا بسمع حضرتك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">47</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher votre numéro.</span><span class="ar">أنا بدوّر على رقم حضرتك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">48</span><span class="fr">Je suis <span class="highlight">en train de</span> recharger mon téléphone.</span><span class="ar">أنا بشحن تليفوني دلوقتي.</span></div>
+    <div class="phrase"><span class="num">49</span><span class="fr">Je suis <span class="highlight">en train de</span> télécharger un document.</span><span class="ar">أنا بنزّل مستند دلوقتي.</span></div>
+    <div class="phrase"><span class="num">50</span><span class="fr">Je suis <span class="highlight">en train de</span> faire un appel vidéo.</span><span class="ar">أنا بعمل مكالمة فيديو دلوقتي.</span></div>
+  </section>
+
+  <!-- 3. الشغل -->
+  <section>
+    <h2>3. الشغل والبحث عن وظيفة <span class="badge">51 – 75</span></h2>
+    <div class="phrase"><span class="num">51</span><span class="fr">Je suis <span class="highlight">en train de</span> travailler.</span><span class="ar">أنا بشتغل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">52</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher un emploi.</span><span class="ar">أنا بدوّر على شغل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">53</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer mon CV.</span><span class="ar">أنا بجهّز السيرة الذاتية بتاعتي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">54</span><span class="fr">Je suis <span class="highlight">en train d'</span>envoyer ma candidature.</span><span class="ar">أنا ببعت طلب التوظيف بتاعي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">55</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher des offres d'emploi.</span><span class="ar">أنا بدوّر على إعلانات وظائف دلوقتي.</span></div>
+    <div class="phrase"><span class="num">56</span><span class="fr">Je suis <span class="highlight">en train de</span> contacter une agence d'intérim.</span><span class="ar">أنا بتواصل مع شركة توظيف مؤقت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">57</span><span class="fr">Je suis <span class="highlight">en train de</span> remplir un formulaire.</span><span class="ar">أنا بملا استمارة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">58</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer un entretien.</span><span class="ar">أنا بحضّر لمقابلة عمل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">59</span><span class="fr">Je suis <span class="highlight">en train de</span> passer un entretien téléphonique.</span><span class="ar">أنا بعمل مقابلة عمل بالتليفون دلوقتي.</span></div>
+    <div class="phrase"><span class="num">60</span><span class="fr">Je suis <span class="highlight">en train de</span> parler avec mon employeur.</span><span class="ar">أنا بتكلم مع صاحب العمل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">61</span><span class="fr">Je suis <span class="highlight">en train de</span> lire un contrat.</span><span class="ar">أنا بقرأ عقد دلوقتي.</span></div>
+    <div class="phrase"><span class="num">62</span><span class="fr">Je suis <span class="highlight">en train de</span> signer un document.</span><span class="ar">أنا بمضي مستند دلوقتي.</span></div>
+    <div class="phrase"><span class="num">63</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier les plans.</span><span class="ar">أنا براجع الرسومات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">64</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer un rapport technique.</span><span class="ar">أنا بجهّز تقرير فني دلوقتي.</span></div>
+    <div class="phrase"><span class="num">65</span><span class="fr">Je suis <span class="highlight">en train de</span> contrôler les installations.</span><span class="ar">أنا بفحص التركيبات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">66</span><span class="fr">Je suis <span class="highlight">en train d'</span>inspecter le chantier.</span><span class="ar">أنا بفحص موقع المشروع دلوقتي.</span></div>
+    <div class="phrase"><span class="num">67</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier les équipements.</span><span class="ar">أنا براجع المعدات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">68</span><span class="fr">Je suis <span class="highlight">en train de</span> superviser les travaux.</span><span class="ar">أنا بشرف على الأعمال دلوقتي.</span></div>
+    <div class="phrase"><span class="num">69</span><span class="fr">Je suis <span class="highlight">en train de</span> discuter du projet.</span><span class="ar">أنا بناقش المشروع دلوقتي.</span></div>
+    <div class="phrase"><span class="num">70</span><span class="fr">Je suis <span class="highlight">en train de</span> résoudre un problème technique.</span><span class="ar">أنا بحل مشكلة فنية دلوقتي.</span></div>
+    <div class="phrase"><span class="num">71</span><span class="fr">Je suis <span class="highlight">en train de</span> calculer les coûts.</span><span class="ar">أنا بحسب التكاليف دلوقتي.</span></div>
+    <div class="phrase"><span class="num">72</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer un devis.</span><span class="ar">أنا بجهّز عرض سعر دلوقتي.</span></div>
+    <div class="phrase"><span class="num">73</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier la climatisation.</span><span class="ar">أنا بفحص التكييف دلوقتي.</span></div>
+    <div class="phrase"><span class="num">74</span><span class="fr">Je suis <span class="highlight">en train de</span> contrôler le système de ventilation.</span><span class="ar">أنا بفحص نظام التهوية دلوقتي.</span></div>
+    <div class="phrase"><span class="num">75</span><span class="fr">Je suis <span class="highlight">en train de</span> rédiger un e-mail professionnel.</span><span class="ar">أنا بكتب إيميل للشغل دلوقتي.</span></div>
+  </section>
+
+  <!-- 4. الدراسة -->
+  <section>
+    <h2>4. الدراسة وتعلّم اللغة <span class="badge">76 – 95</span></h2>
+    <div class="phrase"><span class="num">76</span><span class="fr">Je suis <span class="highlight">en train d'</span>apprendre le français.</span><span class="ar">أنا بتعلم فرنساوي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">77</span><span class="fr">Je suis <span class="highlight">en train d'</span>étudier la grammaire.</span><span class="ar">أنا بذاكر القواعد دلوقتي.</span></div>
+    <div class="phrase"><span class="num">78</span><span class="fr">Je suis <span class="highlight">en train d'</span>apprendre de nouveaux mots.</span><span class="ar">أنا بتعلم كلمات جديدة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">79</span><span class="fr">Je suis <span class="highlight">en train de</span> lire un livre.</span><span class="ar">أنا بقرأ كتاب دلوقتي.</span></div>
+    <div class="phrase"><span class="num">80</span><span class="fr">Je suis <span class="highlight">en train de</span> faire mes devoirs.</span><span class="ar">أنا بعمل واجباتي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">81</span><span class="fr">Je suis <span class="highlight">en train d'</span>écrire une phrase.</span><span class="ar">أنا بكتب جملة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">82</span><span class="fr">Je suis <span class="highlight">en train de</span> traduire un texte.</span><span class="ar">أنا بترجم نص دلوقتي.</span></div>
+    <div class="phrase"><span class="num">83</span><span class="fr">Je suis <span class="highlight">en train de</span> regarder une vidéo éducative.</span><span class="ar">أنا بتفرج على فيديو تعليمي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">84</span><span class="fr">Je suis <span class="highlight">en train d'</span>écouter un cours.</span><span class="ar">أنا بسمع درس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">85</span><span class="fr">Je suis <span class="highlight">en train de</span> répéter les phrases.</span><span class="ar">أنا بكرر الجمل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">86</span><span class="fr">Je suis <span class="highlight">en train de</span> pratiquer ma prononciation.</span><span class="ar">أنا بتدرّب على النطق دلوقتي.</span></div>
+    <div class="phrase"><span class="num">87</span><span class="fr">Je suis <span class="highlight">en train de</span> réviser mes leçons.</span><span class="ar">أنا براجع دروسي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">88</span><span class="fr">Je suis <span class="highlight">en train de</span> préparer un examen.</span><span class="ar">أنا بحضّر لامتحان دلوقتي.</span></div>
+    <div class="phrase"><span class="num">89</span><span class="fr">Je suis <span class="highlight">en train de</span> répondre aux questions.</span><span class="ar">أنا بجاوب على الأسئلة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">90</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher la bonne réponse.</span><span class="ar">أنا بدوّر على الإجابة الصح دلوقتي.</span></div>
+    <div class="phrase"><span class="num">91</span><span class="fr">Je suis <span class="highlight">en train de</span> suivre un cours en ligne.</span><span class="ar">أنا بتابع كورس أونلاين دلوقتي.</span></div>
+    <div class="phrase"><span class="num">92</span><span class="fr">Je suis <span class="highlight">en train de</span> prendre des notes en français.</span><span class="ar">أنا بكتب ملاحظات بالفرنساوي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">93</span><span class="fr">Je suis <span class="highlight">en train de</span> parler avec mon professeur.</span><span class="ar">أنا بتكلم مع المدرس بتاعي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">94</span><span class="fr">Je suis <span class="highlight">en train de</span> corriger mes erreurs.</span><span class="ar">أنا بصحح أخطائي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">95</span><span class="fr">Je suis <span class="highlight">en train de</span> mémoriser les verbes.</span><span class="ar">أنا بحفظ الأفعال دلوقتي.</span></div>
+  </section>
+
+  <!-- 5. المواصلات -->
+  <section>
+    <h2>5. المواصلات والخروج <span class="badge">96 – 115</span></h2>
+    <div class="phrase"><span class="num">96</span><span class="fr">Je suis <span class="highlight">en train de</span> conduire.</span><span class="ar">أنا بسوق دلوقتي.</span></div>
+    <div class="phrase"><span class="num">97</span><span class="fr">Je suis <span class="highlight">en train de</span> prendre le bus.</span><span class="ar">أنا بركب الأتوبيس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">98</span><span class="fr">Je suis <span class="highlight">en train d'</span>attendre le train.</span><span class="ar">أنا مستني القطر دلوقتي.</span></div>
+    <div class="phrase"><span class="num">99</span><span class="fr">Je suis <span class="highlight">en train de</span> marcher dans la rue.</span><span class="ar">أنا ماشي في الشارع دلوقتي.</span></div>
+    <div class="phrase"><span class="num">100</span><span class="fr">Je suis <span class="highlight">en train de</span> traverser la rue.</span><span class="ar">أنا بعدّي الشارع دلوقتي.</span></div>
+    <div class="phrase"><span class="num">101</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher une adresse.</span><span class="ar">أنا بدوّر على عنوان دلوقتي.</span></div>
+    <div class="phrase"><span class="num">102</span><span class="fr">Je suis <span class="highlight">en train de</span> regarder le GPS.</span><span class="ar">أنا ببص على الـ GPS دلوقتي.</span></div>
+    <div class="phrase"><span class="num">103</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher une place de parking.</span><span class="ar">أنا بدوّر على مكان أركن فيه دلوقتي.</span></div>
+    <div class="phrase"><span class="num">104</span><span class="fr">Je suis <span class="highlight">en train d'</span>acheter un billet.</span><span class="ar">أنا بشتري تذكرة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">105</span><span class="fr">Je suis <span class="highlight">en train de</span> monter dans le train.</span><span class="ar">أنا بطلع القطر دلوقتي.</span></div>
+    <div class="phrase"><span class="num">106</span><span class="fr">Je suis <span class="highlight">en train de</span> descendre du bus.</span><span class="ar">أنا بنزل من الأتوبيس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">107</span><span class="fr">Je suis <span class="highlight">en train de</span> rentrer du travail.</span><span class="ar">أنا راجع من الشغل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">108</span><span class="fr">Je suis <span class="highlight">en train d'</span>aller au supermarché.</span><span class="ar">أنا رايح السوبرماركت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">109</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher la gare.</span><span class="ar">أنا بدوّر على محطة القطر دلوقتي.</span></div>
+    <div class="phrase"><span class="num">110</span><span class="fr">Je suis <span class="highlight">en train de</span> réserver un taxi.</span><span class="ar">أنا بحجز تاكسي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">111</span><span class="fr">Je suis <span class="highlight">en train d'</span>attendre un ami.</span><span class="ar">أنا مستني صاحبي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">112</span><span class="fr">Je suis <span class="highlight">en train de</span> visiter la ville.</span><span class="ar">أنا بتفرج على المدينة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">113</span><span class="fr">Je suis <span class="highlight">en train de</span> rentrer chez moi à pied.</span><span class="ar">أنا راجع بيتي مشي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">114</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier les horaires du train.</span><span class="ar">أنا براجع مواعيد القطر دلوقتي.</span></div>
+    <div class="phrase"><span class="num">115</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher le bon arrêt.</span><span class="ar">أنا بدوّر على المحطة الصح دلوقتي.</span></div>
+  </section>
+
+  <!-- 6. التسوق -->
+  <section>
+    <h2>6. التسوق والخدمات والمواعيد <span class="badge">116 – 135</span></h2>
+    <div class="phrase"><span class="num">116</span><span class="fr">Je suis <span class="highlight">en train d'</span>acheter des vêtements.</span><span class="ar">أنا بشتري هدوم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">117</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher ma taille.</span><span class="ar">أنا بدوّر على مقاسي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">118</span><span class="fr">Je suis <span class="highlight">en train d'</span>essayer une veste.</span><span class="ar">أنا بجرّب جاكيت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">119</span><span class="fr">Je suis <span class="highlight">en train de</span> comparer les prix.</span><span class="ar">أنا بقارن الأسعار دلوقتي.</span></div>
+    <div class="phrase"><span class="num">120</span><span class="fr">Je suis <span class="highlight">en train de</span> payer à la caisse.</span><span class="ar">أنا بدفع عند الكاشير دلوقتي.</span></div>
+    <div class="phrase"><span class="num">121</span><span class="fr">Je suis <span class="highlight">en train de</span> retirer de l'argent.</span><span class="ar">أنا بسحب فلوس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">122</span><span class="fr">Je suis <span class="highlight">en train de</span> déposer de l'argent.</span><span class="ar">أنا بودع فلوس دلوقتي.</span></div>
+    <div class="phrase"><span class="num">123</span><span class="fr">Je suis <span class="highlight">en train de</span> vérifier mon compte bancaire.</span><span class="ar">أنا براجع حسابي البنكي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">124</span><span class="fr">Je suis <span class="highlight">en train de</span> remplir un document administratif.</span><span class="ar">أنا بملا مستند إداري دلوقتي.</span></div>
+    <div class="phrase"><span class="num">125</span><span class="fr">Je suis <span class="highlight">en train de</span> demander des informations.</span><span class="ar">أنا بطلب معلومات دلوقتي.</span></div>
+    <div class="phrase"><span class="num">126</span><span class="fr">Je suis <span class="highlight">en train de</span> prendre un rendez-vous chez le médecin.</span><span class="ar">أنا بحجز موعد عند الدكتور دلوقتي.</span></div>
+    <div class="phrase"><span class="num">127</span><span class="fr">Je suis <span class="highlight">en train d'</span>attendre mon tour.</span><span class="ar">أنا مستني دوري دلوقتي.</span></div>
+    <div class="phrase"><span class="num">128</span><span class="fr">Je suis <span class="highlight">en train de</span> parler à la réception.</span><span class="ar">أنا بتكلم مع الاستقبال دلوقتي.</span></div>
+    <div class="phrase"><span class="num">129</span><span class="fr">Je suis <span class="highlight">en train de</span> demander un certificat.</span><span class="ar">أنا بطلب شهادة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">130</span><span class="fr">Je suis <span class="highlight">en train de</span> renouveler mon abonnement.</span><span class="ar">أنا بجدّد اشتراكي دلوقتي.</span></div>
+    <div class="phrase"><span class="num">131</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher une pharmacie.</span><span class="ar">أنا بدوّر على صيدلية دلوقتي.</span></div>
+    <div class="phrase"><span class="num">132</span><span class="fr">Je suis <span class="highlight">en train de</span> commander un repas.</span><span class="ar">أنا بطلب وجبة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">133</span><span class="fr">Je suis <span class="highlight">en train de</span> lire le menu.</span><span class="ar">أنا بقرأ قائمة الأكل دلوقتي.</span></div>
+    <div class="phrase"><span class="num">134</span><span class="fr">Je suis <span class="highlight">en train de</span> réserver une table.</span><span class="ar">أنا بحجز ترابيزة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">135</span><span class="fr">Je suis <span class="highlight">en train de</span> demander la facture.</span><span class="ar">أنا بطلب الفاتورة دلوقتي.</span></div>
+  </section>
+
+  <!-- 7. الأصدقاء -->
+  <section>
+    <h2>7. الأصدقاء والمواقف المختلفة <span class="badge">136 – 150</span></h2>
+    <div class="phrase"><span class="num">136</span><span class="fr">Tu es <span class="highlight">en train de</span> manger ?</span><span class="ar">أنت بتاكل دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">137</span><span class="fr">Tu es <span class="highlight">en train de</span> travailler ?</span><span class="ar">أنت بتشتغل دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">138</span><span class="fr">Tu es <span class="highlight">en train de</span> regarder un film ?</span><span class="ar">أنت بتتفرج على فيلم دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">139</span><span class="fr">Tu es <span class="highlight">en train de</span> m'écouter ?</span><span class="ar">أنت بتسمعني دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">140</span><span class="fr">Tu es <span class="highlight">en train de</span> plaisanter ?</span><span class="ar">أنت بتهزر دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">141</span><span class="fr">Il est <span class="highlight">en train de</span> jouer au football.</span><span class="ar">هو بيلعب كورة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">142</span><span class="fr">Elle est <span class="highlight">en train de</span> préparer ses affaires.</span><span class="ar">هي بتجهّز حاجتها دلوقتي.</span></div>
+    <div class="phrase"><span class="num">143</span><span class="fr">Nous sommes <span class="highlight">en train de</span> regarder un film.</span><span class="ar">إحنا بنتفرج على فيلم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">144</span><span class="fr">Nous sommes <span class="highlight">en train de</span> discuter.</span><span class="ar">إحنا بنتناقش دلوقتي.</span></div>
+    <div class="phrase"><span class="num">145</span><span class="fr">Vous êtes <span class="highlight">en train de</span> faire quoi ?</span><span class="ar">حضرتك بتعمل إيه دلوقتي؟</span></div>
+    <div class="phrase"><span class="num">146</span><span class="fr">Ils sont <span class="highlight">en train de</span> construire une maison.</span><span class="ar">هم بيبنوا بيت دلوقتي.</span></div>
+    <div class="phrase"><span class="num">147</span><span class="fr">Elles sont <span class="highlight">en train de</span> préparer une fête.</span><span class="ar">هم بيجهّزوا حفلة دلوقتي.</span></div>
+    <div class="phrase"><span class="num">148</span><span class="fr">Je suis <span class="highlight">en train de</span> penser à toi.</span><span class="ar">أنا بفكر فيك دلوقتي.</span></div>
+    <div class="phrase"><span class="num">149</span><span class="fr">Je suis <span class="highlight">en train d'</span>essayer de comprendre.</span><span class="ar">أنا بحاول أفهم دلوقتي.</span></div>
+    <div class="phrase"><span class="num">150</span><span class="fr">Je suis <span class="highlight">en train de</span> chercher une solution.</span><span class="ar">أنا بدوّر على حل دلوقتي.</span></div>
+  </section>
+
+  <!-- ملاحظات -->
+  <div class="notes">
+    <h3>⚠️ ملحوظات مهمة جدًا</h3>
+    <ul>
+      <li>
+        <strong>de</strong> تتحول إلى <strong>d'</strong> قبل حرف متحرك أو حرف h صامت:<br>
+        <span class="example" style="direction:ltr;">en train d'apprendre</span>
+        <span class="example" style="direction:ltr;">en train d'écrire</span>
+        <span class="example" style="direction:ltr;">en train d'habiter</span>
+      </li>
+      <li>
+        لازم تصرّف فعل <strong>être</strong>:<br>
+        <span class="example" style="direction:ltr;">Je suis</span>
+        <span class="example" style="direction:ltr;">Tu es</span>
+        <span class="example" style="direction:ltr;">Il est</span>
+        <span class="example" style="direction:ltr;">Nous sommes</span>
+        <span class="example" style="direction:ltr;">Vous êtes</span>
+        <span class="example" style="direction:ltr;">Ils sont</span>
+      </li>
+      <li>
+        بعد <strong>en train de</strong> يأتي الفعل في <strong>المصدر (infinitif)</strong>:<br>
+        ✅ <span class="example" style="direction:ltr;">Je suis en train de travailler.</span><br>
+        ❌ <span class="example wrong" style="direction:ltr;">Je suis en train de travaille.</span>
+      </li>
+      <li>
+        مش لازم تستخدم التركيب في كل جملة مضارع؛ هو بيؤكد إنك في <strong>وسط الفعل حاليًا</strong> — يعني الفعل بيحصل دلوقتي بالظبط، مش مجرد حقيقة عامة.
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    🇫🇷 ١٥٠ جملة فرنسية بـ En train de — مستوى A1–A2 — للممارسة اليومية ✨
+  </footer>
+</div>
+
+<script>
+  // تأثير بسيط عند الضغط على الجملة
+  document.querySelectorAll('.phrase').forEach(phrase => {
+    phrase.addEventListener('click', () => {
+      phrase.style.background = '#fff9c4';
+      phrase.style.transform = 'scale(1.01)';
+      setTimeout(() => {
+        phrase.style.background = '';
+        phrase.style.transform = '';
+      }, 700);
+    });
+  });
+</script>
+
+</body>
+</html>
