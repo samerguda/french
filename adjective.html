@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>150 phrases françaises — Adjectifs et contraires | 150 جملة فرنسية عن الصفات وعكسها</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+      background: #f5f7fa;
+      color: #1e2b3c;
+      padding: 30px 20px;
+      line-height: 1.6;
+      direction: ltr;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      padding: 40px 35px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2b4f;
+      text-align: center;
+      margin-bottom: 10px;
+      border-bottom: 4px solid #c7d9e8;
+      padding-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    h1 small {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #4a6f8a;
+      margin-top: 8px;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1rem;
+      color: #3e5a6e;
+      margin-bottom: 35px;
+      padding: 10px 20px;
+      background: #eef4fa;
+      border-radius: 40px;
+      display: inline-block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #1b4b6c;
+      margin-top: 45px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed #b8d1e3;
+    }
+
+    h2:first-of-type {
+      margin-top: 10px;
+    }
+
+    .sentence-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      counter-reset: sentence-counter;
+    }
+
+    .sentence-list li {
+      counter-increment: sentence-counter;
+      display: flex;
+      align-items: baseline;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: #ffffff;
+      border-left: 4px solid #d4e3f0;
+      transition: background 0.2s, border-color 0.2s;
+      font-size: 1.05rem;
+    }
+
+    .sentence-list li:hover {
+      background: #f0f7ff;
+      border-left-color: #3b82b6;
+    }
+
+    .sentence-list li::before {
+      content: counter(sentence-counter);
+      font-weight: 700;
+      color: #3b82b6;
+      min-width: 32px;
+      margin-right: 8px;
+      font-size: 0.95rem;
+      background: #e3eef8;
+      text-align: center;
+      border-radius: 6px;
+      padding: 2px 0;
+    }
+
+    .fr {
+      font-weight: 500;
+      color: #14365c;
+      flex: 1;
+      padding-right: 18px;
+    }
+
+    .ar {
+      color: #2e4c67;
+      font-weight: 400;
+      text-align: right;
+      direction: rtl;
+      flex: 1;
+      font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+      font-size: 1.02rem;
+      border-left: 1px solid #d9e5f0;
+      padding-left: 18px;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      font-size: 1rem;
+    }
+
+    .summary-table th {
+      background: #1b4b6c;
+      color: white;
+      font-weight: 600;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .summary-table td {
+      background: #f9fcff;
+      padding: 12px 14px;
+      border-bottom: 1px solid #dcebf7;
+      text-align: center;
+    }
+
+    .summary-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .summary-table td:first-child {
+      font-weight: 600;
+      color: #0b2b4f;
+      background: #edf5fc;
+    }
+
+    .summary-table td:last-child {
+      direction: rtl;
+      font-weight: 400;
+      color: #1e3b53;
+    }
+
+    .note-box {
+      margin-top: 30px;
+      padding: 20px 28px;
+      background: #e7f0f9;
+      border-radius: 16px;
+      border-left: 6px solid #3b82b6;
+      font-size: 1rem;
+      color: #10314d;
+    }
+
+    .note-box strong {
+      color: #0b2b4f;
+      font-weight: 700;
+    }
+
+    .note-box ul {
+      margin-top: 10px;
+      padding-left: 25px;
+      list-style-type: disc;
+    }
+
+    .note-box li {
+      margin-bottom: 4px;
+    }
+
+    .example-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin-top: 16px;
+      border: 1px solid #c2d9ec;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 25px;
+    }
+
+    .example-box span {
+      font-size: 1rem;
+    }
+
+    .example-box .fr-ex {
+      color: #14365c;
+      font-weight: 500;
+    }
+
+    .example-box .ar-ex {
+      color: #2e4c67;
+      direction: rtl;
+      font-weight: 400;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 25px 18px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .sentence-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 12px 14px;
+      }
+
+      .sentence-list li::before {
+        align-self: flex-start;
+        margin-bottom: 2px;
+      }
+
+      .fr {
+        padding-right: 0;
+        width: 100%;
+      }
+
+      .ar {
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+        text-align: right;
+        border-top: 1px dashed #c7d9e8;
+        padding-top: 6px;
+        margin-top: 2px;
+      }
+
+      .summary-table th,
+      .summary-table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+      }
+
+      .example-box {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .container {
+        box-shadow: none;
+        padding: 20px;
+      }
+
+      .sentence-list li:hover {
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      150 phrases françaises — Adjectifs et contraires
+      <small>150 جملة فرنسية عن الصفات وعكسها — مع الترجمة العربية</small>
+    </h1>
+
+    <div class="intro">
+      📘 جمل مترقمة بالفرنسية والترجمة العربية — لتتعلم الصفات وضدها وتستخدمها في الحياة اليومية في فرنسا وبلجيكا
+    </div>
+
+    <!-- ========== SECTION 1 ========== -->
+    <h2>1. Les adjectifs de base et leurs contraires (1–25) — الصفات الأساسية وعكسها</h2>
+    <ol class="sentence-list">
+      <li><span class="fr">Cette maison est grande.</span><span class="ar">هذا المنزل كبير.</span></li>
+      <li><span class="fr">Cette maison est petite.</span><span class="ar">هذا المنزل صغير.</span></li>
+      <li><span class="fr">Mon frère est grand.</span><span class="ar">أخي طويل القامة.</span></li>
+      <li><span class="fr">Mon frère est petit.</span><span class="ar">أخي قصير القامة.</span></li>
+      <li><span class="fr">Le sac est lourd.</span><span class="ar">الحقيبة ثقيلة.</span></li>
+      <li><span class="fr">Le sac est léger.</span><span class="ar">الحقيبة خفيفة.</span></li>
+      <li><span class="fr">Cette rue est longue.</span><span class="ar">هذا الشارع طويل.</span></li>
+      <li><span class="fr">Cette rue est courte.</span><span class="ar">هذا الشارع قصير.</span></li>
+      <li><span class="fr">Le mur est haut.</span><span class="ar">الحائط مرتفع.</span></li>
+      <li><span class="fr">Le mur est bas.</span><span class="ar">الحائط منخفض.</span></li>
+      <li><span class="fr">Cette table est large.</span><span class="ar">هذه الطاولة عريضة.</span></li>
+      <li><span class="fr">Cette table est étroite.</span><span class="ar">هذه الطاولة ضيقة.</span></li>
+      <li><span class="fr">Le bâtiment est vieux.</span><span class="ar">المبنى قديم.</span></li>
+      <li><span class="fr">Le bâtiment est neuf.</span><span class="ar">المبنى جديد تمامًا.</span></li>
+      <li><span class="fr">Cette voiture est rapide.</span><span class="ar">هذه السيارة سريعة.</span></li>
+      <li><span class="fr">Cette voiture est lente.</span><span class="ar">هذه السيارة بطيئة.</span></li>
+      <li><span class="fr">Le café est chaud.</span><span class="ar">القهوة ساخنة.</span></li>
+      <li><span class="fr">Le café est froid.</span><span class="ar">القهوة باردة.</span></li>
+      <li><span class="fr">L’eau est propre.</span><span class="ar">الماء نظيف.</span></li>
+      <li><span class="fr">L’eau est sale.</span><span class="ar">الماء متسخ.</span></li>
+      <li><span class="fr">La boîte est pleine.</span><span class="ar">العلبة ممتلئة.</span></li>
+      <li><span class="fr">La boîte est vide.</span><span class="ar">العلبة فارغة.</span></li>
+      <li><span class="fr">Cette porte est ouverte.</span><span class="ar">هذا الباب مفتوح.</span></li>
+      <li><span class="fr">Cette porte est fermée.</span><span class="ar">هذا الباب مغلق.</span></li>
+      <li><span class="fr">Le magasin est proche.</span><span class="ar">المتجر قريب.</span></li>
+    </ol>
+
+    <!-- ========== SECTION 2 ========== -->
+    <h2>2. Les adjectifs des personnes et de l’apparence (26–50) — صفات الأشخاص والمظهر</h2>
+    <ol class="sentence-list" start="26">
+      <li><span class="fr">Mon ami est beau.</span><span class="ar">صديقي وسيم.</span></li>
+      <li><span class="fr">Mon ami est laid.</span><span class="ar">صديقي قبيح.</span></li>
+      <li><span class="fr">Cette femme est belle.</span><span class="ar">هذه المرأة جميلة.</span></li>
+      <li><span class="fr">Cette femme est laide.</span><span class="ar">هذه المرأة قبيحة.</span></li>
+      <li><span class="fr">Il est jeune.</span><span class="ar">هو شاب.</span></li>
+      <li><span class="fr">Il est âgé.</span><span class="ar">هو متقدم في العمر.</span></li>
+      <li><span class="fr">Elle est mince.</span><span class="ar">هي نحيفة.</span></li>
+      <li><span class="fr">Elle est grosse.</span><span class="ar">هي بدينة.</span></li>
+      <li><span class="fr">Il est fort.</span><span class="ar">هو قوي.</span></li>
+      <li><span class="fr">Il est faible.</span><span class="ar">هو ضعيف.</span></li>
+      <li><span class="fr">Elle est élégante.</span><span class="ar">هي أنيقة.</span></li>
+      <li><span class="fr">Elle est négligée.</span><span class="ar">هي غير مهندمة.</span></li>
+      <li><span class="fr">Mon père est calme.</span><span class="ar">أبي هادئ.</span></li>
+      <li><span class="fr">Mon père est nerveux.</span><span class="ar">أبي متوتر.</span></li>
+      <li><span class="fr">Cet homme est gentil.</span><span class="ar">هذا الرجل لطيف.</span></li>
+      <li><span class="fr">Cet homme est méchant.</span><span class="ar">هذا الرجل شرير.</span></li>
+      <li><span class="fr">Elle est polie.</span><span class="ar">هي مهذبة.</span></li>
+      <li><span class="fr">Elle est impolie.</span><span class="ar">هي قليلة الأدب.</span></li>
+      <li><span class="fr">Mon collègue est honnête.</span><span class="ar">زميلي صادق.</span></li>
+      <li><span class="fr">Mon collègue est malhonnête.</span><span class="ar">زميلي غير أمين.</span></li>
+      <li><span class="fr">Il est courageux.</span><span class="ar">هو شجاع.</span></li>
+      <li><span class="fr">Il est lâche.</span><span class="ar">هو جبان.</span></li>
+      <li><span class="fr">Elle est généreuse.</span><span class="ar">هي كريمة.</span></li>
+      <li><span class="fr">Elle est égoïste.</span><span class="ar">هي أنانية.</span></li>
+      <li><span class="fr">Mon voisin est sympathique.</span><span class="ar">جاري ودود.</span></li>
+    </ol>
+
+    <!-- ========== SECTION 3 ========== -->
+    <h2>3. Les émotions et la personnalité (51–75) — المشاعر والشخصية</h2>
+    <ol class="sentence-list" start="51">
+      <li><span class="fr">Je suis heureux.</span><span class="ar">أنا سعيد.</span></li>
+      <li><span class="fr">Je suis triste.</span><span class="ar">أنا حزين.</span></li>
+      <li><span class="fr">Elle est optimiste.</span><span class="ar">هي متفائلة.</span></li>
+      <li><span class="fr">Elle est pessimiste.</span><span class="ar">هي متشائمة.</span></li>
+      <li><span class="fr">Il est patient.</span><span class="ar">هو صبور.</span></li>
+      <li><span class="fr">Il est impatient.</span><span class="ar">هو غير صبور.</span></li>
+      <li><span class="fr">Mon fils est obéissant.</span><span class="ar">ابني مطيع.</span></li>
+      <li><span class="fr">Mon fils est désobéissant.</span><span class="ar">ابني غير مطيع.</span></li>
+      <li><span class="fr">Elle est sérieuse.</span><span class="ar">هي جادة.</span></li>
+      <li><span class="fr">Elle est drôle.</span><span class="ar">هي مرحة.</span></li>
+      <li><span class="fr">Il est intelligent.</span><span class="ar">هو ذكي.</span></li>
+      <li><span class="fr">Il est stupide.</span><span class="ar">هو غبي.</span></li>
+      <li><span class="fr">Cette étudiante est attentive.</span><span class="ar">هذه الطالبة منتبهة.</span></li>
+      <li><span class="fr">Cette étudiante est distraite.</span><span class="ar">هذه الطالبة شاردة الذهن.</span></li>
+      <li><span class="fr">Il est actif.</span><span class="ar">هو نشيط.</span></li>
+      <li><span class="fr">Il est paresseux.</span><span class="ar">هو كسول.</span></li>
+      <li><span class="fr">Elle est sociable.</span><span class="ar">هي اجتماعية.</span></li>
+      <li><span class="fr">Elle est timide.</span><span class="ar">هي خجولة.</span></li>
+      <li><span class="fr">Il est confiant.</span><span class="ar">هو واثق من نفسه.</span></li>
+      <li><span class="fr">Il est inquiet.</span><span class="ar">هو قلق.</span></li>
+      <li><span class="fr">Je suis satisfait.</span><span class="ar">أنا راضٍ.</span></li>
+      <li><span class="fr">Je suis mécontent.</span><span class="ar">أنا غير راضٍ.</span></li>
+      <li><span class="fr">Elle est gentille avec tout le monde.</span><span class="ar">هي لطيفة مع الجميع.</span></li>
+      <li><span class="fr">Elle est agressive avec les autres.</span><span class="ar">هي عدوانية مع الآخرين.</span></li>
+      <li><span class="fr">Il est indépendant.</span><span class="ar">هو مستقل.</span></li>
+    </ol>
+
+    <!-- ========== SECTION 4 ========== -->
+    <h2>4. Le travail et les études (76–100) — العمل والدراسة</h2>
+    <ol class="sentence-list" start="76">
+      <li><span class="fr">Cet employé est compétent.</span><span class="ar">هذا الموظف كفء.</span></li>
+      <li><span class="fr">Cet employé est incompétent.</span><span class="ar">هذا الموظف غير كفء.</span></li>
+      <li><span class="fr">Le travail est facile.</span><span class="ar">العمل سهل.</span></li>
+      <li><span class="fr">Le travail est difficile.</span><span class="ar">العمل صعب.</span></li>
+      <li><span class="fr">Cet exercice est simple.</span><span class="ar">هذا التمرين بسيط.</span></li>
+      <li><span class="fr">Cet exercice est compliqué.</span><span class="ar">هذا التمرين معقد.</span></li>
+      <li><span class="fr">Le résultat est correct.</span><span class="ar">النتيجة صحيحة.</span></li>
+      <li><span class="fr">Le résultat est incorrect.</span><span class="ar">النتيجة غير صحيحة.</span></li>
+      <li><span class="fr">Ce document est complet.</span><span class="ar">هذا المستند كامل.</span></li>
+      <li><span class="fr">Ce document est incomplet.</span><span class="ar">هذا المستند غير مكتمل.</span></li>
+      <li><span class="fr">Le rapport est clair.</span><span class="ar">التقرير واضح.</span></li>
+      <li><span class="fr">Le rapport est confus.</span><span class="ar">التقرير مشوش.</span></li>
+      <li><span class="fr">Cette réponse est exacte.</span><span class="ar">هذه الإجابة دقيقة.</span></li>
+      <li><span class="fr">Cette réponse est fausse.</span><span class="ar">هذه الإجابة خاطئة.</span></li>
+      <li><span class="fr">Le cours est intéressant.</span><span class="ar">الدرس ممتع.</span></li>
+      <li><span class="fr">Le cours est ennuyeux.</span><span class="ar">الدرس ممل.</span></li>
+      <li><span class="fr">Cet étudiant est brillant.</span><span class="ar">هذا الطالب متفوق.</span></li>
+      <li><span class="fr">Cet étudiant est médiocre.</span><span class="ar">هذا الطالب متوسط أو ضعيف المستوى.</span></li>
+      <li><span class="fr">Le professeur est strict.</span><span class="ar">المعلم صارم.</span></li>
+      <li><span class="fr">Le professeur est indulgent.</span><span class="ar">المعلم متساهل.</span></li>
+      <li><span class="fr">Cette entreprise est rentable.</span><span class="ar">هذه الشركة مربحة.</span></li>
+      <li><span class="fr">Cette entreprise est déficitaire.</span><span class="ar">هذه الشركة تحقق خسائر.</span></li>
+      <li><span class="fr">Le bureau est bien organisé.</span><span class="ar">المكتب منظم جيدًا.</span></li>
+      <li><span class="fr">Le bureau est désordonné.</span><span class="ar">المكتب غير مرتب.</span></li>
+      <li><span class="fr">Cet ouvrier est expérimenté.</span><span class="ar">هذا العامل ذو خبرة.</span></li>
+    </ol>
+
+    <!-- ========== SECTION 5 ========== -->
+    <h2>5. La nourriture, le temps et la vie quotidienne (101–125) — الطعام والطقس والحياة اليومية</h2>
+    <ol class="sentence-list" start="101">
+      <li><span class="fr">Cette soupe est délicieuse.</span><span class="ar">هذا الحساء لذيذ.</span></li>
+      <li><span class="fr">Cette soupe est mauvaise.</span><span class="ar">هذا الحساء سيئ المذاق.</span></li>
+      <li><span class="fr">Le citron est acide.</span><span class="ar">الليمون حامض.</span></li>
+      <li><span class="fr">Le sucre est doux.</span><span class="ar">السكر حلو.</span></li>
+      <li><span class="fr">Le plat est épicé.</span><span class="ar">الطبق حار بالتوابل.</span></li>
+      <li><span class="fr">Le plat est fade.</span><span class="ar">الطبق بلا نكهة.</span></li>
+      <li><span class="fr">Le pain est frais.</span><span class="ar">الخبز طازج.</span></li>
+      <li><span class="fr">Le pain est rassis.</span><span class="ar">الخبز بايت.</span></li>
+      <li><span class="fr">Cette viande est tendre.</span><span class="ar">هذا اللحم طري.</span></li>
+      <li><span class="fr">Cette viande est dure.</span><span class="ar">هذا اللحم قاسٍ.</span></li>
+      <li><span class="fr">Le temps est ensoleillé.</span><span class="ar">الطقس مشمس.</span></li>
+      <li><span class="fr">Le temps est nuageux.</span><span class="ar">الطقس غائم.</span></li>
+      <li><span class="fr">L’air est sec.</span><span class="ar">الهواء جاف.</span></li>
+      <li><span class="fr">L’air est humide.</span><span class="ar">الهواء رطب.</span></li>
+      <li><span class="fr">La journée est agréable.</span><span class="ar">اليوم لطيف.</span></li>
+      <li><span class="fr">La journée est désagréable.</span><span class="ar">اليوم غير لطيف.</span></li>
+      <li><span class="fr">Cette chambre est lumineuse.</span><span class="ar">هذه الغرفة مضيئة.</span></li>
+      <li><span class="fr">Cette chambre est sombre.</span><span class="ar">هذه الغرفة مظلمة.</span></li>
+      <li><span class="fr">Le sol est lisse.</span><span class="ar">الأرضية ملساء.</span></li>
+      <li><span class="fr">Le sol est rugueux.</span><span class="ar">الأرضية خشنة.</span></li>
+      <li><span class="fr">Cette chaussure est confortable.</span><span class="ar">هذا الحذاء مريح.</span></li>
+      <li><span class="fr">Cette chaussure est inconfortable.</span><span class="ar">هذا الحذاء غير مريح.</span></li>
+      <li><span class="fr">Le prix est raisonnable.</span><span class="ar">السعر معقول.</span></li>
+      <li><span class="fr">Le prix est excessif.</span><span class="ar">السعر مبالغ فيه.</span></li>
+      <li><span class="fr">Ce produit est utile.</span><span class="ar">هذا المنتج مفيد.</span></li>
+    </ol>
+
+    <!-- ========== SECTION 6 ========== -->
+    <h2>6. Adjectifs supplémentaires importants (126–150) — صفات إضافية مهمة</h2>
+    <ol class="sentence-list" start="126">
+      <li><span class="fr">Ce produit est inutile.</span><span class="ar">هذا المنتج غير مفيد.</span></li>
+      <li><span class="fr">Cette règle est obligatoire.</span><span class="ar">هذه القاعدة إلزامية.</span></li>
+      <li><span class="fr">Cette règle est facultative.</span><span class="ar">هذه القاعدة اختيارية.</span></li>
+      <li><span class="fr">L’entrée est gratuite.</span><span class="ar">الدخول مجاني.</span></li>
+      <li><span class="fr">L’entrée est payante.</span><span class="ar">الدخول مدفوع.</span></li>
+      <li><span class="fr">Ce quartier est sûr.</span><span class="ar">هذا الحي آمن.</span></li>
+      <li><span class="fr">Ce quartier est dangereux.</span><span class="ar">هذا الحي خطير.</span></li>
+      <li><span class="fr">Cette route est droite.</span><span class="ar">هذا الطريق مستقيم.</span></li>
+      <li><span class="fr">Cette route est courbe.</span><span class="ar">هذا الطريق منحني.</span></li>
+      <li><span class="fr">Le verre est transparent.</span><span class="ar">الزجاج شفاف.</span></li>
+      <li><span class="fr">Le verre est opaque.</span><span class="ar">الزجاج معتم.</span></li>
+      <li><span class="fr">Le téléphone est allumé.</span><span class="ar">الهاتف قيد التشغيل.</span></li>
+      <li><span class="fr">Le téléphone est éteint.</span><span class="ar">الهاتف مغلق.</span></li>
+      <li><span class="fr">La connexion est stable.</span><span class="ar">الاتصال مستقر.</span></li>
+      <li><span class="fr">La connexion est instable.</span><span class="ar">الاتصال غير مستقر.</span></li>
+      <li><span class="fr">Cette décision est logique.</span><span class="ar">هذا القرار منطقي.</span></li>
+      <li><span class="fr">Cette décision est illogique.</span><span class="ar">هذا القرار غير منطقي.</span></li>
+      <li><span class="fr">Le film est récent.</span><span class="ar">الفيلم حديث.</span></li>
+      <li><span class="fr">Le film est ancien.</span><span class="ar">الفيلم قديم.</span></li>
+      <li><span class="fr">Cette réponse est positive.</span><span class="ar">هذه الإجابة إيجابية.</span></li>
+      <li><span class="fr">Cette réponse est négative.</span><span class="ar">هذه الإجابة سلبية.</span></li>
+      <li><span class="fr">La situation est normale.</span><span class="ar">الوضع طبيعي.</span></li>
+      <li><span class="fr">La situation est anormale.</span><span class="ar">الوضع غير طبيعي.</span></li>
+      <li><span class="fr">Cet appareil est branché.</span><span class="ar">هذا الجهاز موصول بالكهرباء.</span></li>
+      <li><span class="fr">Cet appareil est débranché.</span><span class="ar">هذا الجهاز مفصول عن الكهرباء.</span></li>
+    </ol>
+
+    <!-- ========== SUMMARY TABLE ========== -->
+    <h2>📚 Résumé des adjectifs et contraires essentiels — ملخص أهم الصفات وعكسها للحفظ</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Français</th>
+          <th>العكس</th>
+          <th>المعنى بالعربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Grand</td><td>Petit</td><td>كبير / صغير</td></tr>
+        <tr><td>Long</td><td>Court</td><td>طويل / قصير</td></tr>
+        <tr><td>Lourd</td><td>Léger</td><td>ثقيل / خفيف</td></tr>
+        <tr><td>Rapide</td><td>Lent</td><td>سريع / بطيء</td></tr>
+        <tr><td>Chaud</td><td>Froid</td><td>ساخن / بارد</td></tr>
+        <tr><td>Propre</td><td>Sale</td><td>نظيف / متسخ</td></tr>
+        <tr><td>Plein</td><td>Vide</td><td>ممتلئ / فارغ</td></tr>
+        <tr><td>Ouvert</td><td>Fermé</td><td>مفتوح / مغلق</td></tr>
+        <tr><td>Fort</td><td>Faible</td><td>قوي / ضعيف</td></tr>
+        <tr><td>Jeune</td><td>Âgé</td><td>شاب / متقدم في العمر</td></tr>
+        <tr><td>Heureux</td><td>Triste</td><td>سعيد / حزين</td></tr>
+        <tr><td>Intelligent</td><td>Stupide</td><td>ذكي / غبي</td></tr>
+        <tr><td>Facile</td><td>Difficile</td><td>سهل / صعب</td></tr>
+        <tr><td>Correct</td><td>Incorrect</td><td>صحيح / غير صحيح</td></tr>
+        <tr><td>Intéressant</td><td>Ennuyeux</td><td>ممتع / ممل</td></tr>
+        <tr><td>Frais</td><td>Rassis</td><td>طازج / بايت</td></tr>
+        <tr><td>Sec</td><td>Humide</td><td>جاف / رطب</td></tr>
+        <tr><td>Utile</td><td>Inutile</td><td>مفيد / غير مفيد</td></tr>
+        <tr><td>Gratuit</td><td>Payant</td><td>مجاني / مدفوع</td></tr>
+        <tr><td>Sûr</td><td>Dangereux</td><td>آمن / خطير</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ========== NOTE ========== -->
+    <div class="note-box">
+      <strong>📌 ملاحظة للحفظ:</strong> الصفة في الفرنسية تتغير أحيانًا حسب جنس الاسم:
+      <div class="example-box">
+        <span class="fr-ex">Il est grand.</span><span class="ar-ex">هو طويل.</span>
+        <span class="fr-ex">Elle est grande.</span><span class="ar-ex">هي طويلة.</span>
+        <span class="fr-ex">Il est heureux.</span><span class="ar-ex">هو سعيد.</span>
+        <span class="fr-ex">Elle est heureuse.</span><span class="ar-ex">هي سعيدة.</span>
+        <span class="fr-ex">Ils sont heureux.</span><span class="ar-ex">هم سعداء.</span>
+        <span class="fr-ex">Elles sont heureuses.</span><span class="ar-ex">هن سعيدات.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
