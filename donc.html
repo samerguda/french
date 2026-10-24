@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 جملة فرنسية باستخدام Donc</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    header .flag {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #1a1a2e;
+      margin-bottom: 15px;
+    }
+
+    header .subtitle {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    header .subtitle strong {
+      color: #e94560;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .legend span {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .legend .fr-badge {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .legend .ar-badge {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .sentence-card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 16px;
+      padding: 20px 25px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-right: 5px solid #e94560;
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .sentence-card:hover {
+      transform: translateX(-5px);
+      box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+    }
+
+    .sentence-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #e94560, #c23152);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+    .sentence-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .sentence-texts {
+      flex: 1;
+    }
+
+    .french {
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.5;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .french .donc-highlight {
+      color: #e94560;
+      font-weight: 800;
+      background: linear-gradient(120deg, #ffe0e6 0%, #ffe0e6 100%);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .arabic {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .grammar-note {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 20px;
+      padding: 30px 35px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border-top: 6px solid #e94560;
+    }
+
+    .grammar-note h2 {
+      color: #1a1a2e;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .grammar-note p {
+      color: #444;
+      line-height: 2;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .grammar-note .example {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin: 10px 0;
+      border-right: 4px solid #e94560;
+      direction: ltr;
+      text-align: left;
+      font-size: 0.95rem;
+      color: #1a1a2e;
+    }
+
+    .grammar-note .example-ar {
+      direction: rtl;
+      text-align: right;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-table th {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      padding: 14px 20px;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table td {
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+      color: #444;
+      background: #fff;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .comparison-table .fr-col {
+      direction: ltr;
+      text-align: left;
+      font-weight: 600;
+      color: #1565c0;
+    }
+
+    .difference-box {
+      background: linear-gradient(135deg, #fff5f7, #ffe0e6);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-top: 20px;
+      border: 1px solid #ffcdd6;
+    }
+
+    .difference-box h3 {
+      color: #c23152;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .difference-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .difference-item .icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .difference-item .diff-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .difference-item .diff-text .fr-ex {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    .difference-item .diff-text .ar-ex {
+      color: #777;
+      font-size: 0.88rem;
+      margin-top: 3px;
+    }
+
+    .diff-keyword {
+      color: #e94560;
+      font-weight: 800;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      .sentence-card {
+        padding: 15px 18px;
+      }
+
+      .french {
+        font-size: 0.95rem;
+      }
+
+      .arabic {
+        font-size: 0.9rem;
+      }
+
+      .grammar-note {
+        padding: 20px;
+      }
+
+      .sentence-number {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 0.7rem;
+        margin-left: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="flag">🇫🇷</div>
+    <h1>100 جملة فرنسية باستخدام <span style="color:#e94560;">Donc</span></h1>
+    <p class="subtitle">
+      كلمة <strong>Donc</strong> معناها: إذن / لذلك / وبالتالي، وتُستخدم للتعبير عن النتيجة أو الاستنتاج.
+    </p>
+    <div class="legend">
+      <span class="fr-badge">🇫🇷 Français</span>
+      <span class="ar-badge">🇸🇦 العربية</span>
+    </div>
+  </header>
+
+  <!-- Sentences 1–100 -->
+  <div id="sentences"></div>
+
+  <!-- Grammar Note -->
+  <div class="grammar-note">
+    <h2>📌 ملحوظة مهمة في القواعد</h2>
+    <p>
+      <strong>Donc</strong> تربط السبب بالنتيجة، وغالبًا تأتي قبل النتيجة.
+    </p>
+
+    <div class="example">
+      Il pleut, <span style="color:#e94560;font-weight:800;">donc</span> je reste chez moi.
+      <div class="example-ar">تمطر، لذلك أبقى في المنزل.</div>
+    </div>
+
+    <p style="margin-top:20px;">قارن بين الكلمات دي:</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>الكلمة</th>
+          <th>المعنى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fr-col">Donc</td>
+          <td>إذن / لذلك</td>
+        </tr>
+        <tr>
+          <td class="fr-col">Alors</td>
+          <td>إذن / عندئذٍ</td>
+        </tr>
+        <tr>
+          <td class="fr-col">Parce que</td>
+          <td>لأن</td>
+        </tr>
+        <tr>
+          <td class="fr-col">C’est pourquoi</td>
+          <td>لهذا السبب</td>
+        </tr>
+        <tr>
+          <td class="fr-col">Par conséquent</td>
+          <td>وبالتالي / بناءً على ذلك</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="difference-box">
+      <h3>⚡ الفرق الأساسي:</h3>
+
+      <div class="difference-item">
+        <span class="icon">🔵</span>
+        <div class="diff-text">
+          <span class="fr-ex">Je reste chez moi <span class="diff-keyword">parce qu’</span>il pleut.</span>
+          <div class="ar-ex">أبقى في المنزل <strong>لأن</strong> الجو ممطر.</div>
+        </div>
+      </div>
+
+      <div class="difference-item">
+        <span class="icon">🔴</span>
+        <div class="diff-text">
+          <span class="fr-ex">Il pleut, <span class="diff-keyword">donc</span> je reste chez moi.</span>
+          <div class="ar-ex">الجو ممطر، <strong>لذلك</strong> أبقى في المنزل.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    ✨ 100 جملة مترقمة ومترجمة — تعلّم الفرنسية بسهولة ✨
+  </footer>
+</div>
+
+<script>
+  const sentences = [
+    { fr: "Je suis fatigué, donc je vais dormir.", ar: "أنا متعب، لذلك سأذهب للنوم." },
+    { fr: "Il pleut, donc je reste à la maison.", ar: "إنها تمطر، لذلك سأبقى في المنزل." },
+    { fr: "Tu es prêt, donc nous pouvons partir.", ar: "أنت مستعد، إذن يمكننا المغادرة." },
+    { fr: "Elle est malade, donc elle ne travaille pas.", ar: "هي مريضة، لذلك لا تعمل." },
+    { fr: "J’ai faim, donc je vais manger.", ar: "أنا جائع، لذلك سأذهب لتناول الطعام." },
+    { fr: "Il est tard, donc je dois partir.", ar: "الوقت متأخر، لذلك يجب أن أغادر." },
+    { fr: "Je n’ai pas d’argent, donc je ne peux pas acheter ça.", ar: "ليس لدي مال، لذلك لا أستطيع شراء هذا." },
+    { fr: "Tu comprends, donc tu peux expliquer.", ar: "أنت تفهم، لذلك يمكنك الشرح." },
+    { fr: "Nous sommes en retard, donc dépêchons-nous.", ar: "نحن متأخرون، لذلك دعنا نسرع." },
+    { fr: "Elle parle français, donc elle peut nous aider.", ar: "هي تتحدث الفرنسية، لذلك يمكنها مساعدتنا." },
+    { fr: "J’ai terminé mon travail, donc je peux sortir.", ar: "أنهيت عملي، لذلك يمكنني الخروج." },
+    { fr: "Il fait froid, donc je mets mon manteau.", ar: "الجو بارد، لذلك أرتدي معطفي." },
+    { fr: "Tu as oublié tes clés, donc tu ne peux pas entrer.", ar: "لقد نسيت مفاتيحك، لذلك لا تستطيع الدخول." },
+    { fr: "Je suis occupé, donc je te rappelle plus tard.", ar: "أنا مشغول، لذلك سأتصل بك لاحقًا." },
+    { fr: "Le magasin est fermé, donc nous reviendrons demain.", ar: "المتجر مغلق، لذلك سنعود غدًا." },
+    { fr: "Elle est très intelligente, donc elle apprend vite.", ar: "هي ذكية جدًا، لذلك تتعلم بسرعة." },
+    { fr: "J’ai un rendez-vous, donc je dois partir maintenant.", ar: "لدي موعد، لذلك يجب أن أغادر الآن." },
+    { fr: "Il n’a pas étudié, donc il a échoué à l’examen.", ar: "لم يدرس، لذلك رسب في الامتحان." },
+    { fr: "Nous avons faim, donc préparons le dîner.", ar: "نحن جائعون، لذلك دعنا نُحضّر العشاء." },
+    { fr: "Tu es fatigué, donc repose-toi.", ar: "أنت متعب، لذلك استرح." },
+    { fr: "Je travaille demain, donc je vais me coucher tôt.", ar: "سأعمل غدًا، لذلك سأذهب للنوم مبكرًا." },
+    { fr: "Elle a beaucoup de travail, donc elle reste au bureau.", ar: "لديها الكثير من العمل، لذلك تبقى في المكتب." },
+    { fr: "Il a perdu son téléphone, donc il est inquiet.", ar: "لقد فقد هاتفه، لذلك هو قلق." },
+    { fr: "Tu as raison, donc je suis d’accord avec toi.", ar: "أنت على حق، لذلك أنا أتفق معك." },
+    { fr: "Il est huit heures, donc nous devons partir.", ar: "الساعة الثامنة، لذلك يجب أن نغادر." },
+    { fr: "Je n’aime pas le café, donc je prends du thé.", ar: "لا أحب القهوة، لذلك أتناول الشاي." },
+    { fr: "Elle n’a pas de voiture, donc elle prend le bus.", ar: "ليس لديها سيارة، لذلك تستقل الحافلة." },
+    { fr: "Le train est annulé, donc nous prenons le métro.", ar: "تم إلغاء القطار، لذلك نستقل المترو." },
+    { fr: "Je suis nouveau ici, donc je ne connais personne.", ar: "أنا جديد هنا، لذلك لا أعرف أحدًا." },
+    { fr: "Il parle trop vite, donc je ne comprends pas tout.", ar: "هو يتحدث بسرعة كبيرة، لذلك لا أفهم كل شيء." },
+    { fr: "Tu as beaucoup progressé, donc continue comme ça.", ar: "لقد أحرزت تقدمًا كبيرًا، لذلك استمر هكذا." },
+    { fr: "J’ai oublié mon portefeuille, donc je ne peux pas payer.", ar: "نسيت محفظتي، لذلك لا أستطيع الدفع." },
+    { fr: "Elle est arrivée tôt, donc elle a attendu dehors.", ar: "وصلت مبكرًا، لذلك انتظرت في الخارج." },
+    { fr: "Il neige, donc les routes sont dangereuses.", ar: "تتساقط الثلوج، لذلك الطرق خطيرة." },
+    { fr: "Je suis libre aujourd’hui, donc nous pouvons nous voir.", ar: "أنا متفرغ اليوم، لذلك يمكننا أن نلتقي." },
+    { fr: "Tu es malade, donc tu devrais consulter un médecin.", ar: "أنت مريض، لذلك ينبغي أن تستشير طبيبًا." },
+    { fr: "Il a beaucoup plu, donc la rue est inondée.", ar: "أمطرت كثيرًا، لذلك الشارع غارق بالمياه." },
+    { fr: "Elle a réussi son examen, donc elle est heureuse.", ar: "نجحت في امتحانها، لذلك هي سعيدة." },
+    { fr: "Je n’ai pas compris, donc peux-tu répéter ?", ar: "لم أفهم، لذلك هل يمكنك التكرار؟" },
+    { fr: "Nous avons fini, donc nous pouvons rentrer.", ar: "لقد انتهينا، لذلك يمكننا العودة إلى المنزل." },
+    { fr: "Il est très gentil, donc tout le monde l’aime.", ar: "هو لطيف جدًا، لذلك يحبه الجميع." },
+    { fr: "Tu as besoin d’aide, donc appelle-moi.", ar: "أنت بحاجة إلى المساعدة، لذلك اتصل بي." },
+    { fr: "Le bébé dort, donc parlons doucement.", ar: "الطفل نائم، لذلك لنتحدث بهدوء." },
+    { fr: "Je suis en vacances, donc je ne travaille pas cette semaine.", ar: "أنا في إجازة، لذلك لا أعمل هذا الأسبوع." },
+    { fr: "Elle a raté le bus, donc elle est arrivée en retard.", ar: "فاتتها الحافلة، لذلك وصلت متأخرة." },
+    { fr: "Il n’a pas de permis, donc il ne conduit pas.", ar: "ليس لديه رخصة قيادة، لذلك لا يقود السيارة." },
+    { fr: "Je veux apprendre le français, donc je pratique chaque jour.", ar: "أريد تعلم الفرنسية، لذلك أتدرب كل يوم." },
+    { fr: "Tu es très rapide, donc tu peux gagner la course.", ar: "أنت سريع جدًا، لذلك يمكنك الفوز بالسباق." },
+    { fr: "Le restaurant est plein, donc nous devons attendre.", ar: "المطعم ممتلئ، لذلك يجب أن ننتظر." },
+    { fr: "J’ai oublié son nom, donc je vais lui demander.", ar: "نسيت اسمه، لذلك سأطلب منه أن يخبرني به." },
+    { fr: "Il fait beau, donc allons nous promener.", ar: "الطقس جميل، لذلك دعنا نذهب للتنزه." },
+    { fr: "Elle a froid, donc elle ferme la fenêtre.", ar: "هي تشعر بالبرد، لذلك تغلق النافذة." },
+    { fr: "Je n’ai pas dormi, donc je suis épuisé.", ar: "لم أنم، لذلك أنا مرهق." },
+    { fr: "Tu connais la réponse, donc dis-la.", ar: "أنت تعرف الإجابة، لذلك قلها." },
+    { fr: "Nous avons peu de temps, donc soyons efficaces.", ar: "لدينا وقت قليل، لذلك لنكن فعّالين." },
+    { fr: "Il est tombé, donc il s’est fait mal au genou.", ar: "لقد سقط، لذلك أصاب ركبته." },
+    { fr: "Elle travaille à Bruxelles, donc elle prend le train chaque matin.", ar: "هي تعمل في بروكسل، لذلك تستقل القطار كل صباح." },
+    { fr: "Je n’ai plus de lait, donc je vais au supermarché.", ar: "لم يعد لدي حليب، لذلك سأذهب إلى السوبرماركت." },
+    { fr: "Tu es en avance, donc tu peux prendre un café.", ar: "أنت وصلت مبكرًا، لذلك يمكنك احتساء القهوة." },
+    { fr: "Il a beaucoup étudié, donc il a obtenu une bonne note.", ar: "درس كثيرًا، لذلك حصل على درجة جيدة." },
+    { fr: "Je suis perdu, donc je regarde la carte.", ar: "أنا تائه، لذلك أنظر إلى الخريطة." },
+    { fr: "Elle ne se sent pas bien, donc elle reste au lit.", ar: "هي لا تشعر بأنها بخير، لذلك تبقى في السرير." },
+    { fr: "Le bus est plein, donc nous attendons le suivant.", ar: "الحافلة ممتلئة، لذلك ننتظر الحافلة التالية." },
+    { fr: "J’ai économisé de l’argent, donc je peux acheter un ordinateur.", ar: "ادخرت المال، لذلك يمكنني شراء حاسوب." },
+    { fr: "Tu as oublié de manger, donc prends quelque chose maintenant.", ar: "لقد نسيت أن تأكل، لذلك تناول شيئًا الآن." },
+    { fr: "Il est très tard, donc les enfants doivent dormir.", ar: "الوقت متأخر جدًا، لذلك يجب أن ينام الأطفال." },
+    { fr: "Je connais cette ville, donc je peux te guider.", ar: "أعرف هذه المدينة، لذلك يمكنني إرشادك." },
+    { fr: "Elle a perdu ses lunettes, donc elle ne voit pas bien.", ar: "لقد فقدت نظارتها، لذلك لا ترى جيدًا." },
+    { fr: "Nous sommes fatigués, donc nous allons nous reposer.", ar: "نحن متعبون، لذلك سنرتاح." },
+    { fr: "Il n’a pas répondu, donc je lui envoie un message.", ar: "لم يرد، لذلك أرسل له رسالة." },
+    { fr: "J’ai beaucoup de choses à faire, donc je commence maintenant.", ar: "لدي أشياء كثيرة لأفعلها، لذلك سأبدأ الآن." },
+    { fr: "Tu es gentil, donc les gens aiment travailler avec toi.", ar: "أنت لطيف، لذلك يحب الناس العمل معك." },
+    { fr: "Elle a raté son train, donc elle doit attendre une heure.", ar: "فقدت قطارها، لذلك يجب أن تنتظر ساعة." },
+    { fr: "Il est malade, donc il ne vient pas à la fête.", ar: "هو مريض، لذلك لن يأتي إلى الحفلة." },
+    { fr: "Je n’ai pas de parapluie, donc je vais être mouillé.", ar: "ليس لدي مظلة، لذلك سأبتل." },
+    { fr: "Nous avons gagné le match, donc nous sommes contents.", ar: "فزنا بالمباراة، لذلك نحن سعداء." },
+    { fr: "Tu as beaucoup de devoirs, donc commence tout de suite.", ar: "لديك الكثير من الواجبات، لذلك ابدأ فورًا." },
+    { fr: "Elle parle doucement, donc écoute attentivement.", ar: "هي تتحدث بصوت منخفض، لذلك استمع بانتباه." },
+    { fr: "Il a oublié le rendez-vous, donc il s’est excusé.", ar: "لقد نسي الموعد، لذلك اعتذر." },
+    { fr: "Je dois me lever tôt, donc je me couche à neuf heures.", ar: "يجب أن أستيقظ مبكرًا، لذلك أذهب للنوم في التاسعة." },
+    { fr: "Le magasin est loin, donc nous prenons la voiture.", ar: "المتجر بعيد، لذلك نذهب بالسيارة." },
+    { fr: "Elle a faim, donc elle prépare un sandwich.", ar: "هي جائعة، لذلك تُحضّر شطيرة." },
+    { fr: "Je n’ai pas compris la question, donc j’ai demandé une explication.", ar: "لم أفهم السؤال، لذلك طلبت توضيحًا." },
+    { fr: "Il est très occupé, donc il ne peut pas nous recevoir.", ar: "هو مشغول جدًا، لذلك لا يستطيع استقبالنا." },
+    { fr: "Tu as réussi, donc tu peux être fier de toi.", ar: "لقد نجحت، لذلك يمكنك أن تفخر بنفسك." },
+    { fr: "Nous n’avons pas de pain, donc je vais à la boulangerie.", ar: "ليس لدينا خبز، لذلك سأذهب إلى المخبز." },
+    { fr: "Elle a beaucoup voyagé, donc elle connaît plusieurs pays.", ar: "لقد سافرت كثيرًا، لذلك تعرف عدة بلدان." },
+    { fr: "Il pleut encore, donc nous annulons le pique-nique.", ar: "ما زالت السماء تمطر، لذلك نلغي النزهة." },
+    { fr: "Je suis en retard, donc prends un taxi sans moi.", ar: "أنا متأخر، لذلك استقل سيارة أجرة من دوني." },
+    { fr: "Tu as froid, donc mets une veste.", ar: "أنت تشعر بالبرد، لذلك ارتدِ سترة." },
+    { fr: "Il n’a pas assez d’expérience, donc il doit encore apprendre.", ar: "ليست لديه خبرة كافية، لذلك لا يزال عليه أن يتعلم." },
+    { fr: "Elle est très fatiguée, donc elle ne sortira pas ce soir.", ar: "هي متعبة جدًا، لذلك لن تخرج هذا المساء." },
+    { fr: "J’ai trouvé un emploi, donc je suis soulagé.", ar: "وجدت وظيفة، لذلك أشعر بالارتياح." },
+    { fr: "Nous habitons près de la gare, donc nous marchons jusqu’au train.", ar: "نسكن بالقرب من محطة القطار، لذلك نمشي إليها." },
+    { fr: "Il a cassé son téléphone, donc il en achète un nouveau.", ar: "لقد كسر هاتفه، لذلك يشتري هاتفًا جديدًا." },
+    { fr: "Tu veux parler français, donc pratique avec moi.", ar: "أنت تريد التحدث بالفرنسية، لذلك تدرّب معي." },
+    { fr: "Elle a oublié son sac, donc elle retourne au bureau.", ar: "نسيت حقيبتها، لذلك تعود إلى المكتب." },
+    { fr: "Je n’ai pas de monnaie, donc je paie par carte.", ar: "ليس لدي نقود معدنية، لذلك أدفع بالبطاقة." },
+    { fr: "Le médecin arrive bientôt, donc attendez ici.", ar: "سيصل الطبيب قريبًا، لذلك انتظروا هنا." },
+    { fr: "J’apprends chaque jour, donc je fais des progrès.", ar: "أنا أتعلم كل يوم، لذلك أحرز تقدمًا." }
+  ];
+
+  const container = document.getElementById('sentences');
+
+  sentences.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'sentence-card';
+    card.style.animationDelay = (i * 0.02) + 's';
+
+    // Highlight "donc" (case-insensitive, whole word)
+    const highlightedFr = s.fr.replace(/\b(donc)\b/gi, '<span class="donc-highlight">$1</span>');
+
+    card.innerHTML = `
+      <div class="sentence-content">
+        <span class="sentence-number">${i + 1}</span>
+        <div class="sentence-texts">
+          <div class="french">${highlightedFr}</div>
+          <div class="arabic">${s.ar}</div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
