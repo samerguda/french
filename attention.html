@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فرنسية باستخدام Attention</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
+    background: linear-gradient(135deg, #0055A4, #1a2a6c, #EF4135);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  header {
+    background: linear-gradient(135deg, #EF4135, #ff7a00, #fdbb2d);
+    color: #fff;
+    padding: 40px 25px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  }
+  header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+  }
+  .intro {
+    background: #fff4e6;
+    padding: 20px 25px;
+    border-right: 6px solid #EF4135;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 0.98em;
+  }
+  .intro strong { color: #EF4135; }
+  .intro ul { margin: 10px 20px 0 0; }
+  .intro li { margin-bottom: 6px; }
+  section { padding: 10px 25px 30px; }
+  section h2 {
+    color: #0055A4;
+    border-bottom: 3px solid #EF4135;
+    padding-bottom: 10px;
+    margin: 30px 0 20px;
+    font-size: 1.4em;
+  }
+  .sentence {
+    background: #f9fafc;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-right: 5px solid #EF4135;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .sentence:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    background: #fff4e6;
+  }
+  .num {
+    display: inline-block;
+    background: #EF4135;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  .fr {
+    font-weight: bold;
+    color: #1a2a6c;
+    font-size: 1.1em;
+    direction: ltr;
+    text-align: left;
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Georgia', serif;
+  }
+  .ar { color: #444; font-size: 1.05em; }
+  table {
+    width: calc(100% - 50px);
+    margin: 20px 25px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  table th {
+    background: #0055A4;
+    color: #fff;
+    padding: 12px;
+    font-size: 1em;
+  }
+  table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f9fafc;
+  }
+  table tr:nth-child(even) td { background: #eef3ff; }
+  table tr:hover td { background: #fff4e6; }
+  table td:first-child {
+    font-weight: bold;
+    color: #1a2a6c;
+    direction: ltr;
+    text-align: left;
+    font-family: 'Georgia', serif;
+  }
+  .note {
+    background: #fff8e1;
+    border: 2px dashed #fdbb2d;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 25px;
+  }
+  .note h3 {
+    color: #b21f1f;
+    margin-bottom: 12px;
+  }
+  .note ul { margin-right: 20px; }
+  .note li { margin-bottom: 8px; }
+  .table-title {
+    text-align: center;
+    color: #0055A4;
+    margin: 30px 25px 5px;
+    font-size: 1.3em;
+    border-bottom: 3px solid #EF4135;
+    padding-bottom: 10px;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a2a6c;
+    color: #fff;
+    font-size: 0.95em;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.4em; }
+    .fr { font-size: 1em; }
+    body { padding: 10px; }
+    table { width: calc(100% - 20px); margin: 15px 10px; font-size: 0.9em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🇫🇷 100 جملة فرنسية باستخدام Attention</h1>
+    <p>مع الترجمة العربية — قاعدة الاستخدام والتطبيق</p>
+  </header>
+
+  <div class="intro">
+    <p><strong>كلمة Attention</strong> معناها «انتباه» أو «احذر»، ويختلف استخدامها حسب الجملة.</p>
+    <ul>
+      <li><strong>Attention !</strong> = انتبه!</li>
+      <li><strong>Faire attention à</strong> = ينتبه إلى / يحذر من</li>
+      <li><strong>Faire attention de ne pas…</strong> = يحرص على ألّا… (ويشيع أيضًا faire attention à ne pas…)</li>
+      <li><strong>Attention à…</strong> = احذر من…</li>
+      <li><strong>Fais attention !</strong> = انتبه! (للمفرد غير الرسمي)</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>أولًا: التحذير والانتباه (1–20)</h2>
+    <div class="sentence"><span class="num">1</span><span class="fr">Attention !</span><span class="ar">انتبه!</span></div>
+    <div class="sentence"><span class="num">2</span><span class="fr">Attention à la voiture !</span><span class="ar">احذر من السيارة!</span></div>
+    <div class="sentence"><span class="num">3</span><span class="fr">Attention au chien !</span><span class="ar">احذر من الكلب!</span></div>
+    <div class="sentence"><span class="num">4</span><span class="fr">Attention à la marche !</span><span class="ar">انتبه للدرجة!</span></div>
+    <div class="sentence"><span class="num">5</span><span class="fr">Attention au danger !</span><span class="ar">احذر من الخطر!</span></div>
+    <div class="sentence"><span class="num">6</span><span class="fr">Attention aux enfants !</span><span class="ar">انتبه للأطفال!</span></div>
+    <div class="sentence"><span class="num">7</span><span class="fr">Attention à la porte !</span><span class="ar">انتبه للباب!</span></div>
+    <div class="sentence"><span class="num">8</span><span class="fr">Attention au feu !</span><span class="ar">احذر من النار!</span></div>
+    <div class="sentence"><span class="num">9</span><span class="fr">Attention, c’est dangereux !</span><span class="ar">انتبه، هذا خطير!</span></div>
+    <div class="sentence"><span class="num">10</span><span class="fr">Attention, le sol est mouillé !</span><span class="ar">انتبه، الأرض مبللة!</span></div>
+    <div class="sentence"><span class="num">11</span><span class="fr">Attention à la tête !</span><span class="ar">انتبه لرأسك!</span></div>
+    <div class="sentence"><span class="num">12</span><span class="fr">Attention au train !</span><span class="ar">احذر من القطار!</span></div>
+    <div class="sentence"><span class="num">13</span><span class="fr">Attention aux escaliers !</span><span class="ar">انتبه للسلالم!</span></div>
+    <div class="sentence"><span class="num">14</span><span class="fr">Attention, ça glisse !</span><span class="ar">انتبه، هذا المكان زلق!</span></div>
+    <div class="sentence"><span class="num">15</span><span class="fr">Attention au vélo !</span><span class="ar">احذر من الدراجة!</span></div>
+    <div class="sentence"><span class="num">16</span><span class="fr">Attention, ne tombe pas !</span><span class="ar">انتبه، لا تسقط!</span></div>
+    <div class="sentence"><span class="num">17</span><span class="fr">Attention à tes pieds !</span><span class="ar">انتبه لقدميك!</span></div>
+    <div class="sentence"><span class="num">18</span><span class="fr">Attention, le verre est cassé !</span><span class="ar">انتبه، الزجاج مكسور!</span></div>
+    <div class="sentence"><span class="num">19</span><span class="fr">Attention aux voitures !</span><span class="ar">احذر من السيارات!</span></div>
+    <div class="sentence"><span class="num">20</span><span class="fr">Attention, le plafond est bas !</span><span class="ar">انتبه، السقف منخفض!</span></div>
+  </section>
+
+  <section>
+    <h2>ثانيًا: استخدام Faire attention (21–40)</h2>
+    <div class="sentence"><span class="num">21</span><span class="fr">Je fais attention.</span><span class="ar">أنا أنتبه.</span></div>
+    <div class="sentence"><span class="num">22</span><span class="fr">Fais attention !</span><span class="ar">انتبه!</span></div>
+    <div class="sentence"><span class="num">23</span><span class="fr">Tu dois faire attention.</span><span class="ar">يجب أن تنتبه.</span></div>
+    <div class="sentence"><span class="num">24</span><span class="fr">Je fais attention à la route.</span><span class="ar">أنتبه إلى الطريق.</span></div>
+    <div class="sentence"><span class="num">25</span><span class="fr">Elle fait attention à ses dépenses.</span><span class="ar">هي تنتبه إلى نفقاتها.</span></div>
+    <div class="sentence"><span class="num">26</span><span class="fr">Il fait attention à sa santé.</span><span class="ar">هو يهتم بصحته.</span></div>
+    <div class="sentence"><span class="num">27</span><span class="fr">Nous faisons attention aux détails.</span><span class="ar">نحن ننتبه إلى التفاصيل.</span></div>
+    <div class="sentence"><span class="num">28</span><span class="fr">Faites attention à vos affaires.</span><span class="ar">انتبهوا إلى أغراضكم.</span></div>
+    <div class="sentence"><span class="num">29</span><span class="fr">Je fais attention à mon alimentation.</span><span class="ar">أنا أنتبه إلى نظامي الغذائي.</span></div>
+    <div class="sentence"><span class="num">30</span><span class="fr">Tu fais attention à ce que tu dis.</span><span class="ar">أنت تنتبه إلى ما تقوله.</span></div>
+    <div class="sentence"><span class="num">31</span><span class="fr">Il faut faire attention.</span><span class="ar">يجب الانتباه.</span></div>
+    <div class="sentence"><span class="num">32</span><span class="fr">Fais attention à toi !</span><span class="ar">اعتنِ بنفسك!</span></div>
+    <div class="sentence"><span class="num">33</span><span class="fr">Elle fait attention à ses enfants.</span><span class="ar">هي تعتني بأطفالها.</span></div>
+    <div class="sentence"><span class="num">34</span><span class="fr">Je fais attention au prix.</span><span class="ar">أنتبه إلى السعر.</span></div>
+    <div class="sentence"><span class="num">35</span><span class="fr">Nous faisons attention à la sécurité.</span><span class="ar">نحن ننتبه إلى السلامة.</span></div>
+    <div class="sentence"><span class="num">36</span><span class="fr">Il fait attention aux règles.</span><span class="ar">هو يلتزم بالقواعد وينتبه إليها.</span></div>
+    <div class="sentence"><span class="num">37</span><span class="fr">Faites attention à votre santé.</span><span class="ar">اهتموا بصحتكم.</span></div>
+    <div class="sentence"><span class="num">38</span><span class="fr">Je fais attention à mon travail.</span><span class="ar">أنا أهتم بعملي.</span></div>
+    <div class="sentence"><span class="num">39</span><span class="fr">Elle fait attention aux erreurs.</span><span class="ar">هي تنتبه إلى الأخطاء.</span></div>
+    <div class="sentence"><span class="num">40</span><span class="fr">Tu dois faire attention à l’heure.</span><span class="ar">يجب أن تنتبه إلى الوقت.</span></div>
+  </section>
+
+  <section>
+    <h2>ثالثًا: المنزل والحياة اليومية (41–60)</h2>
+    <div class="sentence"><span class="num">41</span><span class="fr">Attention, l’eau est chaude !</span><span class="ar">انتبه، الماء ساخن!</span></div>
+    <div class="sentence"><span class="num">42</span><span class="fr">Attention, le café est brûlant !</span><span class="ar">انتبه، القهوة شديدة السخونة!</span></div>
+    <div class="sentence"><span class="num">43</span><span class="fr">Fais attention en cuisine.</span><span class="ar">انتبه أثناء الطهي.</span></div>
+    <div class="sentence"><span class="num">44</span><span class="fr">Attention au couteau !</span><span class="ar">احذر من السكين!</span></div>
+    <div class="sentence"><span class="num">45</span><span class="fr">Fais attention en traversant la rue.</span><span class="ar">انتبه عند عبور الشارع.</span></div>
+    <div class="sentence"><span class="num">46</span><span class="fr">Attention, la porte se ferme !</span><span class="ar">انتبه، الباب يُغلق!</span></div>
+    <div class="sentence"><span class="num">47</span><span class="fr">Fais attention à tes vêtements.</span><span class="ar">انتبه إلى ملابسك.</span></div>
+    <div class="sentence"><span class="num">48</span><span class="fr">Attention, le bébé dort !</span><span class="ar">انتبه، الطفل نائم!</span></div>
+    <div class="sentence"><span class="num">49</span><span class="fr">Fais attention aux marches.</span><span class="ar">انتبه إلى درجات السلم.</span></div>
+    <div class="sentence"><span class="num">50</span><span class="fr">Attention, le verre va tomber !</span><span class="ar">انتبه، الكوب على وشك السقوط!</span></div>
+    <div class="sentence"><span class="num">51</span><span class="fr">Je fais attention à la propreté.</span><span class="ar">أنا أهتم بالنظافة.</span></div>
+    <div class="sentence"><span class="num">52</span><span class="fr">Fais attention en utilisant ce produit.</span><span class="ar">انتبه عند استخدام هذا المنتج.</span></div>
+    <div class="sentence"><span class="num">53</span><span class="fr">Attention, le sol est glissant !</span><span class="ar">انتبه، الأرض زلقة!</span></div>
+    <div class="sentence"><span class="num">54</span><span class="fr">Fais attention à la prise électrique.</span><span class="ar">انتبه إلى المقبس الكهربائي.</span></div>
+    <div class="sentence"><span class="num">55</span><span class="fr">Attention, le four est encore chaud !</span><span class="ar">انتبه، الفرن ما زال ساخنًا!</span></div>
+    <div class="sentence"><span class="num">56</span><span class="fr">Fais attention en portant cette boîte.</span><span class="ar">انتبه وأنت تحمل هذا الصندوق.</span></div>
+    <div class="sentence"><span class="num">57</span><span class="fr">Attention aux produits chimiques !</span><span class="ar">احذر من المواد الكيميائية!</span></div>
+    <div class="sentence"><span class="num">58</span><span class="fr">Je fais attention à ma consommation d’eau.</span><span class="ar">أنتبه إلى استهلاكي للماء.</span></div>
+    <div class="sentence"><span class="num">59</span><span class="fr">Attention, tu vas te cogner la tête !</span><span class="ar">انتبه، ستصطدم رأسك!</span></div>
+    <div class="sentence"><span class="num">60</span><span class="fr">Fais attention quand tu ouvres la fenêtre.</span><span class="ar">انتبه عندما تفتح النافذة.</span></div>
+  </section>
+
+  <section>
+    <h2>رابعًا: العمل والدراسة (61–80)</h2>
+    <div class="sentence"><span class="num">61</span><span class="fr">Attention, le chef arrive !</span><span class="ar">انتبه، المدير قادم!</span></div>
+    <div class="sentence"><span class="num">62</span><span class="fr">Faites attention aux consignes.</span><span class="ar">انتبهوا إلى التعليمات.</span></div>
+    <div class="sentence"><span class="num">63</span><span class="fr">Je fais attention aux plans.</span><span class="ar">أنا أنتبه إلى المخططات.</span></div>
+    <div class="sentence"><span class="num">64</span><span class="fr">Attention, la machine fonctionne !</span><span class="ar">انتبه، الآلة تعمل!</span></div>
+    <div class="sentence"><span class="num">65</span><span class="fr">Fais attention aux outils.</span><span class="ar">انتبه إلى الأدوات.</span></div>
+    <div class="sentence"><span class="num">66</span><span class="fr">Il faut faire attention aux détails techniques.</span><span class="ar">يجب الانتباه إلى التفاصيل الفنية.</span></div>
+    <div class="sentence"><span class="num">67</span><span class="fr">Attention, cette machine est dangereuse !</span><span class="ar">انتبه، هذه الآلة خطيرة!</span></div>
+    <div class="sentence"><span class="num">68</span><span class="fr">Je fais attention à mes collègues.</span><span class="ar">أنا أراعي زملائي وأنتبه لاحتياجاتهم.</span></div>
+    <div class="sentence"><span class="num">69</span><span class="fr">Faites attention à la date limite.</span><span class="ar">انتبهوا إلى الموعد النهائي.</span></div>
+    <div class="sentence"><span class="num">70</span><span class="fr">Attention, le document est confidentiel !</span><span class="ar">انتبه، المستند سري!</span></div>
+    <div class="sentence"><span class="num">71</span><span class="fr">Je fais attention à mon orthographe.</span><span class="ar">أنا أنتبه إلى الإملاء.</span></div>
+    <div class="sentence"><span class="num">72</span><span class="fr">Fais attention pendant l’examen.</span><span class="ar">انتبه أثناء الامتحان.</span></div>
+    <div class="sentence"><span class="num">73</span><span class="fr">Attention, il y a une erreur dans le rapport !</span><span class="ar">انتبه، هناك خطأ في التقرير!</span></div>
+    <div class="sentence"><span class="num">74</span><span class="fr">Nous devons faire attention à la qualité.</span><span class="ar">يجب أن ننتبه إلى الجودة.</span></div>
+    <div class="sentence"><span class="num">75</span><span class="fr">Attention aux câbles électriques !</span><span class="ar">احذر من الكابلات الكهربائية!</span></div>
+    <div class="sentence"><span class="num">76</span><span class="fr">Je fais attention aux instructions du professeur.</span><span class="ar">أنتبه إلى تعليمات الأستاذ.</span></div>
+    <div class="sentence"><span class="num">77</span><span class="fr">Fais attention à ne pas oublier ton rendez-vous.</span><span class="ar">احرص على ألّا تنسى موعدك.</span></div>
+    <div class="sentence"><span class="num">78</span><span class="fr">Attention, la réunion commence !</span><span class="ar">انتبه، الاجتماع يبدأ!</span></div>
+    <div class="sentence"><span class="num">79</span><span class="fr">Il fait attention à la sécurité des travailleurs.</span><span class="ar">هو يهتم بسلامة العمال.</span></div>
+    <div class="sentence"><span class="num">80</span><span class="fr">Nous faisons attention à ne pas perdre de temps.</span><span class="ar">نحرص على ألّا نضيّع الوقت.</span></div>
+  </section>
+
+  <section>
+    <h2>خامسًا: المحادثات والمواقف المختلفة (81–100)</h2>
+    <div class="sentence"><span class="num">81</span><span class="fr">Fais attention à ce que tu fais !</span><span class="ar">انتبه لما تفعله!</span></div>
+    <div class="sentence"><span class="num">82</span><span class="fr">Attention, je t’écoute !</span><span class="ar">انتبه، أنا أستمع إليك!</span></div>
+    <div class="sentence"><span class="num">83</span><span class="fr">Tu devrais faire plus attention.</span><span class="ar">ينبغي أن تكون أكثر انتباهًا.</span></div>
+    <div class="sentence"><span class="num">84</span><span class="fr">Merci de votre attention.</span><span class="ar">شكرًا على حسن استماعكم.</span></div>
+    <div class="sentence"><span class="num">85</span><span class="fr">Je vous remercie pour votre attention.</span><span class="ar">أشكركم على اهتمامكم.</span></div>
+    <div class="sentence"><span class="num">86</span><span class="fr">Il attire l’attention de tout le monde.</span><span class="ar">هو يجذب انتباه الجميع.</span></div>
+    <div class="sentence"><span class="num">87</span><span class="fr">Cette affiche attire mon attention.</span><span class="ar">هذا الملصق يجذب انتباهي.</span></div>
+    <div class="sentence"><span class="num">88</span><span class="fr">Ne fais pas attention à lui.</span><span class="ar">لا تهتم به.</span></div>
+    <div class="sentence"><span class="num">89</span><span class="fr">Fais attention à ce qu’il dit.</span><span class="ar">انتبه إلى ما يقوله.</span></div>
+    <div class="sentence"><span class="num">90</span><span class="fr">Elle a besoin d’attention.</span><span class="ar">هي بحاجة إلى الاهتمام.</span></div>
+    <div class="sentence"><span class="num">91</span><span class="fr">Il manque d’attention en classe.</span><span class="ar">هو قليل الانتباه في الفصل.</span></div>
+    <div class="sentence"><span class="num">92</span><span class="fr">Prête attention à mes paroles.</span><span class="ar">أصغِ إلى كلامي.</span></div>
+    <div class="sentence"><span class="num">93</span><span class="fr">Je n’ai pas fait attention à l’heure.</span><span class="ar">لم أنتبه إلى الوقت.</span></div>
+    <div class="sentence"><span class="num">94</span><span class="fr">Pardon, je n’ai pas fait attention.</span><span class="ar">عذرًا، لم أنتبه.</span></div>
+    <div class="sentence"><span class="num">95</span><span class="fr">Fais attention à ne pas te tromper.</span><span class="ar">احرص على ألّا تخطئ.</span></div>
+    <div class="sentence"><span class="num">96</span><span class="fr">Il faut attirer l’attention du responsable.</span><span class="ar">يجب لفت انتباه المسؤول.</span></div>
+    <div class="sentence"><span class="num">97</span><span class="fr">Elle écoute avec attention.</span><span class="ar">هي تستمع بانتباه.</span></div>
+    <div class="sentence"><span class="num">98</span><span class="fr">Fais attention lorsque tu conduis.</span><span class="ar">انتبه عندما تقود السيارة.</span></div>
+    <div class="sentence"><span class="num">99</span><span class="fr">Je fais toujours attention à mes paroles.</span><span class="ar">أنتبه دائمًا إلى كلامي.</span></div>
+    <div class="sentence"><span class="num">100</span><span class="fr">Faites attention à vous et prenez soin de votre santé.</span><span class="ar">انتبهوا لأنفسكم واعتنوا بصحتكم.</span></div>
+  </section>
+
+  <h2 class="table-title">📋 ملخص سريع للحفظ</h2>
+  <table>
+    <tr><th>التعبير الفرنسي</th><th>المعنى بالعربية</th></tr>
+    <tr><td>Attention !</td><td>انتبه!</td></tr>
+    <tr><td>Attention à…</td><td>احذر من… / انتبه إلى…</td></tr>
+    <tr><td>Faire attention</td><td>ينتبه / يحترس</td></tr>
+    <tr><td>Faire attention à quelqu’un</td><td>يهتم بشخص / ينتبه له</td></tr>
+    <tr><td>Faire attention à quelque chose</td><td>ينتبه إلى شيء</td></tr>
+    <tr><td>Ne fais pas attention</td><td>لا تهتم</td></tr>
+    <tr><td>Prêter attention à</td><td>يُصغي إلى / يولي اهتمامًا لـ</td></tr>
+    <tr><td>Attirer l’attention</td><td>يجذب الانتباه</td></tr>
+    <tr><td>Avec attention</td><td>بانتباه</td></tr>
+    <tr><td>Merci de votre attention</td><td>شكرًا على حسن استماعكم</td></tr>
+  </table>
+
+  <div class="note">
+    <h3>⚠️ ملاحظة مهمة</h3>
+    <p>بعد <strong>faire attention à</strong> يأتي اسم أو فعل في المصدر مع à، مثل:</p>
+    <ul>
+      <li><strong>Je fais attention à la route.</strong> — أنتبه إلى الطريق.</li>
+      <li><strong>Je fais attention à ne pas tomber.</strong> — أحرص على ألّا أسقط.</li>
+      <li><strong>Je fais attention à ce que je dis.</strong> — أنتبه إلى ما أقوله.</li>
+    </ul>
+  </div>
+
+  <footer>
+    📚 100 جملة فرنسية باستخدام Attention — مع الترجمة العربية | تصميم تعليمي
+  </footer>
+</div>
+</body>
+</html>
