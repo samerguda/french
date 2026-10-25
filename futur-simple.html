@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futur simple — 100 جملة فرنسية مترجمة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 30px 15px;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        h1 .flag {
+            font-size: 1.2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #a0c4ff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        h2 {
+            color: #ffd700;
+            font-size: 1.5em;
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '◆';
+            color: #ffd700;
+            font-size: 0.8em;
+        }
+
+        h3 {
+            color: #a0c4ff;
+            font-size: 1.2em;
+            margin: 25px 0 15px;
+        }
+
+        .rule-box {
+            background: rgba(255, 215, 0, 0.08);
+            border-right: 4px solid #ffd700;
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+        }
+
+        .rule-box p {
+            color: #f0f0f0;
+            font-size: 1.1em;
+        }
+
+        .rule-box strong {
+            color: #ffd700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #0f3460, #1a1a2e);
+        }
+
+        thead th {
+            padding: 14px 12px;
+            color: #ffd700;
+            font-size: 1.05em;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        tbody tr {
+            background: rgba(255, 255, 255, 0.04);
+            transition: background 0.2s;
+        }
+
+        tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 215, 0, 0.12);
+        }
+
+        tbody td {
+            padding: 12px 15px;
+            color: #e0e0e0;
+            text-align: right;
+            font-size: 1em;
+        }
+
+        tbody td:first-child {
+            color: #a0c4ff;
+            font-weight: 600;
+        }
+
+        .sentences {
+            list-style: none;
+        }
+
+        .sentences li {
+            padding: 12px 18px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            border-right: 3px solid #0f3460;
+            transition: all 0.3s;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .sentences li:hover {
+            background: rgba(255, 215, 0, 0.08);
+            border-right-color: #ffd700;
+            transform: translateX(-5px);
+        }
+
+        .sentences .fr {
+            color: #7ec8e3;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: embed;
+            font-size: 1.05em;
+        }
+
+        .sentences .ar {
+            color: #e0e0e0;
+            font-size: 0.98em;
+        }
+
+        .separator {
+            color: #ffd700;
+            font-weight: bold;
+            margin: 0 4px;
+        }
+
+        .section-note {
+            background: rgba(160, 196, 255, 0.08);
+            border-right: 4px solid #a0c4ff;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #a0c4ff;
+            font-size: 1.05em;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 180, 0, 0.06));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .tip-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        .tip-box .example-group {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 15px;
+        }
+
+        .tip-box .example-group p {
+            margin: 8px 0;
+            direction: ltr;
+            text-align: left;
+            unicode-bidi: embed;
+            color: #e0e0e0;
+        }
+
+        .tip-box .example-group .ar-t {
+            direction: rtl;
+            text-align: right;
+            color: #a0c4ff;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .irregular-table td:first-child {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 18px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .sentences li {
+                flex-direction: column;
+                gap: 3px;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            thead th, tbody td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇫🇷 100 جملة فرنسية — Futur simple</h1>
+        <p class="subtitle">المستقبل البسيط في اللغة الفرنسية مع الترجمة العربية</p>
+
+        <!-- القاعدة -->
+        <h2>القاعدة</h2>
+        <div class="rule-box">
+            <p><strong>مصدر الفعل + النهاية المناسبة.</strong></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>الضمير</th>
+                    <th>النهاية</th>
+                    <th>مثال</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Je</td><td>-ai</td><td>Je parlerai</td></tr>
+                <tr><td>Tu</td><td>-as</td><td>Tu parleras</td></tr>
+                <tr><td>Il / Elle</td><td>-a</td><td>Il parlera</td></tr>
+                <tr><td>Nous</td><td>-ons</td><td>Nous parlerons</td></tr>
+                <tr><td>Vous</td><td>-ez</td><td>Vous parlerez</td></tr>
+                <tr><td>Ils / Elles</td><td>-ont</td><td>Ils parleront</td></tr>
+            </tbody>
+        </table>
+
+        <!-- 1-20 -->
+        <h2>100 جملة مترجمة</h2>
+
+        <h3>1–20: الحياة اليومية والعمل</h3>
+        <ul class="sentences">
+            <li><span class="fr">Je travaillerai demain.</span><span class="separator">—</span><span class="ar">سأعمل غدًا.</span></li>
+            <li><span class="fr">Tu étudieras le français.</span><span class="separator">—</span><span class="ar">ستدرس اللغة الفرنسية.</span></li>
+            <li><span class="fr">Il arrivera à huit heures.</span><span class="separator">—</span><span class="ar">سيصل في الساعة الثامنة.</span></li>
+            <li><span class="fr">Elle préparera le dîner.</span><span class="separator">—</span><span class="ar">ستحضّر العشاء.</span></li>
+            <li><span class="fr">Nous visiterons Bruxelles.</span><span class="separator">—</span><span class="ar">سنزور بروكسل.</span></li>
+            <li><span class="fr">Vous apprendrez rapidement.</span><span class="separator">—</span><span class="ar">ستتعلمون بسرعة.</span></li>
+            <li><span class="fr">Ils rentreront ce soir.</span><span class="separator">—</span><span class="ar">سيعودون إلى المنزل هذا المساء.</span></li>
+            <li><span class="fr">Elles commenceront demain.</span><span class="separator">—</span><span class="ar">سيبدأن غدًا.</span></li>
+            <li><span class="fr">Je chercherai un emploi.</span><span class="separator">—</span><span class="ar">سأبحث عن وظيفة.</span></li>
+            <li><span class="fr">Tu trouveras une solution.</span><span class="separator">—</span><span class="ar">ستجد حلًا.</span></li>
+            <li><span class="fr">Il travaillera dans une entreprise.</span><span class="separator">—</span><span class="ar">سيعمل في شركة.</span></li>
+            <li><span class="fr">Elle étudiera à l’université.</span><span class="separator">—</span><span class="ar">ستدرس في الجامعة.</span></li>
+            <li><span class="fr">Nous habiterons en Belgique.</span><span class="separator">—</span><span class="ar">سنسكن في بلجيكا.</span></li>
+            <li><span class="fr">Vous parlerez avec le directeur.</span><span class="separator">—</span><span class="ar">ستتحدثون مع المدير.</span></li>
+            <li><span class="fr">Ils finiront le projet.</span><span class="separator">—</span><span class="ar">سينهون المشروع.</span></li>
+            <li><span class="fr">Je téléphonerai à mon ami.</span><span class="separator">—</span><span class="ar">سأتصل بصديقي.</span></li>
+            <li><span class="fr">Tu rangeras ta chambre.</span><span class="separator">—</span><span class="ar">سترتب غرفتك.</span></li>
+            <li><span class="fr">Il nettoiera la cuisine.</span><span class="separator">—</span><span class="ar">سينظف المطبخ.</span></li>
+            <li><span class="fr">Elle préparera ses documents.</span><span class="separator">—</span><span class="ar">ستحضّر مستنداتها.</span></li>
+            <li><span class="fr">Nous organiserons une réunion.</span><span class="separator">—</span><span class="ar">سننظم اجتماعًا.</span></li>
+        </ul>
+
+        <!-- 21-40 -->
+        <h3>21–40: العائلة والمنزل</h3>
+        <ul class="sentences">
+            <li><span class="fr">Je rentrerai tôt.</span><span class="separator">—</span><span class="ar">سأعود مبكرًا.</span></li>
+            <li><span class="fr">Tu aideras ta femme.</span><span class="separator">—</span><span class="ar">ستساعد زوجتك.</span></li>
+            <li><span class="fr">Il accompagnera ses enfants à l’école.</span><span class="separator">—</span><span class="ar">سيوصل أطفاله إلى المدرسة.</span></li>
+            <li><span class="fr">Elle achètera du pain.</span><span class="separator">—</span><span class="ar">ستشتري خبزًا.</span></li>
+            <li><span class="fr">Nous mangerons ensemble.</span><span class="separator">—</span><span class="ar">سنأكل معًا.</span></li>
+            <li><span class="fr">Vous inviterez vos amis.</span><span class="separator">—</span><span class="ar">ستدعون أصدقاءكم.</span></li>
+            <li><span class="fr">Ils regarderont un film.</span><span class="separator">—</span><span class="ar">سيشاهدون فيلمًا.</span></li>
+            <li><span class="fr">Elles prépareront un gâteau.</span><span class="separator">—</span><span class="ar">سيحضّرن كعكة.</span></li>
+            <li><span class="fr">Je laverai les vêtements.</span><span class="separator">—</span><span class="ar">سأغسل الملابس.</span></li>
+            <li><span class="fr">Tu feras le ménage.</span><span class="separator">—</span><span class="ar">ستنظف المنزل.</span></li>
+            <li><span class="fr">Il réparera la porte.</span><span class="separator">—</span><span class="ar">سيصلح الباب.</span></li>
+            <li><span class="fr">Elle arrosera les plantes.</span><span class="separator">—</span><span class="ar">ستسقي النباتات.</span></li>
+            <li><span class="fr">Nous passerons la soirée en famille.</span><span class="separator">—</span><span class="ar">سنقضي المساء مع العائلة.</span></li>
+            <li><span class="fr">Vous ouvrirez les fenêtres.</span><span class="separator">—</span><span class="ar">ستفتحون النوافذ.</span></li>
+            <li><span class="fr">Ils fermeront la porte.</span><span class="separator">—</span><span class="ar">سيغلقون الباب.</span></li>
+            <li><span class="fr">Je prendrai une douche.</span><span class="separator">—</span><span class="ar">سأستحم.</span></li>
+            <li><span class="fr">Tu dormiras tôt.</span><span class="separator">—</span><span class="ar">ستنام مبكرًا.</span></li>
+            <li><span class="fr">Il se réveillera à six heures.</span><span class="separator">—</span><span class="ar">سيستيقظ في السادسة.</span></li>
+            <li><span class="fr">Elle appellera sa mère.</span><span class="separator">—</span><span class="ar">ستتصل بأمها.</span></li>
+            <li><span class="fr">Nous aiderons nos voisins.</span><span class="separator">—</span><span class="ar">سنساعد جيراننا.</span></li>
+        </ul>
+
+        <!-- 41-60 -->
+        <h3>41–60: السفر والمواصلات</h3>
+        <ul class="sentences">
+            <li><span class="fr">Je voyagerai en France.</span><span class="separator">—</span><span class="ar">سأسافر إلى فرنسا.</span></li>
+            <li><span class="fr">Tu prendras le train.</span><span class="separator">—</span><span class="ar">ستستقل القطار.</span></li>
+            <li><span class="fr">Il conduira jusqu’à Bruxelles.</span><span class="separator">—</span><span class="ar">سيقود السيارة حتى بروكسل.</span></li>
+            <li><span class="fr">Elle réservera une chambre.</span><span class="separator">—</span><span class="ar">ستحجز غرفة.</span></li>
+            <li><span class="fr">Nous partirons demain matin.</span><span class="separator">—</span><span class="ar">سنغادر غدًا صباحًا.</span></li>
+            <li><span class="fr">Vous arriverez à l’aéroport.</span><span class="separator">—</span><span class="ar">ستصلون إلى المطار.</span></li>
+            <li><span class="fr">Ils visiteront Paris.</span><span class="separator">—</span><span class="ar">سيزورون باريس.</span></li>
+            <li><span class="fr">Elles prendront le bus.</span><span class="separator">—</span><span class="ar">سيستقللن الحافلة.</span></li>
+            <li><span class="fr">Je chercherai la gare.</span><span class="separator">—</span><span class="ar">سأبحث عن محطة القطار.</span></li>
+            <li><span class="fr">Tu achèteras un billet.</span><span class="separator">—</span><span class="ar">ستشتري تذكرة.</span></li>
+            <li><span class="fr">Il attendra devant la gare.</span><span class="separator">—</span><span class="ar">سينتظر أمام المحطة.</span></li>
+            <li><span class="fr">Elle descendra à la prochaine station.</span><span class="separator">—</span><span class="ar">ستنزل في المحطة القادمة.</span></li>
+            <li><span class="fr">Nous traverserons la rue.</span><span class="separator">—</span><span class="ar">سنعبر الشارع.</span></li>
+            <li><span class="fr">Vous suivrez les indications.</span><span class="separator">—</span><span class="ar">ستتبعون الإرشادات.</span></li>
+            <li><span class="fr">Ils loueront une voiture.</span><span class="separator">—</span><span class="ar">سيستأجرون سيارة.</span></li>
+            <li><span class="fr">Je visiterai le musée.</span><span class="separator">—</span><span class="ar">سأزور المتحف.</span></li>
+            <li><span class="fr">Tu découvriras une nouvelle ville.</span><span class="separator">—</span><span class="ar">ستكتشف مدينة جديدة.</span></li>
+            <li><span class="fr">Il fera ses valises.</span><span class="separator">—</span><span class="ar">سيجهز حقائبه.</span></li>
+            <li><span class="fr">Elle emportera son passeport.</span><span class="separator">—</span><span class="ar">ستأخذ جواز سفرها معها.</span></li>
+            <li><span class="fr">Nous reviendrons dimanche.</span><span class="separator">—</span><span class="ar">سنعود يوم الأحد.</span></li>
+        </ul>
+
+        <!-- 61-80 -->
+        <h3>61–80: العمل والهندسة</h3>
+        <ul class="sentences">
+            <li><span class="fr">Je chercherai un poste d’ingénieur.</span><span class="separator">—</span><span class="ar">سأبحث عن وظيفة مهندس.</span></li>
+            <li><span class="fr">Tu travailleras sur le chantier.</span><span class="separator">—</span><span class="ar">ستعمل في موقع البناء.</span></li>
+            <li><span class="fr">Il dessinera les plans.</span><span class="separator">—</span><span class="ar">سيرسم المخططات.</span></li>
+            <li><span class="fr">Elle vérifiera les installations.</span><span class="separator">—</span><span class="ar">ستفحص التجهيزات.</span></li>
+            <li><span class="fr">Nous installerons le système de climatisation.</span><span class="separator">—</span><span class="ar">سنركّب نظام التكييف.</span></li>
+            <li><span class="fr">Vous contrôlerez les équipements.</span><span class="separator">—</span><span class="ar">ستفحصون المعدات.</span></li>
+            <li><span class="fr">Ils termineront les travaux.</span><span class="separator">—</span><span class="ar">سينهون الأعمال.</span></li>
+            <li><span class="fr">Je rédigerai un rapport.</span><span class="separator">—</span><span class="ar">سأكتب تقريرًا.</span></li>
+            <li><span class="fr">Tu participeras à la réunion.</span><span class="separator">—</span><span class="ar">ستشارك في الاجتماع.</span></li>
+            <li><span class="fr">Il expliquera le problème.</span><span class="separator">—</span><span class="ar">سيشرح المشكلة.</span></li>
+            <li><span class="fr">Elle enverra les documents.</span><span class="separator">—</span><span class="ar">سترسل المستندات.</span></li>
+            <li><span class="fr">Nous respecterons les délais.</span><span class="separator">—</span><span class="ar">سنلتزم بالمواعيد النهائية.</span></li>
+            <li><span class="fr">Vous utiliserez un logiciel de dessin.</span><span class="separator">—</span><span class="ar">ستستخدمون برنامجًا للرسم الهندسي.</span></li>
+            <li><span class="fr">Ils répareront les pompes.</span><span class="separator">—</span><span class="ar">سيصلحون المضخات.</span></li>
+            <li><span class="fr">Je vérifierai les tuyaux.</span><span class="separator">—</span><span class="ar">سأفحص الأنابيب.</span></li>
+            <li><span class="fr">Tu apprendras le logiciel BIM.</span><span class="separator">—</span><span class="ar">ستتعلم برنامج الـ BIM.</span></li>
+            <li><span class="fr">Il préparera le devis.</span><span class="separator">—</span><span class="ar">سيُعدّ عرض السعر.</span></li>
+            <li><span class="fr">Elle contactera le fournisseur.</span><span class="separator">—</span><span class="ar">ستتواصل مع المورد.</span></li>
+            <li><span class="fr">Nous améliorerons la qualité.</span><span class="separator">—</span><span class="ar">سنحسّن الجودة.</span></li>
+            <li><span class="fr">Vous trouverez un meilleur emploi.</span><span class="separator">—</span><span class="ar">ستجدون وظيفة أفضل.</span></li>
+        </ul>
+
+        <!-- 81-100 -->
+        <h3>81–100: الخطط والمستقبل والمشاعر</h3>
+        <ul class="sentences">
+            <li><span class="fr">Je réussirai mon examen.</span><span class="separator">—</span><span class="ar">سأنجح في امتحاني.</span></li>
+            <li><span class="fr">Tu comprendras la leçon.</span><span class="separator">—</span><span class="ar">ستفهم الدرس.</span></li>
+            <li><span class="fr">Il deviendra médecin.</span><span class="separator">—</span><span class="ar">سيصبح طبيبًا.</span></li>
+            <li><span class="fr">Elle sera heureuse.</span><span class="separator">—</span><span class="ar">ستكون سعيدة.</span></li>
+            <li><span class="fr">Nous aurons plus de temps.</span><span class="separator">—</span><span class="ar">سيكون لدينا وقت أكثر.</span></li>
+            <li><span class="fr">Vous pourrez venir demain.</span><span class="separator">—</span><span class="ar">ستتمكنون من المجيء غدًا.</span></li>
+            <li><span class="fr">Ils voudront participer.</span><span class="separator">—</span><span class="ar">سيرغبون في المشاركة.</span></li>
+            <li><span class="fr">Je ferai de mon mieux.</span><span class="separator">—</span><span class="ar">سأبذل قصارى جهدي.</span></li>
+            <li><span class="fr">Tu verras la différence.</span><span class="separator">—</span><span class="ar">سترى الفرق.</span></li>
+            <li><span class="fr">Il saura la réponse.</span><span class="separator">—</span><span class="ar">سيعرف الإجابة.</span></li>
+            <li><span class="fr">Elle ira chez le médecin.</span><span class="separator">—</span><span class="ar">ستذهب إلى الطبيب.</span></li>
+            <li><span class="fr">Nous serons prêts à midi.</span><span class="separator">—</span><span class="ar">سنكون مستعدين عند الظهر.</span></li>
+            <li><span class="fr">Vous aurez de bonnes nouvelles.</span><span class="separator">—</span><span class="ar">ستكون لديكم أخبار جيدة.</span></li>
+            <li><span class="fr">Ils feront un long voyage.</span><span class="separator">—</span><span class="ar">سيقومون برحلة طويلة.</span></li>
+            <li><span class="fr">Je ne serai pas en retard.</span><span class="separator">—</span><span class="ar">لن أتأخر.</span></li>
+            <li><span class="fr">Tu n’oublieras jamais cette journée.</span><span class="separator">—</span><span class="ar">لن تنسى هذا اليوم أبدًا.</span></li>
+            <li><span class="fr">Il ne viendra pas ce soir.</span><span class="separator">—</span><span class="ar">لن يأتي هذا المساء.</span></li>
+            <li><span class="fr">Elle ne travaillera pas dimanche.</span><span class="separator">—</span><span class="ar">لن تعمل يوم الأحد.</span></li>
+            <li><span class="fr">Nous ne perdrons pas de temps.</span><span class="separator">—</span><span class="ar">لن نضيّع الوقت.</span></li>
+            <li><span class="fr">Un jour, je parlerai français couramment.</span><span class="separator">—</span><span class="ar">في يوم من الأيام، سأتحدث الفرنسية بطلاقة.</span></li>
+        </ul>
+
+        <!-- الأفعال الشاذة -->
+        <h2>أهم 10 أفعال شاذة في Futur simple</h2>
+        <div class="section-note">
+            احفظ جذور هذه الأفعال؛ لأنها لا تتبع قاعدة المصدر العادية بالكامل.
+        </div>
+
+        <table class="irregular-table">
+            <thead>
+                <tr>
+                    <th>الفعل</th>
+                    <th>الجذر</th>
+                    <th>مثال</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>être — يكون</td><td>ser-</td><td>Je serai — سأكون</td></tr>
+                <tr><td>avoir — يملك</td><td>aur-</td><td>J’aurai — سيكون لديّ</td></tr>
+                <tr><td>aller — يذهب</td><td>ir-</td><td>J’irai — سأذهب</td></tr>
+                <tr><td>faire — يفعل</td><td>fer-</td><td>Je ferai — سأفعل</td></tr>
+                <tr><td>venir — يأتي</td><td>viendr-</td><td>Je viendrai — سأأتي</td></tr>
+                <tr><td>pouvoir — يستطيع</td><td>pourr-</td><td>Je pourrai — سأستطيع</td></tr>
+                <tr><td>vouloir — يريد</td><td>voudr-</td><td>Je voudrai — سأريد</td></tr>
+                <tr><td>devoir — يجب</td><td>devr-</td><td>Je devrai — يجب عليّ</td></tr>
+                <tr><td>voir — يرى</td><td>verr-</td><td>Je verrai — سأرى</td></tr>
+                <tr><td>savoir — يعرف</td><td>saur-</td><td>Je saurai — سأعرف</td></tr>
+            </tbody>
+        </table>
+
+        <!-- النصيحة -->
+        <div class="tip-box">
+            <h3>💡 نصيحة</h3>
+            <p style="color: #e0e0e0;">حاول أن تحوّل كل جملة إلى النفي والسؤال، مثل:</p>
+            <div class="example-group">
+                <p>Je travaillerai demain.</p>
+                <p class="ar-t">سأعمل غدًا.</p>
+                <p>Je ne travaillerai pas demain.</p>
+                <p class="ar-t">لن أعمل غدًا.</p>
+                <p>Est-ce que je travaillerai demain ?</p>
+                <p class="ar-t">هل سأعمل غدًا؟</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🇫🇷 Futur simple — 100 جملة فرنسية مترجمة</p>
+        </div>
+    </div>
+</body>
+</html>
