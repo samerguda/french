@@ -139,9 +139,11 @@
 
         .sentences {
             list-style: none;
+            counter-reset: sentence-counter;
         }
 
         .sentences li {
+            counter-increment: sentence-counter;
             padding: 12px 18px;
             margin-bottom: 8px;
             background: rgba(255, 255, 255, 0.04);
@@ -152,6 +154,16 @@
             flex-wrap: wrap;
             align-items: baseline;
             gap: 8px;
+        }
+
+        .sentences li::before {
+            content: counter(sentence-counter) ".";
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 0.95em;
+            min-width: 32px;
+            text-align: left;
+            direction: ltr;
         }
 
         .sentences li:hover {
@@ -251,6 +263,10 @@
                 flex-direction: column;
                 gap: 3px;
             }
+            .sentences li::before {
+                min-width: auto;
+                margin-bottom: 3px;
+            }
             table {
                 font-size: 0.9em;
             }
@@ -293,7 +309,7 @@
         <h2>100 جملة مترجمة</h2>
 
         <h3>1–20: الحياة اليومية والعمل</h3>
-        <ul class="sentences">
+        <ul class="sentences" start="1">
             <li><span class="fr">Je travaillerai demain.</span><span class="separator">—</span><span class="ar">سأعمل غدًا.</span></li>
             <li><span class="fr">Tu étudieras le français.</span><span class="separator">—</span><span class="ar">ستدرس اللغة الفرنسية.</span></li>
             <li><span class="fr">Il arrivera à huit heures.</span><span class="separator">—</span><span class="ar">سيصل في الساعة الثامنة.</span></li>
@@ -318,7 +334,7 @@
 
         <!-- 21-40 -->
         <h3>21–40: العائلة والمنزل</h3>
-        <ul class="sentences">
+        <ul class="sentences" start="21">
             <li><span class="fr">Je rentrerai tôt.</span><span class="separator">—</span><span class="ar">سأعود مبكرًا.</span></li>
             <li><span class="fr">Tu aideras ta femme.</span><span class="separator">—</span><span class="ar">ستساعد زوجتك.</span></li>
             <li><span class="fr">Il accompagnera ses enfants à l’école.</span><span class="separator">—</span><span class="ar">سيوصل أطفاله إلى المدرسة.</span></li>
@@ -343,7 +359,7 @@
 
         <!-- 41-60 -->
         <h3>41–60: السفر والمواصلات</h3>
-        <ul class="sentences">
+        <ul class="sentences" start="41">
             <li><span class="fr">Je voyagerai en France.</span><span class="separator">—</span><span class="ar">سأسافر إلى فرنسا.</span></li>
             <li><span class="fr">Tu prendras le train.</span><span class="separator">—</span><span class="ar">ستستقل القطار.</span></li>
             <li><span class="fr">Il conduira jusqu’à Bruxelles.</span><span class="separator">—</span><span class="ar">سيقود السيارة حتى بروكسل.</span></li>
@@ -368,7 +384,7 @@
 
         <!-- 61-80 -->
         <h3>61–80: العمل والهندسة</h3>
-        <ul class="sentences">
+        <ul class="sentences" start="61">
             <li><span class="fr">Je chercherai un poste d’ingénieur.</span><span class="separator">—</span><span class="ar">سأبحث عن وظيفة مهندس.</span></li>
             <li><span class="fr">Tu travailleras sur le chantier.</span><span class="separator">—</span><span class="ar">ستعمل في موقع البناء.</span></li>
             <li><span class="fr">Il dessinera les plans.</span><span class="separator">—</span><span class="ar">سيرسم المخططات.</span></li>
@@ -393,7 +409,7 @@
 
         <!-- 81-100 -->
         <h3>81–100: الخطط والمستقبل والمشاعر</h3>
-        <ul class="sentences">
+        <ul class="sentences" start="81">
             <li><span class="fr">Je réussirai mon examen.</span><span class="separator">—</span><span class="ar">سأنجح في امتحاني.</span></li>
             <li><span class="fr">Tu comprendras la leçon.</span><span class="separator">—</span><span class="ar">ستفهم الدرس.</span></li>
             <li><span class="fr">Il deviendra médecin.</span><span class="separator">—</span><span class="ar">سيصبح طبيبًا.</span></li>
