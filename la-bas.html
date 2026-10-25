@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فرنسية — هنا وهناك (Ici & Là)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
+    background: linear-gradient(135deg, #0f4c81, #1e88a8, #48c9b0);
+    background-attachment: fixed;
+    color: #222;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  header {
+    background: linear-gradient(135deg, #0f4c81, #1e88a8, #48c9b0);
+    color: #fff;
+    padding: 40px 25px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
+  }
+  header p { font-size: 1.1em; opacity: 0.95; }
+  .intro {
+    background: #e8f6f8;
+    padding: 20px 25px;
+    border-right: 6px solid #1e88a8;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 0.98em;
+  }
+  .intro strong { color: #0f4c81; }
+  .intro ul { margin: 10px 20px 0 0; }
+  .intro li { margin-bottom: 6px; }
+  .intro .fr { color: #1e88a8; font-weight: bold; font-family: 'Georgia', serif; }
+  section { padding: 10px 25px 30px; }
+  section h2 {
+    color: #0f4c81;
+    border-bottom: 3px solid #48c9b0;
+    padding-bottom: 10px;
+    margin: 30px 0 20px;
+    font-size: 1.4em;
+  }
+  .sentence {
+    background: #f7fbfc;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-right: 5px solid #48c9b0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .sentence:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    background: #e8f6f8;
+  }
+  .num {
+    display: inline-block;
+    background: #1e88a8;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  .fr {
+    font-weight: bold;
+    color: #0f4c81;
+    font-size: 1.1em;
+    direction: ltr;
+    text-align: left;
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Georgia', serif;
+  }
+  .ar { color: #444; font-size: 1.05em; }
+  table {
+    width: calc(100% - 50px);
+    margin: 20px 25px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  table th {
+    background: #0f4c81;
+    color: #fff;
+    padding: 12px;
+    font-size: 1em;
+  }
+  table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f7fbfc;
+  }
+  table tr:nth-child(even) td { background: #e8f6f8; }
+  table tr:hover td { background: #d1f2eb; }
+  table td:first-child {
+    font-weight: bold;
+    color: #0f4c81;
+    direction: ltr;
+    text-align: left;
+    font-family: 'Georgia', serif;
+  }
+  .note {
+    background: #fff8e1;
+    border: 2px dashed #48c9b0;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 25px;
+  }
+  .note h3 { color: #0f4c81; margin-bottom: 12px; }
+  .note ul { margin-right: 20px; }
+  .note li { margin-bottom: 8px; }
+  .table-title {
+    text-align: center;
+    color: #0f4c81;
+    margin: 30px 25px 5px;
+    font-size: 1.3em;
+    border-bottom: 3px solid #48c9b0;
+    padding-bottom: 10px;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f4c81;
+    color: #fff;
+    font-size: 0.95em;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.4em; }
+    .fr { font-size: 1em; }
+    body { padding: 10px; }
+    table { width: calc(100% - 20px); margin: 15px 10px; font-size: 0.9em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🇫🇷 100 جملة فرنسية عن «هنا وهناك»</h1>
+    <p>Ici & Là — مع الترجمة العربية وقواعد الاستخدام</p>
+  </header>
+
+  <div class="intro">
+    <p><strong>أهم الكلمات التي سنستخدمها:</strong></p>
+    <ul>
+      <li><span class="fr">Ici</span> = هنا</li>
+      <li><span class="fr">Là</span> = هنا / هناك، حسب السياق</li>
+      <li><span class="fr">Là-bas</span> = هناك / في ذلك المكان البعيد</li>
+      <li><span class="fr">Par ici</span> = من هنا / من هذا الاتجاه</li>
+      <li><span class="fr">Par là</span> = من هناك / من ذلك الاتجاه</li>
+      <li><span class="fr">D’ici</span> = من هنا، أو بحلول موعد معين حسب السياق</li>
+      <li><span class="fr">Jusqu’ici</span> = حتى هنا / حتى الآن حسب السياق</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>أولًا: استخدام Ici — هنا (1–20)</h2>
+    <div class="sentence"><span class="num">1</span><span class="fr">Je suis ici.</span><span class="ar">أنا هنا.</span></div>
+    <div class="sentence"><span class="num">2</span><span class="fr">Reste ici.</span><span class="ar">ابقَ هنا.</span></div>
+    <div class="sentence"><span class="num">3</span><span class="fr">Viens ici, s’il te plaît.</span><span class="ar">تعال إلى هنا من فضلك.</span></div>
+    <div class="sentence"><span class="num">4</span><span class="fr">J’habite ici.</span><span class="ar">أنا أسكن هنا.</span></div>
+    <div class="sentence"><span class="num">5</span><span class="fr">Il travaille ici.</span><span class="ar">هو يعمل هنا.</span></div>
+    <div class="sentence"><span class="num">6</span><span class="fr">Nous attendons ici.</span><span class="ar">نحن ننتظر هنا.</span></div>
+    <div class="sentence"><span class="num">7</span><span class="fr">Elle étudie ici.</span><span class="ar">هي تدرس هنا.</span></div>
+    <div class="sentence"><span class="num">8</span><span class="fr">Tu peux t’asseoir ici.</span><span class="ar">يمكنك الجلوس هنا.</span></div>
+    <div class="sentence"><span class="num">9</span><span class="fr">Je travaille ici depuis deux ans.</span><span class="ar">أعمل هنا منذ سنتين.</span></div>
+    <div class="sentence"><span class="num">10</span><span class="fr">Il fait froid ici.</span><span class="ar">الجو بارد هنا.</span></div>
+    <div class="sentence"><span class="num">11</span><span class="fr">Il y a beaucoup de monde ici.</span><span class="ar">يوجد الكثير من الناس هنا.</span></div>
+    <div class="sentence"><span class="num">12</span><span class="fr">Qu’est-ce que tu fais ici ?</span><span class="ar">ماذا تفعل هنا؟</span></div>
+    <div class="sentence"><span class="num">13</span><span class="fr">Pourquoi êtes-vous ici ?</span><span class="ar">لماذا أنتم هنا؟</span></div>
+    <div class="sentence"><span class="num">14</span><span class="fr">Je ne connais personne ici.</span><span class="ar">لا أعرف أحدًا هنا.</span></div>
+    <div class="sentence"><span class="num">15</span><span class="fr">On se retrouve ici demain.</span><span class="ar">سنلتقي هنا غدًا.</span></div>
+    <div class="sentence"><span class="num">16</span><span class="fr">Pose ton sac ici.</span><span class="ar">ضع حقيبتك هنا.</span></div>
+    <div class="sentence"><span class="num">17</span><span class="fr">Tu dois attendre ici.</span><span class="ar">يجب أن تنتظر هنا.</span></div>
+    <div class="sentence"><span class="num">18</span><span class="fr">Je préfère rester ici.</span><span class="ar">أفضل البقاء هنا.</span></div>
+    <div class="sentence"><span class="num">19</span><span class="fr">Tout est calme ici.</span><span class="ar">كل شيء هادئ هنا.</span></div>
+    <div class="sentence"><span class="num">20</span><span class="fr">Je me sens bien ici.</span><span class="ar">أشعر بالراحة هنا.</span></div>
+  </section>
+
+  <section>
+    <h2>ثانيًا: استخدام Là — هنا أو هناك (21–40)</h2>
+    <div class="sentence"><span class="num">21</span><span class="fr">Je suis là.</span><span class="ar">أنا هنا.</span></div>
+    <div class="sentence"><span class="num">22</span><span class="fr">Mets le livre là.</span><span class="ar">ضع الكتاب هناك.</span></div>
+    <div class="sentence"><span class="num">23</span><span class="fr">Viens là !</span><span class="ar">تعال إلى هنا!</span></div>
+    <div class="sentence"><span class="num">24</span><span class="fr">Il est là, devant la porte.</span><span class="ar">هو هناك أمام الباب.</span></div>
+    <div class="sentence"><span class="num">25</span><span class="fr">Pose les clés là.</span><span class="ar">ضع المفاتيح هناك.</span></div>
+    <div class="sentence"><span class="num">26</span><span class="fr">Je t’attends là.</span><span class="ar">أنتظرك هناك.</span></div>
+    <div class="sentence"><span class="num">27</span><span class="fr">Elle est là avec nous.</span><span class="ar">هي هنا معنا.</span></div>
+    <div class="sentence"><span class="num">28</span><span class="fr">Regarde là !</span><span class="ar">انظر هناك!</span></div>
+    <div class="sentence"><span class="num">29</span><span class="fr">Le téléphone est là, sur la table.</span><span class="ar">الهاتف هناك على الطاولة.</span></div>
+    <div class="sentence"><span class="num">30</span><span class="fr">Assieds-toi là.</span><span class="ar">اجلس هناك.</span></div>
+    <div class="sentence"><span class="num">31</span><span class="fr">Pourquoi es-tu là ?</span><span class="ar">لماذا أنت هنا؟</span></div>
+    <div class="sentence"><span class="num">32</span><span class="fr">Je ne veux pas rester là.</span><span class="ar">لا أريد البقاء هناك.</span></div>
+    <div class="sentence"><span class="num">33</span><span class="fr">Il y a une pharmacie là.</span><span class="ar">توجد صيدلية هناك.</span></div>
+    <div class="sentence"><span class="num">34</span><span class="fr">Laisse ta veste là.</span><span class="ar">اترك سترتك هناك.</span></div>
+    <div class="sentence"><span class="num">35</span><span class="fr">Le directeur est là aujourd’hui.</span><span class="ar">المدير موجود هنا اليوم.</span></div>
+    <div class="sentence"><span class="num">36</span><span class="fr">Je suis là pour t’aider.</span><span class="ar">أنا هنا لمساعدتك.</span></div>
+    <div class="sentence"><span class="num">37</span><span class="fr">Tu vois cette maison là ?</span><span class="ar">هل ترى ذلك المنزل هناك؟</span></div>
+    <div class="sentence"><span class="num">38</span><span class="fr">Attends-moi là-bas, pas ici.</span><span class="ar">انتظرني هناك، وليس هنا.</span></div>
+    <div class="sentence"><span class="num">39</span><span class="fr">Mets la boîte là, près de la fenêtre.</span><span class="ar">ضع الصندوق هناك، بالقرب من النافذة.</span></div>
+    <div class="sentence"><span class="num">40</span><span class="fr">Je serai là dans cinq minutes.</span><span class="ar">سأكون هناك خلال خمس دقائق.</span></div>
+  </section>
+
+  <section>
+    <h2>ثالثًا: استخدام Là-bas — هناك (41–60)</h2>
+    <div class="sentence"><span class="num">41</span><span class="fr">Il habite là-bas.</span><span class="ar">هو يسكن هناك.</span></div>
+    <div class="sentence"><span class="num">42</span><span class="fr">Regarde là-bas !</span><span class="ar">انظر إلى هناك!</span></div>
+    <div class="sentence"><span class="num">43</span><span class="fr">Ma voiture est là-bas.</span><span class="ar">سيارتي هناك.</span></div>
+    <div class="sentence"><span class="num">44</span><span class="fr">Nous allons là-bas demain.</span><span class="ar">سنذهب إلى هناك غدًا.</span></div>
+    <div class="sentence"><span class="num">45</span><span class="fr">Elle travaille là-bas.</span><span class="ar">هي تعمل هناك.</span></div>
+    <div class="sentence"><span class="num">46</span><span class="fr">Qui est là-bas ?</span><span class="ar">من هناك؟</span></div>
+    <div class="sentence"><span class="num">47</span><span class="fr">Il y a un supermarché là-bas.</span><span class="ar">يوجد سوبر ماركت هناك.</span></div>
+    <div class="sentence"><span class="num">48</span><span class="fr">Mes amis sont là-bas.</span><span class="ar">أصدقائي هناك.</span></div>
+    <div class="sentence"><span class="num">49</span><span class="fr">Je veux aller là-bas.</span><span class="ar">أريد الذهاب إلى هناك.</span></div>
+    <div class="sentence"><span class="num">50</span><span class="fr">La gare est là-bas.</span><span class="ar">محطة القطار هناك.</span></div>
+    <div class="sentence"><span class="num">51</span><span class="fr">Pourquoi vas-tu là-bas ?</span><span class="ar">لماذا تذهب إلى هناك؟</span></div>
+    <div class="sentence"><span class="num">52</span><span class="fr">Nous avons vécu là-bas pendant trois ans.</span><span class="ar">عشنا هناك لمدة ثلاث سنوات.</span></div>
+    <div class="sentence"><span class="num">53</span><span class="fr">Le parking se trouve là-bas.</span><span class="ar">موقف السيارات يقع هناك.</span></div>
+    <div class="sentence"><span class="num">54</span><span class="fr">Il travaille dans une usine là-bas.</span><span class="ar">يعمل في مصنع هناك.</span></div>
+    <div class="sentence"><span class="num">55</span><span class="fr">Les enfants jouent là-bas.</span><span class="ar">الأطفال يلعبون هناك.</span></div>
+    <div class="sentence"><span class="num">56</span><span class="fr">Ma femme m’attend là-bas.</span><span class="ar">زوجتي تنتظرني هناك.</span></div>
+    <div class="sentence"><span class="num">57</span><span class="fr">Tu peux laisser tes affaires là-bas.</span><span class="ar">يمكنك ترك أغراضك هناك.</span></div>
+    <div class="sentence"><span class="num">58</span><span class="fr">Le bus s’arrête là-bas.</span><span class="ar">تتوقف الحافلة هناك.</span></div>
+    <div class="sentence"><span class="num">59</span><span class="fr">Je ne suis jamais allé là-bas.</span><span class="ar">لم أذهب إلى هناك قط.</span></div>
+    <div class="sentence"><span class="num">60</span><span class="fr">Nous devons marcher jusqu’à là-bas.</span><span class="ar">يجب أن نمشي حتى هناك. (الأصح طبيعيًا: Nous devons marcher jusque-là-bas أو jusqu’à cet endroit-là بحسب المقصود.)</span></div>
+  </section>
+
+  <section>
+    <h2>رابعًا: الاتجاهات — Par ici وPar là (61–75)</h2>
+    <div class="sentence"><span class="num">61</span><span class="fr">Passe par ici.</span><span class="ar">مرّ من هنا.</span></div>
+    <div class="sentence"><span class="num">62</span><span class="fr">Venez par ici, s’il vous plaît.</span><span class="ar">تعالوا من هذا الاتجاه من فضلكم.</span></div>
+    <div class="sentence"><span class="num">63</span><span class="fr">La sortie est par là.</span><span class="ar">المخرج من ذلك الاتجاه.</span></div>
+    <div class="sentence"><span class="num">64</span><span class="fr">C’est par ici ?</span><span class="ar">هل الطريق من هنا؟</span></div>
+    <div class="sentence"><span class="num">65</span><span class="fr">Tournez par là.</span><span class="ar">انعطفوا من ذلك الاتجاه.</span></div>
+    <div class="sentence"><span class="num">66</span><span class="fr">On peut passer par ici.</span><span class="ar">يمكننا المرور من هنا.</span></div>
+    <div class="sentence"><span class="num">67</span><span class="fr">Le chemin passe par là.</span><span class="ar">يمر الطريق من هناك.</span></div>
+    <div class="sentence"><span class="num">68</span><span class="fr">Par ici, vous trouverez la gare.</span><span class="ar">من هذا الاتجاه ستجدون محطة القطار.</span></div>
+    <div class="sentence"><span class="num">69</span><span class="fr">Je pense que la pharmacie est par là.</span><span class="ar">أعتقد أن الصيدلية في ذلك الاتجاه.</span></div>
+    <div class="sentence"><span class="num">70</span><span class="fr">Ne passez pas par là.</span><span class="ar">لا تمروا من هناك.</span></div>
+    <div class="sentence"><span class="num">71</span><span class="fr">Venez par ici pour entrer.</span><span class="ar">تعالوا من هنا للدخول.</span></div>
+    <div class="sentence"><span class="num">72</span><span class="fr">Il est parti par là.</span><span class="ar">غادر من ذلك الاتجاه.</span></div>
+    <div class="sentence"><span class="num">73</span><span class="fr">Le bus passe par ici.</span><span class="ar">تمر الحافلة من هنا.</span></div>
+    <div class="sentence"><span class="num">74</span><span class="fr">On doit passer par là pour arriver au centre.</span><span class="ar">يجب أن نمر من هناك للوصول إلى المركز.</span></div>
+    <div class="sentence"><span class="num">75</span><span class="fr">Le restaurant est juste par ici.</span><span class="ar">المطعم قريب جدًا من هنا.</span></div>
+  </section>
+
+  <section>
+    <h2>خامسًا: جمل متنوعة في الحياة اليومية (76–100)</h2>
+    <div class="sentence"><span class="num">76</span><span class="fr">D’ici, je peux voir la gare.</span><span class="ar">من هنا أستطيع رؤية محطة القطار.</span></div>
+    <div class="sentence"><span class="num">77</span><span class="fr">D’ici à Bruxelles, il faut environ une heure.</span><span class="ar">من هنا إلى بروكسل، نحتاج إلى نحو ساعة.</span></div>
+    <div class="sentence"><span class="num">78</span><span class="fr">Jusqu’ici, tout va bien.</span><span class="ar">حتى الآن، كل شيء على ما يرام.</span></div>
+    <div class="sentence"><span class="num">79</span><span class="fr">Viens jusque-là.</span><span class="ar">تعال حتى ذلك المكان.</span></div>
+    <div class="sentence"><span class="num">80</span><span class="fr">Je suis arrivé jusqu’ici à pied.</span><span class="ar">وصلت إلى هنا سيرًا على الأقدام.</span></div>
+    <div class="sentence"><span class="num">81</span><span class="fr">Il n’y a rien ici.</span><span class="ar">لا يوجد شيء هنا.</span></div>
+    <div class="sentence"><span class="num">82</span><span class="fr">Il y a quelque chose là-bas.</span><span class="ar">يوجد شيء هناك.</span></div>
+    <div class="sentence"><span class="num">83</span><span class="fr">Je préfère vivre ici plutôt que là-bas.</span><span class="ar">أفضل العيش هنا بدلًا من هناك.</span></div>
+    <div class="sentence"><span class="num">84</span><span class="fr">Ici, les magasins ferment tôt.</span><span class="ar">هنا، تُغلق المتاجر مبكرًا.</span></div>
+    <div class="sentence"><span class="num">85</span><span class="fr">Là-bas, les maisons sont plus grandes.</span><span class="ar">هناك، المنازل أكبر.</span></div>
+    <div class="sentence"><span class="num">86</span><span class="fr">Est-ce que tu travailles ici ou là-bas ?</span><span class="ar">هل تعمل هنا أم هناك؟</span></div>
+    <div class="sentence"><span class="num">87</span><span class="fr">Je vais rester ici jusqu’à demain.</span><span class="ar">سأبقى هنا حتى الغد.</span></div>
+    <div class="sentence"><span class="num">88</span><span class="fr">Nous partirons de là-bas à huit heures.</span><span class="ar">سنغادر من هناك في الساعة الثامنة.</span></div>
+    <div class="sentence"><span class="num">89</span><span class="fr">Mets les chaussures ici, près de la porte.</span><span class="ar">ضع الأحذية هنا بالقرب من الباب.</span></div>
+    <div class="sentence"><span class="num">90</span><span class="fr">Le médecin est juste là.</span><span class="ar">الطبيب هنا بالضبط.</span></div>
+    <div class="sentence"><span class="num">91</span><span class="fr">Je voudrais habiter là-bas un jour.</span><span class="ar">أود أن أسكن هناك يومًا ما.</span></div>
+    <div class="sentence"><span class="num">92</span><span class="fr">Attends ici pendant que je vais là-bas.</span><span class="ar">انتظر هنا بينما أذهب إلى هناك.</span></div>
+    <div class="sentence"><span class="num">93</span><span class="fr">D’ici, on ne voit pas la mer.</span><span class="ar">لا يمكننا رؤية البحر من هنا.</span></div>
+    <div class="sentence"><span class="num">94</span><span class="fr">Tu peux venir ici quand tu veux.</span><span class="ar">يمكنك المجيء إلى هنا متى شئت.</span></div>
+    <div class="sentence"><span class="num">95</span><span class="fr">Il y a un arrêt de bus juste là.</span><span class="ar">توجد محطة حافلات هناك بالضبط.</span></div>
+    <div class="sentence"><span class="num">96</span><span class="fr">Nous sommes presque arrivés là-bas.</span><span class="ar">لقد أوشكنا على الوصول إلى هناك.</span></div>
+    <div class="sentence"><span class="num">97</span><span class="fr">Je vais chercher mon téléphone là-bas.</span><span class="ar">سأذهب لإحضار هاتفي من هناك.</span></div>
+    <div class="sentence"><span class="num">98</span><span class="fr">Reste là où tu es.</span><span class="ar">ابقَ في مكانك.</span></div>
+    <div class="sentence"><span class="num">99</span><span class="fr">D’ici, nous pouvons aller à pied jusqu’au centre-ville.</span><span class="ar">من هنا يمكننا الذهاب سيرًا على الأقدام إلى وسط المدينة.</span></div>
+    <div class="sentence"><span class="num">100</span><span class="fr">Que faites-vous là-bas à cette heure-ci ?</span><span class="ar">ماذا تفعلون هناك في هذا الوقت؟</span></div>
+  </section>
+
+  <h2 class="table-title">📋 ملخص سريع للحفظ</h2>
+  <table>
+    <tr><th>الفرنسية</th><th>العربية</th></tr>
+    <tr><td>Ici</td><td>هنا</td></tr>
+    <tr><td>Là</td><td>هنا / هناك حسب السياق</td></tr>
+    <tr><td>Là-bas</td><td>هناك، غالبًا في مكان أبعد</td></tr>
+    <tr><td>Par ici</td><td>من هنا / من هذا الاتجاه</td></tr>
+    <tr><td>Par là</td><td>من هناك / من ذلك الاتجاه</td></tr>
+    <tr><td>D’ici</td><td>من هنا</td></tr>
+    <tr><td>Jusqu’ici</td><td>حتى هنا / حتى الآن</td></tr>
+    <tr><td>Jusque-là</td><td>حتى ذلك المكان / حتى ذلك الوقت</td></tr>
+    <tr><td>Reste ici</td><td>ابقَ هنا</td></tr>
+    <tr><td>Va là-bas</td><td>اذهب إلى هناك</td></tr>
+  </table>
+
+  <div class="note">
+    <h3>💡 نصيحة</h3>
+    <p>في المحادثات اليومية ببلجيكا وفرنسا، ستسمع كثيرًا: <strong>Viens ici !</strong> (تعال هنا)، و<strong>Regarde là-bas !</strong> (انظر إلى هناك)، و<strong>Reste là !</strong> (ابقَ مكانك).</p>
+  </div>
+
+  <footer>
+    📚 100 جملة فرنسية عن «هنا وهناك» — Ici & Là | مع الترجمة العربية
+  </footer>
+</div>
+</body>
+</html>
