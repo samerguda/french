@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كورسات فرنسية مجانية في ليل · للمقيمين البلجيكيين</title>
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f8faff;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .hero {
+      background: linear-gradient(135deg, #0b3b5c, #1b6b8f);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 15px 30px -10px rgba(0, 50, 80, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "🇫🇷";
+      font-size: 12rem;
+      position: absolute;
+      left: -30px;
+      bottom: -40px;
+      opacity: 0.08;
+      transform: rotate(15deg);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.92;
+      max-width: 700px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title i {
+      color: #1b6b8f;
+      font-size: 1.6rem;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e9eef4;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px -8px rgba(27, 107, 143, 0.15);
+      border-color: #b8d3e3;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      line-height: 1.3;
+    }
+
+    .card .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #e3f0f8;
+      color: #1b6b8f;
+      padding: 0.25rem 0.9rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .card .free-tag {
+      background: #d9f0e3;
+      color: #0f6e3f;
+    }
+
+    .card .paid-tag {
+      background: #fef3d9;
+      color: #9b6b00;
+    }
+
+    .card .priority-tag {
+      background: #0b3b5c;
+      color: white;
+    }
+
+    .card p, .card li {
+      font-size: 0.98rem;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card li i {
+      color: #1b6b8f;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      width: 1.1rem;
+      text-align: center;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      border-top: 1px solid #eef4f8;
+    }
+
+    .card-footer i {
+      color: #1b6b8f;
+      width: 1.2rem;
+    }
+
+    .card-footer .contact {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #f2f7fb;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-weight: 500;
+      color: #0b3b5c;
+    }
+
+    /* Warning note */
+    .warning-note {
+      background: #fff8e7;
+      border-right: 6px solid #f5b342;
+      padding: 1.5rem 2rem;
+      border-radius: 1.5rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .warning-note i {
+      font-size: 1.8rem;
+      color: #e69b1e;
+    }
+
+    .warning-note p {
+      font-weight: 500;
+      color: #5e4a1e;
+      margin: 0;
+    }
+
+    .warning-note strong {
+      color: #8a5b00;
+    }
+
+    /* Map / extra info */
+    .map-section {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #e9eef4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .map-section .map-text {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .map-section i {
+      font-size: 2rem;
+      color: #1b6b8f;
+    }
+
+    .map-section span {
+      font-weight: 600;
+      color: #0b3b5c;
+    }
+
+    .btn-map {
+      background: #0b3b5c;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-map:hover {
+      background: #1b6b8f;
+    }
+
+    /* Form section */
+    .form-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px -8px rgba(0, 50, 80, 0.1);
+      margin: 2.5rem 0;
+      border: 1px solid #e2ecf3;
+    }
+
+    .form-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-section h2 i {
+      color: #1b6b8f;
+    }
+
+    .form-subhead {
+      color: #4b6584;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #1e3a5f;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .form-group label i {
+      color: #1b6b8f;
+      font-size: 0.9rem;
+    }
+
+    .form-group select,
+    .form-group input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    .form-group select {
+      padding: 0.9rem 1rem;
+      border: 1.5px solid #d8e2eb;
+      border-radius: 1rem;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      background: #fafdff;
+      color: #1e293b;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231b6b8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 1rem center;
+      background-size: 1.1rem;
+    }
+
+    .form-group select:focus {
+      border-color: #1b6b8f;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(27, 107, 143, 0.12);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .radio-group label {
+      background: #f2f7fb;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #1e3a5f;
+    }
+
+    .radio-group label:has(input:checked) {
+      background: #0b3b5c;
+      color: white;
+      border-color: #0b3b5c;
+    }
+
+    .radio-group label:has(input:checked) i {
+      color: white;
+    }
+
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+
+    .radio-group i {
+      color: #1b6b8f;
+      font-size: 0.9rem;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #0b3b5c, #1b6b8f);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: transform 0.15s, box-shadow 0.2s;
+      margin-top: 1.5rem;
+      box-shadow: 0 8px 18px -6px rgba(11, 59, 92, 0.4);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px -8px rgba(11, 59, 92, 0.5);
+    }
+
+    .submit-btn i {
+      font-size: 1rem;
+    }
+
+    /* Result message */
+    .result-message {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 500;
+      display: none;
+    }
+
+    .result-message.show {
+      display: block;
+    }
+
+    .result-message.success {
+      background: #d9f0e3;
+      color: #0f5e36;
+      border-right: 4px solid #1f9d55;
+    }
+
+    .result-message.info {
+      background: #e3f0f8;
+      color: #0b3b5c;
+      border-right: 4px solid #1b6b8f;
+    }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      padding: 2rem 1rem 0.5rem;
+      color: #6b7f94;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+      .form-section {
+        padding: 1.75rem;
+      }
+      .map-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Hero -->
+  <header class="hero">
+    <h1>كورسات فرنسية مجانية في ليل<br>للمقيمين البلجيكيين 🇧🇪</h1>
+    <p>لديك إقامة برتغالية سارية + كارت أورانج بلجيكي؟ إذاً أنت مؤهل للعديد من الدورات المجانية أو رمزية التكلفة. هذه أفضل الخيارات الحضورية في ليل، للبالغين والأجانب، دون شرط الإقامة الفرنسية.</p>
+    <div class="badge-group">
+      <span class="badge"><i class="fas fa-check-circle"></i> مجاني أو رمزي جداً</span>
+      <span class="badge"><i class="fas fa-map-pin"></i> حضوري في ليل</span>
+      <span class="badge"><i class="fas fa-user-check"></i> لا يشترط إقامة فرنسية</span>
+      <span class="badge"><i class="fas fa-calendar-alt"></i> دورات منتظمة</span>
+    </div>
+  </header>
+
+  <!-- Section 1: La Clé (priority) -->
+  <div class="section-title">
+    <i class="fas fa-star"></i>
+    <span>الخيار الأول · La Clé</span>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card" style="border-right: 6px solid #0b3b5c;">
+      <div class="card-header">
+        <h3>LA CLÉ</h3>
+        <span class="tag priority-tag">الاختيار الأول</span>
+      </div>
+      <p><strong>دروس فرنسية فردية</strong> مع مدرسين متطوعين، مخصصة للبالغين والأجانب.</p>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> الموقع الرسمي يعلن أن الدروس <strong>مجانية</strong>.</li>
+        <li><i class="fas fa-info-circle"></i> دليل DORA يذكر مساهمة سنوية رمزية: <strong>10 يورو</strong>.</li>
+        <li><i class="fas fa-clock"></i> دروس منتظمة، وليست محادثة أسبوعية فقط.</li>
+      </ul>
+      <div class="card-footer">
+        <span class="contact"><i class="fas fa-phone-alt"></i> 03 20 54 06 87</span>
+        <span class="contact"><i class="fas fa-map-marker-alt"></i> 28–30 Rue Ernest Deconynck</span>
+      </div>
+    </div>
+
+    <!-- Accueil Frédéric Ozanam -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Accueil Frédéric Ozanam</h3>
+        <span class="tag free-tag">مجاني</span>
+      </div>
+      <p>دروس فرنسية حضورية + ورش محادثة صباحية يوم الجمعة.</p>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> مجاني بالكامل.</li>
+        <li><i class="fas fa-users"></i> التسجيل حسب الأماكن وقائمة الانتظار.</li>
+        <li><i class="fas fa-clock"></i> ورش المحادثة: الجمعة صباحاً.</li>
+      </ul>
+      <div class="card-footer">
+        <span class="contact"><i class="fas fa-map-marker-alt"></i> 81 Rue Barthélémy Delespaul</span>
+        <span class="contact"><i class="fas fa-database"></i> DORA</span>
+      </div>
+    </div>
+
+    <!-- Centre Social Albert Jacquard -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Centre Social Albert Jacquard</h3>
+        <span class="tag free-tag">مجاني</span>
+      </div>
+      <p>ورشة فرنسية مجانية للبالغين، تركز على المحادثة والنطق.</p>
+      <ul>
+        <li><i class="fas fa-calendar-day"></i> الاثنين 16:45 – 18:15 (خارج العطل المدرسية).</li>
+        <li><i class="fas fa-bullseye"></i> التركيز على المحادثة والنطق.</li>
+      </ul>
+      <div class="card-footer">
+        <span class="contact"><i class="fas fa-phone-alt"></i> 03 20 51 90 47</span>
+        <span class="contact"><i class="fas fa-globe"></i> lille.fr</span>
+      </div>
+    </div>
+
+    <!-- Petit Maroc -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Association d’Animation du Petit Maroc</h3>
+        <span class="tag paid-tag">حسب الإعلان</span>
+      </div>
+      <p>دروس فرنسية للأجانب، موجهة بشكل أساسي لسكان الحي.</p>
+      <ul>
+        <li><i class="fas fa-calendar-alt"></i> الاثنين والخميس 14:00 – 17:00.</li>
+        <li><i class="fas fa-exclamation-triangle"></i> تأكد من قبول عنوانك (موجهة لسكان الحي).</li>
+      </ul>
+      <div class="card-footer">
+        <span class="contact"><i class="fas fa-phone-alt"></i> 03 59 89 85 85</span>
+        <span class="contact"><i class="fas fa-hand-holding-heart"></i> Solidarités Lille</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Warning / La Cimade exclusion -->
+  <div class="warning-note">
+    <i class="fas fa-exclamation-circle"></i>
+    <p><strong>ملاحظة مهمة:</strong> لا ننصح بالتسجيل لدى <strong>La Cimade</strong>؛ فشروطها تستبعد أصحاب الإقامة النظامية والطلاب الأجانب، حتى لو كانت الدروس مجانية. (المصدر: La Cimade)</p>
+  </div>
+
+  <!-- Map section -->
+  <div class="map-section">
+    <div class="map-text">
+      <i class="fas fa-map-marked-alt"></i>
+      <span>خريطة مراكز الدورات في ليل</span>
+    </div>
+    <a href="#" class="btn-map" onclick="alert('يمكنك إضافة رابط الخريطة هنا، مثلاً Google Maps للمراكز المذكورة.'); return false;">
+      <i class="fas fa-external-link-alt"></i> عرض الخريطة
+    </a>
+  </div>
+
+  <!-- Form: تحديد الكورس المناسب -->
+  <div class="form-section" id="formSection">
+    <h2><i class="fas fa-clipboard-list"></i> أريد تحديد الكورس المناسب لي</h2>
+    <p class="form-subhead">أجب عن الأسئلة التالية لنقترح لك الدورة الأنسب حسب وضعك (إقامة بلجيكية/برتغالية، دون إقامة فرنسية).</p>
+
+    <form id="courseForm">
+      <div class="form-grid">
+        <!-- Level -->
+        <div class="form-group">
+          <label><i class="fas fa-layer-group"></i> ما المستوى الذي تريد دراسته؟</label>
+          <select id="level" required>
+            <option value="" disabled selected>اختر المستوى</option>
+            <option value="A1">A1 – من البداية</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="test">اختبار تحديد مستوى أولاً</option>
+          </select>
+        </div>
+
+        <!-- Time -->
+        <div class="form-group">
+          <label><i class="fas fa-clock"></i> موعد الدراسة المفضل</label>
+          <select id="time" required>
+            <option value="" disabled selected>اختر الموعد</option>
+            <option value="morning">صباحاً</option>
+            <option value="afternoon">بعد الظهر</option>
+            <option value="evening">مساءً</option>
+            <option value="any">أي وقت</option>
+          </select>
+        </div>
+
+        <!-- Days per week -->
+        <div class="form-group">
+          <label><i class="fas fa-calendar-week"></i> عدد الأيام أسبوعياً</label>
+          <select id="days" required>
+            <option value="" disabled selected>اختر عدد الأيام</option>
+            <option value="1-2">يوم أو يومين أسبوعياً</option>
+            <option value="3">3 أيام أسبوعياً</option>
+            <option value="4-5">4–5 أيام أسبوعياً</option>
+          </select>
+        </div>
+
+        <!-- Additional confirmation: residence status -->
+        <div class="form-group">
+          <label><i class="fas fa-id-card"></i> وضعك الحالي</label>
+          <div class="radio-group">
+            <label><i class="fas fa-check"></i> <input type="radio" name="status" value="eu" checked> إقامة برتغالية سارية + كارت أورانج بلجيكي</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-search"></i> ابحث عن الكورس المناسب
+      </button>
+    </form>
+
+    <div id="resultMessage" class="result-message"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-note">
+    <i class="fas fa-heart" style="color: #1b6b8f;"></i> معلومات محدثة وفق المصادر المذكورة (DORA، lille.fr، Solidarités Lille). يُنصح بالاتصال مسبقاً لتأكيد المواعيد والأماكن.
+  </div>
+</div>
+
+<script>
+  (function() {
+    const form = document.getElementById('courseForm');
+    const resultDiv = document.getElementById('resultMessage');
+
+    // Data about the courses
+    const courses = [
+      {
+        id: 'lacle',
+        name: 'La Clé',
+        level: ['A1','A2','B1','test'],
+        time: ['morning','afternoon','evening','any'],
+        days: ['1-2','3'],
+        free: true,
+        note: 'دروس فردية مجانية (مساهمة سنوية 10€ محتملة). دروس منتظمة مع متطوعين.',
+        phone: '03 20 54 06 87',
+        address: '28–30 Rue Ernest Deconynck'
+      },
+      {
+        id: 'ozanam',
+        name: 'Accueil Frédéric Ozanam',
+        level: ['A1','A2','B1','test'],
+        time: ['morning','any'],  // Friday morning mainly
+        days: ['1-2'],
+        free: true,
+        note: 'دروس مجانية + ورش محادثة الجمعة صباحاً. التسجيل حسب الأماكن.',
+        phone: null,
+        address: '81 Rue Barthélémy Delespaul'
+      },
+      {
+        id: 'jacquard',
+        name: 'Centre Social Albert Jacquard',
+        level: ['A2','B1','test'], // Conversation focus, likely A2+
+        time: ['afternoon'], // Monday 16:45 = late afternoon
+        days: ['1-2'],
+        free: true,
+        note: 'ورشة محادثة ونطق مجانية. الاثنين 16:45–18:15 (خارج العطل).',
+        phone: '03 20 51 90 47',
+        address: 'Centre Social Albert Jacquard'
+      },
+      {
+        id: 'petitmaroc',
+        name: 'Association d’Animation du Petit Maroc',
+        level: ['A1','A2','B1','test'],
+        time: ['afternoon'], // 14:00-17:00
+        days: ['1-2'], // Monday & Thursday = 2 days
+        free: false, // not explicitly free, but targeted at neighborhood residents
+        note: 'دروس للأجانب. الاثنين والخميس 14:00–17:00. تأكد من قبول عنوانك.',
+        phone: '03 59 89 85 85',
+        address: 'Petit Maroc, Lille'
+      }
+    ];
+
+    // Helper: score each course based on criteria
+    function findBestCourse(level, timePref, daysPref) {
+      // Filter out incompatible by days first? we'll score
+      let scored = courses.map(course => {
+        let score = 0;
+
+        // Level match (exact or 'test' acceptable for all)
+        if (level === 'test' || course.level.includes(level)) {
+          score += 30;
+        } else {
+          // partial match if course level includes something close? not needed
+          score += 0;
+        }
+
+        // Time match
+        if (timePref === 'any') {
+          score += 25;
+        } else if (course.time.includes(timePref)) {
+          score += 30;
+        } else if (course.time.includes('any')) {
+          score += 20;
+        } else {
+          // morning vs afternoon etc.
+          score += 0;
+        }
+
+        // Days match
+        if (daysPref === '1-2') {
+          if (course.days.includes('1-2')) score += 25;
+          else if (course.days.includes('3')) score += 10; // less ideal
+        } else if (daysPref === '3') {
+          if (course.days.includes('3')) score += 25;
+          else if (course.days.includes('1-2')) score += 12; // maybe can add?
+        } else if (daysPref === '4-5') {
+          // none of our courses offer 4-5 days, but we can note that
+          score += 0;
+        }
+
+        // Bonus: free
+        if (course.free) score += 10;
+
+        // Bonus: La Clé priority (user's first choice)
+        if (course.id === 'lacle') score += 8;
+
+        // Bonus: if level is 'test', Ozanam and La Clé are good for assessment
+        if (level === 'test') {
+          if (course.id === 'lacle' || course.id === 'ozanam') score += 5;
+        }
+
+        return { course, score };
+      });
+
+      // Sort descending
+      scored.sort((a, b) => b.score - a.score);
+      return scored;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const level = document.getElementById('level').value;
+      const timePref = document.getElementById('time').value;
+      const daysPref = document.getElementById('days').value;
+
+      if (!level || !timePref || !daysPref) {
+        resultDiv.className = 'result-message show info';
+        resultDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> يرجى اختيار جميع الخيارات أولاً.';
+        return;
+      }
+
+      const ranked = findBestCourse(level, timePref, daysPref);
+      const best = ranked[0].course;
+
+      // Build response
+      let html = `<i class="fas fa-check-circle" style="margin-left: 0.5rem;"></i> <strong>الكورس الأنسب لك:</strong> ${best.name}<br>`;
+      html += `<span style="display:block; margin-top: 0.6rem; font-size:0.95rem;">${best.note}</span>`;
+
+      // Additional details
+      if (best.phone) {
+        html += `<span style="display:block; margin-top: 0.4rem;"><i class="fas fa-phone-alt"></i> ${best.phone}</span>`;
+      }
+      html += `<span style="display:block; margin-top: 0.2rem;"><i class="fas fa-map-marker-alt"></i> ${best.address}</span>`;
+
+      // Special notes based on selections
+      if (daysPref === '4-5') {
+        html += `<hr style="margin: 0.8rem 0; border-color: #cde3f0;">`;
+        html += `<span><i class="fas fa-info-circle"></i> <strong>ملاحظة:</strong> لا توجد حالياً دورات مجانية بـ 4–5 أيام أسبوعياً في هذه القائمة. يمكنك الجمع بين أكثر من مركز أو التحدث مع La Clé لتخصيص حصص إضافية.</span>`;
+      }
+      if (level === 'test') {
+        html += `<hr style="margin: 0.8rem 0; border-color: #cde3f0;">`;
+        html += `<span><i class="fas fa-lightbulb"></i> يُنصح بإجراء اختبار تحديد مستوى مع La Clé أو Ozanam قبل التسجيل.</span>`;
+      }
+
+      // Mention La Cimade not recommended
+      if (best.id !== 'lacle') {
+        html += `<hr style="margin: 0.8rem 0; border-color: #cde3f0;">`;
+        html += `<span><i class="fas fa-exclamation-circle" style="color:#e69b1e;"></i> تذكير: La Cimade غير مناسبة لحاملي الإقامة النظامية (حسب المصدر).</span>`;
+      }
+
+      // Show second best as alternative if score close? maybe not needed
+      if (ranked.length > 1 && ranked[1].score > 20) {
+        const alt = ranked[1].course;
+        html += `<hr style="margin: 0.8rem 0; border-color: #cde3f0;">`;
+        html += `<span><i class="fas fa-random"></i> <strong>بديل مقترح:</strong> ${alt.name} — ${alt.note.split('.')[0]}.</span>`;
+      }
+
+      resultDiv.className = 'result-message show success';
+      resultDiv.innerHTML = html;
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // Map button dummy
+    // Already inline onclick alert
+  })();
+</script>
+</body>
+</html>
