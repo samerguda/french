@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دورات الفرنسية في ليل – خيارات مجانية ومدفوعة مع تنبيهات السفر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            padding: 24px 16px;
+            color: #0b2b4a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* الهيدر والعنوان */
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #0f3b6e, #1e5b9c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .header .flag {
+            font-size: 2rem;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #3a5e7e;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* عناوين الأقسام */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f3b6e;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-right: 6px solid #1e6bb8;
+            padding-right: 14px;
+        }
+
+        .section-sub {
+            font-size: 0.95rem;
+            color: #3a5e7e;
+            margin-bottom: 12px;
+            padding-right: 20px;
+        }
+
+        /* بطاقات الجمعيات */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 22px 20px;
+            box-shadow: 0 8px 24px rgba(0, 30, 60, 0.06);
+            border: 1px solid #e9eef4;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(0, 40, 80, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f3b6e;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #d6e3f0;
+            padding-bottom: 8px;
+        }
+
+        .card h2 span {
+            font-size: 1.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e4f0fa;
+            color: #10508b;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 30px;
+            margin-right: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #bbd4ea;
+        }
+
+        .badge.green {
+            background: #e2f3e4;
+            color: #0b5e2e;
+            border-color: #b6ddc1;
+        }
+
+        .badge.orange {
+            background: #fef3e2;
+            color: #8a5300;
+            border-color: #f5d7a5;
+        }
+
+        .badge.red {
+            background: #fde8e8;
+            color: #9b1c1c;
+            border-color: #f5b5b5;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 10px 0 12px;
+            flex: 1;
+        }
+
+        .card li {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #1f3f5c;
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+            align-items: flex-start;
+        }
+
+        .card li::before {
+            content: "•";
+            color: #1e6bb8;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .contact {
+            background: #f2f7fd;
+            border-radius: 14px;
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            border-right: 4px solid #1e6bb8;
+            word-break: break-word;
+        }
+
+        .contact a {
+            color: #0f3b6e;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #7ba9d4;
+        }
+
+        .contact a:hover {
+            color: #0a2647;
+            border-bottom-style: solid;
+        }
+
+        /* صندوق التنبيه (السفر / الكارت البرتقالي) */
+        .warning-box {
+            background: #fff6e5;
+            border-right: 8px solid #e68a00;
+            border-radius: 20px;
+            padding: 22px 24px;
+            margin: 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .warning-box h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8a5300;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .warning-box p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a3b0e;
+            margin-bottom: 8px;
+        }
+
+        .warning-box strong {
+            color: #6b3e00;
+        }
+
+        .warning-box .highlight {
+            background: #ffecb3;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* رسالة جاهزة */
+        .message-box {
+            background: #0f2f4a;
+            border-radius: 24px;
+            padding: 26px 22px;
+            color: #fff;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            margin-top: 8px;
+            border: 1px solid #1f4e77;
+        }
+
+        .message-box h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            color: #ffd966;
+        }
+
+        .message-content {
+            background: #0b2337;
+            padding: 20px 18px;
+            border-radius: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: break-word;
+            border: 1px solid #2b5e8a;
+            color: #e6f0fa;
+            margin-bottom: 14px;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .copy-note {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.85rem;
+            color: #b8d1e8;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-note button {
+            background: #1e6bb8;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #3f8ad0;
+        }
+
+        .copy-note button:hover {
+            background: #155a9e;
+        }
+
+        /* خريطة / ملاحظة */
+        .map-note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 18px 22px;
+            border: 1px solid #dde8f2;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .map-note .addresses {
+            font-size: 0.9rem;
+            color: #214b70;
+            line-height: 1.8;
+        }
+
+        .map-note .addresses strong {
+            color: #0f3b6e;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .question {
+            background: #fef7e0;
+            border-right: 6px solid #e6b422;
+            border-radius: 18px;
+            padding: 18px 20px;
+            font-size: 0.95rem;
+            color: #4a3b0e;
+            line-height: 1.7;
+            margin-top: 8px;
+        }
+
+        .question strong {
+            color: #1e4a76;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #5f7d9c;
+            padding: 16px 0 8px;
+            border-top: 1px solid #d9e5f0;
+            margin-top: 12px;
+        }
+
+        /* تنسيقات إضافية للقوائم */
+        .inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            margin: 12px 0;
+        }
+
+        .inline-list .item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 12px 18px;
+            border: 1px solid #dde8f2;
+            flex: 1 1 200px;
+        }
+
+        .inline-list .item strong {
+            color: #0f3b6e;
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- العنوان -->
+        <div class="header">
+            <div class="flag">🇫🇷</div>
+            <h1>دورات الفرنسية الحضورية في ليل</h1>
+            <p>خيارات مجانية ومدفوعة – مع تنبيهات مهمة للسفر والإقامة (كارت أورانج بلجيكي / جواز مصري)</p>
+        </div>
+
+        <!-- تنبيه السفر والكارت البرتقالي -->
+        <div class="warning-box">
+            <h3>⚠️ تنبيه مهم: وضعك الحالي (كارت أورانج بلجيكي + جواز مصري)</h3>
+            <p>
+                بما أنك تحمل <strong>كارت أورانج بلجيكي (Attestation d’immatriculation)</strong> وتعيش في <strong>Harelbeke</strong>، فهناك نقطتان مهمتان:
+            </p>
+            <ul style="margin-right: 20px; margin-bottom: 10px; list-style: disc; color: #4a3b0e;">
+                <li style="margin-bottom: 6px;">
+                    <span class="highlight">الكارت البرتقالي البلجيكي ليس تصريح إقامة للسفر داخل شنغن</span>، ولا يكفي وحده للسفر إلى فرنسا والعودة إلى بلجيكا.
+                </li>
+                <li style="margin-bottom: 6px;">
+                    لا تحتاج بالضرورة إلى إقامة فرنسية لكي تسجل في مدرسة لغات خاصة، لكن يجب أن يكون <strong>دخولك إلى فرنسا قانونياً</strong>.
+                </li>
+            </ul>
+            <p>
+                بحسب الإرشادات البلجيكية، يجب التأكد من وثائق الدخول والعودة قبل السفر. <em>Le langage juridique clair +1</em>
+            </p>
+            <p style="margin-top: 10px; background: #ffe8cc; padding: 10px 16px; border-radius: 14px;">
+                <strong>تصحيح مهم:</strong> جمعية La Cimade في ليل لا تستقبل أصحاب الإقامة النظامية أو الطلاب الأجانب في برنامجها المحلي، حتى لو كانوا يريدون تعلم الفرنسية. <em>La Cimade</em>
+            </p>
+        </div>
+
+        <!-- القسم 1: جمعيات مجانية (مع تنبيه) -->
+        <div class="section-title">🤝 جمعيات مجانية (لكن تحقق من قبولك)</div>
+        <div class="section-sub">هذه الجمعيات تستهدف غالباً الأشخاص بدون أوراق، لكن بعضها قد لا يقبل الإقامة البلجيكية أو الطلاب النظاميين.</div>
+
+        <div class="card-grid">
+            <!-- La Cimade -->
+            <div class="card">
+                <h2><span>🤝</span> La Cimade Lille</h2>
+                <div class="badge red">لا تستقبل الإقامات النظامية / الطلاب</div>
+                <ul>
+                    <li>دروس فرنسية حضورية للبالغين.</li>
+                    <li>تستقبل أشخاصاً في وضعية إقامة غير نظامية وطالبي اللجوء.</li>
+                    <li><strong>لا تستقبل أصحاب الإقامة النظامية</strong> أو الطلاب الأجانب في برنامجها المحلي.</li>
+                </ul>
+                <div class="contact">
+                    📧 <a href="mailto:coursdefrancaislille@lacimade.org">coursdefrancaislille@lacimade.org</a><br>
+                    📍 9 Boulevard de la Moselle, Lille
+                </div>
+            </div>
+
+            <!-- LA CLÉ -->
+            <div class="card">
+                <h2><span>🔑</span> Association LA CLÉ</h2>
+                <div class="badge green">مجاني – اسأل قبل التسجيل</div>
+                <ul>
+                    <li>تعليم الفرنسية للأجانب.</li>
+                    <li>دروس فردية مع متطوعين.</li>
+                    <li>القبول بدون اشتراط إقامة نظامية معلن (اسألهم عن وضعك بالكارت البلجيكي).</li>
+                </ul>
+                <div class="contact">
+                    📍 28–30 Rue Ernest Deconynck, Lille<br>
+                    📞 <a href="tel:+33320540687">+33 3 20 54 06 87</a>
+                </div>
+            </div>
+
+            <!-- Accueil Frédéric Ozanam -->
+            <div class="card">
+                <h2><span>🕊️</span> Accueil Frédéric Ozanam</h2>
+                <div class="badge">دروس مجانية</div>
+                <ul>
+                    <li>دروس فرنسية ومحادثة.</li>
+                    <li>التسجيل من خلال مركز الاستقبال.</li>
+                    <li>قائمة انتظار حسب الأماكن المتاحة.</li>
+                </ul>
+                <div class="contact">
+                    📍 81 Rue Barthélémy Delespaul, Lille
+                </div>
+            </div>
+
+            <!-- BANTA -->
+            <div class="card">
+                <h2><span>📚</span> Association BANTA</h2>
+                <div class="badge">للأشخاص المحرومين من حق التعليم</div>
+                <ul>
+                    <li>تعليم الأجانب البالغين، ومنهم بدون أوراق.</li>
+                    <li>دعم في اللغة الفرنسية والرياضيات.</li>
+                </ul>
+                <div class="contact">
+                    📍 2 Rue Désiré Bondues, Lille<br>
+                    📞 <a href="tel:+33781289862">07 81 28 98 62</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- القسم 2: مدارس حضورية بديلة (مدفوعة) -->
+        <div class="section-title">🏫 مدارس لغات حضورية بديلة في ليل (مدفوعة)</div>
+        <div class="section-sub">هذه المدارس الخاصة لا تشترط إقامة فرنسية للتسجيل، لكن يجب أن يكون دخولك إلى فرنسا قانونياً.</div>
+
+        <div class="card-grid">
+            <!-- Alliance Française -->
+            <div class="card">
+                <h2><span>🇫🇷</span> Alliance Française Lille Métropole</h2>
+                <div class="badge orange">مدفوع – مستويات A1 إلى C2</div>
+                <ul>
+                    <li>تعليم منظم داخل الفصول.</li>
+                    <li>مستويات A1 إلى C2.</li>
+                    <li>لا تشترط إقامة فرنسية للتسجيل، لكن يجب أن يكون دخولك قانونياً.</li>
+                </ul>
+                <div class="contact">
+                    📍 2 Rue Bernos, Lille<br>
+                    📞 <a href="tel:+33374677895">+33 3 74 67 78 95</a>
+                </div>
+            </div>
+
+            <!-- Polylangues -->
+            <div class="card">
+                <h2><span>🗣️</span> Polylangues Lille</h2>
+                <div class="badge orange">مدفوع – مستويات حسب مستواك</div>
+                <ul>
+                    <li>دروس فرنسية للأجانب.</li>
+                    <li>مستويات حسب مستواك.</li>
+                    <li>مناسبة لمن يحمل إقامة بلجيكية ويريد الدراسة حضورياً.</li>
+                </ul>
+                <div class="contact">
+                    📍 2 Rue du Faubourg des Postes, Lille<br>
+                    📞 <a href="tel:+33764438641">+33 7 64 43 86 41</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- رسالة جاهزة للتسجيل في المدارس (بدل La Cimade) -->
+        <div class="message-box">
+            <h2>✉️ رسالة جاهزة للتسجيل في مدرسة لغات (Alliance Française / Polylangues)</h2>
+            <div class="message-content" id="messageText">Bonjour,
+
+Je souhaite m’inscrire à vos cours de français en présentiel à Lille.
+
+Je voudrais savoir :
+- Est-ce que les cours sont accessibles aux personnes titulaires d’un titre de séjour belge (carte orange) ?
+- Est-ce que les cours sont payants ? Quels sont les tarifs ?
+- Quels sont les jours et les horaires ?
+- Acceptez-vous actuellement de nouveaux élèves ?
+- Quel est le niveau proposé (A1, A2, B1, B2, C1, C2) ?
+
+Merci beaucoup pour votre réponse.
+
+Cordialement</div>
+            <div class="copy-note">
+                <button onclick="copyMessage()">📋 نسخ الرسالة</button>
+                <span id="copyFeedback" style="font-size:0.8rem; color:#a8c8e8;">(انقر للنسخ)</span>
+            </div>
+        </div>
+
+        <!-- خريطة الأماكن -->
+        <div class="map-note">
+            <div class="addresses">
+                <div><strong>📍 La Cimade</strong> 9 Bd de la Moselle</div>
+                <div><strong>📍 LA CLÉ</strong> 28–30 Rue Ernest Deconynck</div>
+                <div><strong>📍 Ozanam</strong> 81 Rue Barthélémy Delespaul</div>
+                <div><strong>📍 BANTA</strong> 2 Rue Désiré Bondues</div>
+                <div><strong>📍 Alliance Française</strong> 2 Rue Bernos</div>
+                <div><strong>📍 Polylangues</strong> 2 Rue du Faubourg des Postes</div>
+            </div>
+            <div style="font-size:2rem; opacity:0.5;">🗺️</div>
+        </div>
+
+        <!-- سؤال مهم محدث -->
+        <div class="question">
+            <strong>❓ سؤال مهم لتحديد الاختيار الصحيح:</strong> هل ما زالت معك بطاقة الإقامة البرتغالية القديمة السارية، أم أصبح معك فقط:
+            <ul style="margin-top: 8px; margin-right: 20px; list-style: disc;">
+                <li>كارت أورانج بلجيكي (Attestation d’immatriculation).</li>
+                <li>جواز سفر مصري.</li>
+            </ul>
+            <p style="margin-top: 8px;">
+                لأن هذا سيحدد هل تستطيع الذهاب إلى ليل للدراسة حضورياً والعودة إلى بلجيكا بأمان، قبل أن تدفع رسوم أي كورس.
+            </p>
+        </div>
+
+        <!-- تذكير أسبوعي -->
+        <div style="background: #e6f2fc; border-radius: 18px; padding: 16px 20px; display: flex; align-items: center; gap: 12px; border: 1px solid #c2dcf2;">
+            <span style="font-size:1.8rem;">📅</span>
+            <div>
+                <div style="font-weight:700; color:#0f3b6e;">راقب التسجيل أسبوعياً في دورات الفرنسية بليل</div>
+                <div style="font-size:0.9rem; color:#2c577b;">يمكنك متابعة فتح التسجيل أسبوعياً وإبلاغك بالمواعيد الجديدة.</div>
+            </div>
+            <div style="margin-right:auto; font-size:1.2rem; opacity:0.7;">⏳</div>
+        </div>
+
+        <!-- تذييل -->
+        <div class="footer">
+            🇫🇷 معلومات للاجئين والمهاجرين – ليل، فرنسا | تنبيه: تحقق دائماً من وثائق السفر قبل التنقل بين بلجيكا وفرنسا.
+        </div>
+    </div>
+
+    <script>
+        function copyMessage() {
+            const text = document.getElementById('messageText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.textContent = '✅ تم النسخ!';
+                feedback.style.color = '#a0e0a0';
+                setTimeout(() => {
+                    feedback.textContent = '(انقر للنسخ)';
+                    feedback.style.color = '#a8c8e8';
+                }, 2000);
+            }).catch(() => {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                const feedback = document.getElementById('copyFeedback');
+                feedback.textContent = '✅ تم النسخ!';
+                feedback.style.color = '#a0e0a0';
+                setTimeout(() => {
+                    feedback.textContent = '(انقر للنسخ)';
+                    feedback.style.color = '#a8c8e8';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
